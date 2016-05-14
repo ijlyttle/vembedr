@@ -1,0 +1,31 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+library("htmltools")
+library("vembedr")
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+```{r}
+div(
+  align = "center",
+  embed_vimeo("45196609")
+)
+```
+
+```{r}
+div(
+  align = "center",
+  embed_youtube("dQw4w9WgXcQ")
+)
+```
