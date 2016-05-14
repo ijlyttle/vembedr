@@ -16,16 +16,27 @@ knitr::opts_chunk$set(
 ```
 
 
+## Installation
+
+You may install the latest development version from github with
+
+```{r eval = FALSE}
+if (packageVersion("devtools") < 1.6) {
+  install.packages("devtools")
+}
+devtools::install_github("ijlyttle/vembedr")
+```
+
+To use 
+
 ```{r}
-div(
-  align = "center",
-  embed_vimeo("45196609")
-)
+embed_vimeo("45196609")
 ```
 
 ```{r}
-div(
-  align = "center",
-  embed_youtube("dQw4w9WgXcQ")
-)
+embed_youtube("dQw4w9WgXcQ")
 ```
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

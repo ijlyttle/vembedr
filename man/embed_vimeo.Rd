@@ -5,16 +5,22 @@
 \alias{embed_youtube}
 \title{Creates an iframe for video-embedding}
 \usage{
-embed_vimeo(id, width = 500, height = 281)
+embed_vimeo(id, width = 500, height = 281, frameborder = 0,
+  allow_full_screen = TRUE)
 
-embed_youtube(id, width = 500, height = 281)
+embed_youtube(id, width = 420, height = 315, frameborder = 0,
+  allow_full_screen = TRUE)
 }
 \arguments{
-\item{id}{character, vimeo_id}
+\item{id}{character, url identifier}
 
-\item{width}{numeric, width of iframe (pixels)}
+\item{width}{numeric, width of iframe (px)}
 
-\item{height}{numeric, height of iframe (pixels)}
+\item{height}{numeric, height of iframe (px)}
+
+\item{frameborder}{numeric, size of frame border (px)}
+
+\item{allow_full_screen}{logical, indicates if to allow fullscreen}
 }
 \value{
 html code describing iframe
@@ -23,7 +29,7 @@ html code describing iframe
 Creates an iframe for video-embedding
 }
 \examples{
-embed_vimeo(45196609)
+embed_vimeo("45196609")
 
 embed_youtube("dQw4w9WgXcQ")
 
