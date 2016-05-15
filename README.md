@@ -1,9 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+The functions in this package make it a little bit easier to embed hosted videos into your RMarkdown documents and Shiny apps.
+
 Installation
 ------------
 
-You mat
+You may install the latest development version from github by:
 
 ``` r
 if (packageVersion("devtools") < 1.6) {
@@ -12,24 +14,26 @@ if (packageVersion("devtools") < 1.6) {
 devtools::install_github("ijlyttle/vembedr")
 ```
 
-To use
+Use
+===
+
+It's fairly simple, you just need the video id from either Vimeo or YouTube. In RMarkdown, you may wish to set the alignment of the code chunk.
 
 ``` r
 embed_vimeo("45196609")
 ```
 
-<!--html_preserve-->
-<iframe src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-</iframe>
-<!--/html_preserve-->
 ``` r
 embed_youtube("dQw4w9WgXcQ")
 ```
 
-<!--html_preserve-->
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen>
-</iframe>
-<!--/html_preserve-->
+Embedding does not work for the standard Github site, but it does for `gh-pages`.
+
+Future work
+===========
+
+Both YouTube and Vimeo support the use of query parameters in the URL. Supporting this is the likely next step.
+
 Code of Conduct
 ---------------
 

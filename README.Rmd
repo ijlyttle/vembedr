@@ -15,27 +15,36 @@ knitr::opts_chunk$set(
 )
 ```
 
+The functions in this package make it a little bit easier to embed hosted videos into your RMarkdown documents and Shiny apps.
 
 ## Installation
 
-You may install the latest development version from github with
+You may install the latest development version from github by:
 
-```{r eval = FALSE}
+```{r eval=FALSE}
 if (packageVersion("devtools") < 1.6) {
   install.packages("devtools")
 }
 devtools::install_github("ijlyttle/vembedr")
 ```
 
-To use 
+# Use
 
-```{r}
+It's fairly simple, you just need the video id from either Vimeo or YouTube. In RMarkdown, you may wish to set the alignment of the code chunk.
+
+```{r eval=FALSE}
 embed_vimeo("45196609")
 ```
 
-```{r}
+```{r eval=FALSE}
 embed_youtube("dQw4w9WgXcQ")
 ```
+
+Embedding does not work for the standard Github site, but it does for `gh-pages`.
+
+# Future work
+
+Both YouTube and Vimeo support the use of query parameters in the URL. Supporting this is the likely next step. 
 
 ## Code of Conduct
 
