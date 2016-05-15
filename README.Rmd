@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The functions in this package make it a little bit easier to embed hosted videos into your RMarkdown documents and Shiny apps.
+The functions in this package make it a little bit easier for you to embed hosted videos into your RMarkdown documents and Shiny apps.
 
 ## Installation
 
@@ -45,6 +45,11 @@ Embedding does not work for the standard Github site, but it does for `gh-pages`
 # Future work
 
 Both YouTube and Vimeo support the use of query parameters in the URL. Supporting this is the likely next step. 
+
+* [Vimeo embedding](https://developer.vimeo.com/player/embedding)
+* [YouTube embedding](https://developers.google.com/youtube/player_parameters)
+
+At some point, I'd like to submit this to CRAN,
 
 ## Code of Conduct
 
