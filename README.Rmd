@@ -49,7 +49,7 @@ Both YouTube and Vimeo support the use of query parameters in the URL. Supportin
 * [Vimeo embedding](https://developer.vimeo.com/player/embedding)
 * [YouTube embedding](https://developers.google.com/youtube/player_parameters)
 
-At some point, I'd like to submit this to CRAN,
+At some point, I'd like to submit this to CRAN, so your feedback will be very welcome.
 
 ## Code of Conduct
 

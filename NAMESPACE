@@ -2,3 +2,5 @@
 
 export(embed_vimeo)
 export(embed_youtube)
+export(rickroll_vimeo)
+export(rickroll_youtube)

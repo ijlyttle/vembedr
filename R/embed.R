@@ -1,3 +1,4 @@
+# helper function to convert logical into a character parameter
 .convert_allowfullscreen <- function(x){
 
   if (x){
