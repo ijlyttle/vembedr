@@ -30,14 +30,21 @@ devtools::install_github("ijlyttle/vembedr")
 
 # Use
 
-It's fairly simple, you just need the video id from either Vimeo or YouTube. In RMarkdown, you may wish to set the alignment of the code chunk.
+```{r eval=FALSE}
+library("htmltools")
+library("vembedr")
+```
+
+It's fairly simple, you just need the video id from either Vimeo or YouTube. 
 
 ```{r eval=FALSE}
 embed_vimeo("45196609")
 ```
 
+You may wish to center the embed:
+
 ```{r eval=FALSE}
-embed_youtube("dQw4w9WgXcQ")
+div(align = "center", embed_youtube("dQw4w9WgXcQ"))
 ```
 
 Embedding does not work for the standard Github site, but it does for `gh-pages`.
