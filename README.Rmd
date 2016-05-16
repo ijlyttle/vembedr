@@ -19,6 +19,8 @@ knitr::opts_chunk$set(
 
 The functions in this package make it a little bit easier for you to embed hosted videos into your RMarkdown documents and Shiny apps.
 
+[Demo](http://ijlyttle.github.io/vembedr/)
+
 ## Installation
 
 You may install the latest development version from github by:
@@ -49,7 +51,7 @@ You may wish to center the embed:
 div(align = "center", embed_youtube("dQw4w9WgXcQ"))
 ```
 
-Embedding does not work for the standard Github site, but it does for `gh-pages`.
+Embedding does not work for the standard Github site, but it does for `gh-pages`. 
 
 # Future work
 
