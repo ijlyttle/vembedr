@@ -6,10 +6,10 @@
 \title{Creates an iframe for video-embedding}
 \usage{
 embed_vimeo(id, width = 500, height = 281, frameborder = 0,
-  allow_full_screen = TRUE)
+  allow_full_screen = TRUE, query = NULL)
 
 embed_youtube(id, width = 420, height = 315, frameborder = 0,
-  allow_full_screen = TRUE)
+  allow_full_screen = TRUE, query = NULL)
 }
 \arguments{
 \item{id}{character, url identifier}

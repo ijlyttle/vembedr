@@ -10,7 +10,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
-    htmltools
+    htmltools,
+    httr
 RoxygenNote: 5.0.1
 URL: https://github.com/ijlyttle/vembedr
 BugReports: https://github.com/ijlyttle/vembedr/issues

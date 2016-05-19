@@ -1,6 +1,10 @@
 
+[Github page, with live demo](http://ijlyttle.github.io/vembedr/)
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 The functions in this package make it a little bit easier for you to embed hosted videos into your RMarkdown documents and Shiny apps.
+
+[Demo](http://ijlyttle.github.io/vembedr/)
 
 Installation
 ------------
@@ -25,7 +29,7 @@ library("vembedr")
 It's fairly simple, you just need the video id from either Vimeo or YouTube.
 
 ``` r
-embed_vimeo("45196609")
+embed_vimeo("45196609", query = list(start = 10))
 ```
 
 You may wish to center the embed:
