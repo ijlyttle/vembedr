@@ -11,7 +11,9 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     htmltools,
-    httr
+    httr,
+    stringr
 RoxygenNote: 5.0.1
 URL: https://github.com/ijlyttle/vembedr
 BugReports: https://github.com/ijlyttle/vembedr/issues
+Suggests: testthat
