@@ -1,15 +1,3 @@
-# helper function to convert logical into a character parameter
-.convert_allowfullscreen <- function(x){
-
-  if (x){
-    result <- ""
-  } else {
-    result <- NULL
-  }
-
-  result
-}
-
 #' Creates an iframe for video-embedding
 #'
 #' @param id                character, url identifier
@@ -17,6 +5,7 @@
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
 #' @param allow_full_screen logical, indicates if to allow fullscreen
+#' @param query             list of items to include in query string
 #'
 #' @return html code describing iframe
 #' @examples
@@ -32,9 +21,9 @@ embed_vimeo <- function(id, width = 500, height = 281,
 
   url <- httr::parse_url("https://player.vimeo.com/video")
 
+  # update url
   url$path <- paste(url$path, id, sep = "/")
   url$query <- query
-
 
   htmltools::tags$iframe(
     src = httr::build_url(url),
@@ -47,7 +36,9 @@ embed_vimeo <- function(id, width = 500, height = 281,
   )
 }
 
-#' @rdname embed_vimeo
+#' Creates an iframe for video-embedding
+#'
+#' @inheritParams  embed_vimeo
 #'
 #' @examples
 #' embed_youtube("dQw4w9WgXcQ")
