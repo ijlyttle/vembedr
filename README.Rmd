@@ -33,7 +33,7 @@ devtools::install_github("ijlyttle/vembedr")
 
 ### Note for RStudio users
 
-The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at [vembedr GitHub pages](http://ijlyttle.github.io/vembedr/).
+The browser within the RStudio IDE does not support the use of iframes that point to external URLs. Opening your rendered html file in a different browser, such as Chrome or Firefox, should work just fine. 
 
 ## Embedding a YouTube video
 
