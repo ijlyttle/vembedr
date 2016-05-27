@@ -8,8 +8,6 @@ output: github_document
 [![codecov](https://codecov.io/gh/ijlyttle/vembedr/branch/master/graph/badge.svg)](https://codecov.io/gh/ijlyttle/vembedr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr)
 
-
-
 ```{r, echo = FALSE}
 library("htmltools")
 library("vembedr")
@@ -28,9 +26,15 @@ The embedding does not appear on GitHub's rendering of README. If you like, you 
 
 ## Installation
 
-The vembedr package is available yet on CRAN. However, you can install from GitHub:
+This package is available from CRAN:
 
-```{r eval=FALSE}
+```{r}
+install.packages("vembedr")
+```
+
+If you like, you can install the development version using Github.
+
+```{r}
 if (packageVersion("devtools") < 1.6) {
   install.packages("devtools")
 }
