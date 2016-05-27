@@ -28,7 +28,7 @@ The embedding does not appear on GitHub's rendering of README. If you like, you 
 
 ## Installation
 
-The vembedr package is not yet on CRAN. However, you can install from GitHub:
+The vembedr package is available yet on CRAN. However, you can install from GitHub:
 
 ```{r eval=FALSE}
 if (packageVersion("devtools") < 1.6) {

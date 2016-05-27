@@ -1,6 +1,10 @@
+# vembedr 0.1.0.9000
+
+* Version bump for development.
+
 # vembedr 0.1.0
 
-* Version bump for CRAN subission.
+* Version bump for CRAN subimssion.
 
 # vembedr 0.0.0.9000
 
