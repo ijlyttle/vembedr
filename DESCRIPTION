@@ -1,9 +1,11 @@
 Package: vembedr
 Title: Functions to Embed Video in HTML
 Version: 0.1.0
-Authors@R: 'Ian Lyttle <ian.lyttle@schneider-electric.com> [aut, cre]'
+Authors@R: c(
+    person("Ian", "Lyttle", email = "ian.lyttle@schneider-electric.com", role = c("aut", "cre", "cph"))
+  )
 Description: A set of functions for generating HTML to
-    embed hosted video in your RMarkdown documents or Shiny apps.
+    embed hosted video in your R Markdown documents or Shiny apps.
 Depends:
     R (>= 3.3.0)
 License: MIT + file LICENSE

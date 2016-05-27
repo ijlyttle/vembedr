@@ -2,7 +2,7 @@
 vebmedr
 =======
 
-[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![codecov](https://codecov.io/gh/ijlyttle/vembedr/branch/master/graph/badge.svg)](https://codecov.io/gh/ijlyttle/vembedr) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr) [![](http://cranlogs.r-pkg.org/badges/vembedr)](http://cran.rstudio.com/web/packages/vembedr/index.html)
+[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![codecov](https://codecov.io/gh/ijlyttle/vembedr/branch/master/graph/badge.svg)](https://codecov.io/gh/ijlyttle/vembedr)
 
 The functions in this package make it a little bit easier for you to embed hosted videos into your RMarkdown documents and Shiny apps.
 
