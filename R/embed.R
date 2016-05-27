@@ -23,6 +23,7 @@
 #' @return html \code{<iframe>} element
 #'
 #' @name embed
+#' @family embed
 #' @examples
 #' embed_vimeo("45196609")
 #' embed_youtube("dQw4w9WgXcQ")
