@@ -1,4 +1,4 @@
-# vembedr 0.0.1.0000
+# vembedr 0.1.0
 
 * Version bump for CRAN subission.
 

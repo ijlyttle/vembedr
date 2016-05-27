@@ -1,6 +1,6 @@
 Package: vembedr
 Title: Functions to Embed Video in HTML
-Version: 0.0.1.0000
+Version: 0.1.0
 Authors@R: 'Ian Lyttle <ian.lyttle@schneider-electric.com> [aut, cre]'
 Description: This package provides a family of functions for generating HTML to
     embed hosted video in your RMarkdown documents or Shiny apps.
