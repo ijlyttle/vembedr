@@ -4,6 +4,9 @@ output: github_document
 
 # vebmedr
 
+[![](http://cranlogs.r-pkg.org/badges/vembedr)](http://cran.rstudio.com/web/packages/vembedr/index.html)
+
+
 ```{r, echo = FALSE}
 library("htmltools")
 library("vembedr")

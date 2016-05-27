@@ -2,6 +2,8 @@
 vebmedr
 =======
 
+[![](http://cranlogs.r-pkg.org/badges/vembedr)](http://cran.rstudio.com/web/packages/vembedr/index.html)
+
 The functions in this package make it a little bit easier for you to embed hosted videos into your RMarkdown documents and Shiny apps.
 
 The embedding does not appear on GitHub's rendering of README. If you like, you can visit the [demo page](http://ijlyttle.github.io/vembedr/) to see everything in action.
