@@ -1,5 +1,5 @@
 ---
-title: "Emdebbing Video"
+title: "Embedding Video"
 author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -80,7 +80,7 @@ div(
 )
 ```
 
-To make things a little easier, a helper function, `secs()` is provided: 
+To make things a little easier, a helper function, `secs()`, is provided: 
 
 ```{r}
 div(
