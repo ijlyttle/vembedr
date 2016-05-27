@@ -5,6 +5,7 @@ output: github_document
 # vebmedr
 
 [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr)
+[![codecov](https://codecov.io/gh/ijlyttle/vembedr/branch/master/graph/badge.svg)](https://codecov.io/gh/ijlyttle/vembedr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr)
 [![](http://cranlogs.r-pkg.org/badges/vembedr)](http://cran.rstudio.com/web/packages/vembedr/index.html)
 
