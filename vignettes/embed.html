@@ -12,9 +12,9 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2016-05-27" />
+<meta name="date" content="2016-07-05" />
 
-<title>Emdebbing Video</title>
+<title>Embedding Video</title>
 
 
 
@@ -68,9 +68,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<h1 class="title toc-ignore">Emdebbing Video</h1>
+<h1 class="title toc-ignore">Embedding Video</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2016-05-27</em></h4>
+<h4 class="date"><em>2016-07-05</em></h4>
 
 
 
@@ -122,14 +122,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
   <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>, <span class="dt">query =</span> <span class="kw">list</span>(<span class="dt">start =</span> <span class="dv">252</span>))
 )</code></pre></div>
-<p>To make things a little easier, a helper function, <code>secs()</code> is provided:</p>
+<div align="center">
+<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<p>To make things a little easier, a helper function, <code>secs()</code>, is provided:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
   <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
   <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>, <span class="dt">query =</span> <span class="kw">list</span>(<span class="dt">start =</span> <span class="kw">secs</span>(<span class="st">&quot;4m12s&quot;</span>)))
 )</code></pre></div>
-<p><div align="center">
+<div align="center">
 <iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-</div> It seems that Vimeo does not provide the option to specify a start time.</p>
+</div>
+<p>For Vimeo, there is a somewhat undocumented way (thanks <span class="citation">@karthik</span>) to do this. Word of warning, autoplay is set to be on.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, <span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;48699174&quot;</span>, <span class="dt">fragment =</span> <span class="st">&quot;at=40&quot;</span>))</code></pre></div>
+<div align="center">
+<iframe src="https://player.vimeo.com/video/48699174#at=40" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+</div>
 <p>The query parameters for each service can be found at:</p>
 <ul>
 <li><a href="https://developers.google.com/youtube/player_parameters">YouTube IFrame API</a></li>

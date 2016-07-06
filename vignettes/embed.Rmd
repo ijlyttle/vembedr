@@ -73,7 +73,7 @@ YouTube and Vimeo each provide you the means to specify more options using http 
 
 Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a `start` with the number of seconds.
 
-```{r, eval = FALSE}
+```{r}
 div(
   align = "center", 
   embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
@@ -88,7 +88,16 @@ div(
   embed_youtube(id = "8SGif63VW6E", query = list(start = secs("4m12s")))
 )
 ```
-It seems that Vimeo does not provide the option to specify a start time.
+
+For Vimeo, there is a somewhat undocumented way (thanks @karthik) to do this. Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (https://vimeo.com/forums/topic:49396).
+
+```{r}
+div(align = "center", embed_vimeo(id = "98892825", fragment = "at=60"))
+```
+
+```{r}
+
+```
 
 The query parameters for each service can be found at:
 

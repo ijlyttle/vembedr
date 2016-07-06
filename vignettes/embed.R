@@ -17,17 +17,20 @@ div(
   embed_youtube(id = "1hKSYgOGtos", width = 640,  height = 390)
 )
 
-## ---- eval = FALSE-------------------------------------------------------
-#  div(
-#    align = "center",
-#    embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
-#  )
+## ------------------------------------------------------------------------
+div(
+  align = "center", 
+  embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
+)
 
 ## ------------------------------------------------------------------------
 div(
   align = "center", 
   embed_youtube(id = "8SGif63VW6E", query = list(start = secs("4m12s")))
 )
+
+## ------------------------------------------------------------------------
+div(align = "center", embed_vimeo(id = "48699174", fragment = "at=40"))
 
 ## ------------------------------------------------------------------------
 rickroll_youtube()

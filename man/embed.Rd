@@ -7,7 +7,7 @@
 \title{Creates an iframe for video-embedding}
 \usage{
 embed_vimeo(id, width = 500, height = 281, frameborder = 0,
-  allow_full_screen = TRUE, query = NULL)
+  allow_full_screen = TRUE, query = NULL, fragment = NULL)
 
 embed_youtube(id, width = 420, height = 315, frameborder = 0,
   allow_full_screen = TRUE, query = NULL)
