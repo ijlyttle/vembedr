@@ -46,7 +46,7 @@ embed_vimeo <- function(id, width = 500, height = 281,
   url$path <- paste(url$path, id, sep = "/")
   url$query <- query
 
-  htmltools::tags$iframe(
+  embed <- htmltools::tags$iframe(
     src = httr::build_url(url),
     width = width,
     height = height,
@@ -55,6 +55,10 @@ embed_vimeo <- function(id, width = 500, height = 281,
     mozallowfullscreen = allowfullscreen,
     allowfullscreen = allowfullscreen
   )
+
+  class(embed) <- c("embed_vimeo", class(embed))
+
+  embed
 }
 
 #' @rdname embed
@@ -78,4 +82,8 @@ embed_youtube <- function(id, width = 420, height = 315,
     frameborder = frameborder,
     allowfullscreen = allowfullscreen
   )
+
+  class(embed) <- c("embed_youtube", class(embed))
+
+  embed
 }
