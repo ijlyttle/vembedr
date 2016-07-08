@@ -27,6 +27,7 @@
 #' @examples
 #' embed_vimeo("45196609")
 #' embed_youtube("dQw4w9WgXcQ")
+#' embed_user2016("Literate-Programming")
 #' embed_youtube("8SGif63VW6E", query = list(start = secs("4m12s")))
 #'
 NULL
@@ -70,6 +71,27 @@ embed_youtube <- function(id, width = 420, height = 315,
 
   url$path <- paste(url$path, id, sep = "/")
   url$query <- query
+
+  htmltools::tags$iframe(
+    src = httr::build_url(url),
+    width = width,
+    height = height,
+    frameborder = frameborder,
+    allowfullscreen = allowfullscreen
+  )
+}
+
+#' @rdname embed
+#' @export
+#
+embed_user2016 <- function(id, width = 560, height = 315,
+                           frameborder = 0, allow_full_screen = TRUE){
+
+  allowfullscreen <- .convert_allowfullscreen(allow_full_screen)
+
+  url <- httr::parse_url("https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016")
+
+  url$path <- paste(url$path, id, "player", sep = "/")
 
   htmltools::tags$iframe(
     src = httr::build_url(url),
