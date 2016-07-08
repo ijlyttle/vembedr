@@ -30,6 +30,17 @@ devtools::install_github("ijlyttle/vembedr")
 
 The browser within the RStudio IDE does not support the use of iframes that point to external URLs. Opening your rendered html file in a different browser, such as Chrome or Firefox, should work just fine.
 
+UseR! 2016 videos
+-----------------
+
+``` r
+embed_user2016("Literate-Programming")
+```
+
+The trick for these useR videos is that the `id` is just the "title" part of the URL, for example:
+
+`https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/`**`Literate-Programming`**
+
 Embedding a YouTube video
 -------------------------
 
