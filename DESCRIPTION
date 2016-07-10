@@ -14,7 +14,8 @@ LazyData: true
 Imports:
     htmltools,
     httr,
-    stringr
+    stringr,
+    magrittr
 RoxygenNote: 5.0.1
 URL: https://github.com/ijlyttle/vembedr
 BugReports: https://github.com/ijlyttle/vembedr/issues

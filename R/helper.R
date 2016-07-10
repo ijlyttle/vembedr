@@ -30,7 +30,7 @@
 secs <- function(x){
 
   parse <- function(x, char){
-    regex <- paste0("(\\d*)", char)
+    regex <- paste0("(\\d+)", char)
 
     if (stringr::str_detect(x, regex)){
       num <- as.numeric(stringr::str_match(x, regex)[[2]])
@@ -44,8 +44,9 @@ secs <- function(x){
   hours <- parse(x, "h")
   minutes <- parse(x, "m")
   seconds <- parse(x, "s")
+  only_seconds <- parse(x, "$") # capture one-or-more digits at the end of a string
 
-  result <- seconds + 60*(minutes + 60*hours)
+  result <- only_seconds + seconds + 60*(minutes + 60*hours)
 
   result
 }

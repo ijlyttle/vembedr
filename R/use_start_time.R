@@ -26,7 +26,7 @@ use_start_time.embed_youtube <- function(embed, start_time){
   url <- httr::parse_url(src)
 
   # set the time in url$query
-  url$query$start <- start_time
+  url$query$start <- secs(start_time)
 
   # set the url in the embed
   # == need to ask about a public API for this in htmltools ==
@@ -40,13 +40,18 @@ use_start_time.embed_youtube <- function(embed, start_time){
 #'
 use_start_time.embed_vimeo <- function(embed, start_time){
 
-  # get the url from the embed
+  # get the src from the embed
+  src <- htmltools::tagGetAttribute(embed, "src")
 
   # parse the url
+  url <- httr::parse_url(src)
 
   # set the time in url$fragment
+  url$fragment <- paste0("at=", secs(start_time))
 
   # set the url in the embed
+  # == need to ask about a public API for this in htmltools ==
+  embed$attribs$src <- httr::build_url(url)
 
   embed
 }

@@ -1,7 +1,7 @@
 context("use_start_time")
 
 youtube <- rickroll_youtube()
-youtube_start <- use_start_time(youtube, 25)
+youtube_start <- use_start_time(youtube, "25s")
 
 get_query <- function(elem){
   src <- htmltools::tagGetAttribute(elem, "src")
@@ -17,7 +17,14 @@ test_that("youtube works", {
 vimeo <- rickroll_vimeo()
 vimeo_start <- use_start_time(vimeo, "1m3s")
 
+get_fragment <- function(elem){
+  src <- htmltools::tagGetAttribute(elem, "src")
+  url <- httr::parse_url(src)
+
+  url$fragment
+}
+
 test_that("vimeo works", {
-  expect_identical(vimeo, vimeo_start)
+  expect_identical(get_fragment(vimeo_start), "at=63")
 })
 

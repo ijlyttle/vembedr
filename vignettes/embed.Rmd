@@ -58,6 +58,22 @@ The Vimeo id is just the path part of the URL: `"48699174"`:
 div(align = "center", embed_vimeo(id = "48699174"))
 ```
 
+## Adding a start time
+
+```{r}
+div(
+  align = "center", 
+  embed_youtube(id = "8SGif63VW6E") %>% use_start_time("4m12s")
+)
+```
+
+```{r}
+div(
+  align = "center", 
+  embed_vimeo(id = "98892825") %>% use_start_time("1m")
+)
+```
+
 ## Other arguments and query parameters
 
 The defaults for height and width of the iframe are taken from each service's defaults. You can change this using the `height` and `width` arguments to either of the embedding functions:
