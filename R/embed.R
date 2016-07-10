@@ -96,17 +96,32 @@ embed_youtube <- function(id, width = 420, height = 315,
 embed_user2016 <- function(id, width = 560, height = 315,
                            frameborder = 0, allow_full_screen = TRUE){
 
+  id <- c("Events", "useR-international-R-User-conference", "useR2016", id)
+
+  embed_channel9(id, width, height, frameborder, allow_full_screen)
+}
+
+#' @rdname embed
+#' @export
+#'
+embed_channel9 <- function(id, width = 560, height = 315,
+                           frameborder = 0, allow_full_screen = TRUE){
+
   allowfullscreen <- .convert_allowfullscreen(allow_full_screen)
 
-  url <- httr::parse_url("https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016")
+  url <- httr::parse_url("https://channel9.msdn.com")
 
-  url$path <- paste(url$path, id, "player", sep = "/")
+  url$path <- paste0(url$path, c(id, "player"), collapse = "/")
 
-  htmltools::tags$iframe(
+  embed <- htmltools::tags$iframe(
     src = httr::build_url(url),
     width = width,
     height = height,
     frameborder = frameborder,
     allowfullscreen = allowfullscreen
   )
+
+  class(embed) <- c("embed_channel9", class(embed))
+
+  embed
 }

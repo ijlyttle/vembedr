@@ -5,6 +5,7 @@
 #' "autoplay" is set to TRUE.
 #'
 #' @rdname use_start_time
+#' @param ...         generic args to pass through
 #' @param embed       embed object, i.e. \code{\link{embed_youtube}}
 #' @param start_time  numeric (seconds), or character ("3m15s")
 #' @param is_paused logical, for "Channel 9" specifies if the video
@@ -13,6 +14,12 @@
 #' @export
 #'
 use_start_time <- function(...) UseMethod("use_start_time")
+
+
+#' @rdname use_start_time
+#' @export
+#'
+use_start_time.default <- function(...) "Unknown class"
 
 #' @rdname use_start_time
 #' @export
