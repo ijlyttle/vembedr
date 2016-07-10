@@ -50,3 +50,14 @@ secs <- function(x){
 
   result
 }
+
+hms <- function(x){
+
+  seconds <- secs(x)
+
+  h <- floor(seconds/3600)
+  m <- floor((seconds %% 3600)/60)
+  s <- floor(seconds %% 60)
+
+  paste0(h, "h", m, "m", s, "s")
+}

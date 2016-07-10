@@ -66,7 +66,7 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_channel9 <- function(embed, start_time, is_paused, ...){
+use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, ...){
 
   # get the src from the embed
   src <- htmltools::tagGetAttribute(embed, "src")
@@ -75,9 +75,13 @@ use_start_time.embed_channel9 <- function(embed, start_time, is_paused, ...){
   url <- httr::parse_url(src)
 
   # set the time in url$fragment
-  url$fragment <- paste0("time=", start_time, ":paused")
+  frag <- paste("time", hms(start_time), sep = "=")
 
-  #time=0h1m0s:paused
+  if (is_paused){
+    frag <- paste(frag, "paused", sep = ":")
+  }
+
+  url$fragment <- frag
 
   # set the url in the embed
   # == need to ask about a public API for this in htmltools ==
