@@ -18,7 +18,8 @@
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
 #' @param allow_full_screen logical, indicates if to allow fullscreen
-#' @param query             list of items to include in query string
+#' @param query             list of items to include in url-query string
+#' @param fragment          character, (vimeo, channel 9) string to include as url-fragment
 #'
 #' @return html \code{<iframe>} element
 #'
