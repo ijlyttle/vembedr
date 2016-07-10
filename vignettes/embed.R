@@ -29,6 +29,13 @@ div(
 ## ------------------------------------------------------------------------
 div(
   align = "center", 
+  embed_user2016(id = "Towards-a-grammar-of-interactive-graphics") %>% 
+    use_start_time("44m11s")
+)
+
+## ------------------------------------------------------------------------
+div(
+  align = "center", 
   embed_youtube(id = "1hKSYgOGtos", width = 640,  height = 390)
 )
 
