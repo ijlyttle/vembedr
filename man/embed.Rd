@@ -2,6 +2,7 @@
 % Please edit documentation in R/embed.R
 \name{embed}
 \alias{embed}
+\alias{embed_user2016}
 \alias{embed_vimeo}
 \alias{embed_youtube}
 \title{Creates an iframe for video-embedding}
@@ -11,6 +12,9 @@ embed_vimeo(id, width = 500, height = 281, frameborder = 0,
 
 embed_youtube(id, width = 420, height = 315, frameborder = 0,
   allow_full_screen = TRUE, query = NULL)
+
+embed_user2016(id, width = 560, height = 315, frameborder = 0,
+  allow_full_screen = TRUE)
 }
 \arguments{
 \item{id}{character, identifier provided by the service}
@@ -46,6 +50,7 @@ according to the service being used:
 \examples{
 embed_vimeo("45196609")
 embed_youtube("dQw4w9WgXcQ")
+embed_user2016("Literate-Programming")
 embed_youtube("8SGif63VW6E", query = list(start = secs("4m12s")))
 
 }

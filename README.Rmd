@@ -45,6 +45,17 @@ devtools::install_github("ijlyttle/vembedr")
 
 The browser within the RStudio IDE does not support the use of iframes that point to external URLs. Opening your rendered html file in a different browser, such as Chrome or Firefox, should work just fine. 
 
+## UseR! 2016 videos
+
+```{r}
+embed_user2016("Literate-Programming")
+```
+
+The trick for these useR videos is that the `id` is just the "title" part of the URL, for example:
+
+`https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/`**`Literate-Programming`**
+
+
 ## Embedding a YouTube video
 
 Let's say that you want to embed a YouTube video into an RMarkdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:

@@ -1,5 +1,6 @@
 # vembedr 0.1.0.9000
 
+* adds `embed_user2016()`.
 * Version bump for development.
 
 # vembedr 0.1.0
