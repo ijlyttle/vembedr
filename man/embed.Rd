@@ -31,7 +31,9 @@ embed_channel9(id, width = 560, height = 315, frameborder = 0,
 
 \item{allow_full_screen}{logical, indicates if to allow fullscreen}
 
-\item{query}{list of items to include in query string}
+\item{query}{list of items to include in url-query string}
+
+\item{fragment}{character, (vimeo, channel 9) string to include as url-fragment}
 }
 \value{
 html \code{<iframe>} element

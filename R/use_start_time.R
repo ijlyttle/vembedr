@@ -24,7 +24,7 @@ use_start_time.default <- function(...) "Unknown class"
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_youtube <- function(embed, start_time){
+use_start_time.embed_youtube <- function(embed, start_time, ...){
 
   # get the src from the embed
   src <- htmltools::tagGetAttribute(embed, "src")
@@ -45,7 +45,7 @@ use_start_time.embed_youtube <- function(embed, start_time){
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_vimeo <- function(embed, start_time){
+use_start_time.embed_vimeo <- function(embed, start_time, ...){
 
   # get the src from the embed
   src <- htmltools::tagGetAttribute(embed, "src")

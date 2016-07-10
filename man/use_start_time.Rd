@@ -11,9 +11,9 @@ use_start_time(...)
 
 \method{use_start_time}{default}(...)
 
-\method{use_start_time}{embed_youtube}(embed, start_time)
+\method{use_start_time}{embed_youtube}(embed, start_time, ...)
 
-\method{use_start_time}{embed_vimeo}(embed, start_time)
+\method{use_start_time}{embed_vimeo}(embed, start_time, ...)
 }
 \arguments{
 \item{...}{generic args to pass through}
