@@ -32,6 +32,11 @@ should be paused at this time}
 \description{
 Please not that for Vimeo, you may specify a start time, but you can not
 specify that the video be paused at this time. In other words, it is like
-"autoplay" is set to TRUE.
+"autoplay" is set to TRUE, and you cannot unset it.
+}
+\examples{
+  rickroll_youtube() \%>\%
+    use_start_time("3m32s")
+
 }
 

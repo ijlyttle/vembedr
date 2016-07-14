@@ -2,7 +2,7 @@
 #'
 #' Please not that for Vimeo, you may specify a start time, but you can not
 #' specify that the video be paused at this time. In other words, it is like
-#' "autoplay" is set to TRUE.
+#' "autoplay" is set to TRUE, and you cannot unset it.
 #'
 #' @rdname use_start_time
 #' @param ...         generic args to pass through
@@ -12,6 +12,9 @@
 #'   should be paused at this time
 #'
 #' @export
+#' @examples
+#'   rickroll_youtube() %>%
+#'     use_start_time("3m32s")
 #'
 use_start_time <- function(...) UseMethod("use_start_time")
 
