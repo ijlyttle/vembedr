@@ -12,6 +12,7 @@
 #' @examples
 #'   rickroll_vimeo()
 #'   rickroll_youtube()
+#'   rickroll_channel9()
 #'
 NULL
 
@@ -27,4 +28,14 @@ rickroll_vimeo <- function(...){
 #
 rickroll_youtube <- function(...){
   embed_youtube(id = "dQw4w9WgXcQ", ...)
+}
+
+#' @rdname rickroll
+#' @export
+#
+rickroll_channel9 <- function(...){
+  embed_channel9(
+    id = c("Blogs", "Dan", "BlueHat-v7-Katie-Moussouris-interviews-Dan-Kaminsky-on-some-interesting-research-hes-been-doing-late"),
+    ...
+  )
 }

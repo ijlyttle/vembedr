@@ -2,6 +2,7 @@
 % Please edit documentation in R/rickroll.R
 \name{rickroll}
 \alias{rickroll}
+\alias{rickroll_channel9}
 \alias{rickroll_vimeo}
 \alias{rickroll_youtube}
 \title{Embeds a popular video}
@@ -9,6 +10,8 @@
 rickroll_vimeo(...)
 
 rickroll_youtube(...)
+
+rickroll_channel9(...)
 }
 \arguments{
 \item{...}{arguments (other than \code{id}) passed on to \code{\link{embed}}}
@@ -24,6 +27,7 @@ may be useful to you.
 \examples{
   rickroll_vimeo()
   rickroll_youtube()
+  rickroll_channel9()
 
 }
 

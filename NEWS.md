@@ -10,7 +10,7 @@
 
 # vembedr 0.1.0
 
-* Version bump for CRAN subimssion.
+* Version bump for CRAN submission.
 
 # vembedr 0.0.0.9000
 
