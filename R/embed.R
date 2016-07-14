@@ -18,8 +18,10 @@
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
 #' @param allow_full_screen logical, indicates if to allow fullscreen
+#'   (deprecated in favor of \code{allowfullscreen})
+#' @param allowfullscreen logical, indicates if to allow fullscreen
 #' @param query             list of items to include in url-query string
-#' @param fragment          character, (vimeo, channel 9) string to include as url-fragment
+#' @param fragment          character, string to include as url-fragment
 #'
 #' @return html \code{<iframe>} element
 #'
@@ -38,9 +40,18 @@ NULL
 #
 embed_vimeo <- function(id, width = 500, height = 281,
                         frameborder = 0, allow_full_screen = TRUE,
+                        allowfullscreen = TRUE,
                         query = NULL, fragment = NULL){
 
-  allowfullscreen <- .convert_allowfullscreen(allow_full_screen)
+  if (!missing(allow_full_screen)){
+    warning(
+      "argument allow_full_screen is deprecated; please use allowfullscreen instead.",
+      call. = FALSE
+    )
+    allowfullscreen <- allow_full_screen
+  }
+
+  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
   url <- httr::parse_url("https://player.vimeo.com/video")
 
@@ -69,9 +80,18 @@ embed_vimeo <- function(id, width = 500, height = 281,
 #
 embed_youtube <- function(id, width = 420, height = 315,
                           frameborder = 0, allow_full_screen = TRUE,
+                          allowfullscreen = TRUE,
                           query = NULL){
 
-  allowfullscreen <- .convert_allowfullscreen(allow_full_screen)
+  if (!missing(allow_full_screen)){
+    warning(
+      "argument allow_full_screen is deprecated; please use allowfullscreen instead.",
+      call. = FALSE
+    )
+    allowfullscreen <- allow_full_screen
+  }
+
+  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
   url <- httr::parse_url("https://www.youtube.com/embed")
 
@@ -106,9 +126,19 @@ embed_user2016 <- function(id, width = 560, height = 315,
 #' @export
 #'
 embed_channel9 <- function(id, width = 560, height = 315,
-                           frameborder = 0, allow_full_screen = TRUE){
+                           frameborder = 0,
+                           allow_full_screen = TRUE, allowfullscreen = TRUE){
 
-  allowfullscreen <- .convert_allowfullscreen(allow_full_screen)
+  if (!missing(allow_full_screen)){
+    warning(
+      "argument allow_full_screen is deprecated; please use allowfullscreen instead.",
+      call. = FALSE
+    )
+    allowfullscreen <- allow_full_screen
+  }
+
+  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
+
 
   url <- httr::parse_url("https://channel9.msdn.com")
 
