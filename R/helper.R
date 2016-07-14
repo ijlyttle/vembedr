@@ -24,7 +24,7 @@
 #'   secs("3m15s")
 #'   secs("1h1m5s")
 #'
-#' @seealso \code{\link{embed_youtube}}
+#' @seealso \code{\link{embed_youtube}}, \code{\link{hms}}
 #' @export
 #
 secs <- function(x){
@@ -51,6 +51,17 @@ secs <- function(x){
   result
 }
 
+#' creates an hours-minutes-seconds string
+#'
+#' @param x, numeric (number of seconds), or character (i.e. "3m15s")
+#'
+#' @return character string (i.e. "0h3m15s")
+#' @seealso \code{\link{secs}}
+#' @export
+#' @examples
+#'   hms(30)
+#'   hms("3m15s")
+#'
 hms <- function(x){
 
   seconds <- secs(x)
