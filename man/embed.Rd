@@ -16,10 +16,10 @@ embed_youtube(id, width = 420, height = 315, frameborder = 0,
   allow_full_screen = TRUE, allowfullscreen = TRUE, query = NULL)
 
 embed_user2016(id, width = 560, height = 315, frameborder = 0,
-  allow_full_screen = TRUE)
+  allowfullscreen = TRUE)
 
 embed_channel9(id, width = 560, height = 315, frameborder = 0,
-  allow_full_screen = TRUE, allowfullscreen = TRUE)
+  allowfullscreen = TRUE)
 }
 \arguments{
 \item{id}{character, identifier provided by the service}

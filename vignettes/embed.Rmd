@@ -14,21 +14,42 @@ library("vembedr")
 library("htmltools")
 ```
 
-The goal of the vembedr package is to make it a little bit easier for you to embed videos into your RMarkdown documents and your Shiny Apps. The package supports embedding from three services: YouTube, Vimeo, and now the useR2016 presentations (thanks Microsoft!).
-
-```{r}
-embed_user2016("Literate-Programming")
-```
-
-The trick for these useR videos is that the `id` is just the "title" part of the URL, for example:
-
-`https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/`**`Literate-Programming`**
+The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps. 
 
 ### Note for RStudio users
 
 The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at [vembedr GitHub pages](http://ijlyttle.github.io/vembedr/).
 
-## Embedding a YouTube video
+## Services
+
+The package supports embedding from three services: YouTube, Vimeo, and now Microsoft's Channel 9 (including the useR! 2016 presentations, thanks Microsoft!). 
+
+### Channel 9 
+
+Consider the following URL:
+
+`https://channel9.msdn.com/`**`Events/useR-international-R-User-conference/useR2016/Forty-years-of-S`**
+
+```{r}
+embed_channel9(
+  id = c("Events", "useR-international-R-User-conference", "useR2016", "Forty-years-of-S")
+)
+```
+
+
+#### useR! 2016
+
+Consider the URL for Don Knuth's talk:
+
+`https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/`**`Literate-Programming`**
+
+The trick for these useR videos is that the `id` is just the last part of the URL.
+
+```{r}
+embed_user2016(id = "Literate-Programming")
+```
+
+### YouTube
 
 Let's say that you want to embed a YouTube video into an RMarkdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:
 
@@ -52,7 +73,7 @@ div(align = "center", embed_youtube(id = "Qpoqzt2EHaA"))
 
 You will be the best judge of the best formatting for your situation. By providing only the iframe, you can wrap the iframe in whatever tags will work best for you.
 
-## Embedding a Vimeo video
+### Vimeo
 
 Embedding a video from Vimeo is just as easy. 
 
@@ -66,7 +87,20 @@ The Vimeo id is just the path part of the URL: `"48699174"`:
 div(align = "center", embed_vimeo(id = "48699174"))
 ```
 
-## Adding a start time
+### API philosophy
+
+The `embed_*()` family of functions is designed to hew to the API of each service, and to allow you to work more easily with each.
+
+
+The query parameters for each service can be found at:
+
+- [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
+- [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
+- Channel 9 - click the embed button to see options
+
+## Helper functions
+
+### Start time
 
 ```{r}
 div(
@@ -82,12 +116,26 @@ div(
 )
 ```
 
+Note: find Dean Attali's lighting talk
+
 ```{r}
 div(
   align = "center", 
   embed_user2016(id = "Towards-a-grammar-of-interactive-graphics") %>% 
     use_start_time("44m11s")
 )
+```
+
+### Video specification
+
+Some convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video `id` is specified, any argument you provide is passed along to either `embed_youtube()` or `embed_vimeo()`.
+
+```{r}
+rickroll_youtube()
+```
+
+```{r}
+rickroll_vimeo()
 ```
 
 ## Other arguments and query parameters
@@ -123,27 +171,12 @@ div(
 
 For Vimeo, there is a somewhat undocumented way (thanks @karthik) to do this. Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (https://vimeo.com/forums/topic:49396).
 
-```{r}
-div(align = "center", embed_vimeo(id = "98892825", fragment = "at=60"))
+```{r eval=FALSE}
+div(align = "center", embed_vimeo(id = "98892825", fragment = "t=60"))
 ```
 
-```{r}
 
-```
 
-The query parameters for each service can be found at:
 
-- [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
-- [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
 
-### Convenience functions
 
-Finally, a couple of convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video `id` is specified, any argument you provide is passed along to either `embed_youtube()` or `embed_vimeo()`.
-
-```{r}
-rickroll_youtube()
-```
-
-```{r}
-rickroll_vimeo()
-```

@@ -1,12 +1,13 @@
 # vembedr 0.1.0.9000
 
+* adds `rickroll_channel9()`, stretches definition of rickrolling
 * deprecates `allow_full_screen` argument to embed functions in favor of
-  `allowfullscreen` - this will be more consistent with each service's API.
-* adds `use_start_time()` for constent interface to all embed functions.
+  `allowfullscreen` - this will be more consistent with each service's API
+* adds `use_start_time()` for constent interface to all embed functions
 * adds `embed_channel9()` for Microsoft videos
 * adds support for start-time for Vimeo (#14, thanks @karthik for tip)
-* adds `embed_user2016()`.
-* Version bump for development.
+* adds `embed_user2016()`
+* version bump for development
 
 # vembedr 0.1.0
 

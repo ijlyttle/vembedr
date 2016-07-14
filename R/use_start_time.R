@@ -57,7 +57,7 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
   url <- httr::parse_url(src)
 
   # set the time in url$fragment
-  url$fragment <- paste0("at=", secs(start_time))
+  url$fragment <- paste0("t=", secs(start_time))
 
   # set the url in the embed
   # == need to ask about a public API for this in htmltools ==

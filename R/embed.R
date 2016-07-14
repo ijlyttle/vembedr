@@ -115,27 +115,18 @@ embed_youtube <- function(id, width = 420, height = 315,
 #' @export
 #
 embed_user2016 <- function(id, width = 560, height = 315,
-                           frameborder = 0, allow_full_screen = TRUE){
+                           frameborder = 0, allowfullscreen = TRUE){
 
   id <- c("Events", "useR-international-R-User-conference", "useR2016", id)
 
-  embed_channel9(id, width, height, frameborder, allow_full_screen)
+  embed_channel9(id, width, height, frameborder, allowfullscreen)
 }
 
 #' @rdname embed
 #' @export
 #'
 embed_channel9 <- function(id, width = 560, height = 315,
-                           frameborder = 0,
-                           allow_full_screen = TRUE, allowfullscreen = TRUE){
-
-  if (!missing(allow_full_screen)){
-    warning(
-      "argument allow_full_screen is deprecated; please use allowfullscreen instead.",
-      call. = FALSE
-    )
-    allowfullscreen <- allow_full_screen
-  }
+                           frameborder = 0, allowfullscreen = TRUE){
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 

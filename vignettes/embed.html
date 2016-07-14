@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2016-07-10" />
+<meta name="date" content="2016-07-13" />
 
 <title>Embedding Video</title>
 
@@ -70,20 +70,55 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Embedding Video</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2016-07-10</em></h4>
+<h4 class="date"><em>2016-07-13</em></h4>
 
 
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;vembedr&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;htmltools&quot;</span>)</code></pre></div>
-<p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your RMarkdown documents and your Shiny Apps. The package supports embedding from three services: YouTube, Vimeo, and now the useR2016 presentations (thanks Microsoft!).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_user2016</span>(<span class="st">&quot;Literate-Programming&quot;</span>)</code></pre></div>
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
-<p>The trick for these useR videos is that the <code>id</code> is just the “title” part of the URL, for example:</p>
+<p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps.</p>
+<div id="services" class="section level2">
+<h2>Services</h2>
+<p>The package supports embedding from three services: YouTube, Vimeo, and now Microsoft’s Channel 9 (including the useR! 2016 presentations, thanks Microsoft!).</p>
+<div id="channel-9" class="section level3">
+<h3>Channel 9</h3>
+<p>Consider the following URL:</p>
+<p><code>https://channel9.msdn.com/</code><strong><code>Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</code></strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_channel9</span>(
+  <span class="dt">id =</span> <span class="kw">c</span>(<span class="st">&quot;Events&quot;</span>, <span class="st">&quot;useR-international-R-User-conference&quot;</span>, <span class="st">&quot;useR2016&quot;</span>, <span class="st">&quot;Forty-years-of-S&quot;</span>)
+)</code></pre></div>
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+<div id="user-2016" class="section level4">
+<h4>useR! 2016</h4>
+<p>Consider the URL for Don Knuth’s talk:</p>
 <p><code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/</code><strong><code>Literate-Programming</code></strong></p>
+<p>The trick for these useR videos is that the <code>id</code> is just the last part of the URL.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Literate-Programming&quot;</span>)</code></pre></div>
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+<div id="youtube" class="section level3">
+<h3>YouTube</h3>
+</div>
+<div id="vimeo" class="section level3">
+<h3>Vimeo</h3>
+</div>
+<div id="api-philosophy" class="section level3">
+<h3>API philosophy</h3>
+</div>
+</div>
+<div id="helper-functions" class="section level2">
+<h2>Helper functions</h2>
+<div id="start-time" class="section level3">
+<h3>Start time</h3>
+</div>
+<div id="video-specification" class="section level3">
+<h3>Video specification</h3>
+</div>
 <div id="note-for-rstudio-users" class="section level3">
 <h3>Note for RStudio users</h3>
 <p>The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at <a href="http://ijlyttle.github.io/vembedr/">vembedr GitHub pages</a>.</p>
+</div>
 </div>
 <div id="embedding-a-youtube-video" class="section level2">
 <h2>Embedding a YouTube video</h2>

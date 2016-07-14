@@ -3,7 +3,12 @@ library("vembedr")
 library("htmltools")
 
 ## ------------------------------------------------------------------------
-embed_user2016("Literate-Programming")
+embed_channel9(
+  id = c("Events", "useR-international-R-User-conference", "useR2016", "Forty-years-of-S")
+)
+
+## ------------------------------------------------------------------------
+embed_user2016(id = "Literate-Programming")
 
 ## ------------------------------------------------------------------------
 embed_youtube(id = "q2nNzNo_Xps")
