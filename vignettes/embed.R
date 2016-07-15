@@ -17,54 +17,30 @@ embed_youtube(id = "q2nNzNo_Xps")
 div(align = "center", embed_youtube(id = "Qpoqzt2EHaA"))
 
 ## ------------------------------------------------------------------------
-div(align = "center", embed_vimeo(id = "48699174"))
+embed_vimeo(id = "48699174")
 
 ## ------------------------------------------------------------------------
-div(
-  align = "center", 
-  embed_youtube(id = "8SGif63VW6E") %>% use_start_time("4m12s")
-)
+embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
+
+## ----eval=FALSE----------------------------------------------------------
+#  embed_vimeo(id = "98892825", fragment = "t=60")
+
+## ----eval=FALSE----------------------------------------------------------
+#  embed_youtube(id = "8SGif63VW6E") %>% use_start_time("4m12s")
+
+## ----eval=FALSE----------------------------------------------------------
+#  embed_vimeo(id = "98892825") %>% use_start_time("60")
 
 ## ------------------------------------------------------------------------
-div(
-  align = "center", 
-  embed_vimeo(id = "98892825") %>% use_start_time("1m")
-)
-
-## ------------------------------------------------------------------------
-div(
-  align = "center", 
-  embed_user2016(id = "Towards-a-grammar-of-interactive-graphics") %>% 
-    use_start_time("44m11s")
-)
-
-## ------------------------------------------------------------------------
-div(
-  align = "center", 
-  embed_youtube(id = "1hKSYgOGtos", width = 640,  height = 390)
-)
-
-## ------------------------------------------------------------------------
-div(
-  align = "center", 
-  embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
-)
-
-## ------------------------------------------------------------------------
-div(
-  align = "center", 
-  embed_youtube(id = "8SGif63VW6E", query = list(start = secs("4m12s")))
-)
-
-## ------------------------------------------------------------------------
-div(align = "center", embed_vimeo(id = "98892825", fragment = "at=60"))
-
-## ------------------------------------------------------------------------
-
+embed_user2016(id = "Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
+  use_start_time("21m45s")
 
 ## ------------------------------------------------------------------------
 rickroll_youtube()
 
 ## ------------------------------------------------------------------------
 rickroll_vimeo()
+
+## ----eval=FALSE----------------------------------------------------------
+#  embed_youtube() %>% use_rickroll()
 

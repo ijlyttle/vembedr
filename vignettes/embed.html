@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2016-07-13" />
+<meta name="date" content="2016-07-14" />
 
 <title>Embedding Video</title>
 
@@ -70,150 +70,116 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Embedding Video</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2016-07-13</em></h4>
+<h4 class="date"><em>2016-07-14</em></h4>
 
 
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;vembedr&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;htmltools&quot;</span>)</code></pre></div>
 <p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps.</p>
+<div id="new-to-this-release" class="section level3">
+<h3>New to this release:</h3>
+<ul>
+<li>Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.</li>
+<li>A helper function, <code>use_start_time()</code> can be used consistently with YouTube, Vimeo, and Channel 9 embeds.</li>
+</ul>
+</div>
+<div id="note-for-rstudio-users" class="section level3">
+<h3>Note for RStudio users</h3>
+<p>The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at <a href="http://ijlyttle.github.io/vembedr/">vembedr GitHub pages</a>.</p>
+</div>
 <div id="services" class="section level2">
 <h2>Services</h2>
-<p>The package supports embedding from three services: YouTube, Vimeo, and now Microsoft’s Channel 9 (including the useR! 2016 presentations, thanks Microsoft!).</p>
+<p>The package supports embedding from three services: YouTube, Vimeo, and now Microsoft’s Channel 9 (including the useR! 2016 presentations).</p>
 <div id="channel-9" class="section level3">
 <h3>Channel 9</h3>
-<p>Consider the following URL:</p>
+<p>One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft’s Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.</p>
+<p>Consider Rick Becker’s talk on the history of the S language. Seriously, consider it - now, if you have not already seen it. This vignette will still be here in an hour or so.</p>
+<p>Here is the URL for the page that hosts the video:</p>
 <p><code>https://channel9.msdn.com/</code><strong><code>Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</code></strong></p>
+<p>To embed a Channel 9 video, the <code>id</code> is the path of the URL, which you can express as a vector of character strings:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_channel9</span>(
   <span class="dt">id =</span> <span class="kw">c</span>(<span class="st">&quot;Events&quot;</span>, <span class="st">&quot;useR-international-R-User-conference&quot;</span>, <span class="st">&quot;useR2016&quot;</span>, <span class="st">&quot;Forty-years-of-S&quot;</span>)
 )</code></pre></div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 <div id="user-2016" class="section level4">
 <h4>useR! 2016</h4>
-<p>Consider the URL for Don Knuth’s talk:</p>
+<p>Of course, it could be easier to embed these conference videos - hence the <code>embed_user2016()</code> function. For example, this talk needs no introduction:</p>
 <p><code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/</code><strong><code>Literate-Programming</code></strong></p>
-<p>The trick for these useR videos is that the <code>id</code> is just the last part of the URL.</p>
+<p>The trick for these useR! videos is that the <code>id</code> is just the last component of the URLs path.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Literate-Programming&quot;</span>)</code></pre></div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <div id="youtube" class="section level3">
 <h3>YouTube</h3>
-</div>
-<div id="vimeo" class="section level3">
-<h3>Vimeo</h3>
-</div>
-<div id="api-philosophy" class="section level3">
-<h3>API philosophy</h3>
-</div>
-</div>
-<div id="helper-functions" class="section level2">
-<h2>Helper functions</h2>
-<div id="start-time" class="section level3">
-<h3>Start time</h3>
-</div>
-<div id="video-specification" class="section level3">
-<h3>Video specification</h3>
-</div>
-<div id="note-for-rstudio-users" class="section level3">
-<h3>Note for RStudio users</h3>
-<p>The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at <a href="http://ijlyttle.github.io/vembedr/">vembedr GitHub pages</a>.</p>
-</div>
-</div>
-<div id="embedding-a-youtube-video" class="section level2">
-<h2>Embedding a YouTube video</h2>
-<p>Let’s say that you want to embed a YouTube video into an RMarkdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:</p>
+<p>Let’s say that you want to embed a YouTube video into an R Markdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:</p>
 <pre><code>&quot;https://www.youtube.com/watch?v=q2nNzNo_Xps&quot;</code></pre>
-<p>The identifier is simply the last part of the url: <code>&quot;q2nNzNo_Xps&quot;</code>.</p>
+<p>The identifier is simply the last part of the URL: <code>&quot;q2nNzNo_Xps&quot;</code>.</p>
 <p>To embed this video, use the function <code>embed_youtube()</code>, using the <code>id</code> argument:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;q2nNzNo_Xps&quot;</span>)</code></pre></div>
 <iframe src="https://www.youtube.com/embed/q2nNzNo_Xps" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-<p>Voila! If you wish to add some formatting within your document, the htmltools package makes that easier:</p>
+<p>If you wish to add some formatting within your document, the htmltools package makes that easier:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;Qpoqzt2EHaA&quot;</span>))</code></pre></div>
 <div align="center">
 <iframe src="https://www.youtube.com/embed/Qpoqzt2EHaA" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <p>You will be the best judge of the best formatting for your situation. By providing only the iframe, you can wrap the iframe in whatever tags will work best for you.</p>
 </div>
-<div id="embedding-a-vimeo-video" class="section level2">
-<h2>Embedding a Vimeo video</h2>
+<div id="vimeo" class="section level3">
+<h3>Vimeo</h3>
 <p>Embedding a video from Vimeo is just as easy.</p>
 <pre><code>&quot;https://vimeo.com/48699174&quot;</code></pre>
-<p>The Vimeo id is just the path part of the URL: <code>&quot;48699174&quot;</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, <span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;48699174&quot;</span>))</code></pre></div>
-<div align="center">
+<p>The Vimeo <code>id</code> is just the path part of the URL: <code>&quot;48699174&quot;</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;48699174&quot;</span>)</code></pre></div>
 <iframe src="https://player.vimeo.com/video/48699174" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 </div>
 </div>
-<div id="adding-a-start-time" class="section level2">
-<h2>Adding a start time</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
-  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
-  <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>) %&gt;%<span class="st"> </span><span class="kw">use_start_time</span>(<span class="st">&quot;4m12s&quot;</span>)
-)</code></pre></div>
-<div align="center">
-<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
-  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
-  <span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;98892825&quot;</span>) %&gt;%<span class="st"> </span><span class="kw">use_start_time</span>(<span class="st">&quot;1m&quot;</span>)
-)</code></pre></div>
-<div align="center">
-<iframe src="https://player.vimeo.com/video/98892825#at=60" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
-  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
-  <span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Towards-a-grammar-of-interactive-graphics&quot;</span>) %&gt;%<span class="st"> </span>
-<span class="st">    </span><span class="kw">use_start_time</span>(<span class="st">&quot;44m11s&quot;</span>)
-)</code></pre></div>
-<div align="center">
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Towards-a-grammar-of-interactive-graphics/player#time=0h44m11s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
-</div>
-</div>
-<div id="other-arguments-and-query-parameters" class="section level2">
-<h2>Other arguments and query parameters</h2>
-<p>The defaults for height and width of the iframe are taken from each service’s defaults. You can change this using the <code>height</code> and <code>width</code> arguments to either of the embedding functions:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
-  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
-  <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;1hKSYgOGtos&quot;</span>, <span class="dt">width =</span> <span class="dv">640</span>,  <span class="dt">height =</span> <span class="dv">390</span>)
-)</code></pre></div>
-<div align="center">
-<iframe src="https://www.youtube.com/embed/1hKSYgOGtos" width="640" height="390" frameborder="0" allowfullscreen=""></iframe>
-</div>
-<p>YouTube and Vimeo each provide you the means to specify more options using http query parameters. A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): <a href="https://youtu.be/8SGif63VW6E?t=4m12s" class="uri">https://youtu.be/8SGif63VW6E?t=4m12s</a></p>
-<p>Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a <code>start</code> with the number of seconds.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
-  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
-  <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>, <span class="dt">query =</span> <span class="kw">list</span>(<span class="dt">start =</span> <span class="dv">252</span>))
-)</code></pre></div>
-<div align="center">
-<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-</div>
-<p>To make things a little easier, a helper function, <code>secs()</code>, is provided:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
-  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, 
-  <span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>, <span class="dt">query =</span> <span class="kw">list</span>(<span class="dt">start =</span> <span class="kw">secs</span>(<span class="st">&quot;4m12s&quot;</span>)))
-)</code></pre></div>
-<div align="center">
-<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-</div>
-<p>For Vimeo, there is a somewhat undocumented way (thanks <span class="citation">@karthik</span>) to do this. Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (<a href="https://vimeo.com/forums/topic:49396" class="uri">https://vimeo.com/forums/topic:49396</a>).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(<span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, <span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;98892825&quot;</span>, <span class="dt">fragment =</span> <span class="st">&quot;at=60&quot;</span>))</code></pre></div>
-<div align="center">
-<iframe src="https://player.vimeo.com/video/98892825#at=60" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-</div>
-<p>The query parameters for each service can be found at:</p>
+<div id="api-philosophy" class="section level2">
+<h2>API philosophy</h2>
+<p>The <code>embed_*()</code> family of functions is designed to help you compose the URL according to the API of each service, using the <code>query</code> and <code>fragment</code> arguments - these are passed to <code>httr::build_url()</code> to compose the URL.</p>
+<p>The query/fragment parameters for each service can be found at:</p>
 <ul>
 <li><a href="https://developers.google.com/youtube/player_parameters">YouTube IFrame API</a></li>
 <li><a href="https://developer.vimeo.com/player/embedding">Vimeo emebedding</a></li>
+<li><a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a> - click the embed button to see options</li>
 </ul>
-<div id="convenience-functions" class="section level3">
-<h3>Convenience functions</h3>
-<p>Finally, a couple of convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video <code>id</code> is specified, any argument you provide is passed along to either <code>embed_youtube()</code> or <code>embed_vimeo()</code>.</p>
+<p>A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): <code>https://youtu.be/8SGif63VW6E?t=4m12s</code></p>
+<p>Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a <code>start</code> with the number of seconds.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>, <span class="dt">query =</span> <span class="kw">list</span>(<span class="dt">start =</span> <span class="dv">252</span>))</code></pre></div>
+<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<p>For Vimeo, there is a somewhat undocumented way to do this (thanks Karthik Ram for the heads-up). Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (<a href="https://vimeo.com/forums/topic:49396" class="uri">https://vimeo.com/forums/topic:49396</a>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;98892825&quot;</span>, <span class="dt">fragment =</span> <span class="st">&quot;t=60&quot;</span>)</code></pre></div>
+<div id="helper-functions" class="section level3">
+<h3>Helper functions</h3>
+<p>It’s a bit inconvenient to visit a service’s API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered It is proposed that helper functions used to modify the query or fragment will be called <code>use_something()</code> and can be composed using the pipe <code>%&gt;%</code>.</p>
+<div id="start-time" class="section level4">
+<h4>Start time</h4>
+<p>To specify the start time, simply pipe your embed function to the <code>use_start_time()</code> function, which figures out which service you are using, then does the “right thing” to modify the query or fragment.</p>
+<p>The <code>use_start_time()</code> function will treat these all of these inputs equivalently:</p>
+<ul>
+<li><code>&quot;0h1m0s&quot;</code>, <code>&quot;0h01m00s&quot;</code>, <code>&quot;0h1m&quot;</code></li>
+<li><code>&quot;1m0s&quot;</code>, <code>&quot;1m&quot;</code></li>
+<li><code>&quot;60s&quot;</code>, <code>60</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>) %&gt;%<span class="st"> </span><span class="kw">use_start_time</span>(<span class="st">&quot;4m12s&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;98892825&quot;</span>) %&gt;%<span class="st"> </span><span class="kw">use_start_time</span>(<span class="st">&quot;60&quot;</span>)</code></pre></div>
+<p>Let’s say you wanted to point to a specific lightning talk at useR! 2016.</p>
+<p>Please note that it seems to take a few seconds from when the browser loads until the video will be ready to start at the specified time.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM&quot;</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">use_start_time</span>(<span class="st">&quot;21m45s&quot;</span>)</code></pre></div>
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM/player#time=0h21m45s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<div id="video-specification" class="section level4">
+<h4>Video specification</h4>
+<p>Some convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video <code>id</code> is specified, any argument you provide is passed along to either <code>embed_youtube()</code> or <code>embed_vimeo()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rickroll_youtube</span>()</code></pre></div>
 <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rickroll_vimeo</span>()</code></pre></div>
 <iframe src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p>It is imagined that in a future release of this package, this approach will be deprecated in favor of something like:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_youtube</span>() %&gt;%<span class="st"> </span><span class="kw">use_rickroll</span>()</code></pre></div>
+</div>
 </div>
 </div>
 

@@ -7,11 +7,10 @@
 \title{vembedr: A package for embedding video}
 \description{
 The vembedr package provides two categories of functions:
-embed and rickroll, to embed videos from the services: YouTube and Vimeo.
+embed and rickroll, to embed videos from the services YouTube, Vimeo, and Microsoft Channel 9 (including useR! 2016 videos).
 }
 \details{
-The important functions are \code{\link{embed_vimeo}}
-and \code{\link{embed_youtube}}, with a useful helper function for
-specifying the start time of a YouTube video: \code{\link{secs}}.
+The important functions are \code{\link{embed_vimeo}}, \code{\link{embed_youtube}}, and \code{\link{embed_user2016}},
+with a helper function for specifying the start times of videos: \code{\link{use_start_time}}.
 }
 
