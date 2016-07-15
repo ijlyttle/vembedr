@@ -131,7 +131,7 @@ The query/fragment parameters for each service can be found at:
 - [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
 - [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S) - click the embed button to see options
 
-A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): `https://youtu.be/8SGif63VW6E?t=4m12s`
+For example, YouTube lets you use the URL to specify that the video start at a given time (thanks to Aurélien Ginolhac for suggesting this link): `https://youtu.be/8SGif63VW6E?t=4m12s`
 
 Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a `start` with the number of seconds.
 

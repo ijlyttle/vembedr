@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2016-07-14" />
+<meta name="date" content="2016-07-15" />
 
 <title>Embedding Video</title>
 
@@ -70,15 +70,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Embedding Video</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2016-07-14</em></h4>
+<h4 class="date"><em>2016-07-15</em></h4>
 
 
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;vembedr&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;htmltools&quot;</span>)</code></pre></div>
 <p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps.</p>
-<div id="new-to-this-release" class="section level3">
-<h3>New to this release:</h3>
+<div id="new-to-version-0.1.1" class="section level3">
+<h3>New to version 0.1.1</h3>
 <ul>
 <li>Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.</li>
 <li>A helper function, <code>use_start_time()</code> can be used consistently with YouTube, Vimeo, and Channel 9 embeds.</li>
@@ -86,7 +86,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="note-for-rstudio-users" class="section level3">
 <h3>Note for RStudio users</h3>
-<p>The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at <a href="http://ijlyttle.github.io/vembedr/">vembedr GitHub pages</a>.</p>
+<p>The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available using the <a href="http://ijlyttle.github.io/vembedr/">GitHub pages</a> service.</p>
 </div>
 <div id="services" class="section level2">
 <h2>Services</h2>
@@ -94,7 +94,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="channel-9" class="section level3">
 <h3>Channel 9</h3>
 <p>One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft’s Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.</p>
-<p>Consider Rick Becker’s talk on the history of the S language. Seriously, consider it - now, if you have not already seen it. This vignette will still be here in an hour or so.</p>
+<p>Consider Rick Becker’s talk on the history of the S language. Seriously, consider it - now, if you have not already seen it.</p>
 <p>Here is the URL for the page that hosts the video:</p>
 <p><code>https://channel9.msdn.com/</code><strong><code>Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</code></strong></p>
 <p>To embed a Channel 9 video, the <code>id</code> is the path of the URL, which you can express as a vector of character strings:</p>
@@ -106,14 +106,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4>useR! 2016</h4>
 <p>Of course, it could be easier to embed these conference videos - hence the <code>embed_user2016()</code> function. For example, this talk needs no introduction:</p>
 <p><code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/</code><strong><code>Literate-Programming</code></strong></p>
-<p>The trick for these useR! videos is that the <code>id</code> is just the last component of the URLs path.</p>
+<p>The trick for these useR! videos is that the <code>id</code> is just the last component of the URL’s path.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Literate-Programming&quot;</span>)</code></pre></div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <div id="youtube" class="section level3">
 <h3>YouTube</h3>
-<p>Let’s say that you want to embed a YouTube video into an R Markdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:</p>
+<p>Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:</p>
 <pre><code>&quot;https://www.youtube.com/watch?v=q2nNzNo_Xps&quot;</code></pre>
 <p>The identifier is simply the last part of the URL: <code>&quot;q2nNzNo_Xps&quot;</code>.</p>
 <p>To embed this video, use the function <code>embed_youtube()</code>, using the <code>id</code> argument:</p>
@@ -144,7 +144,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="https://developer.vimeo.com/player/embedding">Vimeo emebedding</a></li>
 <li><a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a> - click the embed button to see options</li>
 </ul>
-<p>A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): <code>https://youtu.be/8SGif63VW6E?t=4m12s</code></p>
+<p>For example, YouTube lets you use the URL to specify that the video start at a given time (thanks to Aurélien Ginolhac for suggesting this link): <code>https://youtu.be/8SGif63VW6E?t=4m12s</code></p>
 <p>Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a <code>start</code> with the number of seconds.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;8SGif63VW6E&quot;</span>, <span class="dt">query =</span> <span class="kw">list</span>(<span class="dt">start =</span> <span class="dv">252</span>))</code></pre></div>
 <iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
@@ -152,7 +152,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;98892825&quot;</span>, <span class="dt">fragment =</span> <span class="st">&quot;t=60&quot;</span>)</code></pre></div>
 <div id="helper-functions" class="section level3">
 <h3>Helper functions</h3>
-<p>It’s a bit inconvenient to visit a service’s API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered It is proposed that helper functions used to modify the query or fragment will be called <code>use_something()</code> and can be composed using the pipe <code>%&gt;%</code>.</p>
+<p>It’s a bit inconvenient to visit a service’s API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called <code>use_something()</code> and can be composed using the pipe, <code>%&gt;%</code>.</p>
 <div id="start-time" class="section level4">
 <h4>Start time</h4>
 <p>To specify the start time, simply pipe your embed function to the <code>use_start_time()</code> function, which figures out which service you are using, then does the “right thing” to modify the query or fragment.</p>
