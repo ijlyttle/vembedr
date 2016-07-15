@@ -94,7 +94,7 @@ Embedding a video from Vimeo is just as easy.
 The Vimeo `id` is just the path part of the URL: `"48699174"`:
 
 ```{r}
-div(align = "center", embed_vimeo(id = "48699174"))
+embed_vimeo(id = "48699174")
 ```
 
 ## API philosophy
