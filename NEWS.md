@@ -1,3 +1,7 @@
+# vembedr 0.1.1
+
+* version bump for CRAN submission
+
 # vembedr 0.1.0.9000
 
 * adds `rickroll_channel9()`, stretches definition of rickrolling
