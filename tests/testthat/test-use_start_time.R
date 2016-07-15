@@ -25,6 +25,6 @@ get_fragment <- function(elem){
 }
 
 test_that("vimeo works", {
-  expect_identical(get_fragment(vimeo_start), "at=63")
+  expect_identical(get_fragment(vimeo_start), "t=63")
 })
 

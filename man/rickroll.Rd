@@ -27,7 +27,7 @@ may be useful to you.
 \examples{
   rickroll_vimeo()
   rickroll_youtube()
-  rickroll_channel9()
+  rickroll_channel9() \%>\% use_start_time("5m03s")
 
 }
 

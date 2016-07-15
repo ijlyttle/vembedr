@@ -16,19 +16,30 @@ library("htmltools")
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps. 
 
+### New to this release:
+
+* Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.
+* A helper function, `use_start_time()` can be used consistently with YouTube, Vimeo, and Channel 9 embeds.
+
 ### Note for RStudio users
 
 The browser within the RStudio IDE does not support the use of iframes that point to external URLs. You are encouraged to open this vignette in a different browser, such as Chrome or Firefox. This page is also available at [vembedr GitHub pages](http://ijlyttle.github.io/vembedr/).
 
 ## Services
 
-The package supports embedding from three services: YouTube, Vimeo, and now Microsoft's Channel 9 (including the useR! 2016 presentations, thanks Microsoft!). 
+The package supports embedding from three services: YouTube, Vimeo, and now Microsoft's Channel 9 (including the useR! 2016 presentations). 
 
 ### Channel 9 
 
-Consider the following URL:
+One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft's Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.
+
+Consider Rick Becker's talk on the history of the S language. Seriously, consider it - now, if you have not already seen it. This vignette will still be here in an hour or so.
+
+Here is the URL for the page that hosts the video:
 
 `https://channel9.msdn.com/`**`Events/useR-international-R-User-conference/useR2016/Forty-years-of-S`**
+
+To embed a Channel 9 video, the `id` is the path of the URL, which you can express as a vector of character strings:
 
 ```{r}
 embed_channel9(
@@ -36,14 +47,13 @@ embed_channel9(
 )
 ```
 
-
 #### useR! 2016
 
-Consider the URL for Don Knuth's talk:
+Of course, it could be easier to embed these conference videos - hence the `embed_user2016()` function. For example, this talk needs no introduction:
 
 `https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/`**`Literate-Programming`**
 
-The trick for these useR videos is that the `id` is just the last part of the URL.
+The trick for these useR! videos is that the `id` is just the last component of the URLs path.
 
 ```{r}
 embed_user2016(id = "Literate-Programming")
@@ -51,13 +61,13 @@ embed_user2016(id = "Literate-Programming")
 
 ### YouTube
 
-Let's say that you want to embed a YouTube video into an RMarkdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:
+Let's say that you want to embed a YouTube video into an R Markdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:
 
 ```
 "https://www.youtube.com/watch?v=q2nNzNo_Xps"
 ```
 
-The identifier is simply the last part of the url: `"q2nNzNo_Xps"`.
+The identifier is simply the last part of the URL: `"q2nNzNo_Xps"`.
 
 To embed this video, use the function `embed_youtube()`, using the `id` argument:
 
@@ -65,7 +75,7 @@ To embed this video, use the function `embed_youtube()`, using the `id` argument
 embed_youtube(id = "q2nNzNo_Xps")
 ```
 
-Voila! If you wish to add some formatting within your document, the htmltools package makes that easier:
+If you wish to add some formatting within your document, the htmltools package makes that easier:
 
 ```{r}
 div(align = "center", embed_youtube(id = "Qpoqzt2EHaA"))
@@ -81,52 +91,68 @@ Embedding a video from Vimeo is just as easy.
 "https://vimeo.com/48699174"
 ```
 
-The Vimeo id is just the path part of the URL: `"48699174"`:
+The Vimeo `id` is just the path part of the URL: `"48699174"`:
 
 ```{r}
 div(align = "center", embed_vimeo(id = "48699174"))
 ```
 
-### API philosophy
+## API philosophy
 
-The `embed_*()` family of functions is designed to hew to the API of each service, and to allow you to work more easily with each.
+The `embed_*()` family of functions is designed to help you compose the URL according to the API of each service, using the `query` and `fragment` arguments - these are passed to `httr::build_url()` to compose the URL.
 
-
-The query parameters for each service can be found at:
+The query/fragment parameters for each service can be found at:
 
 - [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
 - [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
-- Channel 9 - click the embed button to see options
+- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S) - click the embed button to see options
 
-## Helper functions
+A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): `https://youtu.be/8SGif63VW6E?t=4m12s`
 
-### Start time
-
-```{r}
-div(
-  align = "center", 
-  embed_youtube(id = "8SGif63VW6E") %>% use_start_time("4m12s")
-)
-```
+Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a `start` with the number of seconds.
 
 ```{r}
-div(
-  align = "center", 
-  embed_vimeo(id = "98892825") %>% use_start_time("1m")
-)
+embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
 ```
 
-Note: find Dean Attali's lighting talk
+For Vimeo, there is a somewhat undocumented way to do this (thanks Karthik Ram for the heads-up). Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (https://vimeo.com/forums/topic:49396).
+
+```{r eval=FALSE}
+embed_vimeo(id = "98892825", fragment = "t=60")
+```
+
+### Helper functions
+
+It's a bit inconvenient to visit a service's API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered It is proposed that helper functions used to modify the query or fragment will be called `use_something()` and can be composed using the pipe `%>%`.
+
+#### Start time
+
+To specify the start time, simply pipe your embed function to the `use_start_time()` function, which figures out which service you are using, then does the "right thing" to modify the query or fragment. 
+
+The `use_start_time()` function will treat these all of these inputs equivalently:
+
+* `"0h1m0s"`, `"0h01m00s"`, `"0h1m"`
+* `"1m0s"`, `"1m"`
+* `"60s"`, `60`
+
+```{r eval=FALSE}
+embed_youtube(id = "8SGif63VW6E") %>% use_start_time("4m12s")
+```
+
+```{r eval=FALSE}
+embed_vimeo(id = "98892825") %>% use_start_time("60")
+```
+
+Let's say you wanted to point to a specific lightning talk at useR! 2016. 
+
+Please note that it seems to take a few seconds from when the browser loads until the video will be ready to start at the specified time.
 
 ```{r}
-div(
-  align = "center", 
-  embed_user2016(id = "Towards-a-grammar-of-interactive-graphics") %>% 
-    use_start_time("44m11s")
-)
+embed_user2016(id = "Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
+  use_start_time("21m45s")
 ```
 
-### Video specification
+#### Video specification
 
 Some convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video `id` is specified, any argument you provide is passed along to either `embed_youtube()` or `embed_vimeo()`.
 
@@ -138,45 +164,8 @@ rickroll_youtube()
 rickroll_vimeo()
 ```
 
-## Other arguments and query parameters
-
-The defaults for height and width of the iframe are taken from each service's defaults. You can change this using the `height` and `width` arguments to either of the embedding functions:
-
-```{r}
-div(
-  align = "center", 
-  embed_youtube(id = "1hKSYgOGtos", width = 640,  height = 390)
-)
-```
-
-YouTube and Vimeo each provide you the means to specify more options using http query parameters. A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): https://youtu.be/8SGif63VW6E?t=4m12s
-
-Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a `start` with the number of seconds.
-
-```{r}
-div(
-  align = "center", 
-  embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
-)
-```
-
-To make things a little easier, a helper function, `secs()`, is provided: 
-
-```{r}
-div(
-  align = "center", 
-  embed_youtube(id = "8SGif63VW6E", query = list(start = secs("4m12s")))
-)
-```
-
-For Vimeo, there is a somewhat undocumented way (thanks @karthik) to do this. Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (https://vimeo.com/forums/topic:49396).
+It is imagined that in a future release of this package, this approach will be deprecated in favor of something like:
 
 ```{r eval=FALSE}
-div(align = "center", embed_vimeo(id = "98892825", fragment = "t=60"))
+embed_youtube() %>% use_rickroll()
 ```
-
-
-
-
-
-
