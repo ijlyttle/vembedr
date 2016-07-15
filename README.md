@@ -6,6 +6,32 @@ vebmedr
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps.
 
+### New to version 0.1.1
+
+-   Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.
+-   A helper function, `use_start_time()` can be used consistently with YouTube, Vimeo, and Channel 9 embeds.
+
+### Installation
+
+You can install the latest released version from CRAN with
+
+``` r
+install.packages("dplyr")
+```
+
+or the latest development version from github with
+
+``` r
+if (packageVersion("devtools") < 1.6) {
+  install.packages("devtools")
+}
+devtools::install_github("ijlyttle/vembedr")
+```
+
+### Note for GitHub README
+
+The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit this page using the [GitHub pages](http://ijlyttle.github.io/vembedr/) service.
+
 Services
 --------
 
@@ -15,7 +41,7 @@ The package supports embedding from three services: YouTube, Vimeo, and now Micr
 
 One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft's Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.
 
-Consider Rick Becker's talk on the history of the S language. Seriously, consider it - now, if you have not already seen it. This vignette will still be here in an hour or so.
+Consider Rick Becker's talk on the history of the S language. Seriously, consider it - now, if you have not already seen it.
 
 Here is the URL for the page that hosts the video:
 
@@ -35,7 +61,7 @@ Of course, it could be easier to embed these conference videos - hence the `embe
 
 `https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/`**`Literate-Programming`**
 
-The trick for these useR! videos is that the `id` is just the last component of the URLs path.
+The trick for these useR! videos is that the `id` is just the last component of the URL's path.
 
 ``` r
 embed_user2016(id = "Literate-Programming")
@@ -43,7 +69,7 @@ embed_user2016(id = "Literate-Programming")
 
 ### YouTube
 
-Let's say that you want to embed a YouTube video into an R Markdown document, perhaps a vignette. Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:
+Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:
 
     "https://www.youtube.com/watch?v=q2nNzNo_Xps"
 
@@ -102,7 +128,7 @@ embed_vimeo(id = "98892825", fragment = "t=60")
 
 ### Helper functions
 
-It's a bit inconvenient to visit a service's API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered It is proposed that helper functions used to modify the query or fragment will be called `use_something()` and can be composed using the pipe `%>%`.
+It's a bit inconvenient to visit a service's API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called `use_something()` and can be composed using the pipe, `%>%`.
 
 #### Start time
 
