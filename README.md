@@ -30,7 +30,7 @@ devtools::install_github("ijlyttle/vembedr")
 
 ### Note for GitHub README
 
-The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit this page using the [GitHub pages](http://ijlyttle.github.io/vembedr/) service.
+The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit the [GitHub pages](http://ijlyttle.github.io/vembedr/) site, build using [pkgdown](http://hadley.github.io/pkgdown/).
 
 Services
 --------
