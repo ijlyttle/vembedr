@@ -16,7 +16,7 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 You can install the latest released version from CRAN with
 
 ``` r
-install.packages("dplyr")
+install.packages("vembedr")
 ```
 
 or the latest development version from github with
