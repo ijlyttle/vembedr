@@ -1,12 +1,14 @@
 ---
-output: github_document
+output: 
+  github_document:
+    html_preview: false
 ---
 
 # vebmedr
 
-[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr)
-[![codecov](https://codecov.io/gh/ijlyttle/vembedr/branch/master/graph/badge.svg)](https://codecov.io/gh/ijlyttle/vembedr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr)
+[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr)
+[![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/vembedr/master.svg)](https://codecov.io/github/ijlyttle/vembedr?branch=master)
 
 ```{r, echo = FALSE}
 library("htmltools")
@@ -15,8 +17,7 @@ library("vembedr")
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-",
-  eval = FALSE
+  fig.path = "README-"
 )
 ```
 
@@ -32,7 +33,7 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 You can install the latest released version from CRAN with
 
 ```{r eval=FALSE}
-install.packages("dplyr")
+install.packages("vembedr")
 ```
 
 or the latest development version from github with
@@ -112,14 +113,16 @@ You will be the best judge of the best formatting for your situation. By providi
 Embedding a video from Vimeo is just as easy. 
 
 ```
-"https://vimeo.com/48699174"
+"https://vimeo.com/189919038"
 ```
 
-The Vimeo `id` is just the path part of the URL: `"48699174"`:
+The Vimeo `id` is just the path part of the URL: `"189919038"`:
 
 ```{r}
-embed_vimeo(id = "48699174")
+embed_vimeo(id = "189919038")
 ```
+
+Hat tip to Karthik Ram for [tweeting](https://twitter.com/_inundata/status/794616331727294464) out this Vimeo.
 
 ## API philosophy
 

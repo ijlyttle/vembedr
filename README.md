@@ -2,7 +2,7 @@
 vebmedr
 =======
 
-[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![codecov](https://codecov.io/gh/ijlyttle/vembedr/branch/master/graph/badge.svg)](https://codecov.io/gh/ijlyttle/vembedr) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr) [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/vembedr/master.svg)](https://codecov.io/github/ijlyttle/vembedr?branch=master)
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your R Markdown documents and your Shiny Apps.
 
@@ -55,6 +55,10 @@ embed_channel9(
 )
 ```
 
+<!--html_preserve-->
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 #### useR! 2016
 
 Of course, it could be easier to embed these conference videos - hence the `embed_user2016()` function. For example, this talk needs no introduction:
@@ -67,6 +71,10 @@ The trick for these useR! videos is that the `id` is just the last component of 
 embed_user2016(id = "Literate-Programming")
 ```
 
+<!--html_preserve-->
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 ### YouTube
 
 Your first step will be to get the YouTube identifier for the particular video. One way to do this is to inspect the URL of the YouTube page featuring the video that you want to embed. For example:
@@ -81,25 +89,40 @@ To embed this video, use the function `embed_youtube()`, using the `id` argument
 embed_youtube(id = "q2nNzNo_Xps")
 ```
 
+<!--html_preserve-->
+<iframe src="https://www.youtube.com/embed/q2nNzNo_Xps" width="420" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 If you wish to add some formatting within your document, the htmltools package makes that easier:
 
 ``` r
 div(align = "center", embed_youtube(id = "Qpoqzt2EHaA"))
 ```
 
+<!--html_preserve-->
+<iframe src="https://www.youtube.com/embed/Qpoqzt2EHaA" width="420" height="315" frameborder="0" allowfullscreen>
+</iframe>
+
+<!--/html_preserve-->
 You will be the best judge of the best formatting for your situation. By providing only the iframe, you can wrap the iframe in whatever tags will work best for you.
 
 ### Vimeo
 
 Embedding a video from Vimeo is just as easy.
 
-    "https://vimeo.com/48699174"
+    "https://vimeo.com/189919038"
 
-The Vimeo `id` is just the path part of the URL: `"48699174"`:
+The Vimeo `id` is just the path part of the URL: `"189919038"`:
 
 ``` r
-embed_vimeo(id = "48699174")
+embed_vimeo(id = "189919038")
 ```
+
+<!--html_preserve-->
+<iframe src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+<!--/html_preserve-->
+Hat tip to Karthik Ram for [tweeting](https://twitter.com/_inundata/status/794616331727294464) out this Vimeo.
 
 API philosophy
 --------------
@@ -112,7 +135,7 @@ The query/fragment parameters for each service can be found at:
 -   [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
 -   [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S) - click the embed button to see options
 
-A well-known example of this is YouTube allowing you to use a URL where the video starts at a given time (thanks to Aurélien Ginolhac for suggesting this link): `https://youtu.be/8SGif63VW6E?t=4m12s`
+For example, YouTube lets you use the URL to specify that the video start at a given time (thanks to Aurélien Ginolhac for suggesting this link): `https://youtu.be/8SGif63VW6E?t=4m12s`
 
 Unfortunately, the query parameters for YouTube links are different from those for YouTube embeds. To do the same thing for embedding, you specify a `start` with the number of seconds.
 
@@ -120,6 +143,10 @@ Unfortunately, the query parameters for YouTube links are different from those f
 embed_youtube(id = "8SGif63VW6E", query = list(start = 252))
 ```
 
+<!--html_preserve-->
+<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 For Vimeo, there is a somewhat undocumented way to do this (thanks Karthik Ram for the heads-up). Word of warning, there seems to be no way to avoid the autoplay, so beware - also see some notes at Vimeo: (<https://vimeo.com/forums/topic:49396>).
 
 ``` r
@@ -157,6 +184,10 @@ embed_user2016(id = "Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>%
   use_start_time("21m45s")
 ```
 
+<!--html_preserve-->
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM/player#time=0h21m45s:paused" width="560" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 #### Video specification
 
 Some convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video `id` is specified, any argument you provide is passed along to either `embed_youtube()` or `embed_vimeo()`.
@@ -165,10 +196,18 @@ Some convenience functions are provided so that you can focus on experimenting w
 rickroll_youtube()
 ```
 
+<!--html_preserve-->
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 ``` r
 rickroll_vimeo()
 ```
 
+<!--html_preserve-->
+<iframe src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+<!--/html_preserve-->
 It is imagined that in a future release of this package, this approach will be deprecated in favor of something like:
 
 ``` r

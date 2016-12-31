@@ -1,6 +1,10 @@
 # vembedr 0.1.1.9000
 
-* version bump for development
+## To do
+- adds use_rickroll() function, deprecates `rickroll_youtube()`, `rickroll_vimeo()`, rickroll_channel9()`
+---
+- adds **pkgdown** support 
+- version bump for development
 
 # vembedr 0.1.1
 
