@@ -96,7 +96,7 @@ embed_youtube(id = "q2nNzNo_Xps")
 If you wish to add some formatting within your document, the htmltools package makes that easier:
 
 ``` r
-div(align = "center", embed_youtube(id = "Qpoqzt2EHaA"))
+embed_youtube(id = "Qpoqzt2EHaA") %>% div(align = "center")
 ```
 
 <!--html_preserve-->

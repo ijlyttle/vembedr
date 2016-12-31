@@ -99,10 +99,10 @@ To embed this video, use the function `embed_youtube()`, using the `id` argument
 embed_youtube(id = "q2nNzNo_Xps")
 ```
 
-If you wish to add some formatting within your document, the htmltools package makes that easier:
+If you wish to add some formatting within your document, the **htmltools** package makes that easier:
 
 ```{r}
-div(align = "center", embed_youtube(id = "Qpoqzt2EHaA"))
+embed_youtube(id = "Qpoqzt2EHaA") %>% div(align = "center")
 ```
 
 You will be the best judge of the best formatting for your situation. By providing only the iframe, you can wrap the iframe in whatever tags will work best for you.
