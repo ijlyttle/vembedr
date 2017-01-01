@@ -190,12 +190,6 @@ rickroll_youtube()
 rickroll_vimeo()
 ```
 
-It is imagined that in a future release of this package, this approach will be deprecated in favor of something like:
-
-```{r eval=FALSE}
-embed_youtube() %>% use_rickroll()
-```
-
 
 ## Code of Conduct
 

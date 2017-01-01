@@ -2,3 +2,21 @@ templates:
   params:
     bootswatch: sandstone
 
+reference:
+- title: Embedding functions
+  desc: ~
+  contents:
+  - embed
+  - rickroll
+- title: Helper functions
+  desc: ~
+  contents:
+  - use_start_time
+
+articles:
+- title: All vignettes
+  desc: ~
+  contents:
+  - overview
+  - services
+  - helpers

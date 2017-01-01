@@ -93,7 +93,7 @@ embed_youtube(id = "q2nNzNo_Xps")
 <iframe src="https://www.youtube.com/embed/q2nNzNo_Xps" width="420" height="315" frameborder="0" allowfullscreen>
 </iframe>
 <!--/html_preserve-->
-If you wish to add some formatting within your document, the htmltools package makes that easier:
+If you wish to add some formatting within your document, the **htmltools** package makes that easier:
 
 ``` r
 embed_youtube(id = "Qpoqzt2EHaA") %>% div(align = "center")
@@ -208,12 +208,6 @@ rickroll_vimeo()
 <iframe src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 </iframe>
 <!--/html_preserve-->
-It is imagined that in a future release of this package, this approach will be deprecated in favor of something like:
-
-``` r
-embed_youtube() %>% use_rickroll()
-```
-
 Code of Conduct
 ---------------
 

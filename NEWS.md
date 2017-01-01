@@ -2,12 +2,13 @@
 
 ### To do
 
-- adds `use_rickroll()` function, deprecates `rickroll_youtube()`, `rickroll_vimeo()`, rickroll_channel9()`
+- adds `embed_facebook()`, `use_facebook()`
 
 ---
 
 ### Done
 
+- fully deprecates `allow_full_screen` argument
 - adds **pkgdown** support 
 - version bump for development
 
