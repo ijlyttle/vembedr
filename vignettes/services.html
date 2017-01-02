@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2017-01-01" />
+<meta name="date" content="2017-01-02" />
 
 <title>Video services</title>
 
@@ -70,25 +70,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Video services</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2017-01-01</em></h4>
+<h4 class="date"><em>2017-01-02</em></h4>
 
 
 
-<p>The foundation of this package is the <code>embed_*()</code> family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the <em>query</em> and <em>fragment</em> components of the reference URL. The query/fragment parameters for each service can be found at:</p>
+<p>The foundation of this package is the <code>embed()</code> family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the <em>query</em> and <em>fragment</em> components of the reference URL. The query/fragment parameters for each service can be found at:</p>
 <ul>
 <li><a href="https://developers.google.com/youtube/player_parameters">YouTube IFrame API</a></li>
 <li><a href="https://developer.vimeo.com/player/embedding">Vimeo emebedding</a></li>
 <li><a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a>, which includes the UseR! 2016 videos. Click the <em>Embed</em> tab for emdedding options.</li>
 </ul>
 <p>One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the <em>helpers</em> vignette deals with how to set the start-time.</p>
-<p>Each of the services exposes <code>height</code> and <code>width</code> arguments; each of the <code>embed_*()</code> functions has the same arguments. The defaults for each service are taken from that service’s default values.</p>
-<p>If this package does not contain the customization you need, keep in mind that the the ouput of an <code>embed_*()</code> function is simply an HMTL tag that can be modified using functions from the <strong>htmltools</strong> package.</p>
+<p>Each of the services exposes <code>height</code> and <code>width</code> arguments; each of the <code>embed()</code> functions has these arguments. The defaults for each service are taken from that service’s default values.</p>
+<p>If this package does not contain the customization you need, keep in mind that the the ouput of an <code>embed()</code> function is simply an HMTL tag that can be modified using functions from the <strong>htmltools</strong> package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;htmltools&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;vembedr&quot;</span>)</code></pre></div>
 <p>For example, to center your video horizontally, you can wrap your embed function in an <code>htmltools::div()</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
   <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>,
-  embed_*(...)
+  <span class="kw">embed</span>(...)
 )</code></pre></div>
 <div id="youtube" class="section level2">
 <h2>YouTube</h2>
