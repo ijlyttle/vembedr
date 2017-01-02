@@ -28,7 +28,6 @@ This is an internal function, supporting \code{\link{suggest_embed}}
 \examples{
   parse_video_url_("https://youtu.be/1-vcErOPofQ?t=28s") \%>\%
   suggest_embed_()
-
 }
 \seealso{
 \code{\link{suggest_embed}} \code{\link{parse_video_url_}}
