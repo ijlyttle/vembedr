@@ -2,8 +2,8 @@
 
 ### To do
 
+- figures out fiddly-bits for javascript to suppress vimeo autoplay when start-time is specified
 - adds `embed_facebook()`, `use_facebook()`
-
 - adds helper function to get function call and identifier given URL
 
 ---

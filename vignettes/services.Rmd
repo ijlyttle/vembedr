@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-The foundation of this package is the `embed_*()` family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the *query* and *fragment* components of the reference URL. The query/fragment parameters for each service can be found at:
+The foundation of this package is the `embed()` family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the *query* and *fragment* components of the reference URL. The query/fragment parameters for each service can be found at:
 
 - [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
 - [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
@@ -17,9 +17,9 @@ The foundation of this package is the `embed_*()` family of functions, used to g
 
 One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the *helpers* vignette deals with how to set the start-time.
 
-Each of the services exposes `height` and `width` arguments; each of the `embed_*()` functions has the same arguments. The defaults for each service are taken from that service's default values. 
+Each of the services exposes `height` and `width` arguments; each of the `embed()` functions has these arguments. The defaults for each service are taken from that service's default values. 
 
-If this package does not contain the customization you need, keep in mind that the the ouput of an `embed_*()` function is simply an HMTL tag that can be modified using functions from the **htmltools** package. 
+If this package does not contain the customization you need, keep in mind that the the ouput of an `embed()` function is simply an HMTL tag that can be modified using functions from the **htmltools** package. 
 
 ```{r}
 library("htmltools")
@@ -31,7 +31,7 @@ For example, to center your video horizontally, you can wrap your embed function
 ```R
 div(
   align = "center",
-  embed_*(...)
+  embed(...)
 )
 ```
 
