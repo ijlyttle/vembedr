@@ -45,6 +45,7 @@ suggest_embed <- function(url){
 #' @examples
 #'   parse_video_url_("https://youtu.be/1-vcErOPofQ?t=28s") %>%
 #'   suggest_embed_()
+#' @export
 #'
 suggest_embed_ <- function(parse_list){
 
