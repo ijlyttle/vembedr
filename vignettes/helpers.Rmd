@@ -1,58 +1,58 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Helper functions"
+author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Helper functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r}
+library("htmltools")
+library("vembedr")
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+### Helper functions
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+It's a bit inconvenient to visit a service's API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called `use_something()` and can be composed using the pipe, `%>%`.
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+#### Start time
 
-## More Examples
+To specify the start time, simply pipe your embed function to the `use_start_time()` function, which figures out which service you are using, then does the "right thing" to modify the query or fragment. 
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+The `use_start_time()` function will treat these all of these inputs equivalently:
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+* `"0h1m0s"`, `"0h01m00s"`, `"0h1m"`
+* `"1m0s"`, `"1m"`
+* `"60s"`, `60`
+
+```{r eval=FALSE}
+embed_youtube(id = "8SGif63VW6E") %>% use_start_time("4m12s")
 ```
 
-Also a quote using `>`:
+```{r eval=FALSE}
+embed_vimeo(id = "98892825") %>% use_start_time("60")
+```
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Let's say you wanted to point to a specific lightning talk at useR! 2016. 
+
+Please note that it seems to take a few seconds from when the browser loads until the video will be ready to start at the specified time.
+
+```{r}
+embed_user2016(id = "Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
+  use_start_time("21m45s")
+```
+
+#### Video specification
+
+Some convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video `id` is specified, any argument you provide is passed along to either `embed_youtube()` or `embed_vimeo()`.
+
+```{r}
+rickroll_youtube()
+```
+
+```{r}
+rickroll_vimeo()
+```

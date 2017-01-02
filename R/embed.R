@@ -17,8 +17,6 @@
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
-#' @param allow_full_screen logical, indicates if to allow fullscreen
-#'   (deprecated in favor of \code{allowfullscreen})
 #' @param allowfullscreen logical, indicates if to allow fullscreen
 #' @param query             list of items to include in url-query string
 #' @param fragment          character, string to include as url-fragment
@@ -39,17 +37,8 @@ NULL
 #' @export
 #
 embed_vimeo <- function(id, width = 500, height = 281,
-                        frameborder = 0, allow_full_screen = TRUE,
-                        allowfullscreen = TRUE,
+                        frameborder = 0, allowfullscreen = TRUE,
                         query = NULL, fragment = NULL){
-
-  if (!missing(allow_full_screen)){
-    warning(
-      "argument allow_full_screen is deprecated; please use allowfullscreen instead.",
-      call. = FALSE
-    )
-    allowfullscreen <- allow_full_screen
-  }
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
@@ -79,17 +68,8 @@ embed_vimeo <- function(id, width = 500, height = 281,
 #' @export
 #
 embed_youtube <- function(id, width = 420, height = 315,
-                          frameborder = 0, allow_full_screen = TRUE,
-                          allowfullscreen = TRUE,
+                          frameborder = 0, allowfullscreen = TRUE,
                           query = NULL){
-
-  if (!missing(allow_full_screen)){
-    warning(
-      "argument allow_full_screen is deprecated; please use allowfullscreen instead.",
-      call. = FALSE
-    )
-    allowfullscreen <- allow_full_screen
-  }
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 

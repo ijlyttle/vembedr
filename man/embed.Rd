@@ -9,11 +9,10 @@
 \title{Creates an iframe for video-embedding}
 \usage{
 embed_vimeo(id, width = 500, height = 281, frameborder = 0,
-  allow_full_screen = TRUE, allowfullscreen = TRUE, query = NULL,
-  fragment = NULL)
+  allowfullscreen = TRUE, query = NULL, fragment = NULL)
 
 embed_youtube(id, width = 420, height = 315, frameborder = 0,
-  allow_full_screen = TRUE, allowfullscreen = TRUE, query = NULL)
+  allowfullscreen = TRUE, query = NULL)
 
 embed_user2016(id, width = 560, height = 315, frameborder = 0,
   allowfullscreen = TRUE)
@@ -29,9 +28,6 @@ embed_channel9(id, width = 560, height = 315, frameborder = 0,
 \item{height}{numeric, height of iframe (px)}
 
 \item{frameborder}{numeric, size of frame border (px)}
-
-\item{allow_full_screen}{logical, indicates if to allow fullscreen
-(deprecated in favor of \code{allowfullscreen})}
 
 \item{allowfullscreen}{logical, indicates if to allow fullscreen}
 

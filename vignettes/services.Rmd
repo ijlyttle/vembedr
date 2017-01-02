@@ -1,58 +1,130 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Video services"
+author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Video services}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+The foundation of this package is the `embed_*()` family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the *query* and *fragment* components of the reference URL. The query/fragment parameters for each service can be found at:
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+- [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
+- [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
+- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 videos. Click the *Embed* tab for emdedding options.
 
-## Vignette Info
+One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the *helpers* vignette deals with how to set the start-time.
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+Each of the services exposes `height` and `width` arguments; each of the `embed_*()` functions has the same arguments. The defaults for each service are taken from that service's default values. 
 
-## Styles
+If this package does not contain the customization you need, keep in mind that the the ouput of an `embed_*()` function is simply an HMTL tag that can be modified using functions from the **htmltools** package. 
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r}
+library("htmltools")
+library("vembedr")
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+For example, to center your video horizontally, you can wrap your embed function in an `htmltools::div()`:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```R
+div(
+  align = "center",
+  embed_*(...)
+)
 ```
 
-Also a quote using `>`:
+## YouTube
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+You can get your video's identifier by inspecting its URL at YouTube. Consider this YouTube URL:
+
+```{r echo=FALSE}
+tags$p(
+  tags$code(
+    HTML(paste0("https://www.youtube.com/watch?v=", tags$strong("q2nNzNo_Xps")))
+  )  
+)
+```
+
+The identifier is simply the last part of the URL: **`q2nNzNo_Xps`**. 
+
+To embed this video, use the function `embed_youtube()`, using the identifier as the `id` argument:
+
+```{r}
+embed_youtube(id = "q2nNzNo_Xps")
+```
+
+## Vimeo
+
+For Vimeo, the identifier is also included in the standard URL:
+
+```{r echo=FALSE}
+tags$p(
+  tags$code(
+    HTML(paste0("https://vimeo.com/", tags$strong("189919038")))
+  )  
+)
+```
+
+The Vimeo identifier is just the path part of the URL: **`189919038`**:
+
+```{r}
+embed_vimeo(id = "189919038")
+```
+
+## UseR! 2016
+
+One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft's Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.
+
+Consider Rick Becker's talk on the history of the S language. Seriously, consider it - now, if you have not already seen it:
+
+```{r echo=FALSE}
+tags$p(
+  tags$code(
+    HTML(paste0(
+      "https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/",  
+      tags$strong("Forty-years-of-S")
+    ))
+  )  
+)
+```
+
+For a UseR! 2016 video, the identifier is the last component of path of the URL, in this case: **`Forty-years-of-S`**. To embed the video:
+
+```{r}
+embed_user2016(id = "Forty-years-of-S")
+```
+
+## Channel 9
+
+The UseR! 2016 videos are hosted on Microsoft's Channel 9 service, so an embed function is provided to use it.
+
+Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a  great video; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.
+
+Here's the URL:
+
+```{r echo=FALSE}
+tags$p(
+  tags$code(
+    HTML(paste0(
+      "https://channel9.msdn.com/",  
+      tags$strong("Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
+    ))
+  )  
+)
+```
+
+The identifier is the path of the URL, **`Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads`**, which you can express as a string:
+
+```{r}
+embed_channel9(id = "Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
+```
+
+Alternatively, you can express this as a vector of strings:
+
+```{r eval=FALSE}
+embed_channel9(
+  id = c("Shows", "Going+Deep", "Brian-Beckman-Dont-fear-the-Monads")
+)
+```

@@ -4,6 +4,8 @@
 
 - adds `embed_facebook()`, `use_facebook()`
 
+- adds helper function to get function call and identifier given URL
+
 ---
 
 ### Done

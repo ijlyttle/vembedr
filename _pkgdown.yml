@@ -17,6 +17,5 @@ articles:
 - title: All vignettes
   desc: ~
   contents:
-  - overview
   - services
   - helpers
