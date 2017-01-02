@@ -42,17 +42,17 @@ You can get your video's identifier by inspecting its URL at YouTube. Consider t
 ```{r echo=FALSE}
 tags$p(
   tags$code(
-    HTML(paste0("https://www.youtube.com/watch?v=", tags$strong("q2nNzNo_Xps")))
+    HTML(paste0("https://www.youtube.com/watch?v=", tags$strong("44wDwMQVqCc")))
   )  
 )
 ```
 
-The identifier is simply the last part of the URL: **`q2nNzNo_Xps`**. 
+The identifier is simply the last part of the URL: **`44wDwMQVqCc`**. 
 
 To embed this video, use the function `embed_youtube()`, using the identifier as the `id` argument:
 
 ```{r}
-embed_youtube(id = "q2nNzNo_Xps")
+embed_youtube(id = "44wDwMQVqCc")
 ```
 
 ## Vimeo
@@ -62,15 +62,15 @@ For Vimeo, the identifier is also included in the standard URL:
 ```{r echo=FALSE}
 tags$p(
   tags$code(
-    HTML(paste0("https://vimeo.com/", tags$strong("189919038")))
+    HTML(paste0("https://vimeo.com/", tags$strong("110538136")))
   )  
 )
 ```
 
-The Vimeo identifier is just the path part of the URL: **`189919038`**:
+The Vimeo identifier is just the path part of the URL: **`110538136`**:
 
 ```{r}
-embed_vimeo(id = "189919038")
+embed_vimeo(id = "110538136")
 ```
 
 ## UseR! 2016

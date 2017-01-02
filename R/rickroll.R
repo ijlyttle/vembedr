@@ -12,7 +12,7 @@
 #' @examples
 #'   rickroll_vimeo()
 #'   rickroll_youtube()
-#'   rickroll_channel9() %>% use_start_time("5m03s")
+#'   rickroll_channel9()
 #'
 NULL
 
@@ -27,7 +27,7 @@ rickroll_vimeo <- function(...){
 #' @export
 #
 rickroll_youtube <- function(...){
-  embed_youtube(id = "dQw4w9WgXcQ", ...)
+  embed_youtube(id = "DLzxrzFCyOs", ...)
 }
 
 #' @rdname rickroll
@@ -37,5 +37,6 @@ rickroll_channel9 <- function(...){
   embed_channel9(
     id = c("Blogs", "Dan", "BlueHat-v7-Katie-Moussouris-interviews-Dan-Kaminsky-on-some-interesting-research-hes-been-doing-late"),
     ...
-  )
+  ) %>%
+    use_start_time("05m08s")
 }

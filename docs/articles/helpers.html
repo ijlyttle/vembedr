@@ -49,37 +49,43 @@
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"vembedr"</span>)</code></pre></div>
-<div id="helper-functions" class="section level3">
-<h3 class="hasAnchor"><html><body><a href="#helper-functions" class="anchor"> </a></body></html>Helper functions</h3>
-<p>It&rsquo;s a bit inconvenient to visit a service&rsquo;s API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called <code>use_something()</code> and can be composed using the pipe, <code>%&gt;%</code>.</p>
-<div id="start-time" class="section level4">
-<h4 class="hasAnchor"><html><body><a href="#start-time" class="anchor"> </a></body></html>Start time</h4>
+<p>It&rsquo;s a bit inconvenient to visit a service&rsquo;s API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called <code>use_something()</code> and can be composed using the pipe, <code>%&gt;%</code>. At this point, there is one such helper-function: <code><a href="../reference/use_start_time.html">use_start_time()</a></code>.</p>
+<div id="start-time" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#start-time" class="anchor"> </a></body></html>Start time</h2>
 <p>To specify the start time, simply pipe your embed function to the <code><a href="../reference/use_start_time.html">use_start_time()</a></code> function, which figures out which service you are using, then does the &ldquo;right thing&rdquo; to modify the query or fragment.</p>
 <p>The <code><a href="../reference/use_start_time.html">use_start_time()</a></code> function will treat these all of these inputs equivalently:</p>
 <ul><li><code>"0h1m0s"</code>, <code>"0h01m00s"</code>, <code>"0h1m"</code></li>
 <li><code>"1m0s"</code>, <code>"1m"</code></li>
 <li><code>"60s"</code>, <code>60</code></li>
-</ul><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"8SGif63VW6E"</span>) %&gt;%<span class="st"> </span><span class="kw"><a href="../reference/use_start_time.html">use_start_time</a></span>(<span class="st">"4m12s"</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/embed.html">embed_vimeo</a></span>(<span class="dt">id =</span> <span class="st">"98892825"</span>) %&gt;%<span class="st"> </span><span class="kw"><a href="../reference/use_start_time.html">use_start_time</a></span>(<span class="st">"60"</span>)</code></pre></div>
-<p>Let&rsquo;s say you wanted to point to a specific lightning talk at useR! 2016.</p>
-<p>Please note that it seems to take a few seconds from when the browser loads until the video will be ready to start at the specified time.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/embed.html">embed_user2016</a></span>(<span class="dt">id =</span> <span class="st">"Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM"</span>) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="../reference/use_start_time.html">use_start_time</a></span>(<span class="st">"21m45s"</span>)</code></pre></div>
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM/player#time=0h21m45s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</ul><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"8SGif63VW6E"</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="../reference/use_start_time.html">use_start_time</a></span>(<span class="st">"4m12s"</span>)</code></pre></div>
+<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<p>Hat tip to Aur&eacute;lien Ginolhac for suggesting this video using this start-time.</p>
+<p>The <code><a href="../reference/use_start_time.html">use_start_time()</a></code> function can be used with all of the <code><a href="../reference/embed.html">embed()</a></code> functions.</p>
+<div id="vimeo-caveat" class="section level3">
+<h3 class="hasAnchor"><html><body><a href="#vimeo-caveat" class="anchor"> </a></body></html>Vimeo caveat</h3>
+<p>For Vimeo there is one caveat: the specification of start-time causes the video to autoplay without an API recourse to prevent autoplay. Please see this <a href="https://vimeo.com/forums/topic:49396">Vimeo-forum thread</a> for more informaton.</p>
 </div>
-<div id="video-specification" class="section level4">
-<h4 class="hasAnchor"><html><body><a href="#video-specification" class="anchor"> </a></body></html>Video specification</h4>
-<p>Some convenience functions are provided so that you can focus on experimenting with the arguments and the query parameters. In these functions, the video <code>id</code> is specified, any argument you provide is passed along to either <code><a href="../reference/embed.html">embed_youtube()</a></code> or <code><a href="../reference/embed.html">embed_vimeo()</a></code>.</p>
+</div>
+<div id="video-specification" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#video-specification" class="anchor"> </a></body></html>Video specification</h2>
+<p>Let&rsquo;s say you do not have a particular video in mind, but you want to experiment with the arguments and the query parameters. For this set of functions, the video <code>id</code> is specified, any argument you provide is passed along to <code><a href="../reference/embed.html">embed_youtube()</a></code>, <code><a href="../reference/embed.html">embed_vimeo()</a></code>, or <code><a href="../reference/embed.html">embed_channel9()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>()</code></pre></div>
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/rickroll.html">rickroll_vimeo</a></span>()</code></pre></div>
 <iframe src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/rickroll.html">rickroll_channel9</a></span>()</code></pre></div>
+<iframe src="https://channel9.msdn.com/Blogs/Dan/BlueHat-v7-Katie-Moussouris-interviews-Dan-Kaminsky-on-some-interesting-research-hes-been-doing-late/player#time=0h5m8s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked"><li><a href="#start-time">Start time</a></li>
+      <li><a href="#video-specification">Video specification</a></li>
+      </ul></div>
       </div>
 
 </div>

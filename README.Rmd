@@ -51,7 +51,6 @@ The GitHub Markdown renderer does not support video embedding. To see everything
 
 If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. Simply open your preview in an external browser.
 
-
 ## Examples
 
 For these examples, it can be useful to load the **htmltools** package along with the **vembedr** package.
@@ -64,7 +63,7 @@ library("vembedr")
 To embed a YouTube video, simply use its `id`, which you can get from the original URL.
 
 ```{r}
-embed_youtube(id = "q2nNzNo_Xps")
+embed_youtube(id = "66BsXw9MKqA")
 ```
 
 Similarly, to embed a Vimeo, use its `id`. Note that we can apply some formatting by wrapping the output of the `embed_vimeo()` function in an **htmltools** `div()`.
@@ -86,6 +85,7 @@ Here's an example using a lightning presentation from UseR! 2016:
 embed_user2016(id = "Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
   use_start_time("21m45s")
 ```
+
 
 ## Code of Conduct
 
