@@ -81,9 +81,8 @@
     </div>
 
     
-    <p>Please not that for Vimeo, you may specify a start time, but you can not
-specify that the video be paused at this time. In other words, it is like
-&quot;autoplay&quot; is set to TRUE, and you cannot unset it.</p>
+    <p>This function provides you a consistent way to specify the start time,
+regardless of the service.</p>
     
 
     <pre><span class='fu'>use_start_time</span>(<span class='no'>...</span>)
@@ -104,15 +103,31 @@ specify that the video be paused at this time. In other words, it is like
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>...</dt>
-      <dd>generic args to pass through</dd>
+      <dd>generic argumentss to pass through</dd>
       <dt>embed</dt>
-      <dd>embed object, i.e. <code><a href='embed.html'>embed_youtube</a></code></dd>
+      <dd>embed object made using an <code><a href='embed.html'>embed</a></code> function</dd>
       <dt>start_time</dt>
       <dd>numeric (seconds), or character (&quot;3m15s&quot;)</dd>
       <dt>is_paused</dt>
       <dd>logical, for &quot;Channel 9&quot; specifies if the video
 should be paused at this time</dd>
     </dl>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The <code>start_time</code> argument can take a variety of formats; these inputs
+all evaluate to the same value:</p>
+    <p><ul>
+<li><code>&quot;0h1m0s&quot;</code>, <code>&quot;0h01m00s&quot;</code>, <code>&quot;0h1m&quot;</code>
+  </li>
+<li><code>&quot;1m0s&quot;</code>, <code>&quot;1m&quot;</code>
+  </li>
+<li><code>&quot;60s&quot;</code>, <code>60</code>
+</li>
+</ul></p>
+    <p>Please note that for Vimeo, you can specify a start time, but you can not
+specify that the video be paused at this time. In other words, it is like
+&quot;autoplay&quot; is set to TRUE, and you cannot unset it.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -124,7 +139,9 @@ should be paused at this time</dd>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#details">Details</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates an iframe for video-embedding — embed • vembedr</title>
+<title>Embed a video into an HTML document — embed • vembedr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,13 +77,13 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates an iframe for video-embedding</h1>
+    <h1>Embed a video into an HTML document</h1>
     </div>
 
     
-    <p>These functions are used to embed video into your RMarkdown html documents,
-or into your Shiny apps. There are currently functions for you to embed from
-either YouTube or Vimeo.</p>
+    <p>These functions are used to embed video into your <strong>rmarkdown</strong> html-documents,
+or into your <strong>shiny</strong> apps. There are functions to embed from
+YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
     
 
     <pre><span class='fu'>embed_vimeo</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>281</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
@@ -118,21 +118,27 @@ either YouTube or Vimeo.</p>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>html <code>&lt;iframe&gt;</code> element</p>
+    <p>An embed object that prints an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/builder'>tags</a>$iframe</code> element</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Both of these services allow you to customize a lot of things by specifying
+    <p>These services allow you to customize a lot of things by specifying
 an optional query string. The specification for the query string will differ
 according to the service being used:</p>
     <p><dl class='dl-horizontal'>
   <dt>YouTube</dt><dd><a href = 'https://developers.google.com/youtube/player_parameters'>https://developers.google.com/youtube/player_parameters</a></dd>
   <dt>Vimeo</dt><dd><a href = 'https://developer.vimeo.com/player/embedding'>https://developer.vimeo.com/player/embedding</a></dd>
+  <dt>Channel 9</dt><dd><a href = 'https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S'>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</a>
+  (click the <em>Embed</em> tab)</dd>
 </dl></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='use_start_time.html'>use_start_time</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://player.vimeo.com/video/45196609&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://www.youtube.com/embed/dQw4w9WgXcQ&quot; width=&quot;420&quot; height=&quot;315&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player&quot; width=&quot;560&quot; height=&quot;315&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"8SGif63VW6E"</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>start</span> <span class='kw'>=</span> <span class='fu'><a href='secs.html'>secs</a></span>(<span class='st'>"4m12s"</span>)))</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://www.youtube.com/embed/8SGif63VW6E?start=252&quot; width=&quot;420&quot; height=&quot;315&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://www.youtube.com/embed/dQw4w9WgXcQ&quot; width=&quot;420&quot; height=&quot;315&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://player.vimeo.com/video/45196609&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player&quot; width=&quot;560&quot; height=&quot;315&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -143,6 +149,8 @@ according to the service being used:</p>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -2,7 +2,7 @@
 % Please edit documentation in R/helper.R
 \name{hms}
 \alias{hms}
-\title{creates an hours-minutes-seconds string}
+\title{Create an hours-minutes-seconds string}
 \usage{
 hms(x)
 }
@@ -13,7 +13,7 @@ hms(x)
 character string (i.e. "0h3m15s")
 }
 \description{
-creates an hours-minutes-seconds string
+Create an hours-minutes-seconds string
 }
 \examples{
   hms(30)

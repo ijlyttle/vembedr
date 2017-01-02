@@ -2,7 +2,7 @@
 % Please edit documentation in R/helper.R
 \name{secs}
 \alias{secs}
-\title{Gets number of seconds given a string}
+\title{Get number of seconds given a string}
 \usage{
 secs(x)
 }

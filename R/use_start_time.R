@@ -1,14 +1,26 @@
 #' Specify a start time for an embedded video
 #'
-#' Please not that for Vimeo, you may specify a start time, but you can not
+#' This function provides you a consistent way to specify the start time,
+#' regardless of the service.
+#'
+#' The \code{start_time} argument can take a variety of formats; these inputs
+#' all evaluate to the same value:
+#'
+#' \itemize{
+#'   \item{\code{"0h1m0s"}, \code{"0h01m00s"}, \code{"0h1m"}}
+#'   \item{\code{"1m0s"}, \code{"1m"}}
+#'   \item{\code{"60s"}, \code{60}}
+#' }
+#'
+#' Please note that for Vimeo, you can specify a start time, but you can not
 #' specify that the video be paused at this time. In other words, it is like
 #' "autoplay" is set to TRUE, and you cannot unset it.
 #'
 #' @rdname use_start_time
-#' @param ...         generic args to pass through
-#' @param embed       embed object, i.e. \code{\link{embed_youtube}}
+#' @param ...         generic argumentss to pass through
+#' @param embed       embed object made using an \code{\link{embed}} function
 #' @param start_time  numeric (seconds), or character ("3m15s")
-#' @param is_paused logical, for "Channel 9" specifies if the video
+#' @param is_paused   logical, for "Channel 9" specifies if the video
 #'   should be paused at this time
 #'
 #' @export

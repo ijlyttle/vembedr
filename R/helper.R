@@ -10,7 +10,7 @@
   result
 }
 
-#' Gets number of seconds given a string
+#' Get number of seconds given a string
 #'
 #' This is a helper function to get the number of seconds.
 #'
@@ -51,7 +51,7 @@ secs <- function(x){
   result
 }
 
-#' creates an hours-minutes-seconds string
+#' Create an hours-minutes-seconds string
 #'
 #' @param x, numeric (number of seconds), or character (i.e. "3m15s")
 #'

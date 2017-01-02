@@ -1,4 +1,4 @@
-#' Embeds a popular video
+#' Embed a popular video
 #'
 #' If you want to experiment with the arguments to \code{\link{embed}},
 #' such as \code{query}, but do not have a particular video in mind, this function
@@ -6,7 +6,7 @@
 #'
 #' @param ... arguments (other than \code{id}) passed on to \code{\link{embed}}
 #'
-#' @return html \code{<iframe>} element
+#' @return An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
 #'
 #' @name rickroll
 #' @examples

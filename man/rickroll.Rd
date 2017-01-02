@@ -5,7 +5,7 @@
 \alias{rickroll_channel9}
 \alias{rickroll_vimeo}
 \alias{rickroll_youtube}
-\title{Embeds a popular video}
+\title{Embed a popular video}
 \usage{
 rickroll_vimeo(...)
 
@@ -17,7 +17,7 @@ rickroll_channel9(...)
 \item{...}{arguments (other than \code{id}) passed on to \code{\link{embed}}}
 }
 \value{
-html \code{<iframe>} element
+An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
 }
 \description{
 If you want to experiment with the arguments to \code{\link{embed}},
@@ -27,7 +27,7 @@ may be useful to you.
 \examples{
   rickroll_vimeo()
   rickroll_youtube()
-  rickroll_channel9() \%>\% use_start_time("5m03s")
+  rickroll_channel9()
 
 }
 
