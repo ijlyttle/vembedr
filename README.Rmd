@@ -63,7 +63,7 @@ library("vembedr")
 To embed a YouTube video, simply use its `id`, which you can get from the original URL.
 
 ```{r}
-embed_youtube(id = "66BsXw9MKqA")
+embed_youtube(id = "1-vcErOPofQ")
 ```
 
 Similarly, to embed a Vimeo, use its `id`. Note that we can apply some formatting by wrapping the output of the `embed_vimeo()` function in an **htmltools** `div()`.
