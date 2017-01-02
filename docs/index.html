@@ -49,7 +49,7 @@
 <div id="coming-to-version-0-1-2" class="section level2">
 <h2 class="hasAnchor"><a href="#coming-to-version-0-1-2" class="anchor"> </a>Coming to version 0.1.2</h2>
 <p>These features are in the development version, not yet on CRAN:</p>
-<ul><li>New function, <code><a href="reference/suggest_embed.html">suggest_embed()</a></code>, that takes a URL from a video&rsquo;s web-page and suggests embedding code.</li>
+<ul><li>New function, <code><a href="reference/suggest_embed.html">suggest_embed()</a></code>, that takes a URL from a video&rsquo;s web-page and suggests embedding-code.</li>
 </ul></div>
 <div id="new-to-version-0-1-1" class="section level2">
 <h2 class="hasAnchor"><a href="#new-to-version-0-1-1" class="anchor"> </a>New to version 0.1.1</h2>
@@ -76,15 +76,15 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>For these examples, it can be useful to load the <strong>htmltools</strong> package along with the <strong>vembedr</strong> package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"vembedr"</span>)</code></pre></div>
-<p>To embed a YouTube video, simply use its <code>id</code>, which you can get from the original URL. Or, to have the code suggested, you can use <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> using the video&rsquo;s URL:</p>
+<p>To embed a YouTube video, simply use its identifier, which you can get from the original URL. Or, to have the code suggested, you can use <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> using the video&rsquo;s URL:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/suggest_embed.html">suggest_embed</a></span>(<span class="st">"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)
 <span class="co">#&gt; embed_youtube("1-vcErOPofQ")</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-<p>Similarly, to embed a Vimeo, use its <code>id</code>. Note that we can apply some formatting by wrapping the output of the <code><a href="reference/embed.html">embed_vimeo()</a></code> function in an <strong>htmltools</strong> <code>div()</code>.</p>
+<p>Similarly, to embed a Vimeo, use its identifier. Note that we can apply some formatting by wrapping the output of the <code><a href="reference/embed.html">embed_vimeo()</a></code> function in an <strong>htmltools</strong> <code>div()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
   <span class="dt">align =</span> <span class="st">"center"</span>,
-  <span class="kw"><a href="reference/embed.html">embed_vimeo</a></span>(<span class="dt">id =</span> <span class="st">"189919038"</span>)
+  <span class="kw"><a href="reference/embed.html">embed_vimeo</a></span>(<span class="st">"189919038"</span>)
 )</code></pre></div>
 <div align="center">
 <iframe src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -92,7 +92,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>Hat tip to Karthik Ram for <a href="https://twitter.com/_inundata/status/794616331727294464">tweeting</a> out this Vimeo.</p>
 <p>For YouTube, Vimeo, and Microsoft Channel 9 (hosts of the User! 2016 videos) you can specify a start time. Please note that for Vimeo, specifying a start time implies that the video <strong>will</strong> be auto-played (which can be annoying).</p>
 <p>Here&rsquo;s an example using a lightning presentation from UseR! 2016:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_user2016</a></span>(<span class="dt">id =</span> <span class="st">"Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM"</span>) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_user2016</a></span>(<span class="st">"Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM"</span>) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="reference/use_start_time.html">use_start_time</a></span>(<span class="st">"21m45s"</span>)</code></pre></div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM/player#time=0h21m45s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>

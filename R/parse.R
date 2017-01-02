@@ -62,8 +62,8 @@ build_suggestion <- function(parse_list){
   }
 
   suggest_list <- list(
-    embed <- str_embed,
-    start_time <- str_start_time
+    embed = str_embed,
+    start_time = str_start_time
   )
 
   suggest_list

@@ -11,7 +11,7 @@ Coming to version 0.1.2
 
 These features are in the development version, not yet on CRAN:
 
--   New function, `suggest_embed()`, that takes a URL from a video's web-page and suggests embedding code.
+-   New function, `suggest_embed()`, that takes a URL from a video's web-page and suggests embedding-code.
 
 New to version 0.1.1
 --------------------
@@ -54,7 +54,7 @@ library("htmltools")
 library("vembedr")
 ```
 
-To embed a YouTube video, simply use its `id`, which you can get from the original URL. Or, to have the code suggested, you can use `suggest_embed()` using the video's URL:
+To embed a YouTube video, simply use its identifier, which you can get from the original URL. Or, to have the code suggested, you can use `suggest_embed()` using the video's URL:
 
 ``` r
 suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
@@ -62,19 +62,19 @@ suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 ```
 
 ``` r
-embed_youtube(id = "1-vcErOPofQ")
+embed_youtube("1-vcErOPofQ")
 ```
 
 <!--html_preserve-->
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen>
 </iframe>
 <!--/html_preserve-->
-Similarly, to embed a Vimeo, use its `id`. Note that we can apply some formatting by wrapping the output of the `embed_vimeo()` function in an **htmltools** `div()`.
+Similarly, to embed a Vimeo, use its identifier. Note that we can apply some formatting by wrapping the output of the `embed_vimeo()` function in an **htmltools** `div()`.
 
 ``` r
 div(
   align = "center",
-  embed_vimeo(id = "189919038")
+  embed_vimeo("189919038")
 )
 ```
 
@@ -90,7 +90,7 @@ For YouTube, Vimeo, and Microsoft Channel 9 (hosts of the User! 2016 videos) you
 Here's an example using a lightning presentation from UseR! 2016:
 
 ``` r
-embed_user2016(id = "Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
+embed_user2016("Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
   use_start_time("21m45s")
 ```
 
