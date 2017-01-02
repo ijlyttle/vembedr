@@ -25,6 +25,8 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 
 ## Coming to version 0.1.2
 
+These features are in the development version, not yet on CRAN:
+
 - New function, `suggest_embed()`, that takes a URL from a video's web-page and suggests embedding code. 
 
 ## New to version 0.1.1

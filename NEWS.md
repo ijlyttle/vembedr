@@ -2,14 +2,14 @@
 
 ### To do
 
-- figures out fiddly-bits for javascript to suppress vimeo autoplay when start-time is specified
 - adds `embed_facebook()`, `use_facebook()`
-- adds `suggest_embed()`: given a URL, provides suggested code to embed video
+- figures out fiddly-bits for javascript to suppress vimeo autoplay when start-time is specified
 
 ---
 
 ### Done
 
+- adds `suggest_embed()`: given a URL, provides suggested code to embed video
 - fully deprecates `allow_full_screen` argument
 - adds **pkgdown** support 
 - version bump for development

@@ -7,15 +7,15 @@
 #'   also silently returns the suggested code as character
 #'
 #' @examples
-#'   suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
-#'   suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+#' suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
+#' suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 #' @export
 #'
 suggest_embed <- function(url){
 
-  parse_list <- parse_video_url_(url)
+  parse_list <- parse_video_url(url)
 
-  suggest_list <- suggest_embed_(parse_list)
+  suggest_list <- build_suggestion(parse_list)
 
   str_message <- paste(unlist(suggest_list), collapse = " %>%\n  ")
 
@@ -28,7 +28,7 @@ suggest_embed <- function(url){
 #'
 #' This is an internal function, supporting \code{\link{suggest_embed}}
 #'
-#' @param parse_list, list generated using \code{\link{.parse_video_url}}
+#' @param parse_list, list generated using \code{\link{parse_video_url}}
 #'   with members:
 #'   \describe{
 #'     \item{service}{character, describes which service is used}
@@ -41,13 +41,13 @@ suggest_embed <- function(url){
 #'   \item{embed}{character, code for \code{\link{embed}} call}
 #'   \item{start_time}{character, (optional) code for \code{\link{use_start_time}} call}
 #' }
-#' @seealso \code{\link{suggest_embed}} \code{\link{parse_video_url_}}
+#' @seealso \code{\link{suggest_embed}} \code{\link{parse_video_url}}
 #' @examples
-#'   parse_video_url_("https://youtu.be/1-vcErOPofQ?t=28s") %>%
-#'   suggest_embed_()
+#' parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s") %>%
+#' build_suggestion()
 #' @export
 #'
-suggest_embed_ <- function(parse_list){
+build_suggestion <- function(parse_list){
 
   str_embed <-
     paste0("embed_", parse_list$service, "(\"", parse_list$id, "\")")
@@ -83,10 +83,10 @@ suggest_embed_ <- function(parse_list){
 #' @keywords internal
 #' @seealso suggest_embed
 #' @examples
-#'
+#' parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s")
 #' @export
 #'
-parse_video_url_ <- function(url){
+parse_video_url <- function(url){
 
   list_parse <- list(
     `channel9.msdn.com` = .parse_channel9,
