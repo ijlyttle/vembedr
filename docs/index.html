@@ -46,6 +46,11 @@
 <div class="page-header"><h1 class="hasAnchor"><a href="#vebmedr" class="anchor"> </a>vebmedr</h1></div>
 
 <p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your <strong>rmarkdown</strong> documents and your <strong>shiny</strong> apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).</p>
+<div id="coming-to-version-0-1-2" class="section level2">
+<h2 class="hasAnchor"><a href="#coming-to-version-0-1-2" class="anchor"> </a>Coming to version 0.1.2</h2>
+<p>These features are in the development version, not yet on CRAN:</p>
+<ul><li>New function, <code><a href="reference/suggest_embed.html">suggest_embed()</a></code>, that takes a URL from a video&rsquo;s web-page and suggests embedding code.</li>
+</ul></div>
 <div id="new-to-version-0-1-1" class="section level2">
 <h2 class="hasAnchor"><a href="#new-to-version-0-1-1" class="anchor"> </a>New to version 0.1.1</h2>
 <ul><li>Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.</li>
@@ -71,7 +76,9 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>For these examples, it can be useful to load the <strong>htmltools</strong> package along with the <strong>vembedr</strong> package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"vembedr"</span>)</code></pre></div>
-<p>To embed a YouTube video, simply use its <code>id</code>, which you can get from the original URL.</p>
+<p>To embed a YouTube video, simply use its <code>id</code>, which you can get from the original URL. Or, to have the code suggested, you can use <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> using the video&rsquo;s URL:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/suggest_embed.html">suggest_embed</a></span>(<span class="st">"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)
+<span class="co">#&gt; embed_youtube("1-vcErOPofQ")</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
 <p>Similarly, to embed a Vimeo, use its <code>id</code>. Note that we can apply some formatting by wrapping the output of the <code><a href="reference/embed.html">embed_vimeo()</a></code> function in an <strong>htmltools</strong> <code>div()</code>.</p>

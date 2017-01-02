@@ -66,7 +66,11 @@ library("htmltools")
 library("vembedr")
 ```
 
-To embed a YouTube video, simply use its `id`, which you can get from the original URL.
+To embed a YouTube video, simply use its `id`, which you can get from the original URL. Or, to have the code suggested, you can use `suggest_embed()` using the video's URL:
+
+```{r}
+suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+```
 
 ```{r}
 embed_youtube(id = "1-vcErOPofQ")

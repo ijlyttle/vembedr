@@ -15,7 +15,7 @@ called for side-effects,
   also silently returns the suggested code as character
 }
 \description{
-Suggest embedding-code based on a URL
+This function is meant to work with URLs from any of the supported services.
 }
 \examples{
 suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")

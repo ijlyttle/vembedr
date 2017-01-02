@@ -6,6 +6,13 @@ vebmedr
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).
 
+Coming to version 0.1.2
+-----------------------
+
+These features are in the development version, not yet on CRAN:
+
+-   New function, `suggest_embed()`, that takes a URL from a video's web-page and suggests embedding code.
+
 New to version 0.1.1
 --------------------
 
@@ -47,7 +54,12 @@ library("htmltools")
 library("vembedr")
 ```
 
-To embed a YouTube video, simply use its `id`, which you can get from the original URL.
+To embed a YouTube video, simply use its `id`, which you can get from the original URL. Or, to have the code suggested, you can use `suggest_embed()` using the video's URL:
+
+``` r
+suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+#> embed_youtube("1-vcErOPofQ")
+```
 
 ``` r
 embed_youtube(id = "1-vcErOPofQ")

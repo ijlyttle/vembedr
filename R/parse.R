@@ -1,5 +1,7 @@
 #' Suggest embedding-code based on a URL
 #'
+#' This function is meant to work with URLs from any of the supported services.
+#'
 #' @param url  character, can be copied from browser location or from
 #'   the "share" output on a video's web page
 #'
@@ -97,7 +99,13 @@ parse_video_url <- function(url){
 
   url_parsed <- httr::parse_url(url)
 
-  # what to do if hostname not there
+  # what to do if hostname not supported
+  if (!(url_parsed$hostname %in% names(list_parse))){
+    stop(
+      paste0("Video service at `", url_parsed$hostname, "` not supported."),
+      call. = FALSE
+    )
+  }
 
   fn_parse <- list_parse[[url_parsed$hostname]]
 
@@ -122,10 +130,16 @@ parse_video_url <- function(url){
 }
 
 .parse_vimeo <- function(url_parsed){
+
+  start_time <- NULL
+  if (!is.null(url_parsed$fragment)){
+    start_time <- sub("^t=", "", url_parsed$fragment) # removes leading "t="
+  }
+
   list(
     service = "vimeo",
     id = url_parsed$path,
-    start_time = sub("^t=", "", url_parsed$fragment) # removes the leading "t="
+    start_time = start_time
   )
 }
 

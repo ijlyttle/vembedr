@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2017-01-01" />
+<meta name="date" content="2017-01-02" />
 
 <title>Helper functions</title>
 
@@ -70,16 +70,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Helper functions</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2017-01-01</em></h4>
+<h4 class="date"><em>2017-01-02</em></h4>
 
 
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;htmltools&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;vembedr&quot;</span>)</code></pre></div>
-<p>It’s a bit inconvenient to visit a service’s API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called <code>use_something()</code> and can be composed using the pipe, <code>%&gt;%</code>. At this point, there is one such helper-function: <code>use_start_time()</code>.</p>
 <div id="start-time" class="section level2">
 <h2>Start time</h2>
-<p>To specify the start time, simply pipe your embed function to the <code>use_start_time()</code> function, which figures out which service you are using, then does the “right thing” to modify the query or fragment.</p>
+<p>It’s a bit inconvenient to visit a service’s API page to figure out how do something relatively common, such as specifying a start time.</p>
+<p>Instead, you can pipe the output of your embed function to the <code>use_start_time()</code> function, which figures out which service you are using, then does the “right thing” to modify the query or fragment.</p>
 <p>The <code>use_start_time()</code> function will treat these all of these inputs equivalently:</p>
 <ul>
 <li><code>&quot;0h1m0s&quot;</code>, <code>&quot;0h01m00s&quot;</code>, <code>&quot;0h1m&quot;</code></li>
@@ -94,6 +94,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="vimeo-caveat" class="section level3">
 <h3>Vimeo caveat</h3>
 <p>For Vimeo there is one caveat: the specification of start-time causes the video to autoplay without an API recourse to prevent autoplay. Please see this <a href="https://vimeo.com/forums/topic:49396">Vimeo-forum thread</a> for more informaton.</p>
+</div>
+</div>
+<div id="suggest-code" class="section level2">
+<h2>Suggest code</h2>
+<p>If you have the URL of the video you want to embed, you can use the <code>suggest_embed()</code> function to return to you some suggested code for you to use.</p>
+<p>Behind the scenes, the function parses the URL to determine the service, the identifier, and (if applicable) the start time.</p>
+<div id="youtube" class="section level3">
+<h3>YouTube</h3>
+<p>You can provide the URL from your browser’s address window:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suggest_embed</span>(<span class="st">&quot;https://www.youtube.com/watch?v=1-vcErOPofQ&quot;</span>)</code></pre></div>
+<pre><code>## embed_youtube(&quot;1-vcErOPofQ&quot;)</code></pre>
+<p>You can also provide the URL from the YouTube “Share” button:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suggest_embed</span>(<span class="st">&quot;https://youtu.be/1-vcErOPofQ?t=28s&quot;</span>)</code></pre></div>
+<pre><code>## embed_youtube(&quot;1-vcErOPofQ&quot;) %&gt;%
+##   use_start_time(&quot;28s&quot;)</code></pre>
+</div>
+<div id="vimeo" class="section level3">
+<h3>Vimeo</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suggest_embed</span>(<span class="st">&quot;https://vimeo.com/131407894&quot;</span>)</code></pre></div>
+<pre><code>## embed_vimeo(&quot;131407894&quot;)</code></pre>
+</div>
+<div id="channel-9" class="section level3">
+<h3>Channel 9</h3>
+<p>This works for the UseR! 2016 videos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suggest_embed</span>(<span class="st">&quot;https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM?ocid=player&quot;</span>)</code></pre></div>
+<pre><code>## embed_user2016(&quot;Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM&quot;)</code></pre>
+<p>It also works for the other Channel 9 videos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suggest_embed</span>(<span class="st">&quot;https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads&quot;</span>)</code></pre></div>
+<pre><code>## embed_channel9(&quot;Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads&quot;)</code></pre>
 </div>
 </div>
 <div id="video-specification" class="section level2">

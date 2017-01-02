@@ -14,11 +14,11 @@ library("htmltools")
 library("vembedr")
 ```
 
-It's a bit inconvenient to visit a service's API page to figure out how do something relatively common, like specify a start time. For this reason a consistent set of helper functions is offered. It is proposed that helper functions used to modify the URL will be called `use_something()` and can be composed using the pipe, `%>%`. At this point, there is one such helper-function: `use_start_time()`.
-
 ## Start time
 
-To specify the start time, simply pipe your embed function to the `use_start_time()` function, which figures out which service you are using, then does the "right thing" to modify the query or fragment. 
+It's a bit inconvenient to visit a service's API page to figure out how do something relatively common, such as specifying a start time. 
+
+Instead, you can pipe the output of your embed function to the `use_start_time()` function, which figures out which service you are using, then does the "right thing" to modify the query or fragment. 
 
 The `use_start_time()` function will treat these all of these inputs equivalently:
 
@@ -38,6 +38,47 @@ The `use_start_time()` function can be used with all of the `embed()` functions.
 ### Vimeo caveat
 
 For Vimeo there is one caveat: the specification of start-time causes the video to autoplay without an API recourse to prevent autoplay. Please see this [Vimeo-forum thread](https://vimeo.com/forums/topic:49396) for more informaton.
+
+## Suggest code
+
+If you have the URL of the video you want to embed, you can use the `suggest_embed()` function to return to you some suggested code for you to use.
+
+Behind the scenes, the function parses the URL to determine the service, the identifier, and (if applicable) the start time.
+
+### YouTube
+
+You can provide the URL from your browser's address window:
+
+```{r}
+suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+```
+
+You can also provide the URL from the YouTube "Share" button:
+
+```{r}
+suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
+```
+
+### Vimeo
+
+```{r}
+suggest_embed("https://vimeo.com/131407894")
+```
+
+### Channel 9
+
+This works for the UseR! 2016 videos:
+
+```{r}
+suggest_embed("https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM?ocid=player")
+```
+
+It also works for the other Channel 9 videos:
+
+```{r}
+suggest_embed("https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
+```
+
 
 ## Video specification
 
