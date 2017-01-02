@@ -12,6 +12,7 @@ reference:
   desc: ~
   contents:
   - use_start_time
+  - suggest_embed
 
 articles:
 - title: All vignettes

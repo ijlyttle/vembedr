@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • vembedr</title>
+<title>Parse a URL to determine service and id — parse_video_url • vembedr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -75,49 +75,53 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Function reference</h1>
-      <h4>version&nbsp;0.1.1.9000</h4>
+    <h1>Parse a URL to determine service and id</h1>
     </div>
 
-    <div class="contents">
-      <h2 id="section-embedding-functions" class="hasAnchor"><a href="#section-embedding-functions" class="anchor"></a>Embedding functions</h2>
-      <p class="section-desc"></p>
-
-      
-      <p><a href="embed.html">Embed a video into an HTML document</a></p>
-      <ul>
-        <li><code><a href="embed.html">embed</a></code></li><li><code><a href="embed.html">embed_channel9</a></code></li><li><code><a href="embed.html">embed_user2016</a></code></li><li><code><a href="embed.html">embed_vimeo</a></code></li><li><code><a href="embed.html">embed_youtube</a></code></li>
-      </ul>
-      
-      <p><a href="rickroll.html">Embed a popular video</a></p>
-      <ul>
-        <li><code><a href="rickroll.html">rickroll</a></code></li><li><code><a href="rickroll.html">rickroll_channel9</a></code></li><li><code><a href="rickroll.html">rickroll_vimeo</a></code></li><li><code><a href="rickroll.html">rickroll_youtube</a></code></li>
-      </ul>
-          <h2 id="section-helper-functions" class="hasAnchor"><a href="#section-helper-functions" class="anchor"></a>Helper functions</h2>
-      <p class="section-desc"></p>
-
-      
-      <p><a href="suggest_embed.html">Suggest embedding-code based on a URL</a></p>
-      <ul>
-        <li><code><a href="suggest_embed.html">suggest_embed</a></code></li>
-      </ul>
-      
-      <p><a href="use_start_time.html">Specify a start time for an embedded video</a></p>
-      <ul>
-        <li><code><a href="use_start_time.html">use_start_time</a></code></li><li><code><a href="use_start_time.html">use_start_time.default</a></code></li><li><code><a href="use_start_time.html">use_start_time.embed_channel9</a></code></li><li><code><a href="use_start_time.html">use_start_time.embed_vimeo</a></code></li><li><code><a href="use_start_time.html">use_start_time.embed_youtube</a></code></li>
-      </ul>
     
-    </div>
-  </div>
+    <p>Parse a URL to determine service and id</p>
+    
 
+    <pre><span class='fu'>parse_video_url</span>(<span class='no'>url</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <dl class="dl-horizontal">
+      <dt>url</dt>
+      <dd>character, URL to parse</dd>
+    </dl>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>list with members:
+<dl class='dl-horizontal'>
+  <dt>service</dt><dd>character, describes which service is used</dd>
+  <dt>id</dt><dd>character, identifier for the video at the service</dd>
+  <dt>start_time</dt><dd>character, indicates start time</dd>
+</dl></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p>suggest_embed</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-embedding-functions">Embedding functions</a></li>
-      <li><a href="#section-helper-functions">Helper functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
