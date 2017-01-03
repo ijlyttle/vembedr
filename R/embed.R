@@ -52,6 +52,7 @@ embed_vimeo <- function(id, width = 500, height = 281,
   url$fragment <- fragment
 
   embed <- htmltools::tags$iframe(
+    class = "vimeo-embed",
     src = httr::build_url(url),
     width = width,
     height = height,

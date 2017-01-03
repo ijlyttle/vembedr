@@ -1,14 +1,5 @@
 # vembedr 0.1.1.9000
 
-### To do
-
-- adds `embed_facebook()`, `use_facebook()`
-- figures out fiddly-bits for javascript to suppress vimeo autoplay when start-time is specified
-
----
-
-### Done
-
 - adds `suggest_embed()`: given a URL, provides suggested code to embed video
 - fully deprecates `allow_full_screen` argument
 - adds **pkgdown** support 

@@ -79,7 +79,7 @@ div(
 ```
 
 <!--html_preserve-->
-<iframe src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 </iframe>
 
 <!--/html_preserve-->
