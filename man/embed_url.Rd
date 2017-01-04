@@ -2,12 +2,12 @@
 % Please edit documentation in R/embed_url.R
 \name{embed_url}
 \alias{embed_url}
-\title{Embed a video based on url}
+\title{Embed a video based on URL}
 \usage{
 embed_url(url)
 }
 \arguments{
-\item{url}{character, url of webpage for video}
+\item{url}{character, URL of webpage for video}
 }
 \value{
 An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element

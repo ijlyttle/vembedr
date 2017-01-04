@@ -1,4 +1,4 @@
-#' Embed a video based on url
+#' Embed a video based on URL
 #'
 #' You can use this function to embed video using only the URL and you do not
 #' need any customization beyond the start-time.
@@ -8,7 +8,7 @@
 #' This function calls \code{\link{suggest_embed}} then parses and evaluates the code.
 #' If you need to customize the iframe, \code{\link{suggest_embed}} may be more useful to you.
 #'
-#' @param url character, url of webpage for video
+#' @param url character, URL of webpage for video
 #'
 #' @return An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
 #'
@@ -19,7 +19,11 @@
 #'
 embed_url <- function(url){
 
+  parse_text <- function(x){
+    parse(text = x)
+  }
+
   suggest_embed(url, quiet = TRUE) %>%
-    parse(text = .) %>%
+    parse_text() %>%
     eval()
 }
