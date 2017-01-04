@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Suggest embedding-code based on a URL — suggest_embed • vembedr</title>
+<title>Embed a video based on url — embed_url • vembedr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,32 +77,40 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Suggest embedding-code based on a URL</h1>
+    <h1>Embed a video based on url</h1>
     </div>
 
     
-    <p>This function is meant to work with URLs from any of the supported services.</p>
+    <p>You can use this function to embed video using only the URL and you do not
+need any customization beyond the start-time.
+It should work for all the services supported by the <code><a href='embed.html'>embed</a></code>
+family of functions.</p>
     
 
-    <pre><span class='fu'>suggest_embed</span>(<span class='no'>url</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre><span class='fu'>embed_url</span>(<span class='no'>url</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>url</dt>
-      <dd>character, can be copied from browser location or from
-the &quot;share&quot; output on a video&#39;s web page</dd>
-      <dt>quiet</dt>
-      <dd>logical, indicates to supress printing of the suggested code</dd>
+      <dd>character, url of webpage for video</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>character, silently returns the suggested code</p>
+    <p>An embed object that prints an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/builder'>tags</a>$iframe</code> element</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function calls <code><a href='suggest_embed.html'>suggest_embed</a></code> then parses and evaluates the code.
+If you need to customize the iframe, <code><a href='suggest_embed.html'>suggest_embed</a></code> may be more useful to you.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='suggest_embed.html'>suggest_embed</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span>)</div><div class='output co'>#&gt; embed_youtube(&quot;1-vcErOPofQ&quot;) %&gt;%
-#&gt;   use_start_time(&quot;28s&quot;)</div><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)</div><div class='output co'>#&gt; embed_youtube(&quot;1-vcErOPofQ&quot;)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>embed_url</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span>)</div><div class='output co'>#&gt; &lt;iframe src=&quot;https://www.youtube.com/embed/1-vcErOPofQ?start=28&quot; width=&quot;420&quot; height=&quot;315&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -110,6 +118,10 @@ the &quot;share&quot; output on a video&#39;s web page</dd>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

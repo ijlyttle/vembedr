@@ -39,6 +39,16 @@ The `use_start_time()` function can be used with all of the `embed()` functions.
 
 For Vimeo there is one caveat: the specification of start-time causes the video to autoplay without an API recourse to prevent autoplay. Please see this [Vimeo-forum thread](https://vimeo.com/forums/topic:49396) for more informaton.
 
+## Embed based on URL
+
+If you do not need to customization your iframe (i.e., change the default size), this may be useful to you. Simply provide the URL where the video is hosted - the `embed_url()` function will determine if the URL is from one of the supported services - if so, it will return the HTML to embed the video.
+
+```{r}
+embed_url("https://www.youtube.com/watch?v=q2nNzNo_Xps")
+```
+
+If you need to make additional customization, you can usethe `suggest_embed()` function (which this function uses) to provide the R code, which you can then modify to your needs.
+
 ## Suggest code
 
 If you have the URL of the video you want to embed, you can use the `suggest_embed()` function to return to you some suggested code for you to use.

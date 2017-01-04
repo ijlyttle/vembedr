@@ -19,7 +19,7 @@
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
-#' @param allowfullscreen logical, indicates if to allow fullscreen
+#' @param allowfullscreen   logical, indicates if to allow fullscreen
 #' @param query             list of items to include in url-query string
 #' @param fragment          character, string to include as url-fragment
 #'

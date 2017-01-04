@@ -4,15 +4,16 @@
 \alias{suggest_embed}
 \title{Suggest embedding-code based on a URL}
 \usage{
-suggest_embed(url)
+suggest_embed(url, quiet = FALSE)
 }
 \arguments{
 \item{url}{character, can be copied from browser location or from
 the "share" output on a video's web page}
+
+\item{quiet}{logical, indicates to supress printing of the suggested code}
 }
 \value{
-called for side-effects,
-  also silently returns the suggested code as character
+character, silently returns the suggested code
 }
 \description{
 This function is meant to work with URLs from any of the supported services.

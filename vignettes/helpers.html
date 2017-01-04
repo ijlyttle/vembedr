@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2017-01-02" />
+<meta name="date" content="2017-01-04" />
 
 <title>Helper functions</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Helper functions</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2017-01-02</em></h4>
+<h4 class="date"><em>2017-01-04</em></h4>
 
 
 
@@ -95,6 +95,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3>Vimeo caveat</h3>
 <p>For Vimeo there is one caveat: the specification of start-time causes the video to autoplay without an API recourse to prevent autoplay. Please see this <a href="https://vimeo.com/forums/topic:49396">Vimeo-forum thread</a> for more informaton.</p>
 </div>
+</div>
+<div id="embed-based-on-url" class="section level2">
+<h2>Embed based on URL</h2>
+<p>If you do not need to customization your iframe (i.e., change the default size), this may be useful to you. Simply provide the URL where the video is hosted - the <code>embed_url()</code> function will determine if the URL is from one of the supported services - if so, it will return the HTML to embed the video.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_url</span>(<span class="st">&quot;https://www.youtube.com/watch?v=q2nNzNo_Xps&quot;</span>)</code></pre></div>
+<iframe src="https://www.youtube.com/embed/q2nNzNo_Xps" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<p>If you need to make additional customization, you can usethe <code>suggest_embed()</code> function (which this function uses) to provide the R code, which you can then modify to your needs.</p>
 </div>
 <div id="suggest-code" class="section level2">
 <h2>Suggest code</h2>

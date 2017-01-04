@@ -2,18 +2,18 @@
 #'
 #' This function is meant to work with URLs from any of the supported services.
 #'
-#' @param url  character, can be copied from browser location or from
+#' @param url    character, can be copied from browser location or from
 #'   the "share" output on a video's web page
+#' @param quiet  logical, indicates to supress printing of the suggested code
 #'
-#' @return called for side-effects,
-#'   also silently returns the suggested code as character
+#' @return character, silently returns the suggested code
 #'
 #' @examples
 #' suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
 #' suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 #' @export
 #'
-suggest_embed <- function(url){
+suggest_embed <- function(url, quiet = FALSE){
 
   parse_list <- parse_video_url(url)
 
@@ -21,7 +21,9 @@ suggest_embed <- function(url){
 
   str_message <- paste(unlist(suggest_list), collapse = " %>%\n  ")
 
-  cat(str_message)
+  if (!quiet){
+    cat(str_message)
+  }
 
   invisible(str_message)
 }

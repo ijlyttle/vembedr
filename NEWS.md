@@ -1,5 +1,6 @@
 # vembedr 0.1.1.9000
 
+- adds `embed_url()`: given a URL, build the iframe to embed the video
 - adds `suggest_embed()`: given a URL, provides suggested code to embed video
 - fully deprecates `allow_full_screen` argument
 - adds **pkgdown** support 

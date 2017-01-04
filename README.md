@@ -11,7 +11,8 @@ Coming to version 0.1.2
 
 These features are in the development version, not yet on CRAN:
 
--   New function, `suggest_embed()`, that takes a URL from a video's web-page and suggests embedding-code.
+-   New function, `embed_url()`, given a URL from a video's web-page: build the iframe to embed the video.
+-   New function, `suggest_embed()`, given a URL from a video's web-page: suggests embedding-code.
 
 New to version 0.1.1
 --------------------
@@ -54,7 +55,17 @@ library("htmltools")
 library("vembedr")
 ```
 
-To embed a YouTube video, simply use its identifier, which you can get from the original URL. Or, to have the code suggested, you can use `suggest_embed()` using the video's URL:
+All of the features shown here can be used for all the supported services: YouTube, Vimeo, and Channel 9. Here, the features are mixed-and-matched in the interest of brevity.
+
+To embed a YouTube (or Vimeo, or Channel 9) video you can:
+
+-   Use its identifier, which you can get from the original URL.
+-   To have the code suggested, you can use `suggest_embed()` using the video's URL.
+-   You can embed directly using its URL.
+
+``` r
+embed_youtube("1-vcErOPofQ")
+```
 
 ``` r
 suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
@@ -62,7 +73,7 @@ suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 ```
 
 ``` r
-embed_youtube("1-vcErOPofQ")
+embed_url("https://www.youtube.com/watch?v=1-vcErOPofQ")
 ```
 
 <!--html_preserve-->
