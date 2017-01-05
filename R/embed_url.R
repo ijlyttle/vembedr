@@ -23,7 +23,7 @@ embed_url <- function(url){
     parse(text = x)
   }
 
-  suggest_embed(url, quiet = TRUE) %>%
+  suggest_embed_pure(url) %>%
     parse_text() %>%
     eval()
 }

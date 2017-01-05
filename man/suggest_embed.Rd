@@ -2,24 +2,34 @@
 % Please edit documentation in R/parse.R
 \name{suggest_embed}
 \alias{suggest_embed}
+\alias{suggest_embed_pure}
 \title{Suggest embedding-code based on a URL}
 \usage{
-suggest_embed(url, quiet = FALSE)
+suggest_embed(url)
+
+suggest_embed_pure(url)
 }
 \arguments{
 \item{url}{character, can be copied from browser location or from
 the "share" output on a video's web page}
-
-\item{quiet}{logical, indicates to supress printing of the suggested code}
 }
 \value{
-character, silently returns the suggested code
+character, returns the suggested code (\code{suggest_embed} returns invisibly)
 }
 \description{
 This function is meant to work with URLs from any of the supported services.
+}
+\details{
+\describe{
+  \item{\code{suggest_embed}}{called for the side-effect of
+    printing to the suggested code the screen}
+  \item{\code{suggest_embed_pure}}{returns character string
+    that represents the suggested code}
+}
 }
 \examples{
 suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
 suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 }
+\keyword{internal}
 

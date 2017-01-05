@@ -2,18 +2,36 @@
 #'
 #' This function is meant to work with URLs from any of the supported services.
 #'
+#' \describe{
+#'   \item{\code{suggest_embed}}{called for the side-effect of
+#'     printing to the suggested code the screen}
+#'   \item{\code{suggest_embed_pure}}{returns character string
+#'     that represents the suggested code}
+#' }
+#'
 #' @param url    character, can be copied from browser location or from
 #'   the "share" output on a video's web page
-#' @param quiet  logical, indicates to supress printing of the suggested code
 #'
-#' @return character, silently returns the suggested code
+#' @return character, returns the suggested code (\code{suggest_embed} returns invisibly)
 #'
 #' @examples
 #' suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
 #' suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 #' @export
 #'
-suggest_embed <- function(url, quiet = FALSE){
+suggest_embed <- function(url){
+
+  str_message <- suggest_embed_pure(url)
+
+  cat(str_message)
+
+  invisible(str_message)
+}
+
+#' @keywords internal
+#' @rdname suggest_embed
+#' @export
+suggest_embed_pure <- function(url){
 
   parse_list <- parse_video_url(url)
 
@@ -21,12 +39,9 @@ suggest_embed <- function(url, quiet = FALSE){
 
   str_message <- paste(unlist(suggest_list), collapse = " %>%\n  ")
 
-  if (!quiet){
-    cat(str_message)
-  }
-
-  invisible(str_message)
+  str_message
 }
+
 
 #' Given a parse-list, generate an embed-list
 #'
