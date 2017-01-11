@@ -69,15 +69,16 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>For these examples, it can be useful to load the <strong>htmltools</strong> package along with the <strong>vembedr</strong> package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"vembedr"</span>)</code></pre></div>
+<p>With the newest function, <code><a href="reference/embed_url.html">embed_url()</a></code>, you can use the URL from your browser to embed video:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed_url.html">embed_url</a></span>(<span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span>)</code></pre></div>
+<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<p>If you just want the embedding code, the <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> function may be useful:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/suggest_embed.html">suggest_embed</a></span>(<span class="st">"https://youtu.be/uV4UpCq2azs?t=1m32s"</span>)
+<span class="co">#&gt; embed_youtube("uV4UpCq2azs") %&gt;%</span>
+<span class="co">#&gt;   use_start_time("1m32s")</span></code></pre></div>
 <p>All of the features shown here can be used for all the supported services: YouTube, Vimeo, and Channel 9. Here, the features are mixed-and-matched in the interest of brevity.</p>
-<p>To embed a YouTube (or Vimeo, or Channel 9) video you can:</p>
-<ul><li>Use its identifier, which you can get from the original URL.</li>
-<li>Have the emdedding-code suggested, using <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> with the video&rsquo;s URL.</li>
-<li>You can embed directly using its URL.</li>
-</ul><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/suggest_embed.html">suggest_embed</a></span>(<span class="st">"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)
-<span class="co">#&gt; embed_youtube("1-vcErOPofQ")</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed_url.html">embed_url</a></span>(<span class="st">"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)</code></pre></div>
+<p>To embed a YouTube (or Vimeo, or Channel 9) video you can use its identifier, which you can get from the original URL.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
 <p>Similarly, to embed a Vimeo, use its identifier. Note that we can apply some formatting by wrapping the output of the <code><a href="reference/embed.html">embed_vimeo()</a></code> function in an <strong>htmltools</strong> <code>div()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(

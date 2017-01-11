@@ -45,25 +45,30 @@ library("htmltools")
 library("vembedr")
 ```
 
+With the newest function, `embed_url()`, you can use the URL from your browser to embed video:
+
+``` r
+embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
+```
+
+<!--html_preserve-->
+<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="420" height="315" frameborder="0" allowfullscreen>
+</iframe>
+<!--/html_preserve-->
+If you just want the embedding code, the `suggest_embed()` function may be useful:
+
+``` r
+suggest_embed("https://youtu.be/uV4UpCq2azs?t=1m32s")
+#> embed_youtube("uV4UpCq2azs") %>%
+#>   use_start_time("1m32s")
+```
+
 All of the features shown here can be used for all the supported services: YouTube, Vimeo, and Channel 9. Here, the features are mixed-and-matched in the interest of brevity.
 
-To embed a YouTube (or Vimeo, or Channel 9) video you can:
-
--   Use its identifier, which you can get from the original URL.
--   Have the emdedding-code suggested, using `suggest_embed()` with the video's URL.
--   You can embed directly using its URL.
+To embed a YouTube (or Vimeo, or Channel 9) video you can use its identifier, which you can get from the original URL.
 
 ``` r
 embed_youtube("1-vcErOPofQ")
-```
-
-``` r
-suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
-#> embed_youtube("1-vcErOPofQ")
-```
-
-``` r
-embed_url("https://www.youtube.com/watch?v=1-vcErOPofQ")
 ```
 
 <!--html_preserve-->
