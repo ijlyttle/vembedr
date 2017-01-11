@@ -6,19 +6,11 @@ vebmedr
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).
 
-Coming to version 0.1.2
------------------------
-
-These features are in the development version, not yet on CRAN:
-
--   New function, `embed_url()`, given a URL from a video's web-page: build the iframe to embed the video.
--   New function, `suggest_embed()`, given a URL from a video's web-page: suggests embedding-code.
-
-New to version 0.1.1
+New to version 0.1.2
 --------------------
 
--   Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.
--   A helper function, `use_start_time()`, can be used consistently with YouTube, Vimeo, and Channel 9 embeds.
+-   New function `embed_url()`: given a URL, build the `<iframe/>` to embed the video
+-   New function `suggest_embed()`: given a URL from a video's web-page: suggests embedding-code.
 
 Installation
 ------------
@@ -60,7 +52,7 @@ All of the features shown here can be used for all the supported services: YouTu
 To embed a YouTube (or Vimeo, or Channel 9) video you can:
 
 -   Use its identifier, which you can get from the original URL.
--   To have the code suggested, you can use `suggest_embed()` using the video's URL.
+-   Have the emdedding-code suggested, using `suggest_embed()` with the video's URL.
 -   You can embed directly using its URL.
 
 ``` r

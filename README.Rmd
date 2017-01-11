@@ -25,7 +25,8 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 
 ## New to version 0.1.2
 
-- New function, `suggest_embed()`, given a URL from a video's web-page: suggests embedding-code. 
+- New function `embed_url()`: given a URL, build the `<iframe/>` to embed the video
+- New function `suggest_embed()`: given a URL from a video's web-page: suggests embedding-code. 
 
 ## Installation
 
@@ -64,7 +65,7 @@ All of the features shown here can be used for all the supported services: YouTu
 To embed a YouTube (or Vimeo, or Channel 9) video you can:
 
 - Use its identifier, which you can get from the original URL. 
-- To have the code suggested, you can use `suggest_embed()` using the video's URL.
+- Have the emdedding-code suggested, using `suggest_embed()` with the video's URL.
 - You can embed directly using its URL.
 
 ```{r eval=FALSE}

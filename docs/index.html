@@ -46,16 +46,10 @@
 <div class="page-header"><h1 class="hasAnchor"><a href="#vebmedr" class="anchor"> </a>vebmedr</h1></div>
 
 <p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your <strong>rmarkdown</strong> documents and your <strong>shiny</strong> apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).</p>
-<div id="coming-to-version-0-1-2" class="section level2">
-<h2 class="hasAnchor"><a href="#coming-to-version-0-1-2" class="anchor"> </a>Coming to version 0.1.2</h2>
-<p>These features are in the development version, not yet on CRAN:</p>
-<ul><li>New function, <code><a href="reference/embed_url.html">embed_url()</a></code>, given a URL from a video&rsquo;s web-page: build the iframe to embed the video.</li>
-<li>New function, <code><a href="reference/suggest_embed.html">suggest_embed()</a></code>, given a URL from a video&rsquo;s web-page: suggests embedding-code.</li>
-</ul></div>
-<div id="new-to-version-0-1-1" class="section level2">
-<h2 class="hasAnchor"><a href="#new-to-version-0-1-1" class="anchor"> </a>New to version 0.1.1</h2>
-<ul><li>Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.</li>
-<li>A helper function, <code><a href="reference/use_start_time.html">use_start_time()</a></code>, can be used consistently with YouTube, Vimeo, and Channel 9 embeds.</li>
+<div id="new-to-version-0-1-2" class="section level2">
+<h2 class="hasAnchor"><a href="#new-to-version-0-1-2" class="anchor"> </a>New to version 0.1.2</h2>
+<ul><li>New function <code><a href="reference/embed_url.html">embed_url()</a></code>: given a URL, build the <code>&lt;iframe/&gt;</code> to embed the video</li>
+<li>New function <code><a href="reference/suggest_embed.html">suggest_embed()</a></code>: given a URL from a video&rsquo;s web-page: suggests embedding-code.</li>
 </ul></div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor"><a href="#installation" class="anchor"> </a>Installation</h2>
@@ -80,7 +74,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>All of the features shown here can be used for all the supported services: YouTube, Vimeo, and Channel 9. Here, the features are mixed-and-matched in the interest of brevity.</p>
 <p>To embed a YouTube (or Vimeo, or Channel 9) video you can:</p>
 <ul><li>Use its identifier, which you can get from the original URL.</li>
-<li>To have the code suggested, you can use <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> using the video&rsquo;s URL.</li>
+<li>Have the emdedding-code suggested, using <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> with the video&rsquo;s URL.</li>
 <li>You can embed directly using its URL.</li>
 </ul><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/suggest_embed.html">suggest_embed</a></span>(<span class="st">"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)
@@ -117,6 +111,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 </ul><h2>License</h2>
 <p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE">LICENSE</a></p>
 <h2>Developers</h2><ul class="list-unstyled"><li>Ian Lyttle <br><small class="roles"> Author, maintainer, copyright&nbsp;holder </small> </li>
+<li><a href="authors.html">All authors...</a></li>
 </ul><html><body><h2>Dev status</h2><ul class="list-unstyled"><li><a href="http://cran.r-project.org/package=vembedr">
   <img src="http://www.r-pkg.org/badges/version/vembedr" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://travis-ci.org/ijlyttle/vembedr">
