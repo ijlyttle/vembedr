@@ -30,18 +30,16 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 
 ## Installation
 
-You can install the latest released version from CRAN with
+You can install the latest released version from CRAN with:
 
 ```{r eval=FALSE}
 install.packages("vembedr")
 ```
 
-or the latest development version from github with
+or the latest development version from GitHub with:
 
 ```{r eval=FALSE}
-if (packageVersion("devtools") < 1.6) {
-  install.packages("devtools")
-}
+# install.packages("devtools")
 devtools::install_github("ijlyttle/vembedr")
 ```
 

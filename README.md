@@ -15,18 +15,16 @@ New to version 0.1.2
 Installation
 ------------
 
-You can install the latest released version from CRAN with
+You can install the latest released version from CRAN with:
 
 ``` r
 install.packages("vembedr")
 ```
 
-or the latest development version from github with
+or the latest development version from GitHub with:
 
 ``` r
-if (packageVersion("devtools") < 1.6) {
-  install.packages("devtools")
-}
+# install.packages("devtools")
 devtools::install_github("ijlyttle/vembedr")
 ```
 
