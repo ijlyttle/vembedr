@@ -1,6 +1,6 @@
 Package: vembedr
 Title: Functions to Embed Video in HTML
-Version: 0.1.1.9000
+Version: 0.1.2
 Authors@R: c(
     person("Ian", "Lyttle", email = "ian.lyttle@schneider-electric.com", role = c("aut", "cre", "cph")),
     person(family = "Schneider Electric", role = c("cph"))

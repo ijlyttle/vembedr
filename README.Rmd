@@ -23,17 +23,9 @@ knitr::opts_chunk$set(
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).
 
-## Coming to version 0.1.2
+## New to version 0.1.2
 
-These features are in the development version, not yet on CRAN:
-
-- New function, `embed_url()`, given a URL from a video's web-page: build the iframe to embed the video.
 - New function, `suggest_embed()`, given a URL from a video's web-page: suggests embedding-code. 
-
-## New to version 0.1.1
-
-- Embed useR! 2016 videos, and by extension, Microsoft Channel 9 videos.
-- A helper function, `use_start_time()`, can be used consistently with YouTube, Vimeo, and Channel 9 embeds.
 
 ## Installation
 

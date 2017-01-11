@@ -1,4 +1,4 @@
-#' This does not work - yet!
+# not to be used yet, still buggy
 use_vimeo_js <- function(){
 
   htmltools::tagList(
