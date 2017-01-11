@@ -2,7 +2,7 @@
 vebmedr
 =======
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/vembedr)](http://cran.r-project.org/package=vembedr) [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/vembedr/master.svg)](https://codecov.io/github/ijlyttle/vembedr?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr) [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/vembedr/master.svg)](https://codecov.io/github/ijlyttle/vembedr?branch=master)
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).
 
