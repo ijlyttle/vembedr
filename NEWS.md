@@ -1,3 +1,7 @@
+## vembedr 0.1.2.9000
+
+- version bump for development
+
 ## vembedr 0.1.2
 
 - adds `embed_url()`: given a URL, build the `<iframe/>` to embed the video
