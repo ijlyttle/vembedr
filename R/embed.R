@@ -32,6 +32,7 @@
 #' embed_youtube("dQw4w9WgXcQ")
 #' embed_vimeo("45196609")
 #' embed_user2016("Literate-Programming")
+#' embed_user2017("Room-202-Lightning-Talks") %>% use_start_time("26m35s")
 #'
 NULL
 

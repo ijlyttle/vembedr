@@ -1,5 +1,6 @@
 ## vembedr 0.1.2.9000
 
+- adds function `embed_user2017()`: embed videos from UseR!2017
 - version bump for development
 
 ## vembedr 0.1.2

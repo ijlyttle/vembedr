@@ -2,9 +2,9 @@
 % Please edit documentation in R/rickroll.R
 \name{rickroll}
 \alias{rickroll}
-\alias{rickroll_channel9}
 \alias{rickroll_vimeo}
 \alias{rickroll_youtube}
+\alias{rickroll_channel9}
 \title{Embed a popular video}
 \usage{
 rickroll_vimeo(...)
@@ -30,4 +30,3 @@ may be useful to you.
   rickroll_channel9()
 
 }
-

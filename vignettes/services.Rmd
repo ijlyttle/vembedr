@@ -13,7 +13,7 @@ The foundation of this package is the `embed()` family of functions, used to gen
 
 - [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
 - [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
-- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 videos. Click the *Embed* tab for emdedding options.
+- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 and 2017 videos. Click the *Embed* tab for emdedding options.
 
 One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the *helpers* vignette deals with how to set the start-time.
 
@@ -73,7 +73,7 @@ The Vimeo identifier is just the path part of the URL: **`110538136`**:
 embed_vimeo(id = "110538136")
 ```
 
-## UseR! 2016
+## UseR!2016 (and 2017)
 
 One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft's Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.
 
@@ -90,7 +90,7 @@ tags$p(
 )
 ```
 
-For a UseR! 2016 video, the identifier is the last component of path of the URL, in this case: **`Forty-years-of-S`**. To embed the video:
+For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: **`Forty-years-of-S`**. To embed the video:
 
 ```{r}
 embed_user2016(id = "Forty-years-of-S")
@@ -98,9 +98,9 @@ embed_user2016(id = "Forty-years-of-S")
 
 ## Channel 9
 
-The UseR! 2016 videos are hosted on Microsoft's Channel 9 service, so an embed function is provided to use it.
+The UseR! 2016 ans 2017 videos are hosted on Microsoft's Channel 9 service, so an embed function is provided to use it.
 
-Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a  great video; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.
+Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a great video; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.
 
 Here's the URL:
 

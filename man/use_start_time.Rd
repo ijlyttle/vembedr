@@ -3,9 +3,9 @@
 \name{use_start_time}
 \alias{use_start_time}
 \alias{use_start_time.default}
-\alias{use_start_time.embed_channel9}
-\alias{use_start_time.embed_vimeo}
 \alias{use_start_time.embed_youtube}
+\alias{use_start_time.embed_vimeo}
+\alias{use_start_time.embed_channel9}
 \title{Specify a start time for an embedded video}
 \usage{
 use_start_time(...)
@@ -52,4 +52,3 @@ specify that the video be paused at this time. In other words, it is like
     use_start_time("3m32s")
 
 }
-

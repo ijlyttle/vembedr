@@ -32,4 +32,3 @@ suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
 suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
 }
 \keyword{internal}
-

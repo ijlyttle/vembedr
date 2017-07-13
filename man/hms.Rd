@@ -23,4 +23,3 @@ Create an hours-minutes-seconds string
 \seealso{
 \code{\link{secs}}
 }
-

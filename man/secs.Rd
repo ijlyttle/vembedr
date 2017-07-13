@@ -27,4 +27,3 @@ This could be useful for composing query parameters for YouTube embeds.
 \seealso{
 \code{\link{embed_youtube}}, \code{\link{hms}}
 }
-

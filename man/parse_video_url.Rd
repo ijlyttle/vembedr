@@ -27,4 +27,3 @@ parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s")
 suggest_embed
 }
 \keyword{internal}
-

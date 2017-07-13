@@ -4,13 +4,12 @@ vebmedr
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr) [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr) [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/vembedr/master.svg)](https://codecov.io/github/ijlyttle/vembedr?branch=master)
 
-The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 videos).
+The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 and 2017 videos).
 
-New to version 0.1.2
---------------------
+New to version 0.1.2.9000 (development)
+---------------------------------------
 
--   New function `embed_url()`: given a URL, build the `<iframe/>` to embed the video
--   New function `suggest_embed()`: given a URL from a video's web-page: suggests embedding-code.
+-   Adds function `embed_user2017()`: embed videos from UseR!2017
 
 Installation
 ------------
@@ -33,7 +32,9 @@ Note for GitHub README and RStudio viewer
 
 The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit the [GitHub pages](http://ijlyttle.github.io/vembedr/) site, built using [pkgdown](http://hadley.github.io/pkgdown/).
 
-If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. Simply open your preview in an external browser.
+If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the [learnr](https://rstudio.github.io/learnr/) package, the IDE support embedding of Vimeo and YouTube videos.
+
+Otherwise, you can simply open your preview in an external browser.
 
 Examples
 --------
@@ -91,17 +92,17 @@ div(
 <!--/html_preserve-->
 Hat tip to Karthik Ram for [tweeting](https://twitter.com/_inundata/status/794616331727294464) out this Vimeo.
 
-For YouTube, Vimeo, and Microsoft Channel 9 (hosts of the User! 2016 videos) you can specify a start time. Please note that for Vimeo, specifying a start time implies that the video **will** be auto-played (which can be annoying).
+For YouTube, Vimeo, and Microsoft Channel 9 (hosts of the User! 2016 and 2017 videos) you can specify a start time. Please note that for Vimeo, specifying a start time implies that the video **will** be auto-played (which can be annoying).
 
-Here's an example using a lightning presentation from UseR! 2016:
+Here's an example using a lightning presentation from UseR!2017:
 
 ``` r
-embed_user2016("Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM") %>% 
-  use_start_time("21m45s")
+embed_user2017("Room-202-Lightning-Talks") %>% 
+  use_start_time("26m35s")
 ```
 
 <!--html_preserve-->
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Day-3-Siepr-130-Ligtning-Talks-100-PM-140-PM/player#time=0h21m45s:paused" width="560" height="315" frameborder="0" allowfullscreen>
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen>
 </iframe>
 <!--/html_preserve-->
 Code of Conduct

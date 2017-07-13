@@ -2,10 +2,11 @@
 % Please edit documentation in R/embed.R
 \name{embed}
 \alias{embed}
-\alias{embed_channel9}
-\alias{embed_user2016}
 \alias{embed_vimeo}
 \alias{embed_youtube}
+\alias{embed_user2016}
+\alias{embed_user2017}
+\alias{embed_channel9}
 \title{Embed a video into an HTML document}
 \usage{
 embed_vimeo(id, width = 500, height = 281, frameborder = 0,
@@ -15,6 +16,9 @@ embed_youtube(id, width = 420, height = 315, frameborder = 0,
   allowfullscreen = TRUE, query = NULL)
 
 embed_user2016(id, width = 560, height = 315, frameborder = 0,
+  allowfullscreen = TRUE)
+
+embed_user2017(id, width = 560, height = 315, frameborder = 0,
   allowfullscreen = TRUE)
 
 embed_channel9(id, width = 560, height = 315, frameborder = 0,
@@ -59,9 +63,9 @@ according to the service being used:
 embed_youtube("dQw4w9WgXcQ")
 embed_vimeo("45196609")
 embed_user2016("Literate-Programming")
+embed_user2017("Room-202-Lightning-Talks") \%>\% use_start_time("26m35s")
 
 }
 \seealso{
 \code{\link{use_start_time}}
 }
-

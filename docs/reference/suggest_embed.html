@@ -11,8 +11,8 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,16 +86,19 @@
     <p>This function is meant to work with URLs from any of the supported services.</p>
     
 
-    <pre><span class='fu'>suggest_embed</span>(<span class='no'>url</span>)
+    <pre class="usage"><span class='fu'>suggest_embed</span>(<span class='no'>url</span>)
 
 <span class='fu'>suggest_embed_pure</span>(<span class='no'>url</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>url</dt>
-      <dd>character, can be copied from browser location or from
-the &quot;share&quot; output on a video&#39;s web page</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>url</th>
+      <td><p>character, can be copied from browser location or from
+the "share" output on a video's web page</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -101,17 +106,17 @@ the &quot;share&quot; output on a video&#39;s web page</dd>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><dl class='dl-horizontal'>
-  <dt><code>suggest_embed</code></dt><dd>called for the side-effect of
-    printing to the suggested code the screen</dd>
-  <dt><code>suggest_embed_pure</code></dt><dd>returns character string
-    that represents the suggested code</dd>
-</dl></p>
+    <dl class='dl-horizontal'>
+  <dt><code>suggest_embed</code></dt><dd><p>called for the side-effect of
+    printing to the suggested code the screen</p></dd>
+  <dt><code>suggest_embed_pure</code></dt><dd><p>returns character string
+    that represents the suggested code</p></dd>
+</dl>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span>)</div><div class='output co'>#&gt; embed_youtube(&quot;1-vcErOPofQ&quot;) %&gt;%
-#&gt;   use_start_time(&quot;28s&quot;)</div><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)</div><div class='output co'>#&gt; embed_youtube(&quot;1-vcErOPofQ&quot;)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span>)</div><div class='output co'>#&gt; embed_youtube("1-vcErOPofQ") %&gt;%
+#&gt;   use_start_time("28s")</div><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)</div><div class='output co'>#&gt; embed_youtube("1-vcErOPofQ")</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

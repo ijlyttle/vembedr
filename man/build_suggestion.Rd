@@ -32,4 +32,3 @@ build_suggestion()
 \seealso{
 \code{\link{suggest_embed}} \code{\link{parse_video_url}}
 }
-
