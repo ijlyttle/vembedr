@@ -32,7 +32,7 @@ Note for GitHub README and RStudio viewer
 
 The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit the [GitHub pages](http://ijlyttle.github.io/vembedr/) site, built using [pkgdown](http://hadley.github.io/pkgdown/).
 
-If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the [learnr](https://rstudio.github.io/learnr/) package, the IDE support embedding of Vimeo and YouTube videos.
+If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the [learnr](https://rstudio.github.io/learnr/) package, the IDE-viewer supports embedding of Vimeo and YouTube videos.
 
 Otherwise, you can simply open your preview in an external browser.
 

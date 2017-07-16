@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Functions to Embed Video in HTML • vembedr</title>
-<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -29,10 +29,28 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="/index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="articles/index.html">Articles</a>
+  <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/helpers.html">Helper functions</a>
+    </li>
+    <li>
+      <a href="articles/services.html">Video services</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="news/index.html">News</a>
@@ -80,13 +98,13 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"vembedr"</span>)</code></pre></div>
 <p>or the latest development version from GitHub with:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vembedr"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"ijlyttle/vembedr"</span>)</code></pre></div>
 </div>
 <div id="note-for-github-readme-and-rstudio-viewer" class="section level2">
 <h2 class="hasAnchor">
 <a href="#note-for-github-readme-and-rstudio-viewer" class="anchor"></a>Note for GitHub README and RStudio viewer</h2>
 <p>The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit the <a href="http://ijlyttle.github.io/vembedr/">GitHub pages</a> site, built using <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
-<p>If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the <a href="https://rstudio.github.io/learnr/">learnr</a> package, the IDE support embedding of Vimeo and YouTube videos.</p>
+<p>If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the <a href="https://rstudio.github.io/learnr/">learnr</a> package, the IDE-viewer supports embedding of Vimeo and YouTube videos.</p>
 <p>Otherwise, you can simply open your preview in an external browser.</p>
 </div>
 <div id="examples" class="section level2">
@@ -106,8 +124,8 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>To embed a YouTube (or Vimeo, or Channel 9) video you can use its identifier, which you can get from the original URL.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="st">"1-vcErOPofQ"</span>)</code></pre></div>
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
-<p>Similarly, to embed a Vimeo, use its identifier. Note that we can apply some formatting by wrapping the output of the <code><a href="reference/embed.html">embed_vimeo()</a></code> function in an <strong>htmltools</strong> <code>div()</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">div</span>(
+<p>Similarly, to embed a Vimeo, use its identifier. Note that we can apply some formatting by wrapping the output of the <code><a href="reference/embed.html">embed_vimeo()</a></code> function in an <strong>htmltools</strong> <code><a href="http://www.rdocumentation.org/packages/htmltools/topics/builder">div()</a></code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/htmltools/topics/builder">div</a></span>(
   <span class="dt">align =</span> <span class="st">"center"</span>,
   <span class="kw"><a href="reference/embed.html">embed_vimeo</a></span>(<span class="st">"189919038"</span>)
 )</code></pre></div>
@@ -117,7 +135,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 <p>Hat tip to Karthik Ram for <a href="https://twitter.com/_inundata/status/794616331727294464">tweeting</a> out this Vimeo.</p>
 <p>For YouTube, Vimeo, and Microsoft Channel 9 (hosts of the User! 2016 and 2017 videos) you can specify a start time. Please note that for Vimeo, specifying a start time implies that the video <strong>will</strong> be auto-played (which can be annoying).</p>
 <p>Here’s an example using a lightning presentation from UseR!2017:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_user2017</a></span>(<span class="st">"Room-202-Lightning-Talks"</span>) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/embed.html">embed_user2017</a></span>(<span class="st">"Room-202-Lightning-Talks"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="reference/use_start_time.html">use_start_time</a></span>(<span class="st">"26m35s"</span>)</code></pre></div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>
@@ -131,7 +149,8 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Links</h2>
+    <h2 class="hasAnchor">
+<a href="#sidebar" class="anchor"></a>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cran.r-project.org/package=vembedr">https://​cran.r-project.org/​package=vembedr</a>
 </li>
@@ -141,7 +160,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/vemb
 </li>
 </ul>
 <h2>License</h2>
-<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE">LICENSE</a></p>
+<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE.html">LICENSE</a></p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Ian Lyttle <br><small class="roles"> Author, maintainer, copyright holder </small> </li>

@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2017-01-02" />
+<meta name="date" content="2017-07-16" />
 
 <title>Video services</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Video services</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2017-01-02</em></h4>
+<h4 class="date"><em>2017-07-16</em></h4>
 
 
 
@@ -78,7 +78,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="https://developers.google.com/youtube/player_parameters">YouTube IFrame API</a></li>
 <li><a href="https://developer.vimeo.com/player/embedding">Vimeo emebedding</a></li>
-<li><a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a>, which includes the UseR! 2016 videos. Click the <em>Embed</em> tab for emdedding options.</li>
+<li><a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a>, which includes the UseR! 2016 and 2017 videos. Click the <em>Embed</em> tab for emdedding options.</li>
 </ul>
 <p>One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the <em>helpers</em> vignette deals with how to set the start-time.</p>
 <p>Each of the services exposes <code>height</code> and <code>width</code> arguments; each of the <code>embed()</code> functions has these arguments. The defaults for each service are taken from that service’s default values.</p>
@@ -109,22 +109,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </p>
 <p>The Vimeo identifier is just the path part of the URL: <strong><code>110538136</code></strong>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;110538136&quot;</span>)</code></pre></div>
-<iframe src="https://player.vimeo.com/video/110538136" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/110538136" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 </div>
-<div id="user-2016" class="section level2">
-<h2>UseR! 2016</h2>
+<div id="user2016-and-2017" class="section level2">
+<h2>UseR!2016 (and 2017)</h2>
 <p>One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft’s Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.</p>
 <p>Consider Rick Becker’s talk on the history of the S language. Seriously, consider it - now, if you have not already seen it:</p>
 <p>
 <code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/<strong>Forty-years-of-S</strong></code>
 </p>
-<p>For a UseR! 2016 video, the identifier is the last component of path of the URL, in this case: <strong><code>Forty-years-of-S</code></strong>. To embed the video:</p>
+<p>For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: <strong><code>Forty-years-of-S</code></strong>. To embed the video:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Forty-years-of-S&quot;</span>)</code></pre></div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <div id="channel-9" class="section level2">
 <h2>Channel 9</h2>
-<p>The UseR! 2016 videos are hosted on Microsoft’s Channel 9 service, so an embed function is provided to use it.</p>
+<p>The UseR! 2016 ans 2017 videos are hosted on Microsoft’s Channel 9 service, so an embed function is provided to use it.</p>
 <p>Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a great video; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.</p>
 <p>Here’s the URL:</p>
 <p>
@@ -146,7 +146,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
