@@ -20,7 +20,7 @@ use_start_time(...)
   ...)
 }
 \arguments{
-\item{...}{generic argumentss to pass through}
+\item{...}{generic arguments to pass through}
 
 \item{embed}{embed object made using an \code{\link{embed}} function}
 

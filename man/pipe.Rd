@@ -4,7 +4,7 @@
 \alias{\%>\%}
 \title{Pipe functions}
 \arguments{
-\item{lhs, rhs}{An embed object and a fuction to apply to it}
+\item{lhs, rhs}{An embed object and a function to apply to it}
 }
 \description{
 Like dplyr, vembedr also uses the pipe function, \code{\%>\%} to turn
