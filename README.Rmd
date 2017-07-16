@@ -6,6 +6,10 @@ output:
 
 # vebmedr
 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr)
+[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr)
+[![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/vembedr/master.svg)](https://codecov.io/github/ijlyttle/vembedr?branch=master)
+
 ```{r, echo = FALSE}
 library("htmltools")
 library("vembedr")

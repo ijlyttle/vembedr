@@ -1,3 +1,7 @@
+## vembedr 0.1.3.9000
+
+- version bump for development
+
 ## vembedr 0.1.3
 
 - updates README to show some custom formatting (#25, thanks @koncina and @ginolhac)
