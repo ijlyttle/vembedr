@@ -70,6 +70,19 @@ list_suggest_user2016 <- list(
   start_time = NULL
 )
 
+url_user2017 <- "https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks"
+
+list_parse_user2017 <- list(
+  service = "user2017",
+  id = "Room-202-Lightning-Talks",
+  start_time = NULL
+)
+
+list_suggest_user2017 <- list(
+  embed = "embed_user2017(\"Room-202-Lightning-Talks\")",
+  start_time = NULL
+)
+
 ####
 url_cran <- "https://cran.rstudio.com/"
 
@@ -88,6 +101,7 @@ test_that("parse_video_url works", {
   expect_parse(url_vimeo_time, list_parse_vimeo_time)
   expect_parse(url_channel9, list_parse_channel9)
   expect_parse(url_user2016, list_parse_user2016)
+  expect_parse(url_user2017, list_parse_user2017)
   expect_error(parse_video_url(url_cran), regexp = "cran\\.rstudio\\.com")
 })
 
@@ -97,4 +111,5 @@ test_that("build_suggestion works", {
   expect_build(list_parse_vimeo_time, list_suggest_vimeo_time)
   expect_build(list_parse_channel9, list_suggest_channel9)
   expect_build(list_parse_user2016, list_suggest_user2016)
+  expect_build(list_parse_user2017, list_suggest_user2017)
 })

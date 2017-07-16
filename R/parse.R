@@ -170,15 +170,30 @@ parse_video_url <- function(url){
   path_user2016 <-
     c("Events", "useR-international-R-User-conference", "useR2016")
 
+
+  path_user2017 <-c(
+    "Events",
+    "useR-international-R-User-conferences",
+    "useR-International-R-User-2017-Conference"
+  )
+
   if (identical(length(path_split), 4L)
-      && identical(path_split[1:3], path_user2016)){
-    # this is a UseR! 2016 link
+      && identical(path_split[1:3], path_user2016)) {
+    # this is a UseR!2016 link
     result <- list(
       service = "user2016",
       id = path_split[[4]],
       start_time = NULL
     )
-  } else {
+  } else if (identical(path_split[1:3], path_user2017)) {
+    # this is a UseR!2017 link
+    result <- list(
+      service = "user2017",
+      id = path_split[[4]],
+      start_time = NULL
+    )
+  }
+  else {
     # this is a regular Channel 9 link
     result <- list(
       service = "channel9",
