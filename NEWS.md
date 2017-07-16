@@ -1,4 +1,4 @@
-## vembedr 0.1.2.9000
+## vembedr 0.1.3
 
 - updates README to show some custom formatting (#25, thanks @koncina and @ginolhac)
 - deprecates `hms()` and `secs()` in favor of `use_start_time()` (#24)

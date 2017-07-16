@@ -23,9 +23,10 @@ knitr::opts_chunk$set(
 
 The goal of the vembedr package is to make it a little bit easier for you to embed videos into your **rmarkdown** documents and your **shiny** apps. Three services are currently supported: YouTube, Vimeo, and Microsoft Channel 9 (including UseR! 2016 and 2017 videos).
 
-## New to version 0.1.2.9000 (development)
+## New to version 0.1.3
 
-- Adds function `embed_user2017()`: embed videos from UseR!2017
+- updates README to show some custom formatting, thanks [Eric Koncina](https://github.com/koncina) and [Aurélien Ginolhac](https://github.com/ginolhac)
+- adds function `embed_user2017()`: embed videos from UseR!2017
 
 ## Installation
 
