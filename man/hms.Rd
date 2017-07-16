@@ -15,11 +15,6 @@ character string (i.e. "0h3m15s")
 \description{
 Create an hours-minutes-seconds string
 }
-\examples{
-  hms(30)
-  hms("3m15s")
-
-}
 \seealso{
 \code{\link{secs}}
 }

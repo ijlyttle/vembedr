@@ -18,12 +18,6 @@ This is a helper function to get the number of seconds.
 \details{
 This could be useful for composing query parameters for YouTube embeds.
 }
-\examples{
-  secs("45s")
-  secs("3m15s")
-  secs("1h1m5s")
-
-}
 \seealso{
 \code{\link{embed_youtube}}, \code{\link{hms}}
 }
