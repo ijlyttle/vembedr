@@ -6,7 +6,7 @@ Authors@R: c(
     person(family = "Schneider Electric", role = c("cph"))
   )
 Description: A set of functions for generating HTML to
-    embed hosted video in your R Markdown documents or Shiny apps.
+    embed hosted video in your R Markdown documents or Shiny applications.
 Depends:
     R (>= 3.3.0)
 License: MIT + file LICENSE
