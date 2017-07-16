@@ -31,7 +31,7 @@ embed_youtube(id = "8SGif63VW6E") %>%
   use_start_time("4m12s")
 ```
 
-Hat tip to Aurélien Ginolhac for suggesting this video using this start-time.
+Hat tip to [Aurélien Ginolhac](https://github.com/ginolhac) for suggesting this video using this start-time.
 
 The `use_start_time()` function can be used with all of the `embed()` functions. 
 
@@ -47,7 +47,7 @@ If you do not need to customization your iframe (i.e., change the default size),
 embed_url("https://www.youtube.com/watch?v=q2nNzNo_Xps")
 ```
 
-If you need to make additional customization, you can usethe `suggest_embed()` function (which this function uses) to provide the R code, which you can then modify to your needs.
+If you need to make additional customization, you can use the `suggest_embed()` function (which this function uses) to provide the R code, which you can then modify to your needs.
 
 ## Suggest code
 

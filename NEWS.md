@@ -1,6 +1,7 @@
 ## vembedr 0.1.2.9000
 
-- deprecates `hms()` and `secs()` in favor of `use_start_time()`
+- updates README to show some custom formatting (#25, thanks @koncina and @ginolhac)
+- deprecates `hms()` and `secs()` in favor of `use_start_time()` (#24)
 - adds function `embed_user2017()`: embed videos from UseR!2017
 - version bump for development
 
