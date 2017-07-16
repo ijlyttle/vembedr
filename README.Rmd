@@ -126,7 +126,7 @@ Of course, the use of the pipe operator is optional. Hat tip to Karthik Ram for 
 
 -----
 
-For YouTube, Vimeo, and Microsoft Channel 9 (hosts of the User! 2016 and 2017 videos) you can specify a start time. Please note that for Vimeo, specifying a start time implies that the video **will** be auto-played (which can be annoying).
+You can also specify a start time. Please note that for Vimeo, specifying a start time implies that the video **will** be auto-played (which can be annoying).
 
 Here's an example using a lightning presentation from UseR!2017:
 
