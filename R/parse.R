@@ -170,7 +170,6 @@ parse_video_url <- function(url){
   path_user2016 <-
     c("Events", "useR-international-R-User-conference", "useR2016")
 
-
   path_user2017 <-c(
     "Events",
     "useR-international-R-User-conferences",
