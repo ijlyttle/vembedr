@@ -17,7 +17,7 @@
 #' "autoplay" is set to TRUE, and you cannot unset it.
 #'
 #' @rdname use_start_time
-#' @param ...         generic argumentss to pass through
+#' @param ...         generic arguments to pass through
 #' @param embed       embed object made using an \code{\link{embed}} function
 #' @param start_time  numeric (seconds), or character ("3m15s")
 #' @param is_paused   logical, for "Channel 9" specifies if the video
