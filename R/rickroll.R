@@ -20,7 +20,7 @@ NULL
 #' @export
 #
 rickroll_vimeo <- function(...){
-  embed_vimeo(id = "45196609", ...)
+  embed_vimeo(id = "148751763", ...)
 }
 
 #' @rdname rickroll
