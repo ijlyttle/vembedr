@@ -9,6 +9,13 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
 The foundation of this package is the `embed()` family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the *query* and *fragment* components of the reference URL. The query/fragment parameters for each service can be found at:
 
 - [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
@@ -62,15 +69,15 @@ For Vimeo, the identifier is also included in the standard URL:
 ```{r echo=FALSE}
 tags$p(
   tags$code(
-    HTML(paste0("https://vimeo.com/", tags$strong("110538136")))
+    HTML(paste0("https://vimeo.com/", tags$strong("238200347")))
   )  
 )
 ```
 
-The Vimeo identifier is just the path part of the URL: **`110538136`**:
+The Vimeo identifier is just the path part of the URL: **`238200347`**:
 
 ```{r}
-embed_vimeo(id = "110538136")
+embed_vimeo(id = "238200347")
 ```
 
 ## UseR!2016 (and 2017)

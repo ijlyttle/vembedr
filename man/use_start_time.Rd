@@ -16,8 +16,8 @@ use_start_time(...)
 
 \method{use_start_time}{embed_vimeo}(embed, start_time, ...)
 
-\method{use_start_time}{embed_channel9}(embed, start_time, is_paused = TRUE,
-  ...)
+\method{use_start_time}{embed_channel9}(embed, start_time,
+  is_paused = TRUE, ...)
 }
 \arguments{
 \item{...}{generic arguments to pass through}
