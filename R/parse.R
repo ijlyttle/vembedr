@@ -68,18 +68,29 @@ suggest_embed_pure <- function(url){
 #'
 build_suggestion <- function(parse_list){
 
+  # idea: this seems like a great place to implement tidyeval
+
   str_embed <-
-    paste0("embed_", parse_list$service, "(\"", parse_list$id, "\")")
+    glue::glue('embed_{parse_list$service}("{parse_list$id}")')
+
+  # if we have a custom_domain (this is getting hacky):
+  if (!is.null(parse_list$custom_domain)) {
+    str_embed <-
+      glue::glue(
+        'embed_{parse_list$service}("{parse_list$id}", ',
+        'custom_domain = "{parse_list$custom_domain}")'
+      )
+  }
 
   if (is.null(parse_list$start_time)){
     str_start_time <- NULL
   } else {
-    str_start_time <-
-      paste0("use_start_time(\"", parse_list$start_time, "\")")
+    str_start_time <- glue::glue("use_start_time(\"{parse_list$start_time}\")")
+    str_start_time <- as.character(str_start_time)
   }
 
   suggest_list <- list(
-    embed = str_embed,
+    embed = as.character(str_embed),
     start_time = str_start_time
   )
 
@@ -246,12 +257,24 @@ parse_video_url <- function(url) {
 
 .parse_box <- function(url_parsed) {
 
+  # determine custom-domain by taking apart hostname
+  hostname_split <- stringr::str_split(url_parsed$hostname, "\\.")[[1]]
+
+  custom_domain <- NULL
+  if (identical(length(hostname_split), 4L)) {
+    custom_domain <- hostname_split[1]
+  }
+
+  # determine id by taking apart path
+  path_split <- stringr::str_split(url_parsed$path, "/")[[1]]
+
+  id <- path_split[2]
+
   result <- list(
     service = "box",
     id = id,
-    start_time = NULL,
-    id_type = id_type,
     custom_domain = custom_domain,
+    start_time = NULL
   )
 
   result

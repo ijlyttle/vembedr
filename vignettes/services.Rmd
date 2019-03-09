@@ -82,6 +82,13 @@ embed_vimeo(id = "238200347")
 
 ## Box
 
+Need to use the full link, not a custom link.
+
+```{r}
+embed_url("https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx")
+```
+
+
 ```{r}
 embed_box(id = "m5do45hvzw32iv2aors3urf5pgkxxazx")
 ```
