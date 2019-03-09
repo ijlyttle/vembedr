@@ -20,7 +20,7 @@
 #'
 #' @return numeric, number of seconds
 #'
-#' @seealso \code{\link{embed_youtube}}, \code{\link{hms}}
+#' @seealso [embed_youtube()], [hms()]
 #' @export
 #
 secs <- function(x){
@@ -65,7 +65,7 @@ secs <- function(x){
 #' @param x, numeric (number of seconds), or character (i.e. "3m15s")
 #'
 #' @return character string (i.e. "0h3m15s")
-#' @seealso \code{\link{secs}}
+#' @seealso [secs()]
 #' @export
 #'
 hms <- function(x){

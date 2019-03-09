@@ -9,19 +9,19 @@
 #' according to the service being used:
 #'
 #' \describe{
-#'   \item{YouTube}{\url{https://developers.google.com/youtube/player_parameters}}
-#'   \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
-#'   \item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
-#'   (click the \emph{Embed} tab)}
-#'   \item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
+#'   \item{YouTube}{<https://developers.google.com/youtube/player_parameters>}
+#'   \item{Vimeo}{<https://developer.vimeo.com/player/embedding>}
+#'   \item{Channel 9}{<https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S>
+#'   (click the *Embed* tab)}
+#'   \item{Box}{<https://developer.box.com/docs/box-embed#section-build-box-embed-programatically>}
 #' }
 #'
 #' @param id                character, identifier provided by the service
 #' @param custom_domain     character, (used by Box) name of Box-instance
-#'   to use. If \code{NULL}, will use the value of
-#'   \code{getOption("vembedr.box_custom_domain")}. This can be useful if you
-#'   are using a corporate instance of Box. If still \code{NULL}, will use
-#'   \code{"cloud"}, the standard Box instance.
+#'   to use. If `NULL`, will use the value of
+#'   `getOption("vembedr.box_custom_domain")`. This can be useful if you
+#'   are using a corporate instance of Box. If still `NULL`, will use
+#'   `"cloud"`, the standard Box instance.
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
@@ -33,7 +33,7 @@
 #'
 #' @name embed
 #' @family embed
-#' @seealso \code{\link{use_start_time}}
+#' @seealso [use_start_time()]
 #' @examples
 #' embed_youtube("dQw4w9WgXcQ")
 #' embed_vimeo("45196609")

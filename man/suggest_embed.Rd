@@ -21,10 +21,10 @@ This function is meant to work with URLs from any of the supported services.
 }
 \details{
 \describe{
-  \item{\code{suggest_embed}}{called for the side-effect of
-    printing to the suggested code the screen}
-  \item{\code{suggest_embed_pure}}{returns character string
-    that represents the suggested code}
+\item{\code{suggest_embed}}{called for the side-effect of
+messaging the suggested code the screen}
+\item{\code{suggest_embed_pure}}{returns character string
+that represents the suggested code}
 }
 }
 \examples{

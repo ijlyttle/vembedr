@@ -1,3 +1,9 @@
+## ----setup, include = FALSE----------------------------------------------
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
 ## ------------------------------------------------------------------------
 library("htmltools")
 library("vembedr")
@@ -15,12 +21,15 @@ embed_youtube(id = "44wDwMQVqCc")
 ## ----echo=FALSE----------------------------------------------------------
 tags$p(
   tags$code(
-    HTML(paste0("https://vimeo.com/", tags$strong("110538136")))
+    HTML(paste0("https://vimeo.com/", tags$strong("238200347")))
   )  
 )
 
 ## ------------------------------------------------------------------------
-embed_vimeo(id = "110538136")
+embed_vimeo(id = "238200347")
+
+## ------------------------------------------------------------------------
+embed_box(id = "m5do45hvzw32iv2aors3urf5pgkxxazx")
 
 ## ----echo=FALSE----------------------------------------------------------
 tags$p(

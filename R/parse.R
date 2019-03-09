@@ -3,16 +3,16 @@
 #' This function is meant to work with URLs from any of the supported services.
 #'
 #' \describe{
-#'   \item{\code{suggest_embed}}{called for the side-effect of
+#'   \item{`suggest_embed`}{called for the side-effect of
 #'     messaging the suggested code the screen}
-#'   \item{\code{suggest_embed_pure}}{returns character string
+#'   \item{`suggest_embed_pure`}{returns character string
 #'     that represents the suggested code}
 #' }
 #'
 #' @param url    character, can be copied from browser location or from
 #'   the "share" output on a video's web page
 #'
-#' @return character, returns the suggested code (\code{suggest_embed} returns invisibly)
+#' @return character, returns the suggested code (`suggest_embed` returns invisibly)
 #'
 #' @examples
 #' suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
@@ -45,9 +45,9 @@ suggest_embed_pure <- function(url){
 
 #' Given a parse-list, generate an embed-list
 #'
-#' This is an internal function, supporting \code{\link{suggest_embed}}
+#' This is an internal function, supporting [suggest_embed()]
 #'
-#' @param parse_list, list generated using \code{\link{parse_video_url}}
+#' @param parse_list, list generated using [parse_video_url()]
 #'   with members:
 #'   \describe{
 #'     \item{service}{character, describes which service is used}
@@ -57,10 +57,10 @@ suggest_embed_pure <- function(url){
 #'
 #' @return list with members:
 #' \describe{
-#'   \item{embed}{character, code for \code{\link{embed}} call}
-#'   \item{start_time}{character, (optional) code for \code{\link{use_start_time}} call}
+#'   \item{embed}{character, code for [embed()] call}
+#'   \item{start_time}{character, (optional) code for [use_start_time()] call}
 #' }
-#' @seealso \code{\link{suggest_embed}} \code{\link{parse_video_url}}
+#' @seealso [suggest_embed()] [parse_video_url()]
 #' @examples
 #' parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s") %>%
 #' build_suggestion()
@@ -86,9 +86,14 @@ build_suggestion <- function(parse_list){
   suggest_list
 }
 
+type_video_url <- function(url) {
+
+}
+
+
 #' Parse a URL to determine service and id
 #'
-#' This is an internal function, supporting \code{\link{suggest_embed}}
+#' This is an internal function, supporting [suggest_embed()]
 #'
 #' @param url  character, URL to parse
 #'

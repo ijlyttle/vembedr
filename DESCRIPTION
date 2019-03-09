@@ -33,3 +33,4 @@ Suggests: testthat,
     rmarkdown,
     covr
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)

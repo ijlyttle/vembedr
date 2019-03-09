@@ -3,13 +3,13 @@
 #' This function provides you a consistent way to specify the start time,
 #' regardless of the service.
 #'
-#' The \code{start_time} argument can take a variety of formats; these inputs
+#' The `start_time` argument can take a variety of formats; these inputs
 #' all evaluate to the same value:
 #'
 #' \itemize{
-#'   \item{\code{"0h1m0s"}, \code{"0h01m00s"}, \code{"0h1m"}}
-#'   \item{\code{"1m0s"}, \code{"1m"}}
-#'   \item{\code{"60s"}, \code{60}}
+#'   \item{`"0h1m0s"`, `"0h01m00s"`, `"0h1m"`}
+#'   \item{`"1m0s"`, `"1m"`}
+#'   \item{`"60s"`, `60`}
 #' }
 #'
 #' Please note that for Vimeo, you can specify a start time, but you can not
@@ -18,7 +18,7 @@
 #'
 #' @rdname use_start_time
 #' @param ...         generic arguments to pass through
-#' @param embed       embed object made using an \code{\link{embed}} function
+#' @param embed       embed object made using an [embed()] function
 #' @param start_time  numeric (seconds), or character ("3m15s")
 #' @param is_paused   logical, for "Channel 9" specifies if the video
 #'   should be paused at this time

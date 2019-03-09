@@ -25,7 +25,7 @@ embed_user2017(id, width = 560, height = 315, frameborder = 0,
 embed_channel9(id, width = 560, height = 315, frameborder = 0,
   allowfullscreen = TRUE)
 
-embed_box(id, custom_domain = NULL, width = 500, height = 281,
+embed_box(id, custom_domain = NULL, width = 500, height = 330,
   frameborder = 0, allowfullscreen = TRUE)
 }
 \arguments{
@@ -63,11 +63,11 @@ an optional query string. The specification for the query string will differ
 according to the service being used:
 
 \describe{
-  \item{YouTube}{\url{https://developers.google.com/youtube/player_parameters}}
-  \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
-  \item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
-  (click the \emph{Embed} tab)}
-  \item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
+\item{YouTube}{\url{https://developers.google.com/youtube/player_parameters}}
+\item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
+\item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
+(click the \emph{Embed} tab)}
+\item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
 }
 }
 \examples{
@@ -78,6 +78,6 @@ embed_user2017("Room-202-Lightning-Talks") \%>\% use_start_time("26m35s")
 
 }
 \seealso{
-\code{\link{use_start_time}}
+\code{\link[=use_start_time]{use_start_time()}}
 }
 \concept{embed}
