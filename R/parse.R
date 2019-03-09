@@ -160,6 +160,10 @@ parse_video_url <- function(url) {
 
   url_parsed <- httr::parse_url(url)
 
+  # idea:
+  #  - this could be done more-conventionally using S3 dispatch
+  #  - get_service() could return a parsed url with additional class
+  #
   fn_parse <- list_parse[[service]]
 
   do.call(fn_parse, list(url_parsed = url_parsed))
@@ -242,6 +246,15 @@ parse_video_url <- function(url) {
 
 .parse_box <- function(url_parsed) {
 
+  result <- list(
+    service = "box",
+    id = id,
+    start_time = NULL,
+    id_type = id_type,
+    custom_domain = custom_domain,
+  )
+
+  result
 }
 
 

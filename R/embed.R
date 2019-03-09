@@ -17,6 +17,9 @@
 #' }
 #'
 #' @param id                character, identifier provided by the service
+#' @param id_type           character, (used by Box) indicates type of `id`
+#'   `"s"`: standard, `"v"`: vanity (custom). Default, `NULL`, indicates to use
+#'   heuristics to determine type `id`,
 #' @param custom_domain     character, (used by Box) name of Box-instance
 #'   to use. If `NULL`, will use the value of
 #'   `getOption("vembedr.box_custom_domain")`. This can be useful if you
@@ -157,7 +160,8 @@ embed_channel9 <- function(id, width = 560, height = 315,
 #' @rdname embed
 #' @export
 #'
-embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
+embed_box <- function(id, id_type = NULL, custom_domain = NULL,
+                      width = 500, height = 330,
                       frameborder = 0, allowfullscreen = TRUE) {
 
   # adapted from:
@@ -180,7 +184,9 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
     host <- "{custom_domain}.app.box.com"
   }
 
-  url <- glue::glue("https://{host}/embed/s/{id}")
+  id_type <- id_type_box(id)
+
+  url <- glue::glue("https://{host}/embed/{id_type}/{id}")
 
   embed <- htmltools::tags$iframe(
     src = url,
@@ -195,4 +201,21 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
   class(embed) <- c("embed_box", class(embed))
 
   embed
+}
+
+id_type_box <- function(x) {
+
+  # assume vanity
+  type <- "v"
+
+  # exactly 32 lowecase letters or digits
+  regex <- "^[a-z0-9]{32}$"
+  is_standard <- stringr::str_detect(x, regex)
+
+  # if standard, change
+  if (is_standard) {
+    type <- "s"
+  }
+
+  type
 }
