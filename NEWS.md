@@ -1,5 +1,6 @@
 ## vembedr 0.1.3.9000
 
+- adds functionality for embedding [Box](https://www.box.com) videos, via the `embed_box()` function
 - version bump for development
 
 ## vembedr 0.1.3

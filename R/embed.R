@@ -16,12 +16,12 @@
 #'   \item{Box}{<https://developer.box.com/docs/box-embed#section-build-box-embed-programatically>}
 #' }
 #'
-#' @param id                character, identifier provided by the service\
+#' @param id                character, identifier provided by the service
 #' @param custom_domain     character, (used by Box) name of Box-instance
 #'   to use. If `NULL`, will use the value of
 #'   `getOption("vembedr.box_custom_domain")`. This can be useful if you
-#'   are using a corporate instance of Box. If still `NULL`, will use
-#'   `"cloud"`, the standard Box instance.
+#'   are using a corporate instance of Box. If still `NULL`, it will use
+#'   the standard Box instance.
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
@@ -39,6 +39,7 @@
 #' embed_vimeo("45196609")
 #' embed_user2016("Literate-Programming")
 #' embed_user2017("Room-202-Lightning-Talks") %>% use_start_time("26m35s")
+#' embed_box("m5do45hvzw32iv2aors3urf5pgkxxazx")
 #'
 NULL
 

@@ -4,6 +4,18 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
+library("fs")
+
+dir_source <- here::here("man/figures")
+dir_target <- here::here("vignettes")
+dir_target_figures <- file.path(dir_target, "figures")
+
+if (dir_exists(dir_target_figures)) {
+  dir_delete(dir_target_figures)
+}
+
+dir_copy(dir_source, dir_target)
+
 ## ------------------------------------------------------------------------
 library("htmltools")
 library("vembedr")
@@ -29,7 +41,10 @@ tags$p(
 embed_vimeo(id = "238200347")
 
 ## ------------------------------------------------------------------------
-embed_box(id = "m5do45hvzw32iv2aors3urf5pgkxxazx")
+embed_url("https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx")
+
+## ----eval=FALSE----------------------------------------------------------
+#  embed_box(id = "m5do45hvzw32iv2aors3urf5pgkxxazx")
 
 ## ----echo=FALSE----------------------------------------------------------
 tags$p(
