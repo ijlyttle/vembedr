@@ -149,23 +149,18 @@ get_service <- function(url) {
 parse_video_url <- function(url) {
 
   list_parse <- list(
-    `channel9.msdn.com` = .parse_channel9,
-    `www.youtube.com` = .parse_youtube,
-    `youtu.be` = .parse_youtube_short,
-    `vimeo.com` = .parse_vimeo
+    channel9 = .parse_channel9,
+    youtube = .parse_youtube,
+    youtube_short = .parse_youtube_short,
+    vimeo = .parse_vimeo,
+    box = .parse_box
   )
+
+  service <- get_service(url)
 
   url_parsed <- httr::parse_url(url)
 
-  # what to do if hostname not supported
-  if (!(url_parsed$hostname %in% names(list_parse))) {
-    stop(
-      paste0("Video service at `", url_parsed$hostname, "` not supported."),
-      call. = FALSE
-    )
-  }
-
-  fn_parse <- list_parse[[url_parsed$hostname]]
+  fn_parse <- list_parse[[service]]
 
   do.call(fn_parse, list(url_parsed = url_parsed))
 
@@ -243,6 +238,10 @@ parse_video_url <- function(url) {
   }
 
   result
+}
+
+.parse_box <- function(url_parsed) {
+
 }
 
 
