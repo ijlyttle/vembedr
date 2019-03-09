@@ -84,16 +84,36 @@ list_suggest_user2017 <- list(
 )
 
 ####
+url_box <- "https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"
+url_box_corp <- "https://acme.app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"
+
+####
 url_cran <- "https://cran.rstudio.com/"
 
 ####
-expect_parse <- function(url, list_parse){
+expect_service <- function(url, service) {
+  expect_identical(get_service(url), service)
+}
+
+expect_parse <- function(url, list_parse) {
   expect_identical(parse_video_url(url), list_parse)
 }
 
-expect_build <- function(list_parse, list_suggest){
+expect_build <- function(list_parse, list_suggest) {
   expect_identical(build_suggestion(list_parse), list_suggest)
 }
+
+test_that("get_service works", {
+  expect_service(url_youtube, "youtube")
+  expect_service(url_youtube_short_time, "youtube_short")
+  expect_service(url_vimeo_time, "vimeo")
+  expect_service(url_channel9, "channel9")
+  expect_service(url_user2016, "channel9")
+  expect_service(url_user2017, "channel9")
+  expect_service(url_box, "box")
+  expect_service(url_box_corp, "box")
+  expect_error(get_service(url_cran), regexp = "cran\\.rstudio\\.com")
+})
 
 test_that("parse_video_url works", {
   expect_parse(url_youtube, list_parse_youtube)

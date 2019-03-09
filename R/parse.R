@@ -86,8 +86,44 @@ build_suggestion <- function(parse_list){
   suggest_list
 }
 
-type_video_url <- function(url) {
+#' Determine the service, given the URL
+#'
+#' @inheritParams suggest_embed
+#'
+#' @return `character` identfying the video service
+#'
+#' @examples
+#' get_service("https://youtu.be/1-vcErOPofQ?t=28s")
+#' @export
+#'
+get_service <- function(url) {
 
+  url_parsed <- httr::parse_url(url)
+  hostname <- url_parsed$hostname
+
+  # each service will match a regex
+  regex <- c(
+    channel9 = "^channel9\\.msdn\\.com$",
+    youtube = "^www\\.youtube\\.com$",
+    youtube_short = "^youtu\\.be$",
+    vimeo = "^vimeo\\.com$",
+    box = "app\\.box\\.com$"
+  )
+
+  # str_detect is vectorized over the patters
+  is_service <- stringr::str_detect(hostname, regex)
+
+  # if no service found, throw error
+  if (!any(is_service)) {
+    stop(
+      glue::glue("Cannot find service to match '{hostname}'."),
+      call. = FALSE
+    )
+  }
+
+  service <- names(regex)[is_service]
+
+  service
 }
 
 
