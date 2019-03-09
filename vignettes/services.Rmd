@@ -80,6 +80,12 @@ The Vimeo identifier is just the path part of the URL: **`238200347`**:
 embed_vimeo(id = "238200347")
 ```
 
+## Box
+
+```{r}
+embed_box(id = "m5do45hvzw32iv2aors3urf5pgkxxazx")
+```
+
 ## UseR!2016 (and 2017)
 
 One of the great things about the useR! 2016 conference was that all of the keynotes and contributed talks were recorded, thanks to Microsoft. The videos are available on Microsoft's Channel 9 service - so it behooves us to make an function to embed Channel 9 videos.

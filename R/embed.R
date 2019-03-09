@@ -13,9 +13,15 @@
 #'   \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
 #'   \item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
 #'   (click the \emph{Embed} tab)}
+#'   \item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
 #' }
 #'
 #' @param id                character, identifier provided by the service
+#' @param custom_domain     character, (used by Box) name of Box-instance
+#'   to use. If \code{NULL}, will use the value of
+#'   \code{getOption("vembedr.box_custom_domain")}. This can be useful if you
+#'   are using a corporate instance of Box. If still \code{NULL}, will use
+#'   \code{"cloud"}, the standard Box instance.
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
@@ -144,6 +150,49 @@ embed_channel9 <- function(id, width = 560, height = 315,
   )
 
   class(embed) <- c("embed_channel9", class(embed))
+
+  embed
+}
+
+#' @rdname embed
+#' @export
+#'
+embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
+                      frameborder = 0, allowfullscreen = TRUE) {
+
+  # adapted from:
+  # https://developer.box.com/docs/box-embed#section-build-box-embed-programatically
+
+  # <iframe
+  #    src="https://{custom_domain}.app.box.com/embed/s/{shared link value}"
+  #    width="{pixels}"
+  #    height="{pixels}"
+  #    frameborder="0"
+  #    allowfullscreen webkitallowfullscreen msallowfullscreen>
+  # </iframe>
+
+  custom_domain <- custom_domain %||% getOption("vembedr.box_custom_domain")
+
+  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
+
+  host <- "app.box.com"
+  if (!is.null(custom_domain)) {
+    host <- "{custom_domain}.app.box.com"
+  }
+
+  url <- glue::glue("https://{host}/embed/s/{id}")
+
+  embed <- htmltools::tags$iframe(
+    src = url,
+    width = width,
+    height = height,
+    frameborder = frameborder,
+    allowfullscreen = allowfullscreen,
+    webkitallowfullscreen = allowfullscreen,
+    msallowfullscreen = allowfullscreen
+  )
+
+  class(embed) <- c("embed_box", class(embed))
 
   embed
 }

@@ -7,6 +7,7 @@
 \alias{embed_user2016}
 \alias{embed_user2017}
 \alias{embed_channel9}
+\alias{embed_box}
 \title{Embed a video into an HTML document}
 \usage{
 embed_vimeo(id, width = 500, height = 281, frameborder = 0,
@@ -23,6 +24,9 @@ embed_user2017(id, width = 560, height = 315, frameborder = 0,
 
 embed_channel9(id, width = 560, height = 315, frameborder = 0,
   allowfullscreen = TRUE)
+
+embed_box(id, custom_domain = NULL, width = 500, height = 281,
+  frameborder = 0, allowfullscreen = TRUE)
 }
 \arguments{
 \item{id}{character, identifier provided by the service}
@@ -38,6 +42,12 @@ embed_channel9(id, width = 560, height = 315, frameborder = 0,
 \item{query}{list of items to include in url-query string}
 
 \item{fragment}{character, string to include as url-fragment}
+
+\item{custom_domain}{character, (used by Box) name of Box-instance
+to use. If \code{NULL}, will use the value of
+\code{getOption("vembedr.box_custom_domain")}. This can be useful if you
+are using a corporate instance of Box. If still \code{NULL}, will use
+\code{"cloud"}, the standard Box instance.}
 }
 \value{
 An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
@@ -57,6 +67,7 @@ according to the service being used:
   \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
   \item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
   (click the \emph{Embed} tab)}
+  \item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
 }
 }
 \examples{

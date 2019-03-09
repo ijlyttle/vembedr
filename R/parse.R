@@ -4,7 +4,7 @@
 #'
 #' \describe{
 #'   \item{\code{suggest_embed}}{called for the side-effect of
-#'     printing to the suggested code the screen}
+#'     messaging the suggested code the screen}
 #'   \item{\code{suggest_embed_pure}}{returns character string
 #'     that represents the suggested code}
 #' }
@@ -23,7 +23,7 @@ suggest_embed <- function(url){
 
   str_message <- suggest_embed_pure(url)
 
-  cat(str_message)
+  message(str_message)
 
   invisible(str_message)
 }
@@ -105,7 +105,7 @@ build_suggestion <- function(parse_list){
 #' parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s")
 #' @export
 #'
-parse_video_url <- function(url){
+parse_video_url <- function(url) {
 
   list_parse <- list(
     `channel9.msdn.com` = .parse_channel9,
@@ -117,7 +117,7 @@ parse_video_url <- function(url){
   url_parsed <- httr::parse_url(url)
 
   # what to do if hostname not supported
-  if (!(url_parsed$hostname %in% names(list_parse))){
+  if (!(url_parsed$hostname %in% names(list_parse))) {
     stop(
       paste0("Video service at `", url_parsed$hostname, "` not supported."),
       call. = FALSE
@@ -130,7 +130,7 @@ parse_video_url <- function(url){
 
 }
 
-.parse_youtube <- function(url_parsed){
+.parse_youtube <- function(url_parsed) {
   list(
     service = "youtube",
     id = url_parsed$query$v,
@@ -138,7 +138,7 @@ parse_video_url <- function(url){
   )
 }
 
-.parse_youtube_short <- function(url_parsed){
+.parse_youtube_short <- function(url_parsed) {
   list(
     service = "youtube",
     id = url_parsed$path,
