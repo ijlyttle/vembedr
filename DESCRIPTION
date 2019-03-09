@@ -33,6 +33,7 @@ Suggests:
     knitr,
     rmarkdown,
     covr,
-    here
+    here,
+    fs
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
