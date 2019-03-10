@@ -14,6 +14,18 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library("fs")
+
+dir_source <- here::here("man/figures")
+dir_target <- here::here("vignettes")
+dir_target_figures <- file.path(dir_target, "figures")
+
+if (dir_exists(dir_target_figures)) {
+  dir_delete(dir_target_figures)
+}
+
+dir_copy(dir_source, dir_target)
 ```
 
 The foundation of this package is the `embed()` family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the *query* and *fragment* components of the reference URL. The query/fragment parameters for each service can be found at:
@@ -21,6 +33,7 @@ The foundation of this package is the `embed()` family of functions, used to gen
 - [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
 - [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
 - [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 and 2017 videos. Click the *Embed* tab for emdedding options.
+- [Box](https://developer.box.com/docs/box-embed#section-build-box-embed-programatically)
 
 One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the *helpers* vignette deals with how to set the start-time.
 
@@ -79,6 +92,31 @@ The Vimeo identifier is just the path part of the URL: **`238200347`**:
 ```{r}
 embed_vimeo(id = "238200347")
 ```
+
+## Box
+
+To share a video on Box, the video file itself will have to be shared. From the Box web-interface, you can do this by clicking the **Share** button at the top-right corner of your file's web-page. 
+
+Then, you need to capture some infomation about the embed-link itself, either the URL or the `id`.
+
+![Box Share](figures/box-url.png){ width=100% }
+
+Please note that you need to provide the `id` from the "ugly" URL, not a custom URL.  
+
+```{r}
+embed_url("https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx")
+```
+
+You can do the same thing using the `embed_box()` function and the `id`. The Box identifier is  the path part of the URL that follows the `s/`, in this case: **`m5do45hvzw32iv2aors3urf5pgkxxazx`**.
+
+
+```{r eval=FALSE}
+embed_box(id = "m5do45hvzw32iv2aors3urf5pgkxxazx")
+```
+
+If you are using a corporate instance of Box, and use the `embed_box()` function, you will also have to specify the `custom_domain`. For example, if your URL starts with `"https://acme.app.box.com"`, then your `custom_domain` is `"acme"`.
+
+
 
 ## UseR!2016 (and 2017)
 

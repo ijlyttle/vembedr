@@ -84,16 +84,60 @@ list_suggest_user2017 <- list(
 )
 
 ####
+url_box <- "https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"
+url_box_acme <- "https://acme.app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"
+
+list_parse_box <- list(
+  service = "box",
+  id = "m5do45hvzw32iv2aors3urf5pgkxxazx",
+  custom_domain = NULL,
+  start_time = NULL
+)
+
+list_parse_box_acme <- list(
+  service = "box",
+  id = "m5do45hvzw32iv2aors3urf5pgkxxazx",
+  custom_domain = "acme",
+  start_time = NULL
+)
+
+list_suggest_box <- list(
+  embed = 'embed_box("m5do45hvzw32iv2aors3urf5pgkxxazx")',
+  start_time = NULL
+)
+
+list_suggest_box_acme <- list(
+  embed = 'embed_box("m5do45hvzw32iv2aors3urf5pgkxxazx", custom_domain = "acme")',
+  start_time = NULL
+)
+
+####
 url_cran <- "https://cran.rstudio.com/"
 
 ####
-expect_parse <- function(url, list_parse){
+expect_service <- function(url, service) {
+  expect_identical(get_service(url), service)
+}
+
+expect_parse <- function(url, list_parse) {
   expect_identical(parse_video_url(url), list_parse)
 }
 
-expect_build <- function(list_parse, list_suggest){
+expect_build <- function(list_parse, list_suggest) {
   expect_identical(build_suggestion(list_parse), list_suggest)
 }
+
+test_that("get_service works", {
+  expect_service(url_youtube, "youtube")
+  expect_service(url_youtube_short_time, "youtube_short")
+  expect_service(url_vimeo_time, "vimeo")
+  expect_service(url_channel9, "channel9")
+  expect_service(url_user2016, "channel9")
+  expect_service(url_user2017, "channel9")
+  expect_service(url_box, "box")
+  expect_service(url_box_acme, "box")
+  expect_error(get_service(url_cran), regexp = "cran\\.rstudio\\.com")
+})
 
 test_that("parse_video_url works", {
   expect_parse(url_youtube, list_parse_youtube)
@@ -102,6 +146,8 @@ test_that("parse_video_url works", {
   expect_parse(url_channel9, list_parse_channel9)
   expect_parse(url_user2016, list_parse_user2016)
   expect_parse(url_user2017, list_parse_user2017)
+  expect_parse(url_box, list_parse_box)
+  expect_parse(url_box_acme, list_parse_box_acme)
   expect_error(parse_video_url(url_cran), regexp = "cran\\.rstudio\\.com")
 })
 
@@ -112,4 +158,6 @@ test_that("build_suggestion works", {
   expect_build(list_parse_channel9, list_suggest_channel9)
   expect_build(list_parse_user2016, list_suggest_user2016)
   expect_build(list_parse_user2017, list_suggest_user2017)
+  expect_build(list_parse_box, list_suggest_box)
+  expect_build(list_parse_box_acme, list_suggest_box_acme)
 })

@@ -9,13 +9,19 @@
 #' according to the service being used:
 #'
 #' \describe{
-#'   \item{YouTube}{\url{https://developers.google.com/youtube/player_parameters}}
-#'   \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
-#'   \item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
-#'   (click the \emph{Embed} tab)}
+#'   \item{YouTube}{<https://developers.google.com/youtube/player_parameters>}
+#'   \item{Vimeo}{<https://developer.vimeo.com/player/embedding>}
+#'   \item{Channel 9}{<https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S>
+#'   (click the *Embed* tab)}
+#'   \item{Box}{<https://developer.box.com/docs/box-embed#section-build-box-embed-programatically>}
 #' }
 #'
 #' @param id                character, identifier provided by the service
+#' @param custom_domain     character, (used by Box) name of Box-instance
+#'   to use. If `NULL`, will use the value of
+#'   `getOption("vembedr.box_custom_domain")`. This can be useful if you
+#'   are using a corporate instance of Box. If still `NULL`, it will use
+#'   the standard Box instance.
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
 #' @param frameborder       numeric, size of frame border (px)
@@ -27,12 +33,13 @@
 #'
 #' @name embed
 #' @family embed
-#' @seealso \code{\link{use_start_time}}
+#' @seealso [use_start_time()]
 #' @examples
 #' embed_youtube("dQw4w9WgXcQ")
 #' embed_vimeo("45196609")
 #' embed_user2016("Literate-Programming")
 #' embed_user2017("Room-202-Lightning-Talks") %>% use_start_time("26m35s")
+#' embed_box("m5do45hvzw32iv2aors3urf5pgkxxazx")
 #'
 NULL
 
@@ -144,6 +151,49 @@ embed_channel9 <- function(id, width = 560, height = 315,
   )
 
   class(embed) <- c("embed_channel9", class(embed))
+
+  embed
+}
+
+#' @rdname embed
+#' @export
+#'
+embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
+                      frameborder = 0, allowfullscreen = TRUE) {
+
+  # adapted from:
+  # https://developer.box.com/docs/box-embed#section-build-box-embed-programatically
+
+  # <iframe
+  #    src="https://{custom_domain}.app.box.com/embed/s/{shared link value}"
+  #    width="{pixels}"
+  #    height="{pixels}"
+  #    frameborder="0"
+  #    allowfullscreen webkitallowfullscreen msallowfullscreen>
+  # </iframe>
+
+  custom_domain <- custom_domain %||% getOption("vembedr.box_custom_domain")
+
+  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
+
+  host <- "app.box.com"
+  if (!is.null(custom_domain)) {
+    host <- "{custom_domain}.app.box.com"
+  }
+
+  url <- glue::glue("https://{host}/embed/s/{id}")
+
+  embed <- htmltools::tags$iframe(
+    src = url,
+    width = width,
+    height = height,
+    frameborder = frameborder,
+    allowfullscreen = allowfullscreen,
+    webkitallowfullscreen = allowfullscreen,
+    msallowfullscreen = allowfullscreen
+  )
+
+  class(embed) <- c("embed_box", class(embed))
 
   embed
 }

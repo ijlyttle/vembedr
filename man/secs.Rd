@@ -19,5 +19,5 @@ This is a helper function to get the number of seconds.
 This could be useful for composing query parameters for YouTube embeds.
 }
 \seealso{
-\code{\link{embed_youtube}}, \code{\link{hms}}
+\code{\link[=embed_youtube]{embed_youtube()}}, \code{\link[=hms]{hms()}}
 }

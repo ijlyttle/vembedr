@@ -16,5 +16,5 @@ character string (i.e. "0h3m15s")
 Create an hours-minutes-seconds string
 }
 \seealso{
-\code{\link{secs}}
+\code{\link[=secs]{secs()}}
 }

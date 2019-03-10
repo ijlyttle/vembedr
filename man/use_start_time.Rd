@@ -22,7 +22,7 @@ use_start_time(...)
 \arguments{
 \item{...}{generic arguments to pass through}
 
-\item{embed}{embed object made using an \code{\link{embed}} function}
+\item{embed}{embed object made using an \code{\link[=embed]{embed()}} function}
 
 \item{start_time}{numeric (seconds), or character ("3m15s")}
 
@@ -38,9 +38,9 @@ The \code{start_time} argument can take a variety of formats; these inputs
 all evaluate to the same value:
 
 \itemize{
-  \item{\code{"0h1m0s"}, \code{"0h01m00s"}, \code{"0h1m"}}
-  \item{\code{"1m0s"}, \code{"1m"}}
-  \item{\code{"60s"}, \code{60}}
+\item{\code{"0h1m0s"}, \code{"0h01m00s"}, \code{"0h1m"}}
+\item{\code{"1m0s"}, \code{"1m"}}
+\item{\code{"60s"}, \code{60}}
 }
 
 Please note that for Vimeo, you can specify a start time, but you can not

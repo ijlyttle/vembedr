@@ -12,13 +12,13 @@ parse_video_url(url)
 \value{
 list with members:
 \describe{
-  \item{service}{character, describes which service is used}
-  \item{id}{character, identifier for the video at the service}
-  \item{start_time}{character, indicates start time}
+\item{service}{character, describes which service is used}
+\item{id}{character, identifier for the video at the service}
+\item{start_time}{character, indicates start time}
 }
 }
 \description{
-This is an internal function, supporting \code{\link{suggest_embed}}
+This is an internal function, supporting \code{\link[=suggest_embed]{suggest_embed()}}
 }
 \examples{
 parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s")
