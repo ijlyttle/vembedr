@@ -30,6 +30,7 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 
 ## New to version 0.1.3.9000
 
+- functions to help you format: `use_rounded()`, `use_align()`, and `use_bs_responsive()`.
 - you can embed videos hosted on Box, using `embed_box()`.
 
 ## Installation

@@ -103,7 +103,7 @@ use_rounded <- function(embed, radius = NULL) {
     div <-
       htmltools::tagAppendAttributes(
         div,
-        style = glue::glue("border-radius: {radius};")
+        style = as.character(glue::glue("border-radius: {radius};"))
       )
   }
 
