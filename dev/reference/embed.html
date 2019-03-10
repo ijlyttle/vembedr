@@ -145,7 +145,10 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
   <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='fu'>embed_channel9</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>560</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>315</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>embed_box</span>(<span class='no'>id</span>, <span class='kw'>custom_domain</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>330</span>,
+  <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -178,6 +181,14 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
       <th>fragment</th>
       <td><p>character, string to include as url-fragment</p></td>
     </tr>
+    <tr>
+      <th>custom_domain</th>
+      <td><p>character, (used by Box) name of Box-instance
+to use. If <code>NULL</code>, will use the value of
+<code><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption("vembedr.box_custom_domain")</a></code>. This can be useful if you
+are using a corporate instance of Box. If still <code>NULL</code>, it will use
+the standard Box instance.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -190,19 +201,20 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
 an optional query string. The specification for the query string will differ
 according to the service being used:</p>
 <dl class='dl-horizontal'>
-  <dt>YouTube</dt><dd><p><a href='https://developers.google.com/youtube/player_parameters'>https://developers.google.com/youtube/player_parameters</a></p></dd>
-  <dt>Vimeo</dt><dd><p><a href='https://developer.vimeo.com/player/embedding'>https://developer.vimeo.com/player/embedding</a></p></dd>
-  <dt>Channel 9</dt><dd><p><a href='https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S'>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</a>
-  (click the <em>Embed</em> tab)</p></dd>
+<dt>YouTube</dt><dd><p><a href='https://developers.google.com/youtube/player_parameters'>https://developers.google.com/youtube/player_parameters</a></p></dd>
+<dt>Vimeo</dt><dd><p><a href='https://developer.vimeo.com/player/embedding'>https://developer.vimeo.com/player/embedding</a></p></dd>
+<dt>Channel 9</dt><dd><p><a href='https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S'>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</a>
+(click the <em>Embed</em> tab)</p></dd>
+<dt>Box</dt><dd><p><a href='https://developer.box.com/docs/box-embed#section-build-box-embed-programatically'>https://developer.box.com/docs/box-embed#section-build-box-embed-programatically</a></p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='use_start_time.html'>use_start_time</a></code></p></div>
+    <div class='dont-index'><p><code><a href='use_start_time.html'>use_start_time()</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2017</span>(<span class='st'>"Room-202-Lightning-Talks"</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"26m35s"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2017</span>(<span class='st'>"Room-202-Lightning-Talks"</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"26m35s"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_box</span>(<span class='st'>"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
