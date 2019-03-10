@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pipe functions — %&gt;% • vembedr</title>
+<title>Make rounded corners — use_rounded • vembedr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Pipe functions — %&gt;%" />
+<meta property="og:title" content="Make rounded corners — use_rounded" />
 
-<meta property="og:description" content="Like dplyr, vembedr also uses the pipe function, \%&amp;gt;\% to turn
-function composition into a series of imperative statements." />
+<meta property="og:description" content="You can use this function to make rounded corners for the enclosing &amp;lt;/div&amp;gt;." />
 <meta name="twitter:card" content="summary" />
 
 <meta name="robots" content="noindex">
@@ -118,49 +117,47 @@ function composition into a series of imperative statements." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Pipe functions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/pipe.R'><code>R/pipe.R</code></a></small>
-    <div class="hidden name"><code>pipe.Rd</code></div>
+    <h1>Make rounded corners</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/div.R'><code>R/div.R</code></a></small>
+    <div class="hidden name"><code>use_rounded.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Like dplyr, vembedr also uses the pipe function, <code>\%&gt;\%</code> to turn
-function composition into a series of imperative statements.</p>
+    <p>You can use this function to make rounded corners for the enclosing <code>&lt;/div&gt;</code>.</p>
     
     </div>
 
+    <pre class="usage"><span class='fu'>use_rounded</span>(<span class='no'>embed</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lhs, rhs</th>
-      <td><p>An embed object and a function to apply to it</p></td>
+      <th>embed</th>
+      <td><p><code>vembedr_embed</code> object, created using an <code><a href='embed.html'>embed()</a></code> function</p></td>
+    </tr>
+    <tr>
+      <th>radius</th>
+      <td><p><code>numeric</code> or <code>character</code>, css property for the border-radius
+for the <code>&lt;iframe/&gt;</code>. Numeric values will be interpreted as number of pixels.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Instead of</span>
-<span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span>(), <span class='st'>"1m35s"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
-#&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://www.youtube.com/embed/DLzxrzFCyOs?start=95" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
-#&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='co'># you can write</span>
-<span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span>() <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"1m35s"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
-#&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://www.youtube.com/embed/DLzxrzFCyOs?start=95" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
-#&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div></pre>
+    <p>object with class <code>vembedr_embed</code>,
+prints to an 'HTML' <code>&lt;div/&gt;</code> that contains an <code>&lt;iframe/&gt;</code></p>
+    
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

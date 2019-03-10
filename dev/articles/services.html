@@ -81,7 +81,8 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
+      </header><link href="services_files/vembedr-0.1.3.9000/css/vembedr.css" rel="stylesheet">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Video services</h1>
@@ -102,18 +103,53 @@
 <li><a href="https://developer.vimeo.com/player/embedding">Vimeo emebedding</a></li>
 <li>
 <a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a>, which includes the UseR! 2016 and 2017 videos. Click the <em>Embed</em> tab for emdedding options.</li>
-<li><a href="https://developer.box.com/docs/box-embed#section-build-box-embed-programatically">Box</a></li>
+<li><a href="https://developer.box.com/docs/box-embed#section-build-box-embed-programatically">Box embedding</a></li>
 </ul>
 <p>One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the <em>helpers</em> vignette deals with how to set the start-time.</p>
 <p>Each of the services exposes <code>height</code> and <code>width</code> arguments; each of the <code><a href="../reference/embed.html">embed()</a></code> functions has these arguments. The defaults for each service are taken from that service’s default values.</p>
 <p>If this package does not contain the customization you need, keep in mind that the the ouput of an <code><a href="../reference/embed.html">embed()</a></code> function is simply an HMTL tag that can be modified using functions from the <strong>htmltools</strong> package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"htmltools"</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"vembedr"</span>)</a></code></pre></div>
-<p>For example, to center your video horizontally, you can wrap your embed function in an <code><a href="https://www.rdocumentation.org/packages/htmltools/topics/builder">htmltools::div()</a></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/htmltools/topics/builder">div</a></span>(</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">align =</span> <span class="st">"center"</span>,</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="kw"><a href="../reference/embed.html">embed</a></span>(...)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">)</a></code></pre></div>
+<p>For example, to center your video horizontally, you can pipe to the function <code><a href="../reference/use_align.html">use_align()</a></code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_align.html">use_align</a></span>(<span class="st">"center"</span>)</a></code></pre></div>
+<div align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+<p>You can make things responsive:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="st">"zpOULjyy-n8"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span>()</a></code></pre></div>
+<div class="embed-responsive embed-responsive-16by9">
+<div>
+<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="420" height="315" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+</div>
+</div>
+<p>You can make rounded corners:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_rounded.html">use_rounded</a></span>()</a></code></pre></div>
+<div>
+<div class="vembedr-rounded">
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_align.html">use_align</a></span>(<span class="st">"center"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/use_rounded.html">use_rounded</a></span>(<span class="dt">radius =</span> <span class="dv">5</span>)</a></code></pre></div>
+<div align="center">
+<div class="vembedr-rounded" style="border-radius: 5px;">
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="st">"zpOULjyy-n8"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/use_rounded.html">use_rounded</a></span>()</a></code></pre></div>
+<div class="embed-responsive embed-responsive-16by9">
+<div class="vembedr-rounded">
+<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="420" height="315" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+</div>
+</div>
 <div id="youtube" class="section level2">
 <h2 class="hasAnchor">
 <a href="#youtube" class="anchor"></a>YouTube</h2>
@@ -123,8 +159,12 @@
 </p>
 <p>The identifier is simply the last part of the URL: <strong><code>44wDwMQVqCc</code></strong>.</p>
 <p>To embed this video, use the function <code><a href="../reference/embed.html">embed_youtube()</a></code>, using the identifier as the <code>id</code> argument:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"44wDwMQVqCc"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"44wDwMQVqCc"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://www.youtube.com/embed/44wDwMQVqCc" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 </div>
 <div id="vimeo" class="section level2">
 <h2 class="hasAnchor">
@@ -134,8 +174,12 @@
 <code>https://vimeo.com/<strong>238200347</strong></code>
 </p>
 <p>The Vimeo identifier is just the path part of the URL: <strong><code>238200347</code></strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_vimeo</a></span>(<span class="dt">id =</span> <span class="st">"238200347"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_vimeo</a></span>(<span class="dt">id =</span> <span class="st">"238200347"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe class="vimeo-embed" src="https://player.vimeo.com/video/238200347" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+</div>
+</div>
 </div>
 <div id="box" class="section level2">
 <h2 class="hasAnchor">
@@ -146,10 +190,14 @@
 <img src="figures/box-url.png" alt="Box Share" style="width:100.0%"><p class="caption">Box Share</p>
 </div>
 <p>Please note that you need to provide the <code>id</code> from the “ugly” URL, not a custom URL.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="../reference/embed_url.html">embed_url</a></span>(<span class="st">"https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="../reference/embed_url.html">embed_url</a></span>(<span class="st">"https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""></iframe>
+</div>
+</div>
 <p>You can do the same thing using the <code><a href="../reference/embed.html">embed_box()</a></code> function and the <code>id</code>. The Box identifier is the path part of the URL that follows the <code>s/</code>, in this case: <strong><code>m5do45hvzw32iv2aors3urf5pgkxxazx</code></strong>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_box</a></span>(<span class="dt">id =</span> <span class="st">"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_box</a></span>(<span class="dt">id =</span> <span class="st">"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</a></code></pre></div>
 <p>If you are using a corporate instance of Box, and use the <code><a href="../reference/embed.html">embed_box()</a></code> function, you will also have to specify the <code>custom_domain</code>. For example, if your URL starts with <code>"https://acme.app.box.com"</code>, then your <code>custom_domain</code> is <code>"acme"</code>.</p>
 </div>
 <div id="user2016-and-2017" class="section level2">
@@ -161,8 +209,12 @@
 <code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/<strong>Forty-years-of-S</strong></code>
 </p>
 <p>For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: <strong><code>Forty-years-of-S</code></strong>. To embed the video:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_user2016</a></span>(<span class="dt">id =</span> <span class="st">"Forty-years-of-S"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_user2016</a></span>(<span class="dt">id =</span> <span class="st">"Forty-years-of-S"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 </div>
 <div id="channel-9" class="section level2">
 <h2 class="hasAnchor">
@@ -174,12 +226,16 @@
 <code>https://channel9.msdn.com/<strong>Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads</strong></code>
 </p>
 <p>The identifier is the path of the URL, <strong><code>Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads</code></strong>, which you can express as a string:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_channel9</a></span>(<span class="dt">id =</span> <span class="st">"Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_channel9</a></span>(<span class="dt">id =</span> <span class="st">"Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 <p>Alternatively, you can express this as a vector of strings:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_channel9</a></span>(</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="dt">id =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Shows"</span>, <span class="st">"Going+Deep"</span>, <span class="st">"Brian-Beckman-Dont-fear-the-Monads"</span>)</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_channel9</a></span>(</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">  <span class="dt">id =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Shows"</span>, <span class="st">"Going+Deep"</span>, <span class="st">"Brian-Beckman-Dont-fear-the-Monads"</span>)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">)</a></code></pre></div>
 </div>
   </div>
 

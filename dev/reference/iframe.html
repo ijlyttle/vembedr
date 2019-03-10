@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pipe functions — %&gt;% • vembedr</title>
+<title>Accessor methods for iframe — iframe • vembedr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Pipe functions — %&gt;%" />
+<meta property="og:title" content="Accessor methods for iframe — iframe" />
 
-<meta property="og:description" content="Like dplyr, vembedr also uses the pipe function, \%&amp;gt;\% to turn
-function composition into a series of imperative statements." />
+<meta property="og:description" content="Accessor methods for iframe" />
 <meta name="twitter:card" content="summary" />
 
 <meta name="robots" content="noindex">
@@ -118,49 +117,68 @@ function composition into a series of imperative statements." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Pipe functions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/pipe.R'><code>R/pipe.R</code></a></small>
-    <div class="hidden name"><code>pipe.Rd</code></div>
+    <h1>Accessor methods for iframe</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/iframe.R'><code>R/iframe.R</code></a></small>
+    <div class="hidden name"><code>iframe.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Like dplyr, vembedr also uses the pipe function, <code>\%&gt;\%</code> to turn
-function composition into a series of imperative statements.</p>
+    <p>Accessor methods for iframe</p>
     
     </div>
 
+    <pre class="usage"><span class='fu'>get_iframe</span>(<span class='no'>embed</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>get_iframe</span>(<span class='no'>embed</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for vembedr_embed</span>
+<span class='fu'>get_iframe</span>(<span class='no'>embed</span>, <span class='no'>...</span>)
+
+<span class='fu'>set_iframe</span>(<span class='no'>embed</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>set_iframe</span>(<span class='no'>embed</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for vembedr_embed</span>
+<span class='fu'>set_iframe</span>(<span class='no'>embed</span>, <span class='no'>iframe</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lhs, rhs</th>
-      <td><p>An embed object and a function to apply to it</p></td>
+      <th>embed</th>
+      <td><p><code>vembedr_embed</code> object, created using an <code><a href='embed.html'>embed()</a></code> function</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other args as needed</p></td>
+    </tr>
+    <tr>
+      <th>iframe</th>
+      <td><p><code>shiny.tag</code> with <code>name</code> <code>"iframe"</code>, object to be set</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Instead of</span>
-<span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span>(), <span class='st'>"1m35s"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
-#&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://www.youtube.com/embed/DLzxrzFCyOs?start=95" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
-#&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='co'># you can write</span>
-<span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span>() <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"1m35s"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
-#&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://www.youtube.com/embed/DLzxrzFCyOs?start=95" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
-#&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div></pre>
+    
+<dl class='dl-horizontal'>
+<dt>get_iframe</dt><dd><p><code>shiny.tag</code> with <code>name</code> <code>"iframe"</code>, created using <a href='https://www.rdocumentation.org/packages/htmltools/topics/builder'>htmltools::tags</a><code>$iframe()</code></p></dd>
+<dt>set_iframe</dt><dd><p><code>embed</code> object</p></dd>
+</dl>
+
+    
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

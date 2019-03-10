@@ -103,6 +103,7 @@
 <h2 class="hasAnchor">
 <a href="#new-to-version-0-1-3-9000" class="anchor"></a>New to version 0.1.3.9000</h2>
 <ul>
+<li>functions to help you format: <code><a href="reference/use_rounded.html">use_rounded()</a></code>, <code><a href="reference/use_align.html">use_align()</a></code>, and <code><a href="reference/use_bs_responsive.html">use_bs_responsive()</a></code>.</li>
 <li>you can embed videos hosted on Box, using <code><a href="reference/embed.html">embed_box()</a></code>.</li>
 </ul>
 </div>
@@ -132,7 +133,11 @@
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"vembedr"</span>)</a></code></pre></div>
 <p>With the function <code><a href="reference/embed_url.html">embed_url()</a></code>, you can use the URL from your browser to embed video:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/embed_url.html">embed_url</a></span>(<span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 <hr>
 <p>If you just want the embedding code, the <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> function may be useful:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/suggest_embed.html">suggest_embed</a></span>(<span class="st">"https://youtu.be/uV4UpCq2azs?t=1m32s"</span>)</a>
@@ -142,7 +147,11 @@
 <hr>
 <p>To embed a YouTube (or Vimeo, or Channel 9) video you can use its identifier, which you can get from the original URL.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/embed.html">embed_youtube</a></span>(<span class="st">"1-vcErOPofQ"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 <hr>
 <p>For this example, we embed a Vimeo using some custom formatting - thanks to <a href="https://github.com/koncina">Eric Koncina</a> and <a href="https://github.com/ginolhac">Aurélien Ginolhac</a> who <a href="https://github.com/ijlyttle/vembedr/issues/25">showed the way</a>. First let’s introduce some css where we can define some rounded corners for an embedded video, by describing an HTML class, <code>vembedr</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">.vembedr</span> {</a>
@@ -192,7 +201,11 @@
 <a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/htmltools/topics/builder">div</a></span>(<span class="dt">align =</span> <span class="st">"center"</span>)</a></code></pre></div>
 <div align="center">
 <div class="vembedr">
+<div>
+<div>
 <iframe class="vimeo-embed" src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+</div>
+</div>
 </div>
 </div>
 <br><p>Of course, the use of the pipe operator is optional. Hat tip to Karthik Ram for <a href="https://twitter.com/_inundata/status/794616331727294464">tweeting</a> out this Vimeo.</p>
@@ -201,7 +214,11 @@
 <p>Here’s an example using a lightning presentation from UseR!2017:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw"><a href="reference/embed.html">embed_user2017</a></span>(<span class="st">"Room-202-Lightning-Talks"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/use_start_time.html">use_start_time</a></span>(<span class="st">"26m35s"</span>)</a></code></pre></div>
+<div>
+<div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 <hr>
 </div>
 <div id="note-for-github-readme-and-rstudio-viewer" class="section level2">

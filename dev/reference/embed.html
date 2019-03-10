@@ -193,7 +193,8 @@ the standard Box instance.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An embed object that prints an <code>htmltools::<a href='https://www.rdocumentation.org/packages/htmltools/topics/builder'>tags</a>$iframe</code> element</p>
+    <p>object with class <code>vembedr_embed</code>,
+prints to an 'HTML' <code>&lt;div/&gt;</code> that contains an <code>&lt;iframe/&gt;</code></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -214,7 +215,27 @@ according to the service being used:</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_user2017</span>(<span class='st'>"Room-202-Lightning-Talks"</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"26m35s"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'><span class='fu'>embed_box</span>(<span class='st'>"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</div><div class='output co'>#&gt; &lt;iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""&gt;&lt;/iframe&gt;</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
+#&gt;   &lt;div&gt;
+#&gt;     &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
+#&gt;   &lt;div&gt;
+#&gt;     &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
+#&gt;   &lt;div&gt;
+#&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2017</span>(<span class='st'>"Room-202-Lightning-Talks"</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"26m35s"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
+#&gt;   &lt;div&gt;
+#&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_box</span>(<span class='st'>"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
+#&gt;   &lt;div&gt;
+#&gt;     &lt;iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
