@@ -98,6 +98,15 @@ use_rounded <- function(embed, radius = NULL) {
   div[["attribs"]][["class"]] <-
     to_html_class(div[["attribs"]][["class"]], "vembedr-rounded")
 
+  # if we have a user-specified radius, use it
+  if (!is.null(radius)) {
+    div <-
+      htmltools::tagAppendAttributes(
+        div,
+        style = glue::glue("border-radius: {radius};")
+      )
+  }
+
   embed[["children"]][[1]] <- div
 
   # attach html-dependency

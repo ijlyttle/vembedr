@@ -70,7 +70,7 @@ rickroll_youtube() %>%
 ```{r}
 rickroll_youtube() %>%
   use_align("center") %>%
-  use_rounded()
+  use_rounded(radius = 5)
 ```
 
 
