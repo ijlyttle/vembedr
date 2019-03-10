@@ -23,7 +23,7 @@ set_iframe(embed, ...)
 \method{set_iframe}{vembedr_embed}(embed, iframe, ...)
 }
 \arguments{
-\item{embed}{\code{embed} object made using an \code{\link[=embed]{embed()}} function}
+\item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 
 \item{...}{other args as needed}
 

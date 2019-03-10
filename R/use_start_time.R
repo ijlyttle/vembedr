@@ -19,10 +19,12 @@
 #'
 #' @rdname use_start_time
 #' @param ...         generic arguments to pass through
-#' @param embed       `embed` object made using an [embed()] function
-#' @param start_time  numeric (seconds), or character ("3m15s")
+#' @param embed       `vembedr_embed` object, created using an [embed()] function
+#' @param start_time  numeric (seconds), or character (e.g. `"3m15s"`)
 #' @param is_paused   logical, for "Channel 9" specifies if the video
 #'   should be paused at this time
+#'
+#' @inherit embed return
 #'
 #' @export
 #' @examples

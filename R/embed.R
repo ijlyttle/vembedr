@@ -29,7 +29,8 @@
 #' @param query             list of items to include in url-query string
 #' @param fragment          character, string to include as url-fragment
 #'
-#' @return An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+#' @return object with class `vembedr_embed`,
+#'   prints to an 'HTML' `<div/>` that contains an `<iframe/>`
 #'
 #' @name embed
 #' @family embed

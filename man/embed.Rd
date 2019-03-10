@@ -50,7 +50,8 @@ are using a corporate instance of Box. If still \code{NULL}, it will use
 the standard Box instance.}
 }
 \value{
-An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+object with class \code{vembedr_embed},
+prints to an 'HTML' \code{<div/>} that contains an \code{<iframe/>}
 }
 \description{
 These functions are used to embed video into your \strong{rmarkdown} html-documents,

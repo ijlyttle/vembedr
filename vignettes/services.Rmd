@@ -46,13 +46,11 @@ library("htmltools")
 library("vembedr")
 ```
 
-For example, to center your video horizontally, you can wrap your embed function in an `htmltools::div()`:
+For example, to center your video horizontally, you can pipe to the function `use_align()`:
 
-```R
-div(
-  align = "center",
-  embed(...)
-)
+```{r}
+rickroll_youtube() %>%
+  use_align("center")
 ```
 
 ## YouTube

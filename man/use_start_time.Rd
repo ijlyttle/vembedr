@@ -6,6 +6,7 @@
 \alias{use_start_time.vembedr_embed_youtube}
 \alias{use_start_time.vembedr_embed_vimeo}
 \alias{use_start_time.vembedr_embed_channel9}
+\alias{use_start_time.vembedr_embed_box}
 \title{Specify a start time for an embedded video}
 \usage{
 use_start_time(...)
@@ -18,20 +19,27 @@ use_start_time(...)
 
 \method{use_start_time}{vembedr_embed_channel9}(embed, start_time,
   is_paused = TRUE, ...)
+
+\method{use_start_time}{vembedr_embed_box}(embed, ...)
 }
 \arguments{
 \item{...}{generic arguments to pass through}
 
-\item{embed}{\code{embed} object made using an \code{\link[=embed]{embed()}} function}
+\item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 
 \item{start_time}{numeric (seconds), or character ("3m15s")}
 
 \item{is_paused}{logical, for "Channel 9" specifies if the video
 should be paused at this time}
 }
+\value{
+object with class \code{vembedr_embed},
+prints to an 'HTML' \code{<div/>} that contains an \code{<iframe/>}
+}
 \description{
 This function provides you a consistent way to specify the start time,
-regardless of the service.
+regardless of the service. Please note that Box does not provide a
+means to specify the start time.
 }
 \details{
 The \code{start_time} argument can take a variety of formats; these inputs
