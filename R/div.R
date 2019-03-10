@@ -1,4 +1,3 @@
-
 #' Align horizontally
 #'
 #' Use this function to specify the horizontal alignment of the `<iframe/>`
@@ -25,18 +24,48 @@ use_align <- function(embed,
   embed
 }
 
-div_bs_responsive <- function(..., ratio = c("16by9", "4by3")) {
+#' Make size responsive
+#'
+#' If your 'HTML` page includes
+#' [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed),
+#' you can use this function to make the size of the `<iframe/>` responsive
+#' within the enclosing `</div>`.
+#'
+#' @inheritParams use_start_time
+#' @param ratio `character`, indicates aspect ratio for the `<iframe/>`
+#'
+#' @inherit embed return
+#' @export
+#'
+use_bs_responsive <- function(embed, ratio = c("16by9", "4by3")) {
+
+  assertthat::assert_that(
+    inherits(embed, "vembedr_embed"),
+    msg = "embed is not a `vebmedr_embed` object"
+  )
 
   ratio <- match.arg(ratio)
 
-  class = glue::glue("embed-responsive embed-responsive-{ratio}")
+  class_div <- c(
+    "embed-responsive",
+    glue::glue("embed-responsive-{ratio}")
+  )
 
-  contents <- list(...)
+  class_iframe <- "embed-responsive-item"
 
-  # need to find any <iframes> in any of the contents, then add
-  # class "embed-responsive-item"
+  # add the class to the div
+  embed[["attribs"]][["class"]] <-
+    to_html_class(embed[["attribs"]][["class"]], class_div)
 
-  htmltools::div(contents, class = class)
+  # add the class to the iframe
+  iframe <- get_iframe(embed)
+
+  iframe[["attribs"]][["class"]] <-
+    to_html_class(iframe[["attribs"]][["class"]], class_iframe)
+
+  embed <- set_iframe(embed, iframe)
+
+  embed
 }
 
 

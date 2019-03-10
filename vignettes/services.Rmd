@@ -53,6 +53,13 @@ rickroll_youtube() %>%
   use_align("center")
 ```
 
+You can make things responsive:
+
+```{r}
+embed_youtube("zpOULjyy-n8") %>%
+  use_bs_responsive()
+```
+
 ## YouTube
 
 You can get your video's identifier by inspecting its URL at YouTube. Consider this YouTube URL:

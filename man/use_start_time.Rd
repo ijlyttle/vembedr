@@ -27,7 +27,7 @@ use_start_time(...)
 
 \item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 
-\item{start_time}{numeric (seconds), or character ("3m15s")}
+\item{start_time}{numeric (seconds), or character (e.g. \code{"3m15s"})}
 
 \item{is_paused}{logical, for "Channel 9" specifies if the video
 should be paused at this time}

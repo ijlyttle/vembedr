@@ -20,6 +20,14 @@ dir_copy(dir_source, dir_target)
 library("htmltools")
 library("vembedr")
 
+## ------------------------------------------------------------------------
+rickroll_youtube() %>%
+  use_align("center")
+
+## ------------------------------------------------------------------------
+embed_youtube("zpOULjyy-n8") %>%
+  use_bs_responsive()
+
 ## ----echo=FALSE----------------------------------------------------------
 tags$p(
   tags$code(
