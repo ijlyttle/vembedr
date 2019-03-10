@@ -60,6 +60,26 @@ embed_youtube("zpOULjyy-n8") %>%
   use_bs_responsive()
 ```
 
+You can make rounded corners:
+
+```{r}
+rickroll_youtube() %>%
+  use_rounded()
+```
+
+```{r}
+rickroll_youtube() %>%
+  use_align("center") %>%
+  use_rounded()
+```
+
+
+```{r}
+embed_youtube("zpOULjyy-n8") %>%
+  use_bs_responsive() %>%
+  use_rounded()
+```
+
 ## YouTube
 
 You can get your video's identifier by inspecting its URL at YouTube. Consider this YouTube URL:

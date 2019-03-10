@@ -8,3 +8,13 @@ to_html_class <- function(x, ...) {
 
   x
 }
+
+# define html-dependency
+vembedr_dependency <-
+  htmltools::htmlDependency(
+    name = "vembedr",
+    version = packageVersion("vembedr"),
+    src = "vembedr",
+    stylesheet = c("css/vembedr.css"),
+    package = "vembedr"
+  )

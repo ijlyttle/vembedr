@@ -32,7 +32,7 @@ get_iframe.default <- function(embed, ...) {
 #' @export
 #'
 get_iframe.vembedr_embed <- function(embed, ...) {
-  embed[["children"]][[1]]
+  embed[["children"]][[1]][["children"]][[1]]
 }
 
 #' @rdname iframe
@@ -63,7 +63,7 @@ set_iframe.vembedr_embed <- function(embed, iframe, ...) {
     msg = "iframe is not an `iframe`"
   )
 
-  embed[["children"]][[1]] <- iframe
+  embed[["children"]][[1]][["children"]][[1]] <- iframe
 
   embed
 }
