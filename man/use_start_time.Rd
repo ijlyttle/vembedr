@@ -3,20 +3,20 @@
 \name{use_start_time}
 \alias{use_start_time}
 \alias{use_start_time.default}
-\alias{use_start_time.embed_youtube}
-\alias{use_start_time.embed_vimeo}
-\alias{use_start_time.embed_channel9}
+\alias{use_start_time.vembedr_embed_youtube}
+\alias{use_start_time.vembedr_embed_vimeo}
+\alias{use_start_time.vembedr_embed_channel9}
 \title{Specify a start time for an embedded video}
 \usage{
 use_start_time(...)
 
 \method{use_start_time}{default}(...)
 
-\method{use_start_time}{embed_youtube}(embed, start_time, ...)
+\method{use_start_time}{vembedr_embed_youtube}(embed, start_time, ...)
 
-\method{use_start_time}{embed_vimeo}(embed, start_time, ...)
+\method{use_start_time}{vembedr_embed_vimeo}(embed, start_time, ...)
 
-\method{use_start_time}{embed_channel9}(embed, start_time,
+\method{use_start_time}{vembedr_embed_channel9}(embed, start_time,
   is_paused = TRUE, ...)
 }
 \arguments{

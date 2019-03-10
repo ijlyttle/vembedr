@@ -73,7 +73,7 @@ embed_vimeo <- function(id, width = 500, height = 281,
       )
     )
 
-  class(embed) <- c("embed_vimeo", "embed", class(embed))
+  class(embed) <- c("vembedr_embed_vimeo", "vembedr_embed", class(embed))
 
   embed
 }
@@ -103,7 +103,7 @@ embed_youtube <- function(id, width = 420, height = 315,
       )
     )
 
-  class(embed) <- c("embed_youtube", "embed",  class(embed))
+  class(embed) <- c("vembedr_embed_youtube", "vembedr_embed",  class(embed))
 
   embed
 }
@@ -159,7 +159,7 @@ embed_channel9 <- function(id, width = 560, height = 315,
       )
     )
 
-  class(embed) <- c("embed_channel9",  "embed", class(embed))
+  class(embed) <- c("vembedr_embed_channel9",  "vembedr_embed", class(embed))
 
   embed
 }
@@ -205,7 +205,7 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
       )
     )
 
-  class(embed) <- c("embed_box",  "embed", class(embed))
+  class(embed) <- c("vembedr_embed_box",  "vembedr_embed", class(embed))
 
   embed
 }

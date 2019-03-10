@@ -1,7 +1,8 @@
 #' Specify a start time for an embedded video
 #'
 #' This function provides you a consistent way to specify the start time,
-#' regardless of the service.
+#' regardless of the service. Please note that Box does not provide a
+#' means to specify the start time.
 #'
 #' The `start_time` argument can take a variety of formats; these inputs
 #' all evaluate to the same value:
@@ -39,7 +40,7 @@ use_start_time.default <- function(...) "Unknown class"
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_youtube <- function(embed, start_time, ...){
+use_start_time.vembedr_embed_youtube <- function(embed, start_time, ...){
 
   # get the iframe
   iframe <- get_iframe(embed)
@@ -66,7 +67,7 @@ use_start_time.embed_youtube <- function(embed, start_time, ...){
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_vimeo <- function(embed, start_time, ...){
+use_start_time.vembedr_embed_vimeo <- function(embed, start_time, ...){
 
   # get the iframe
   iframe <- get_iframe(embed)
@@ -93,7 +94,7 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, ...){
+use_start_time.vembedr_embed_channel9 <- function(embed, start_time, is_paused = TRUE, ...){
 
   # get the iframe
   iframe <- get_iframe(embed)
@@ -119,6 +120,15 @@ use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, .
 
   # set the iframe in the embed
   embed <- set_iframe(embed, iframe)
+
+  embed
+}
+
+#' @rdname use_start_time
+#' @export
+#'
+use_start_time.vembedr_embed_box <- function(embed, ...) {
+  warning("Start time cannot be specified for Box.")
 
   embed
 }

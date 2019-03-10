@@ -31,7 +31,7 @@ get_iframe.default <- function(embed, ...) {
 #' @rdname iframe
 #' @export
 #'
-get_iframe.embed <- function(embed, ...) {
+get_iframe.vembedr_embed <- function(embed, ...) {
   embed[["children"]][[1]]
 }
 
@@ -55,7 +55,7 @@ set_iframe.default <- function(embed, ...) {
 #' @rdname iframe
 #' @export
 #'
-set_iframe.embed <- function(embed, iframe, ...) {
+set_iframe.vembedr_embed <- function(embed, iframe, ...) {
 
   assertthat::assert_that(
     inherits(iframe, "shiny.tag"),

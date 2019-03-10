@@ -4,23 +4,23 @@
 \alias{iframe}
 \alias{get_iframe}
 \alias{get_iframe.default}
-\alias{get_iframe.embed}
+\alias{get_iframe.vembedr_embed}
 \alias{set_iframe}
 \alias{set_iframe.default}
-\alias{set_iframe.embed}
+\alias{set_iframe.vembedr_embed}
 \title{Accessor methods for iframe}
 \usage{
 get_iframe(embed, ...)
 
 \method{get_iframe}{default}(embed, ...)
 
-\method{get_iframe}{embed}(embed, ...)
+\method{get_iframe}{vembedr_embed}(embed, ...)
 
 set_iframe(embed, ...)
 
 \method{set_iframe}{default}(embed, ...)
 
-\method{set_iframe}{embed}(embed, iframe, ...)
+\method{set_iframe}{vembedr_embed}(embed, iframe, ...)
 }
 \arguments{
 \item{embed}{\code{embed} object made using an \code{\link[=embed]{embed()}} function}
