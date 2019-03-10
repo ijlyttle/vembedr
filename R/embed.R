@@ -59,18 +59,21 @@ embed_vimeo <- function(id, width = 500, height = 281,
   url$query <- query
   url$fragment <- fragment
 
-  embed <- htmltools::tags$iframe(
-    class = "vimeo-embed",
-    src = httr::build_url(url),
-    width = width,
-    height = height,
-    frameborder = frameborder,
-    webkitallowfullscreen = allowfullscreen,
-    mozallowfullscreen = allowfullscreen,
-    allowfullscreen = allowfullscreen
-  )
+  embed <-
+    htmltools::div(
+      htmltools::tags$iframe(
+        class = "vimeo-embed",
+        src = httr::build_url(url),
+        width = width,
+        height = height,
+        frameborder = frameborder,
+        webkitallowfullscreen = allowfullscreen,
+        mozallowfullscreen = allowfullscreen,
+        allowfullscreen = allowfullscreen
+      )
+    )
 
-  class(embed) <- c("embed_vimeo", class(embed))
+  class(embed) <- c("embed_vimeo", "embed", class(embed))
 
   embed
 }
@@ -89,15 +92,18 @@ embed_youtube <- function(id, width = 420, height = 315,
   url$path <- paste(url$path, id, sep = "/")
   url$query <- query
 
-  embed <- htmltools::tags$iframe(
-    src = httr::build_url(url),
-    width = width,
-    height = height,
-    frameborder = frameborder,
-    allowfullscreen = allowfullscreen
-  )
+  embed <-
+    htmltools::div(
+      htmltools::tags$iframe(
+        src = httr::build_url(url),
+        width = width,
+        height = height,
+        frameborder = frameborder,
+        allowfullscreen = allowfullscreen
+      )
+    )
 
-  class(embed) <- c("embed_youtube", class(embed))
+  class(embed) <- c("embed_youtube", "embed",  class(embed))
 
   embed
 }
@@ -142,15 +148,18 @@ embed_channel9 <- function(id, width = 560, height = 315,
 
   url$path <- paste0(url$path, c(id, "player"), collapse = "/")
 
-  embed <- htmltools::tags$iframe(
-    src = httr::build_url(url),
-    width = width,
-    height = height,
-    frameborder = frameborder,
-    allowfullscreen = allowfullscreen
-  )
+  embed <-
+    htmltools::div(
+      htmltools::tags$iframe(
+        src = httr::build_url(url),
+        width = width,
+        height = height,
+        frameborder = frameborder,
+        allowfullscreen = allowfullscreen
+      )
+    )
 
-  class(embed) <- c("embed_channel9", class(embed))
+  class(embed) <- c("embed_channel9",  "embed", class(embed))
 
   embed
 }
@@ -183,17 +192,20 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
 
   url <- glue::glue("https://{host}/embed/s/{id}")
 
-  embed <- htmltools::tags$iframe(
-    src = url,
-    width = width,
-    height = height,
-    frameborder = frameborder,
-    allowfullscreen = allowfullscreen,
-    webkitallowfullscreen = allowfullscreen,
-    msallowfullscreen = allowfullscreen
-  )
+  embed <-
+    htmltools::div(
+      htmltools::tags$iframe(
+        src = url,
+        width = width,
+        height = height,
+        frameborder = frameborder,
+        allowfullscreen = allowfullscreen,
+        webkitallowfullscreen = allowfullscreen,
+        msallowfullscreen = allowfullscreen
+      )
+    )
 
-  class(embed) <- c("embed_box", class(embed))
+  class(embed) <- c("embed_box",  "embed", class(embed))
 
   embed
 }

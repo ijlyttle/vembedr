@@ -18,7 +18,7 @@
 #'
 #' @rdname use_start_time
 #' @param ...         generic arguments to pass through
-#' @param embed       embed object made using an [embed()] function
+#' @param embed       `embed` object made using an [embed()] function
 #' @param start_time  numeric (seconds), or character ("3m15s")
 #' @param is_paused   logical, for "Channel 9" specifies if the video
 #'   should be paused at this time
@@ -41,8 +41,11 @@ use_start_time.default <- function(...) "Unknown class"
 #'
 use_start_time.embed_youtube <- function(embed, start_time, ...){
 
-  # get the src from the embed
-  src <- htmltools::tagGetAttribute(embed, "src")
+  # get the iframe
+  iframe <- get_iframe(embed)
+
+  # get the src from the iframe
+  src <- htmltools::tagGetAttribute(iframe, "src")
 
   # parse the url
   url <- httr::parse_url(src)
@@ -50,9 +53,12 @@ use_start_time.embed_youtube <- function(embed, start_time, ...){
   # set the time in url$query
   url$query$start <- .secs(start_time)
 
-  # set the url in the embed
+  # set the url in the iframe
   # == need to ask about a public API for this in htmltools ==
-  embed$attribs$src <- httr::build_url(url)
+  iframe$attribs$src <- httr::build_url(url)
+
+  # set the iframe in the embed
+  embed <- set_iframe(embed, iframe)
 
   embed
 }
@@ -62,8 +68,11 @@ use_start_time.embed_youtube <- function(embed, start_time, ...){
 #'
 use_start_time.embed_vimeo <- function(embed, start_time, ...){
 
-  # get the src from the embed
-  src <- htmltools::tagGetAttribute(embed, "src")
+  # get the iframe
+  iframe <- get_iframe(embed)
+
+  # get the src from the iframe
+  src <- htmltools::tagGetAttribute(iframe, "src")
 
   # parse the url
   url <- httr::parse_url(src)
@@ -71,9 +80,12 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
   # set the time in url$fragment
   url$fragment <- paste0("t=", .secs(start_time))
 
-  # set the url in the embed
+  # set the url in the iframe
   # == need to ask about a public API for this in htmltools ==
-  embed$attribs$src <- httr::build_url(url)
+  iframe$attribs$src <- httr::build_url(url)
+
+  # set the iframe in the embed
+  embed <- set_iframe(embed, iframe)
 
   embed
 }
@@ -83,8 +95,11 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
 #'
 use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, ...){
 
-  # get the src from the embed
-  src <- htmltools::tagGetAttribute(embed, "src")
+  # get the iframe
+  iframe <- get_iframe(embed)
+
+  # get the src from the iframe
+  src <- htmltools::tagGetAttribute(iframe, "src")
 
   # parse the url
   url <- httr::parse_url(src)
@@ -98,9 +113,12 @@ use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, .
 
   url$fragment <- frag
 
-  # set the url in the embed
+  # set the url in the iframe
   # == need to ask about a public API for this in htmltools ==
-  embed$attribs$src <- httr::build_url(url)
+  iframe$attribs$src <- httr::build_url(url)
+
+  # set the iframe in the embed
+  embed <- set_iframe(embed, iframe)
 
   embed
 }

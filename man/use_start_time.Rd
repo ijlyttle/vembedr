@@ -22,7 +22,7 @@ use_start_time(...)
 \arguments{
 \item{...}{generic arguments to pass through}
 
-\item{embed}{embed object made using an \code{\link[=embed]{embed()}} function}
+\item{embed}{\code{embed} object made using an \code{\link[=embed]{embed()}} function}
 
 \item{start_time}{numeric (seconds), or character ("3m15s")}
 
