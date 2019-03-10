@@ -12,7 +12,7 @@
 
 <meta name="author" content="Ian Lyttle" />
 
-<meta name="date" content="2019-03-09" />
+<meta name="date" content="2019-03-10" />
 
 <title>Video services</title>
 
@@ -300,7 +300,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">Video services</h1>
 <h4 class="author"><em>Ian Lyttle</em></h4>
-<h4 class="date"><em>2019-03-09</em></h4>
+<h4 class="date"><em>2019-03-10</em></h4>
 
 
 
@@ -316,11 +316,18 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>If this package does not contain the customization you need, keep in mind that the the ouput of an <code>embed()</code> function is simply an HMTL tag that can be modified using functions from the <strong>htmltools</strong> package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(<span class="st">&quot;htmltools&quot;</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(<span class="st">&quot;vembedr&quot;</span>)</a></code></pre></div>
-<p>For example, to center your video horizontally, you can wrap your embed function in an <code>htmltools::div()</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">div</span>(</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>,</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="kw">embed</span>(...)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">)</a></code></pre></div>
+<p>For example, to center your video horizontally, you can pipe to the function <code>use_align()</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">rickroll_youtube</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw">use_align</span>(<span class="st">&quot;center&quot;</span>)</a></code></pre></div>
+<div align="center">
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<p>You can make things responsive:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">embed_youtube</span>(<span class="st">&quot;zpOULjyy-n8&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">use_bs_responsive</span>()</a></code></pre></div>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="420" height="315" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+</div>
 <div id="youtube" class="section level2">
 <h2>YouTube</h2>
 <p>You can get your video’s identifier by inspecting its URL at YouTube. Consider this YouTube URL:</p>
@@ -329,8 +336,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </p>
 <p>The identifier is simply the last part of the URL: <strong><code>44wDwMQVqCc</code></strong>.</p>
 <p>To embed this video, use the function <code>embed_youtube()</code>, using the identifier as the <code>id</code> argument:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;44wDwMQVqCc&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">embed_youtube</span>(<span class="dt">id =</span> <span class="st">&quot;44wDwMQVqCc&quot;</span>)</a></code></pre></div>
+<div>
 <iframe src="https://www.youtube.com/embed/44wDwMQVqCc" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
 </div>
 <div id="vimeo" class="section level2">
 <h2>Vimeo</h2>
@@ -339,8 +348,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <code>https://vimeo.com/<strong>238200347</strong></code>
 </p>
 <p>The Vimeo identifier is just the path part of the URL: <strong><code>238200347</code></strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;238200347&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">embed_vimeo</span>(<span class="dt">id =</span> <span class="st">&quot;238200347&quot;</span>)</a></code></pre></div>
+<div>
 <iframe class="vimeo-embed" src="https://player.vimeo.com/video/238200347" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+</div>
 </div>
 <div id="box" class="section level2">
 <h2>Box</h2>
@@ -351,10 +362,12 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p class="caption">Box Share</p>
 </div>
 <p>Please note that you need to provide the <code>id</code> from the “ugly” URL, not a custom URL.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">embed_url</span>(<span class="st">&quot;https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">embed_url</span>(<span class="st">&quot;https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx&quot;</span>)</a></code></pre></div>
+<div>
 <iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""></iframe>
+</div>
 <p>You can do the same thing using the <code>embed_box()</code> function and the <code>id</code>. The Box identifier is the path part of the URL that follows the <code>s/</code>, in this case: <strong><code>m5do45hvzw32iv2aors3urf5pgkxxazx</code></strong>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">embed_box</span>(<span class="dt">id =</span> <span class="st">&quot;m5do45hvzw32iv2aors3urf5pgkxxazx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">embed_box</span>(<span class="dt">id =</span> <span class="st">&quot;m5do45hvzw32iv2aors3urf5pgkxxazx&quot;</span>)</a></code></pre></div>
 <p>If you are using a corporate instance of Box, and use the <code>embed_box()</code> function, you will also have to specify the <code>custom_domain</code>. For example, if your URL starts with <code>&quot;https://acme.app.box.com&quot;</code>, then your <code>custom_domain</code> is <code>&quot;acme&quot;</code>.</p>
 </div>
 <div id="user2016-and-2017" class="section level2">
@@ -365,8 +378,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/<strong>Forty-years-of-S</strong></code>
 </p>
 <p>For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: <strong><code>Forty-years-of-S</code></strong>. To embed the video:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Forty-years-of-S&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">embed_user2016</span>(<span class="dt">id =</span> <span class="st">&quot;Forty-years-of-S&quot;</span>)</a></code></pre></div>
+<div>
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
 </div>
 <div id="channel-9" class="section level2">
 <h2>Channel 9</h2>
@@ -377,12 +392,14 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <code>https://channel9.msdn.com/<strong>Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads</strong></code>
 </p>
 <p>The identifier is the path of the URL, <strong><code>Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads</code></strong>, which you can express as a string:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">embed_channel9</span>(<span class="dt">id =</span> <span class="st">&quot;Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">embed_channel9</span>(<span class="dt">id =</span> <span class="st">&quot;Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads&quot;</span>)</a></code></pre></div>
+<div>
 <iframe src="https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
 <p>Alternatively, you can express this as a vector of strings:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">embed_channel9</span>(</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="dt">id =</span> <span class="kw">c</span>(<span class="st">&quot;Shows&quot;</span>, <span class="st">&quot;Going+Deep&quot;</span>, <span class="st">&quot;Brian-Beckman-Dont-fear-the-Monads&quot;</span>)</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">embed_channel9</span>(</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">id =</span> <span class="kw">c</span>(<span class="st">&quot;Shows&quot;</span>, <span class="st">&quot;Going+Deep&quot;</span>, <span class="st">&quot;Brian-Beckman-Dont-fear-the-Monads&quot;</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">)</a></code></pre></div>
 </div>
 
 

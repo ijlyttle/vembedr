@@ -33,7 +33,7 @@ The foundation of this package is the `embed()` family of functions, used to gen
 - [YouTube IFrame API](https://developers.google.com/youtube/player_parameters)
 - [Vimeo emebedding](https://developer.vimeo.com/player/embedding)
 - [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 and 2017 videos. Click the *Embed* tab for emdedding options.
-- [Box](https://developer.box.com/docs/box-embed#section-build-box-embed-programatically)
+- [Box embedding](https://developer.box.com/docs/box-embed#section-build-box-embed-programatically)
 
 One of the goals of this package is to make it easier to specify the important parameters: video-identifier and (optional) start-time. This vignette deals with how to obtain video-identifiers, the *helpers* vignette deals with how to set the start-time.
 
@@ -46,13 +46,38 @@ library("htmltools")
 library("vembedr")
 ```
 
-For example, to center your video horizontally, you can wrap your embed function in an `htmltools::div()`:
+For example, to center your video horizontally, you can pipe to the function `use_align()`:
 
-```R
-div(
-  align = "center",
-  embed(...)
-)
+```{r}
+rickroll_youtube() %>%
+  use_align("center")
+```
+
+You can make things responsive:
+
+```{r}
+embed_youtube("zpOULjyy-n8") %>%
+  use_bs_responsive()
+```
+
+You can make rounded corners:
+
+```{r}
+rickroll_youtube() %>%
+  use_rounded()
+```
+
+```{r}
+rickroll_youtube() %>%
+  use_align("center") %>%
+  use_rounded(radius = 5)
+```
+
+
+```{r}
+embed_youtube("zpOULjyy-n8") %>%
+  use_bs_responsive() %>%
+  use_rounded()
 ```
 
 ## YouTube

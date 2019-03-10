@@ -1,7 +1,8 @@
 #' Specify a start time for an embedded video
 #'
 #' This function provides you a consistent way to specify the start time,
-#' regardless of the service.
+#' regardless of the service. Please note that Box does not provide a
+#' means to specify the start time.
 #'
 #' The `start_time` argument can take a variety of formats; these inputs
 #' all evaluate to the same value:
@@ -18,10 +19,12 @@
 #'
 #' @rdname use_start_time
 #' @param ...         generic arguments to pass through
-#' @param embed       embed object made using an [embed()] function
-#' @param start_time  numeric (seconds), or character ("3m15s")
+#' @param embed       `vembedr_embed` object, created using an [embed()] function
+#' @param start_time  numeric (seconds), or character (e.g. `"3m15s"`)
 #' @param is_paused   logical, for "Channel 9" specifies if the video
 #'   should be paused at this time
+#'
+#' @inherit embed return
 #'
 #' @export
 #' @examples
@@ -39,10 +42,13 @@ use_start_time.default <- function(...) "Unknown class"
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_youtube <- function(embed, start_time, ...){
+use_start_time.vembedr_embed_youtube <- function(embed, start_time, ...){
 
-  # get the src from the embed
-  src <- htmltools::tagGetAttribute(embed, "src")
+  # get the iframe
+  iframe <- get_iframe(embed)
+
+  # get the src from the iframe
+  src <- htmltools::tagGetAttribute(iframe, "src")
 
   # parse the url
   url <- httr::parse_url(src)
@@ -50,9 +56,12 @@ use_start_time.embed_youtube <- function(embed, start_time, ...){
   # set the time in url$query
   url$query$start <- .secs(start_time)
 
-  # set the url in the embed
+  # set the url in the iframe
   # == need to ask about a public API for this in htmltools ==
-  embed$attribs$src <- httr::build_url(url)
+  iframe$attribs$src <- httr::build_url(url)
+
+  # set the iframe in the embed
+  embed <- set_iframe(embed, iframe)
 
   embed
 }
@@ -60,10 +69,13 @@ use_start_time.embed_youtube <- function(embed, start_time, ...){
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_vimeo <- function(embed, start_time, ...){
+use_start_time.vembedr_embed_vimeo <- function(embed, start_time, ...){
 
-  # get the src from the embed
-  src <- htmltools::tagGetAttribute(embed, "src")
+  # get the iframe
+  iframe <- get_iframe(embed)
+
+  # get the src from the iframe
+  src <- htmltools::tagGetAttribute(iframe, "src")
 
   # parse the url
   url <- httr::parse_url(src)
@@ -71,9 +83,12 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
   # set the time in url$fragment
   url$fragment <- paste0("t=", .secs(start_time))
 
-  # set the url in the embed
+  # set the url in the iframe
   # == need to ask about a public API for this in htmltools ==
-  embed$attribs$src <- httr::build_url(url)
+  iframe$attribs$src <- httr::build_url(url)
+
+  # set the iframe in the embed
+  embed <- set_iframe(embed, iframe)
 
   embed
 }
@@ -81,10 +96,13 @@ use_start_time.embed_vimeo <- function(embed, start_time, ...){
 #' @rdname use_start_time
 #' @export
 #'
-use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, ...){
+use_start_time.vembedr_embed_channel9 <- function(embed, start_time, is_paused = TRUE, ...){
 
-  # get the src from the embed
-  src <- htmltools::tagGetAttribute(embed, "src")
+  # get the iframe
+  iframe <- get_iframe(embed)
+
+  # get the src from the iframe
+  src <- htmltools::tagGetAttribute(iframe, "src")
 
   # parse the url
   url <- httr::parse_url(src)
@@ -98,9 +116,21 @@ use_start_time.embed_channel9 <- function(embed, start_time, is_paused = TRUE, .
 
   url$fragment <- frag
 
-  # set the url in the embed
+  # set the url in the iframe
   # == need to ask about a public API for this in htmltools ==
-  embed$attribs$src <- httr::build_url(url)
+  iframe$attribs$src <- httr::build_url(url)
+
+  # set the iframe in the embed
+  embed <- set_iframe(embed, iframe)
+
+  embed
+}
+
+#' @rdname use_start_time
+#' @export
+#'
+use_start_time.vembedr_embed_box <- function(embed, ...) {
+  warning("Start time cannot be specified for Box.")
 
   embed
 }

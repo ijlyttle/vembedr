@@ -17,6 +17,8 @@ apps. Four services are currently supported:
 
 ## New to version 0.1.3.9000
 
+  - functions to help you format: `use_rounded()`, `use_align()`, and
+    `use_bs_responsive()`.
   - you can embed videos hosted on Box, using `embed_box()`.
 
 ## Installation
@@ -63,9 +65,17 @@ embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
 
 <!--html_preserve-->
 
+<div>
+
+<div>
+
 <iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="420" height="315" frameborder="0" allowfullscreen>
 
 </iframe>
+
+</div>
+
+</div>
 
 <!--/html_preserve-->
 
@@ -96,9 +106,17 @@ embed_youtube("1-vcErOPofQ")
 
 <!--html_preserve-->
 
+<div>
+
+<div>
+
 <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen>
 
 </iframe>
+
+</div>
+
+</div>
 
 <!--/html_preserve-->
 
@@ -157,9 +175,17 @@ embed_vimeo("189919038") %>%
 
 <div class="vembedr">
 
+<div>
+
+<div>
+
 <iframe class="vimeo-embed" src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 
 </iframe>
+
+</div>
+
+</div>
 
 </div>
 
@@ -191,9 +217,17 @@ embed_user2017("Room-202-Lightning-Talks") %>%
 
 <!--html_preserve-->
 
+<div>
+
+<div>
+
 <iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen>
 
 </iframe>
+
+</div>
+
+</div>
 
 <!--/html_preserve-->
 

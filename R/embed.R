@@ -29,7 +29,8 @@
 #' @param query             list of items to include in url-query string
 #' @param fragment          character, string to include as url-fragment
 #'
-#' @return An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+#' @return object with class `vembedr_embed`,
+#'   prints to an 'HTML' `<div/>` that contains an `<iframe/>`
 #'
 #' @name embed
 #' @family embed
@@ -59,7 +60,7 @@ embed_vimeo <- function(id, width = 500, height = 281,
   url$query <- query
   url$fragment <- fragment
 
-  embed <- htmltools::tags$iframe(
+  iframe <- htmltools::tags$iframe(
     class = "vimeo-embed",
     src = httr::build_url(url),
     width = width,
@@ -70,7 +71,7 @@ embed_vimeo <- function(id, width = 500, height = 281,
     allowfullscreen = allowfullscreen
   )
 
-  class(embed) <- c("embed_vimeo", class(embed))
+  embed <- create_embed(iframe, "vembedr_embed_vimeo")
 
   embed
 }
@@ -89,7 +90,7 @@ embed_youtube <- function(id, width = 420, height = 315,
   url$path <- paste(url$path, id, sep = "/")
   url$query <- query
 
-  embed <- htmltools::tags$iframe(
+  iframe <- htmltools::tags$iframe(
     src = httr::build_url(url),
     width = width,
     height = height,
@@ -97,7 +98,7 @@ embed_youtube <- function(id, width = 420, height = 315,
     allowfullscreen = allowfullscreen
   )
 
-  class(embed) <- c("embed_youtube", class(embed))
+  embed <- create_embed(iframe, "vembedr_embed_youtube")
 
   embed
 }
@@ -142,7 +143,7 @@ embed_channel9 <- function(id, width = 560, height = 315,
 
   url$path <- paste0(url$path, c(id, "player"), collapse = "/")
 
-  embed <- htmltools::tags$iframe(
+  iframe <- htmltools::tags$iframe(
     src = httr::build_url(url),
     width = width,
     height = height,
@@ -150,7 +151,7 @@ embed_channel9 <- function(id, width = 560, height = 315,
     allowfullscreen = allowfullscreen
   )
 
-  class(embed) <- c("embed_channel9", class(embed))
+  embed <- create_embed(iframe, "vembedr_embed_channel9")
 
   embed
 }
@@ -183,7 +184,7 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
 
   url <- glue::glue("https://{host}/embed/s/{id}")
 
-  embed <- htmltools::tags$iframe(
+  iframe <- htmltools::tags$iframe(
     src = url,
     width = width,
     height = height,
@@ -193,7 +194,20 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
     msallowfullscreen = allowfullscreen
   )
 
-  class(embed) <- c("embed_box", class(embed))
+  embed <- create_embed(iframe, "vembedr_embed_box")
+
+  embed
+}
+
+
+create_embed <- function(iframe, name) {
+
+
+  embed <- htmltools::div(
+    htmltools::div(iframe)
+  )
+
+  class(embed) <- c(name,  "vembedr_embed", class(embed))
 
   embed
 }

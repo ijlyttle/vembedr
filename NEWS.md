@@ -1,5 +1,10 @@
 ## vembedr 0.1.3.9000
 
+- adds three functions to help with formatting; they are all pipeable with `embed_*()` functions:
+  - `use_rounded()` lets you specify rounded corners. (#25, with @koncina and @ginolhac)
+  - `use_align()` lets you specify a horizontal alignment.
+  - `use_bs_responsive()` if your 'HTML' page includes [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed), use this function to make your `<iframe/>` responsive. (#13)
+  
 - adds functionality for embedding [Box](https://www.box.com) videos, via the `embed_box()` function (#28)
 - version bump for development
 
