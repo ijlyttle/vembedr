@@ -18,9 +18,8 @@
 #'
 #' @param id                character, identifier provided by the service
 #' @param custom_domain     character, (used by Box) name of Box-instance
-#'   to use. If `NULL`, will use the value of
-#'   `getOption("vembedr.box_custom_domain")`. This can be useful if you
-#'   are using a corporate instance of Box. If still `NULL`, it will use
+#'   to use. It can be useful to use `getOption("vembedr.box_custom_domain")`
+#'   if you are using a corporate instance of Box. If `NULL`, it will use
 #'   the standard Box instance.
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
@@ -159,7 +158,8 @@ embed_channel9 <- function(id, width = 560, height = 315,
 #' @rdname embed
 #' @export
 #'
-embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
+embed_box <- function(id, custom_domain = getOption("vembedr.box_custom_domain"),
+                      width = 500, height = 330,
                       frameborder = 0, allowfullscreen = TRUE) {
 
   # adapted from:
@@ -172,8 +172,6 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
   #    frameborder="0"
   #    allowfullscreen webkitallowfullscreen msallowfullscreen>
   # </iframe>
-
-  custom_domain <- custom_domain %||% getOption("vembedr.box_custom_domain")
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 

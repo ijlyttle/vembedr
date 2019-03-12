@@ -25,8 +25,9 @@ embed_user2017(id, width = 560, height = 315, frameborder = 0,
 embed_channel9(id, width = 560, height = 315, frameborder = 0,
   allowfullscreen = TRUE)
 
-embed_box(id, custom_domain = NULL, width = 500, height = 330,
-  frameborder = 0, allowfullscreen = TRUE)
+embed_box(id, custom_domain = getOption("vembedr.box_custom_domain"),
+  width = 500, height = 330, frameborder = 0,
+  allowfullscreen = TRUE)
 }
 \arguments{
 \item{id}{character, identifier provided by the service}
@@ -44,9 +45,8 @@ embed_box(id, custom_domain = NULL, width = 500, height = 330,
 \item{fragment}{character, string to include as url-fragment}
 
 \item{custom_domain}{character, (used by Box) name of Box-instance
-to use. If \code{NULL}, will use the value of
-\code{getOption("vembedr.box_custom_domain")}. This can be useful if you
-are using a corporate instance of Box. If still \code{NULL}, it will use
+to use. It can be useful to use \code{getOption("vembedr.box_custom_domain")}
+if you are using a corporate instance of Box. If \code{NULL}, it will use
 the standard Box instance.}
 }
 \value{
