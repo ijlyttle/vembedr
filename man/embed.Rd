@@ -10,24 +10,25 @@
 \alias{embed_box}
 \title{Embed a video into an HTML document}
 \usage{
-embed_vimeo(id, width = 500, height = 281, frameborder = 0,
-  allowfullscreen = TRUE, query = NULL, fragment = NULL)
+embed_vimeo(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE, query = NULL,
+  fragment = NULL)
 
-embed_youtube(id, width = 420, height = 315, frameborder = 0,
-  allowfullscreen = TRUE, query = NULL)
+embed_youtube(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE, query = NULL)
 
-embed_user2016(id, width = 560, height = 315, frameborder = 0,
-  allowfullscreen = TRUE)
+embed_user2016(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE)
 
-embed_user2017(id, width = 560, height = 315, frameborder = 0,
-  allowfullscreen = TRUE)
+embed_user2017(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE)
 
-embed_channel9(id, width = 560, height = 315, frameborder = 0,
-  allowfullscreen = TRUE)
+embed_channel9(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE)
 
 embed_box(id, custom_domain = getOption("vembedr.box_custom_domain"),
-  width = 500, height = 330, frameborder = 0,
-  allowfullscreen = TRUE)
+  width = NULL, height = 300, ratio = c("16by9", "4by3"),
+  frameborder = 0, allowfullscreen = TRUE)
 }
 \arguments{
 \item{id}{character, identifier provided by the service}
