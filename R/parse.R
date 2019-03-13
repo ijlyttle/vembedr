@@ -4,7 +4,9 @@
 #'
 #' \describe{
 #'   \item{`suggest_embed`}{called for the side-effect of
-#'     messaging the suggested code the screen}
+#'     printing suggested code the screen. If you have a recent version
+#'     of [usethis](https://cran.r-project.org/package=usethis), the code
+#'     will be copied to your clipboard}
 #'   \item{`suggest_embed_pure`}{returns character string
 #'     that represents the suggested code}
 #' }
@@ -15,17 +17,30 @@
 #' @return character, returns the suggested code (`suggest_embed` returns invisibly)
 #'
 #' @examples
-#' suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
-#' suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+#' \dontrun{
+#'   # not run because it may copy to your clipboard
+#'   suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
+#'   suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+#' }
+#'   cat(suggest_embed_pure("https://youtu.be/1-vcErOPofQ?t=28"))
 #' @export
 #'
 suggest_embed <- function(url){
 
-  str_message <- suggest_embed_pure(url)
+  code <- suggest_embed_pure(url)
 
-  message(str_message)
+  # do we have a recent-enough version of usethis?
+  has_usethis <-
+    requireNamespace("usethis", quietly = TRUE) &&
+    utils::packageVersion("usethis") > "1.4.0"
 
-  invisible(str_message)
+  if (has_usethis) {
+    usethis::ui_code_block(code)
+  } else {
+    message(code)
+  }
+
+  invisible(code)
 }
 
 #' @keywords internal
