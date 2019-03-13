@@ -1,5 +1,6 @@
 ## vembedr 0.1.3.9000
 
+- if you have a recent version of [usethis](https://usethis.r-lib.org) installed, `suggest_embed()` will copy the suggested code to your clipboard. (#32)
 - sets the default `height` to 300 pixels, and introduces an argument `ratio`, to set the aspect ratio; legal values are `"16by9"` or `"4by3"`. If you set the `width` and `height`, `ratio` is ignored. If you specify only one of `width` or `height`, `ratio` is used to calculate the other. (#33)
 - adds three functions to help with formatting; they are all pipeable with `embed_*()` functions:
   - `use_rounded()` lets you specify rounded corners. (#25, with @koncina and @ginolhac)
