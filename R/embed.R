@@ -18,12 +18,12 @@
 #'
 #' @param id                character, identifier provided by the service
 #' @param custom_domain     character, (used by Box) name of Box-instance
-#'   to use. If `NULL`, will use the value of
-#'   `getOption("vembedr.box_custom_domain")`. This can be useful if you
-#'   are using a corporate instance of Box. If still `NULL`, it will use
+#'   to use. It can be useful to use `getOption("vembedr.box_custom_domain")`
+#'   if you are using a corporate instance of Box. If `NULL`, it will use
 #'   the standard Box instance.
 #' @param height            numeric, height of iframe (px)
 #' @param width             numeric, width of iframe (px)
+#' @param ratio             `character`, indicates aspect ratio for the `<iframe/>`
 #' @param frameborder       numeric, size of frame border (px)
 #' @param allowfullscreen   logical, indicates if to allow fullscreen
 #' @param query             list of items to include in url-query string
@@ -47,9 +47,13 @@ NULL
 #' @rdname embed
 #' @export
 #
-embed_vimeo <- function(id, width = 500, height = 281,
+embed_vimeo <- function(id,
+                        width = NULL, height = 300, ratio = c("16by9", "4by3"),
                         frameborder = 0, allowfullscreen = TRUE,
                         query = NULL, fragment = NULL){
+
+  ratio <- match.arg(ratio)
+  dim <- get_width_height(width, height, ratio)
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
@@ -63,15 +67,15 @@ embed_vimeo <- function(id, width = 500, height = 281,
   iframe <- htmltools::tags$iframe(
     class = "vimeo-embed",
     src = httr::build_url(url),
-    width = width,
-    height = height,
+    width = dim$width,
+    height = dim$height,
     frameborder = frameborder,
     webkitallowfullscreen = allowfullscreen,
     mozallowfullscreen = allowfullscreen,
     allowfullscreen = allowfullscreen
   )
 
-  embed <- create_embed(iframe, "vembedr_embed_vimeo")
+  embed <- create_embed(iframe, "vembedr_embed_vimeo", ratio)
 
   embed
 }
@@ -79,9 +83,13 @@ embed_vimeo <- function(id, width = 500, height = 281,
 #' @rdname embed
 #' @export
 #
-embed_youtube <- function(id, width = 420, height = 315,
+embed_youtube <- function(id,
+                          width = NULL, height = 300, ratio = c("16by9", "4by3"),
                           frameborder = 0, allowfullscreen = TRUE,
                           query = NULL){
+
+  ratio <- match.arg(ratio)
+  dim <- get_width_height(width, height, ratio)
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
@@ -92,13 +100,13 @@ embed_youtube <- function(id, width = 420, height = 315,
 
   iframe <- htmltools::tags$iframe(
     src = httr::build_url(url),
-    width = width,
-    height = height,
+    width = dim$width,
+    height = dim$height,
     frameborder = frameborder,
     allowfullscreen = allowfullscreen
   )
 
-  embed <- create_embed(iframe, "vembedr_embed_youtube")
+  embed <- create_embed(iframe, "vembedr_embed_youtube", ratio)
 
   embed
 }
@@ -106,18 +114,20 @@ embed_youtube <- function(id, width = 420, height = 315,
 #' @rdname embed
 #' @export
 #
-embed_user2016 <- function(id, width = 560, height = 315,
+embed_user2016 <- function(id,
+                           width = NULL, height = 300, ratio = c("16by9", "4by3"),
                            frameborder = 0, allowfullscreen = TRUE){
 
   id <- c("Events", "useR-international-R-User-conference", "useR2016", id)
 
-  embed_channel9(id, width, height, frameborder, allowfullscreen)
+  embed_channel9(id, width, height, ratio, frameborder, allowfullscreen)
 }
 
 #' @rdname embed
 #' @export
 #
-embed_user2017 <- function(id, width = 560, height = 315,
+embed_user2017 <- function(id,
+                           width = NULL, height = 300, ratio = c("16by9", "4by3"),
                            frameborder = 0, allowfullscreen = TRUE){
 
   id <- c(
@@ -127,17 +137,20 @@ embed_user2017 <- function(id, width = 560, height = 315,
     id
   )
 
-  embed_channel9(id, width, height, frameborder, allowfullscreen)
+  embed_channel9(id, width, height, ratio, frameborder, allowfullscreen)
 }
 
 #' @rdname embed
 #' @export
 #'
-embed_channel9 <- function(id, width = 560, height = 315,
+embed_channel9 <- function(id,
+                           width = NULL, height = 300, ratio = c("16by9", "4by3"),
                            frameborder = 0, allowfullscreen = TRUE){
 
-  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
+  ratio <- match.arg(ratio)
+  dim <- get_width_height(width, height, ratio)
 
+  allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
   url <- httr::parse_url("https://channel9.msdn.com")
 
@@ -145,13 +158,13 @@ embed_channel9 <- function(id, width = 560, height = 315,
 
   iframe <- htmltools::tags$iframe(
     src = httr::build_url(url),
-    width = width,
-    height = height,
+    width = dim$width,
+    height = dim$height,
     frameborder = frameborder,
     allowfullscreen = allowfullscreen
   )
 
-  embed <- create_embed(iframe, "vembedr_embed_channel9")
+  embed <- create_embed(iframe, "vembedr_embed_channel9", ratio)
 
   embed
 }
@@ -159,7 +172,8 @@ embed_channel9 <- function(id, width = 560, height = 315,
 #' @rdname embed
 #' @export
 #'
-embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
+embed_box <- function(id, custom_domain = getOption("vembedr.box_custom_domain"),
+                      width = NULL, height = 300, ratio = c("16by9", "4by3"),
                       frameborder = 0, allowfullscreen = TRUE) {
 
   # adapted from:
@@ -173,7 +187,8 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
   #    allowfullscreen webkitallowfullscreen msallowfullscreen>
   # </iframe>
 
-  custom_domain <- custom_domain %||% getOption("vembedr.box_custom_domain")
+  ratio <- match.arg(ratio)
+  dim <- get_width_height(width, height, ratio)
 
   allowfullscreen <- .convert_allowfullscreen(allowfullscreen)
 
@@ -186,28 +201,29 @@ embed_box <- function(id, custom_domain = NULL, width = 500, height = 330,
 
   iframe <- htmltools::tags$iframe(
     src = url,
-    width = width,
-    height = height,
+    width = dim$width,
+    height = dim$height + 60,
     frameborder = frameborder,
     allowfullscreen = allowfullscreen,
     webkitallowfullscreen = allowfullscreen,
     msallowfullscreen = allowfullscreen
   )
 
-  embed <- create_embed(iframe, "vembedr_embed_box")
+  embed <- create_embed(iframe, "vembedr_embed_box", ratio)
 
   embed
 }
 
 
-create_embed <- function(iframe, name) {
-
+create_embed <- function(iframe, name, ratio) {
 
   embed <- htmltools::div(
     htmltools::div(iframe)
   )
 
   class(embed) <- c(name,  "vembedr_embed", class(embed))
+
+  attr(embed, "ratio") <- ratio
 
   embed
 }

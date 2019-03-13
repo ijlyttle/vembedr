@@ -10,22 +10,24 @@
 \alias{embed_box}
 \title{Embed a video into an HTML document}
 \usage{
-embed_vimeo(id, width = 500, height = 281, frameborder = 0,
-  allowfullscreen = TRUE, query = NULL, fragment = NULL)
+embed_vimeo(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE, query = NULL,
+  fragment = NULL)
 
-embed_youtube(id, width = 420, height = 315, frameborder = 0,
-  allowfullscreen = TRUE, query = NULL)
+embed_youtube(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE, query = NULL)
 
-embed_user2016(id, width = 560, height = 315, frameborder = 0,
-  allowfullscreen = TRUE)
+embed_user2016(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE)
 
-embed_user2017(id, width = 560, height = 315, frameborder = 0,
-  allowfullscreen = TRUE)
+embed_user2017(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE)
 
-embed_channel9(id, width = 560, height = 315, frameborder = 0,
-  allowfullscreen = TRUE)
+embed_channel9(id, width = NULL, height = 300, ratio = c("16by9",
+  "4by3"), frameborder = 0, allowfullscreen = TRUE)
 
-embed_box(id, custom_domain = NULL, width = 500, height = 330,
+embed_box(id, custom_domain = getOption("vembedr.box_custom_domain"),
+  width = NULL, height = 300, ratio = c("16by9", "4by3"),
   frameborder = 0, allowfullscreen = TRUE)
 }
 \arguments{
@@ -34,6 +36,8 @@ embed_box(id, custom_domain = NULL, width = 500, height = 330,
 \item{width}{numeric, width of iframe (px)}
 
 \item{height}{numeric, height of iframe (px)}
+
+\item{ratio}{\code{character}, indicates aspect ratio for the \code{<iframe/>}}
 
 \item{frameborder}{numeric, size of frame border (px)}
 
@@ -44,9 +48,8 @@ embed_box(id, custom_domain = NULL, width = 500, height = 330,
 \item{fragment}{character, string to include as url-fragment}
 
 \item{custom_domain}{character, (used by Box) name of Box-instance
-to use. If \code{NULL}, will use the value of
-\code{getOption("vembedr.box_custom_domain")}. This can be useful if you
-are using a corporate instance of Box. If still \code{NULL}, it will use
+to use. It can be useful to use \code{getOption("vembedr.box_custom_domain")}
+if you are using a corporate instance of Box. If \code{NULL}, it will use
 the standard Box instance.}
 }
 \value{

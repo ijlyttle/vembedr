@@ -3,6 +3,18 @@ context("test-div")
 library("conflicted")
 library("htmltools")
 
+test_that("embed functions set a ratio", {
+
+  ratio <- function(x) {
+    attr(x, "ratio")
+  }
+
+  expect_identical(ratio(rickroll_youtube()), "16by9")
+  expect_identical(ratio(rickroll_vimeo()), "16by9")
+  expect_identical(ratio(rickroll_channel9()), "16by9")
+  expect_identical(ratio(embed_box("foo")), "16by9")
+})
+
 test_that("use_align() works", {
 
   emb <- rickroll_youtube()
@@ -17,8 +29,8 @@ test_that("use_align() works", {
 
 test_that("use_bs_responsive() works", {
 
-  emb <- rickroll_youtube()
-  emb_new <- use_bs_responsive(emb, "4by3")
+  emb <- rickroll_youtube(ratio = "4by3")
+  emb_new <- use_bs_responsive(emb)
 
   expect_error(use_align(emb, "down"))
 
