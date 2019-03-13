@@ -150,15 +150,21 @@ the "share" output on a video's web page</p></td>
 
     <dl class='dl-horizontal'>
 <dt><code>suggest_embed</code></dt><dd><p>called for the side-effect of
-messaging the suggested code the screen</p></dd>
+printing suggested code the screen. If you have a recent version
+of <a href='https://cran.r-project.org/package=usethis'>usethis</a>, the code
+will be copied to your clipboard</p></dd>
 <dt><code>suggest_embed_pure</code></dt><dd><p>returns character string
 that represents the suggested code</p></dd>
 </dl>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span>)</div><div class='output co'>#&gt; <span class='message'>embed_youtube("1-vcErOPofQ") %&gt;%</span>
-#&gt; <span class='message'>  use_start_time("28s")</span></div><div class='input'><span class='fu'>suggest_embed</span>(<span class='st'>"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)</div><div class='output co'>#&gt; <span class='message'>embed_youtube("1-vcErOPofQ")</span></div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+  <span class='co'># not run because it may copy to your clipboard</span>
+  <span class='fu'>suggest_embed</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span>)
+  <span class='fu'>suggest_embed</span>(<span class='st'>"https://www.youtube.com/watch?v=1-vcErOPofQ"</span>)
+<span class='co'># }</span><div class='input'>  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/cat'>cat</a></span>(<span class='fu'>suggest_embed_pure</span>(<span class='st'>"https://youtu.be/1-vcErOPofQ?t=28"</span>))</div><div class='output co'>#&gt; embed_youtube("1-vcErOPofQ") %&gt;%
+#&gt;   use_start_time("28")</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
