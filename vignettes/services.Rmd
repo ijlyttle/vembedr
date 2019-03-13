@@ -49,7 +49,7 @@ library("vembedr")
 For example, to center your video horizontally, you can pipe to the function `use_align()`:
 
 ```{r}
-rickroll_youtube() %>%
+rickroll_youtube(ratio = "4by3") %>%
   use_align("center")
 ```
 

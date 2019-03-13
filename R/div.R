@@ -32,19 +32,19 @@ use_align <- function(embed,
 #' within the enclosing `</div>`.
 #'
 #' @inheritParams use_start_time
-#' @param ratio `character`, indicates aspect ratio for the `<iframe/>`
 #'
 #' @inherit embed return
 #' @export
 #'
-use_bs_responsive <- function(embed, ratio = c("16by9", "4by3")) {
+use_bs_responsive <- function(embed) {
 
   assertthat::assert_that(
     inherits(embed, "vembedr_embed"),
     msg = "embed is not a `vebmedr_embed` object"
   )
 
-  ratio <- match.arg(ratio)
+  # ratio is set when we create the embed
+  ratio <- attr(embed, "ratio")
 
   class_div <- c(
     "embed-responsive",

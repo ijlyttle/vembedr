@@ -4,12 +4,10 @@
 \alias{use_bs_responsive}
 \title{Make size responsive}
 \usage{
-use_bs_responsive(embed, ratio = c("16by9", "4by3"))
+use_bs_responsive(embed)
 }
 \arguments{
 \item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
-
-\item{ratio}{\code{character}, indicates aspect ratio for the \code{<iframe/>}}
 }
 \value{
 object with class \code{vembedr_embed},

@@ -37,6 +37,8 @@ embed_box(id, custom_domain = getOption("vembedr.box_custom_domain"),
 
 \item{height}{numeric, height of iframe (px)}
 
+\item{ratio}{\code{character}, indicates aspect ratio for the \code{<iframe/>}}
+
 \item{frameborder}{numeric, size of frame border (px)}
 
 \item{allowfullscreen}{logical, indicates if to allow fullscreen}
