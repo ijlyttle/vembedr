@@ -92,32 +92,6 @@ embed_youtube("1-vcErOPofQ")
 
 For this example, we embed a Vimeo using some custom formatting - thanks to [Eric Koncina](https://github.com/koncina) and [Aurélien Ginolhac](https://github.com/ginolhac) who [showed the way](https://github.com/ijlyttle/vembedr/issues/25). First let's introduce some css where we can define some rounded corners for an embedded video, by describing an HTML class, `vembedr`:
 
-```{css}
-.vembedr {
-  display: inline-block;
-  border-radius: 25px; /* adjust it to your needs */
-  overflow: hidden;
-}
-
-.vembedr iframe {
-  display: block;
-  border: none;
-}
-```
-
-    ```{css}
-    .vembedr {
-      display: inline-block;
-      border-radius: 25px; /* adjust it to your needs */
-      overflow: hidden;
-    }
-    
-    .vembedr iframe {
-      display: block;
-      border: none;
-    }
-    ```
-
 To embed a Vimeo with some custom formatting:
 
 - call `embed_vimeo()` using the Vimeo identifier, *then*

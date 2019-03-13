@@ -38,7 +38,7 @@ test_that("use_bs_responsive() works", {
 
   expect_identical(
     tagGetAttribute(emb_new, "class"),
-    "embed-responsive embed-responsive-4by3"
+    "vembedr embed-responsive embed-responsive-4by3"
   )
 
   expect_identical(

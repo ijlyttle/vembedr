@@ -218,6 +218,7 @@ embed_box <- function(id, custom_domain = getOption("vembedr.box_custom_domain")
 create_embed <- function(iframe, name, ratio) {
 
   embed <- htmltools::div(
+    class = "vembedr",
     htmltools::div(iframe)
   )
 
