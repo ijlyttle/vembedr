@@ -22,13 +22,19 @@ This function is meant to work with URLs from any of the supported services.
 \details{
 \describe{
 \item{\code{suggest_embed}}{called for the side-effect of
-messaging the suggested code the screen}
+printing suggested code the screen. If you have a recent version
+of \href{https://cran.r-project.org/package=usethis}{usethis}, the code
+will be copied to your clipboard}
 \item{\code{suggest_embed_pure}}{returns character string
 that represents the suggested code}
 }
 }
 \examples{
-suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
-suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+\dontrun{
+  # not run because it may copy to your clipboard
+  suggest_embed("https://youtu.be/1-vcErOPofQ?t=28s")
+  suggest_embed("https://www.youtube.com/watch?v=1-vcErOPofQ")
+}
+  cat(suggest_embed_pure("https://youtu.be/1-vcErOPofQ?t=28"))
 }
 \keyword{internal}

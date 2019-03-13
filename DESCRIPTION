@@ -25,7 +25,8 @@ Imports:
     stringr,
     magrittr,
     glue,
-    assertthat
+    assertthat,
+    utils
 RoxygenNote: 6.1.1
 URL: https://github.com/ijlyttle/vembedr
 BugReports: https://github.com/ijlyttle/vembedr/issues
@@ -36,6 +37,7 @@ Suggests:
     covr,
     here,
     fs,
-    conflicted
+    conflicted,
+    usethis
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
