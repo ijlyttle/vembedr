@@ -132,22 +132,24 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>embed_vimeo</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>281</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>fragment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>embed_vimeo</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
+  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>fragment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>embed_youtube</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>420</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>315</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>embed_youtube</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
+  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>embed_user2016</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>560</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>315</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>embed_user2016</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
+  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>embed_user2017</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>560</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>315</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>embed_user2017</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
+  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>embed_channel9</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>560</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>315</span>, <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>embed_channel9</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
+  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>embed_box</span>(<span class='no'>id</span>, <span class='kw'>custom_domain</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>330</span>,
+<span class='fu'>embed_box</span>(<span class='no'>id</span>, <span class='kw'>custom_domain</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"vembedr.box_custom_domain"</span>),
+  <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>, <span class='st'>"4by3"</span>),
   <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -164,6 +166,10 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
     <tr>
       <th>height</th>
       <td><p>numeric, height of iframe (px)</p></td>
+    </tr>
+    <tr>
+      <th>ratio</th>
+      <td><p><code>character</code>, indicates aspect ratio for the <code>&lt;iframe/&gt;</code></p></td>
     </tr>
     <tr>
       <th>frameborder</th>
@@ -184,9 +190,8 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
     <tr>
       <th>custom_domain</th>
       <td><p>character, (used by Box) name of Box-instance
-to use. If <code>NULL</code>, will use the value of
-<code><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption("vembedr.box_custom_domain")</a></code>. This can be useful if you
-are using a corporate instance of Box. If still <code>NULL</code>, it will use
+to use. It can be useful to use <code><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption("vembedr.box_custom_domain")</a></code>
+if you are using a corporate instance of Box. If <code>NULL</code>, it will use
 the standard Box instance.</p></td>
     </tr>
     </table>
@@ -217,23 +222,23 @@ according to the service being used:</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
 #&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="420" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;     &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
 #&gt;   &lt;div&gt;
-#&gt;     &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;     &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
 #&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2017</span>(<span class='st'>"Room-202-Lightning-Talks"</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"26m35s"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
 #&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_box</span>(<span class='st'>"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</div><div class='output co'>#&gt; &lt;div&gt;
 #&gt;   &lt;div&gt;
-#&gt;     &lt;iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""&gt;&lt;/iframe&gt;
+#&gt;     &lt;iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="533" height="360" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'>
 </div></pre>

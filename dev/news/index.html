@@ -122,6 +122,7 @@
 <h2 class="hasAnchor">
 <a href="#vembedr-0-1-3-9000" class="anchor"></a>vembedr 0.1.3.9000</h2>
 <ul>
+<li>sets the default <code>height</code> to 300 pixels, and introduces an argument <code>ratio</code>, to set the aspect ratio; legal values are <code>"16by9"</code> or <code>"4by3"</code>. If you set the <code>width</code> and <code>height</code>, <code>ratio</code> is ignored. If you specify only one of <code>width</code> or <code>height</code>, <code>ratio</code> is used to calculate the other. (<a href='https://github.com/ijlyttle/vembedr/issues/33'>#33</a>)</li>
 <li>adds three functions to help with formatting; they are all pipeable with <code>embed_*()</code> functions:
 <ul>
 <li>
@@ -129,7 +130,7 @@
 <li>
 <code><a href="../reference/use_align.html">use_align()</a></code> lets you specify a horizontal alignment.</li>
 <li>
-<code><a href="../reference/use_bs_responsive.html">use_bs_responsive()</a></code> if your ‘HTML’ page includes <a href="https://getbootstrap.com/docs/3.3/components/#responsive-embed">Twitter Bootstrap 3</a>, use this function to make your <code>&lt;iframe/&gt;</code> responsive. (<a href='https://github.com/ijlyttle/vembedr/issues/13'>#13</a>)</li>
+<code><a href="../reference/use_bs_responsive.html">use_bs_responsive()</a></code> if your ‘HTML’ page includes <a href="https://getbootstrap.com/docs/3.3/components/#responsive-embed">Twitter Bootstrap 3</a>, use this function to make your <code>&lt;iframe/&gt;</code> responsive. In this case, the <code>ratio</code> is used, <code>width</code> and <code>height</code> are ignored. (<a href='https://github.com/ijlyttle/vembedr/issues/13'>#13</a>)</li>
 </ul>
 </li>
 <li>adds functionality for embedding <a href="https://www.box.com">Box</a> videos, via the <code><a href="../reference/embed.html">embed_box()</a></code> function (<a href='https://github.com/ijlyttle/vembedr/issues/28'>#28</a>)</li>

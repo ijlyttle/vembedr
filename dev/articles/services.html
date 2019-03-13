@@ -88,7 +88,7 @@
       <h1>Video services</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2019-03-10</h4>
+            <h4 class="date">2019-03-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/master/vignettes/services.Rmd"><code>vignettes/services.Rmd</code></a></small>
       <div class="hidden name"><code>services.Rmd</code></div>
@@ -111,11 +111,11 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"htmltools"</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"vembedr"</span>)</a></code></pre></div>
 <p>For example, to center your video horizontally, you can pipe to the function <code><a href="../reference/use_align.html">use_align()</a></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>() <span class="op">%&gt;%</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>(<span class="dt">ratio =</span> <span class="st">"4by3"</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_align.html">use_align</a></span>(<span class="st">"center"</span>)</a></code></pre></div>
 <div align="center">
 <div>
-<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="400" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <p>You can make things responsive:</p>
@@ -123,7 +123,7 @@
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span>()</a></code></pre></div>
 <div class="embed-responsive embed-responsive-16by9">
 <div>
-<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="420" height="315" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="533" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <p>You can make rounded corners:</p>
@@ -131,7 +131,7 @@
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/use_rounded.html">use_rounded</a></span>()</a></code></pre></div>
 <div>
 <div class="vembedr-rounded">
-<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="../reference/rickroll.html">rickroll_youtube</a></span>() <span class="op">%&gt;%</span></a>
@@ -139,7 +139,7 @@
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/use_rounded.html">use_rounded</a></span>(<span class="dt">radius =</span> <span class="dv">5</span>)</a></code></pre></div>
 <div align="center">
 <div class="vembedr-rounded" style="border-radius: 5px;">
-<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="st">"zpOULjyy-n8"</span>) <span class="op">%&gt;%</span></a>
@@ -147,7 +147,7 @@
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/use_rounded.html">use_rounded</a></span>()</a></code></pre></div>
 <div class="embed-responsive embed-responsive-16by9">
 <div class="vembedr-rounded">
-<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="420" height="315" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/zpOULjyy-n8" width="533" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <div id="youtube" class="section level2">
@@ -162,7 +162,7 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_youtube</a></span>(<span class="dt">id =</span> <span class="st">"44wDwMQVqCc"</span>)</a></code></pre></div>
 <div>
 <div>
-<iframe src="https://www.youtube.com/embed/44wDwMQVqCc" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/44wDwMQVqCc" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 </div>
@@ -177,7 +177,7 @@
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_vimeo</a></span>(<span class="dt">id =</span> <span class="st">"238200347"</span>)</a></code></pre></div>
 <div>
 <div>
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/238200347" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/238200347" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 </div>
 </div>
 </div>
@@ -193,7 +193,7 @@
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="../reference/embed_url.html">embed_url</a></span>(<span class="st">"https://app.box.com/s/m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</a></code></pre></div>
 <div>
 <div>
-<iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="500" height="330" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""></iframe>
+<iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="533" height="360" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""></iframe>
 </div>
 </div>
 <p>You can do the same thing using the <code><a href="../reference/embed.html">embed_box()</a></code> function and the <code>id</code>. The Box identifier is the path part of the URL that follows the <code>s/</code>, in this case: <strong><code>m5do45hvzw32iv2aors3urf5pgkxxazx</code></strong>.</p>
@@ -212,7 +212,7 @@
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_user2016</a></span>(<span class="dt">id =</span> <span class="st">"Forty-years-of-S"</span>)</a></code></pre></div>
 <div>
 <div>
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 </div>
@@ -229,7 +229,7 @@
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="../reference/embed.html">embed_channel9</a></span>(<span class="dt">id =</span> <span class="st">"Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"</span>)</a></code></pre></div>
 <div>
 <div>
-<iframe src="https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads/player" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads/player" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <p>Alternatively, you can express this as a vector of strings:</p>
