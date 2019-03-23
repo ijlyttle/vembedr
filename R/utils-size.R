@@ -17,6 +17,12 @@ get_width_height <- function(width = NULL, height = 300, ratio = c("16by9", "4by
     height <- round(width / ratio)
   }
 
+  # validate
+  assertthat::assert_that(
+    assertthat::is.number(width),
+    assertthat::is.number(height)
+  )
+
   list(width = width, height = height)
 }
 
