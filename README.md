@@ -1,5 +1,5 @@
 
-# vebmedr
+# vembedr
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr)
 [![Travis-CI Build
@@ -65,11 +65,11 @@ embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
 
 <!--html_preserve-->
 
-<div>
+<div class="vembedr">
 
 <div>
 
-<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="420" height="315" frameborder="0" allowfullscreen>
+<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen>
 
 </iframe>
 
@@ -86,7 +86,7 @@ be useful:
 
 ``` r
 suggest_embed("https://youtu.be/uV4UpCq2azs?t=1m32s")
-#> embed_youtube("uV4UpCq2azs") %>%
+#>   embed_youtube("uV4UpCq2azs") %>%
 #>   use_start_time("1m32s")
 ```
 
@@ -106,11 +106,11 @@ embed_youtube("1-vcErOPofQ")
 
 <!--html_preserve-->
 
-<div>
+<div class="vembedr">
 
 <div>
 
-<iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="420" height="315" frameborder="0" allowfullscreen>
+<iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="533" height="300" frameborder="0" allowfullscreen>
 
 </iframe>
 
@@ -128,32 +128,6 @@ Ginolhac](https://github.com/ginolhac) who [showed the
 way](https://github.com/ijlyttle/vembedr/issues/25). First let’s
 introduce some css where we can define some rounded corners for an
 embedded video, by describing an HTML class, `vembedr`:
-
-``` css
-.vembedr {
-  display: inline-block;
-  border-radius: 25px; /* adjust it to your needs */
-  overflow: hidden;
-}
-
-.vembedr iframe {
-  display: block;
-  border: none;
-}
-```
-
-    ```{css}
-    .vembedr {
-      display: inline-block;
-      border-radius: 25px; /* adjust it to your needs */
-      overflow: hidden;
-    }
-    
-    .vembedr iframe {
-      display: block;
-      border: none;
-    }
-    ```
 
 To embed a Vimeo with some custom formatting:
 
@@ -175,11 +149,11 @@ embed_vimeo("189919038") %>%
 
 <div class="vembedr">
 
-<div>
+<div class="vembedr">
 
 <div>
 
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/189919038" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/189919038" width="533" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 
 </iframe>
 
@@ -217,11 +191,11 @@ embed_user2017("Room-202-Lightning-Talks") %>%
 
 <!--html_preserve-->
 
-<div>
+<div class="vembedr">
 
 <div>
 
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="560" height="315" frameborder="0" allowfullscreen>
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="533" height="300" frameborder="0" allowfullscreen>
 
 </iframe>
 

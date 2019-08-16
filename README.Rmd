@@ -4,7 +4,7 @@ output:
     html_preview: false
 ---
 
-# vebmedr
+# vembedr
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr)
 [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/vembedr.svg?branch=master)](https://travis-ci.org/ijlyttle/vembedr)
