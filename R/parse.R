@@ -174,29 +174,23 @@ get_service <- function(url) {
 #'
 parse_video_url <- function(url) {
 
-  list_parse <- list(
-    channel9 = .parse_channel9,
-    youtube = .parse_youtube,
-    youtube_short = .parse_youtube_short,
-    vimeo = .parse_vimeo,
-    box = .parse_box
-  )
-
   service <- get_service(url)
 
   url_parsed <- httr::parse_url(url)
+  class(url_parsed) <- c(glue::glue("vembedr_{service}"))
 
-  # idea:
-  #  - this could be done more-conventionally using S3 dispatch
-  #  - get_service() could return a parsed url with additional class
-  #
-  fn_parse <- list_parse[[service]]
-
-  do.call(fn_parse, list(url_parsed = url_parsed))
-
+  .parse(url_parsed)
 }
 
-.parse_youtube <- function(url_parsed) {
+.parse <- function(url_parsed, ...) {
+  UseMethod(".parse")
+}
+
+.parse.default <- function(url_parsed, ...) {
+  stop("no method available")
+}
+
+.parse.vembedr_youtube <- function(url_parsed, ...) {
   list(
     service = "youtube",
     id = url_parsed$query$v,
@@ -204,7 +198,7 @@ parse_video_url <- function(url) {
   )
 }
 
-.parse_youtube_short <- function(url_parsed) {
+.parse.vembedr_youtube_short <- function(url_parsed, ...) {
   list(
     service = "youtube",
     id = url_parsed$path,
@@ -212,7 +206,7 @@ parse_video_url <- function(url) {
   )
 }
 
-.parse_vimeo <- function(url_parsed){
+.parse.vembedr_vimeo <- function(url_parsed, ...){
 
   start_time <- NULL
   if (!is.null(url_parsed$fragment)){
@@ -226,7 +220,7 @@ parse_video_url <- function(url) {
   )
 }
 
-.parse_channel9 <- function(url_parsed){
+.parse.vembedr_channel9 <- function(url_parsed, ...){
 
   path_split <-
     url_parsed$path %>%
@@ -270,7 +264,7 @@ parse_video_url <- function(url) {
   result
 }
 
-.parse_box <- function(url_parsed) {
+.parse.vembedr_box <- function(url_parsed, ...) {
 
   # determine custom-domain by taking apart hostname
   hostname_split <- stringr::str_split(url_parsed$hostname, "\\.")[[1]]
