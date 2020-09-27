@@ -105,7 +105,7 @@ embed_channel9(c("Shows", "Going+Deep", "Brian-Beckman-Dont-fear-the-Monads"))
 
 #### UseR!2016 (and 2017)
 
-At UseR!2016, Rick Becker gave a wonderful talk on the history of the S language:
+At UseR! 2016, Rick Becker gave a wonderful talk on the history of the S language:
 
 ```{r echo=FALSE}
 tags$p(
@@ -147,5 +147,20 @@ embed_box("d75g9cr27s2jnx62b86idpgffzzxfdt2")
 
 If you are using a corporate instance of Box, and use the `embed_box()` function, you will also have to specify the `custom_domain`. For example, if your URL starts with `"https://acme.app.box.com"`, then your `custom_domain` is `"acme"`.
 
+## Sample videos
 
+In case you need sample videos with which to experiment, this package has you covered:
 
+```{r}
+rickroll_youtube()
+```
+
+Also (mercifully, not displayed):
+
+```{r eval=FALSE}
+rickroll_vimeo()
+```
+
+```{r eval=FALSE}
+rickroll_channel9()
+```
