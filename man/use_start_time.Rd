@@ -17,8 +17,7 @@ use_start_time(...)
 
 \method{use_start_time}{vembedr_embed_vimeo}(embed, start_time, ...)
 
-\method{use_start_time}{vembedr_embed_channel9}(embed, start_time,
-  is_paused = TRUE, ...)
+\method{use_start_time}{vembedr_embed_channel9}(embed, start_time, is_paused = TRUE, ...)
 
 \method{use_start_time}{vembedr_embed_box}(embed, ...)
 }
@@ -34,7 +33,7 @@ should be paused at this time}
 }
 \value{
 object with class \code{vembedr_embed},
-prints to an 'HTML' \code{<div/>} that contains an \code{<iframe/>}
+prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
 }
 \description{
 This function provides you a consistent way to specify the start time,

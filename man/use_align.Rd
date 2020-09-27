@@ -13,9 +13,9 @@ use_align(embed, align = c("left", "right", "center", "justified"))
 }
 \value{
 object with class \code{vembedr_embed},
-prints to an 'HTML' \code{<div/>} that contains an \code{<iframe/>}
+prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
 }
 \description{
-Use this function to specify the horizontal alignment of the \code{<iframe/>}
-within the enclosing \code{</div>}.
+Use this function to specify the horizontal alignment of the \verb{<iframe/>}
+within the enclosing \verb{</div>}.
 }

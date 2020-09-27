@@ -10,12 +10,12 @@ use_rounded(embed, radius = NULL)
 \item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 
 \item{radius}{\code{numeric} or \code{character}, css property for the border-radius
-for the \code{<iframe/>}. Numeric values will be interpreted as number of pixels.}
+for the \verb{<iframe/>}. Numeric values will be interpreted as number of pixels.}
 }
 \value{
 object with class \code{vembedr_embed},
-prints to an 'HTML' \code{<div/>} that contains an \code{<iframe/>}
+prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
 }
 \description{
-You can use this function to make rounded corners for the enclosing \code{</div>}.
+You can use this function to make rounded corners for the enclosing \verb{</div>}.
 }
