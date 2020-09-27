@@ -60,7 +60,7 @@ suggest_embed("https://youtu.be/JeaBNAXfHfQ")
 The identifier is the last part of the URL. To embed this video:
 
 ```{r}
-embed_youtube(id = "JeaBNAXfHfQ")
+embed_youtube("JeaBNAXfHfQ")
 ```
 
 ### Vimeo
@@ -74,7 +74,7 @@ suggest_embed("https://vimeo.com/238200347")
 The Vimeo identifier is the path part of the URL:
 
 ```{r}
-embed_vimeo(id = "238200347")
+embed_vimeo("238200347")
 ```
 
 ### Channel 9
@@ -86,21 +86,21 @@ Personal note: one of the things I want to well-and-truly understand (along with
 Here's the URL:
 
 ```{r}
-suggest_embed("https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
+suggest_embed(
+  "https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"
+)
 ```
 
 The identifier is the path of the URL, **`Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads`**, which you can express as a string:
 
 ```{r}
-embed_channel9(id = "Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
+embed_channel9("Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
 ```
 
 Alternatively, you can express this as a vector of strings:
 
 ```{r eval=FALSE}
-embed_channel9(
-  id = c("Shows", "Going+Deep", "Brian-Beckman-Dont-fear-the-Monads")
-)
+embed_channel9(c("Shows", "Going+Deep", "Brian-Beckman-Dont-fear-the-Monads"))
 ```
 
 #### UseR!2016 (and 2017)
@@ -121,7 +121,7 @@ tags$p(
 For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: **`Forty-years-of-S`**. To embed the video:
 
 ```{r}
-embed_user2016(id = "Forty-years-of-S")
+embed_user2016("Forty-years-of-S")
 ```
 
 ### Box
@@ -142,7 +142,7 @@ You can do the same thing using the `embed_box()` function and the `id`. The Box
 
 
 ```{r}
-embed_box(id = "d75g9cr27s2jnx62b86idpgffzzxfdt2")
+embed_box("d75g9cr27s2jnx62b86idpgffzzxfdt2")
 ```
 
 If you are using a corporate instance of Box, and use the `embed_box()` function, you will also have to specify the `custom_domain`. For example, if your URL starts with `"https://acme.app.box.com"`, then your `custom_domain` is `"acme"`.
