@@ -10,3 +10,4 @@
 ^pkgdown$
 ^docs$
 ^\.github$
+^checklist-new-service\.md$

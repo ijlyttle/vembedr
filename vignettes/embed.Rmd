@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
+library("htmltools")
 library("fs")
 
 dir_source <- here::here("man/figures")
@@ -27,6 +28,18 @@ if (dir_exists(dir_target_figures)) {
 
 dir_copy(dir_source, dir_target)
 ```
+
+## Embded using URL
+
+## Embed by service
+
+### YouTube
+
+### Vimeo
+
+### Microsoft Channel 9
+
+### Box
 
 The foundation of this package is the `embed()` family of functions, used to generate the embed code from a supported service. Often, parameters are specified in the embed code using the *query* and *fragment* components of the reference URL. The query/fragment parameters for each service can be found at:
 
@@ -42,7 +55,6 @@ Each of the services exposes `height` and `width` arguments; each of the `embed(
 If this package does not contain the customization you need, keep in mind that the the ouput of an `embed()` function is simply an HMTL tag that can be modified using functions from the **htmltools** package. 
 
 ```{r}
-library("htmltools")
 library("vembedr")
 ```
 
