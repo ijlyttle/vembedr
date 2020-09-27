@@ -8,21 +8,29 @@
 
 <title>Embed a video into an HTML document — embed • vembedr</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,12 +38,12 @@
 
 
 
-<meta property="og:title" content="Embed a video into an HTML document — embed" />
 
+<meta property="og:title" content="Embed a video into an HTML document — embed" />
 <meta property="og:description" content="These functions are used to embed video into your rmarkdown html-documents,
 or into your shiny apps. There are functions to embed from
 YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos)." />
-<meta name="twitter:card" content="summary" />
+
 
 <meta name="robots" content="noindex">
 
@@ -49,9 +57,10 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos)." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,7 +74,7 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
       </span>
     </div>
 
@@ -73,37 +82,24 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos)." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/helpers.html">Helper functions</a>
-    </li>
-    <li>
-      <a href="../articles/services.html">Video services</a>
-    </li>
-  </ul>
+<li>
+  <a href="../articles/index.html">Articles</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/ijlyttle/vembedr">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/ijlyttle/vembedr/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -114,6 +110,7 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos)." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -125,33 +122,69 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos)." />
     </div>
 
     <div class="ref-description">
-    
     <p>These functions are used to embed video into your <strong>rmarkdown</strong> html-documents,
 or into your <strong>shiny</strong> apps. There are functions to embed from
 YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>embed_vimeo</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
-  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>fragment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>embed_vimeo</span><span class='op'>(</span>
+  <span class='va'>id</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  height <span class='op'>=</span> <span class='fl'>300</span>,
+  ratio <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"16by9"</span>, <span class='st'>"4by3"</span><span class='op'>)</span>,
+  frameborder <span class='op'>=</span> <span class='fl'>0</span>,
+  allowfullscreen <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  query <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fragment <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span>
 
-<span class='fu'>embed_youtube</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
-  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>query</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>embed_youtube</span><span class='op'>(</span>
+  <span class='va'>id</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  height <span class='op'>=</span> <span class='fl'>300</span>,
+  ratio <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"16by9"</span>, <span class='st'>"4by3"</span><span class='op'>)</span>,
+  frameborder <span class='op'>=</span> <span class='fl'>0</span>,
+  allowfullscreen <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  query <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span>
 
-<span class='fu'>embed_user2016</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
-  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>embed_user2016</span><span class='op'>(</span>
+  <span class='va'>id</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  height <span class='op'>=</span> <span class='fl'>300</span>,
+  ratio <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"16by9"</span>, <span class='st'>"4by3"</span><span class='op'>)</span>,
+  frameborder <span class='op'>=</span> <span class='fl'>0</span>,
+  allowfullscreen <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
 
-<span class='fu'>embed_user2017</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
-  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>embed_user2017</span><span class='op'>(</span>
+  <span class='va'>id</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  height <span class='op'>=</span> <span class='fl'>300</span>,
+  ratio <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"16by9"</span>, <span class='st'>"4by3"</span><span class='op'>)</span>,
+  frameborder <span class='op'>=</span> <span class='fl'>0</span>,
+  allowfullscreen <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
 
-<span class='fu'>embed_channel9</span>(<span class='no'>id</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>,
-  <span class='st'>"4by3"</span>), <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>embed_channel9</span><span class='op'>(</span>
+  <span class='va'>id</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  height <span class='op'>=</span> <span class='fl'>300</span>,
+  ratio <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"16by9"</span>, <span class='st'>"4by3"</span><span class='op'>)</span>,
+  frameborder <span class='op'>=</span> <span class='fl'>0</span>,
+  allowfullscreen <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
 
-<span class='fu'>embed_box</span>(<span class='no'>id</span>, <span class='kw'>custom_domain</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"vembedr.box_custom_domain"</span>),
-  <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>ratio</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"16by9"</span>, <span class='st'>"4by3"</span>),
-  <span class='kw'>frameborder</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>allowfullscreen</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
-    
+<span class='fu'>embed_box</span><span class='op'>(</span>
+  <span class='va'>id</span>,
+  custom_domain <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"vembedr.box_custom_domain"</span><span class='op'>)</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  height <span class='op'>=</span> <span class='fl'>300</span>,
+  ratio <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"16by9"</span>, <span class='st'>"4by3"</span><span class='op'>)</span>,
+  frameborder <span class='op'>=</span> <span class='fl'>0</span>,
+  allowfullscreen <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -190,75 +223,70 @@ YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).</p>
     <tr>
       <th>custom_domain</th>
       <td><p>character, (used by Box) name of Box-instance
-to use. It can be useful to use <code><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption("vembedr.box_custom_domain")</a></code>
+to use. It can be useful to use <code><a href='https://rdrr.io/r/base/options.html'>getOption("vembedr.box_custom_domain")</a></code>
 if you are using a corporate instance of Box. If <code>NULL</code>, it will use
 the standard Box instance.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>object with class <code>vembedr_embed</code>,
 prints to an 'HTML' <code>&lt;div/&gt;</code> that contains an <code>&lt;iframe/&gt;</code></p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>These services allow you to customize a lot of things by specifying
 an optional query string. The specification for the query string will differ
 according to the service being used:</p>
-<dl class='dl-horizontal'>
+<dl>
 <dt>YouTube</dt><dd><p><a href='https://developers.google.com/youtube/player_parameters'>https://developers.google.com/youtube/player_parameters</a></p></dd>
 <dt>Vimeo</dt><dd><p><a href='https://developer.vimeo.com/player/embedding'>https://developer.vimeo.com/player/embedding</a></p></dd>
 <dt>Channel 9</dt><dd><p><a href='https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S'>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</a>
 (click the <em>Embed</em> tab)</p></dd>
 <dt>Box</dt><dd><p><a href='https://developer.box.com/docs/box-embed#section-build-box-embed-programatically'>https://developer.box.com/docs/box-embed#section-build-box-embed-programatically</a></p></dd>
+
 </dl>
-    
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='use_start_time.html'>use_start_time()</a></code></p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span>(<span class='st'>"dQw4w9WgXcQ"</span>)</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
+    <pre class="examples"><div class='input'><span class='fu'>embed_youtube</span><span class='op'>(</span><span class='st'>"dQw4w9WgXcQ"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_vimeo</span>(<span class='st'>"45196609"</span>)</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_vimeo</span><span class='op'>(</span><span class='st'>"45196609"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2016</span>(<span class='st'>"Literate-Programming"</span>)</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2016</span><span class='op'>(</span><span class='st'>"Literate-Programming"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2017</span>(<span class='st'>"Room-202-Lightning-Talks"</span>) <span class='kw'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span>(<span class='st'>"26m35s"</span>)</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_user2017</span><span class='op'>(</span><span class='st'>"Room-202-Lightning-Talks"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span><span class='op'>(</span><span class='st'>"26m35s"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_box</span>(<span class='st'>"m5do45hvzw32iv2aors3urf5pgkxxazx"</span>)</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>embed_box</span><span class='op'>(</span><span class='st'>"m5do45hvzw32iv2aors3urf5pgkxxazx"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe src="https://app.box.com/embed/s/m5do45hvzw32iv2aors3urf5pgkxxazx" width="533" height="360" frameborder="0" allowfullscreen="" webkitallowfullscreen="" msallowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -266,13 +294,16 @@ according to the service being used:</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
