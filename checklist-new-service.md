@@ -1,11 +1,16 @@
-When adding a new service, say TicTok, we need to make sure that we add it everywhere:
+When adding a new service, say TikTok, we need to make sure that we add it everywhere:
 
 ## Code
 
 Maybe split up be service so that we can just add the file.
 
+To determine service:
+
+- `get_service()`: `R/parse.R` 
+
+Methods based on service:
+
 - `use_start_time()`: `use_start_time.R`
-- `get_service()`: `R/parse.R`
 - `.parse()`: `R/parse.R`
 - `get_iframe()`: `R/iframe.R`
 

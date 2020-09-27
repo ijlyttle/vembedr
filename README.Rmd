@@ -113,7 +113,7 @@ embed_user2017("Room-202-Lightning-Talks") %>%
   use_start_time("26m35s")
 ```
 
-------
+One of the more-frustrating things I have noticed while developing this package, is that more-and-more videos will not play when embedded at a different site (like your RMarkdown document). This is due to licensing issues. I am all for the copyright holder being able to specify where there content can and cannot be played; I just wish they could make this more obvious when looking for videos to demonstrate.
 
 ## Code of Conduct
 

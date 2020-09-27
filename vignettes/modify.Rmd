@@ -113,3 +113,42 @@ rickroll_vimeo()
 ```{r}
 rickroll_channel9()
 ```
+
+### Formatting
+
+For example, to center your video horizontally, you can pipe to the function `use_align()`:
+
+```{r}
+embed_vimeo("10022924") %>%
+  use_align("center")
+```
+
+If you are using Bootstrap, you can make things responsive:
+
+```{r}
+embed_youtube("FkBQc0gQkQI") %>%
+  use_bs_responsive()
+```
+
+You can make rounded corners:
+
+```{r}
+embed_vimeo("276139835") %>%
+  use_rounded()
+```
+
+```{r}
+embed_youtube("lan-UQfN0zs") %>%
+  use_align("center") %>%
+  use_rounded(radius = 5)
+```
+
+
+```{r}
+embed_youtube("3pKpfs5EK_s") %>%
+  use_rounded()
+```
+
+
+
+
