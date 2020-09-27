@@ -26,7 +26,7 @@ use_align <- function(embed,
 
 #' Make size responsive
 #'
-#' If your 'HTML` page includes
+#' If your HTML page includes
 #' [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed),
 #' you can use this function to make the size of the `iframe` responsive
 #' within the enclosing `div`.

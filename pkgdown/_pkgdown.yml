@@ -1,0 +1,20 @@
+template:
+  params:
+    bootswatch: sandstone
+
+development:
+  mode: auto
+
+reference:
+- title: Embedding functions
+  desc: ~
+  contents:
+  - embed
+  - rickroll
+- title: Helper functions
+  desc: ~
+  contents:
+  - embed_url
+  - suggest_embed
+  - use_start_time
+

@@ -10,9 +10,11 @@ use_bs_responsive(embed)
 \item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 }
 \value{
-object with class \code{vembedr_embed},
-prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
+Object with S3 class \code{vembedr_embed}
 }
 \description{
-If your 'HTML\verb{page includes [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed), you can use this function to make the size of the}iframe\verb{responsive within the enclosing}div`.
+If your HTML page includes
+\href{https://getbootstrap.com/docs/3.3/components/#responsive-embed}{Twitter Bootstrap 3},
+you can use this function to make the size of the \code{iframe} responsive
+within the enclosing \code{div}.
 }

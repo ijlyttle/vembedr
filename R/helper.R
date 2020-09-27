@@ -21,6 +21,8 @@
 #' @return numeric, number of seconds
 #'
 #' @seealso [embed_youtube()], [hms()]
+#'
+#' @keywords internal
 #' @export
 #
 secs <- function(x){
@@ -66,6 +68,8 @@ secs <- function(x){
 #'
 #' @return character string (i.e. "0h3m15s")
 #' @seealso [secs()]
+#'
+#' @keywords internal
 #' @export
 #'
 hms <- function(x){

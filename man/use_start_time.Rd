@@ -7,11 +7,11 @@
 \alias{use_start_time.vembedr_embed_vimeo}
 \alias{use_start_time.vembedr_embed_channel9}
 \alias{use_start_time.vembedr_embed_box}
-\title{Specify a start time for an embedded video}
+\title{Specify start time}
 \usage{
-use_start_time(...)
+use_start_time(embed, ...)
 
-\method{use_start_time}{default}(...)
+\method{use_start_time}{default}(embed, ...)
 
 \method{use_start_time}{vembedr_embed_youtube}(embed, start_time, ...)
 
@@ -22,18 +22,17 @@ use_start_time(...)
 \method{use_start_time}{vembedr_embed_box}(embed, ...)
 }
 \arguments{
-\item{...}{generic arguments to pass through}
-
 \item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 
-\item{start_time}{numeric (seconds), or character (e.g. \code{"3m15s"})}
+\item{...}{generic arguments to pass through}
 
-\item{is_paused}{logical, for "Channel 9" specifies if the video
+\item{start_time}{\code{numeric} (seconds), or \code{character} (e.g. \code{"3m15s"})}
+
+\item{is_paused}{\code{logical}, for "Channel 9" specifies if the video
 should be paused at this time}
 }
 \value{
-object with class \code{vembedr_embed},
-prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
+Object with S3 class \code{vembedr_embed}
 }
 \description{
 This function provides you a consistent way to specify the start time,
@@ -52,7 +51,7 @@ all evaluate to the same value:
 
 Please note that for Vimeo, you can specify a start time, but you can not
 specify that the video be paused at this time. In other words, it is like
-"autoplay" is set to TRUE, and you cannot unset it.
+"autoplay" is set to \code{TRUE}, and you cannot unset it.
 }
 \examples{
   rickroll_youtube() \%>\%
