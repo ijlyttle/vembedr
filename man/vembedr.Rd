@@ -3,7 +3,6 @@
 \docType{package}
 \name{vembedr}
 \alias{vembedr}
-\alias{vembedr-package}
 \title{vembedr: A package for embedding video}
 \description{
 The vembedr package provides two categories of functions:

@@ -214,7 +214,7 @@ embed_box <- function(id, custom_domain = getOption("vembedr.box_custom_domain")
   embed
 }
 
-
+# internal function to create embed div
 create_embed <- function(iframe, name, ratio) {
 
   embed <- htmltools::div(
@@ -225,6 +225,9 @@ create_embed <- function(iframe, name, ratio) {
   class(embed) <- c(name,  "vembedr_embed", class(embed))
 
   attr(embed, "ratio") <- ratio
+
+  # attach html-dependency
+  embed <- htmltools::attachDependencies(embed, vembedr_dependency())
 
   embed
 }

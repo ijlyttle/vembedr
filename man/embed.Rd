@@ -10,25 +10,63 @@
 \alias{embed_box}
 \title{Embed a video into an HTML document}
 \usage{
-embed_vimeo(id, width = NULL, height = 300, ratio = c("16by9",
-  "4by3"), frameborder = 0, allowfullscreen = TRUE, query = NULL,
-  fragment = NULL)
+embed_vimeo(
+  id,
+  width = NULL,
+  height = 300,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE,
+  query = NULL,
+  fragment = NULL
+)
 
-embed_youtube(id, width = NULL, height = 300, ratio = c("16by9",
-  "4by3"), frameborder = 0, allowfullscreen = TRUE, query = NULL)
+embed_youtube(
+  id,
+  width = NULL,
+  height = 300,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE,
+  query = NULL
+)
 
-embed_user2016(id, width = NULL, height = 300, ratio = c("16by9",
-  "4by3"), frameborder = 0, allowfullscreen = TRUE)
+embed_user2016(
+  id,
+  width = NULL,
+  height = 300,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE
+)
 
-embed_user2017(id, width = NULL, height = 300, ratio = c("16by9",
-  "4by3"), frameborder = 0, allowfullscreen = TRUE)
+embed_user2017(
+  id,
+  width = NULL,
+  height = 300,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE
+)
 
-embed_channel9(id, width = NULL, height = 300, ratio = c("16by9",
-  "4by3"), frameborder = 0, allowfullscreen = TRUE)
+embed_channel9(
+  id,
+  width = NULL,
+  height = 300,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE
+)
 
-embed_box(id, custom_domain = getOption("vembedr.box_custom_domain"),
-  width = NULL, height = 300, ratio = c("16by9", "4by3"),
-  frameborder = 0, allowfullscreen = TRUE)
+embed_box(
+  id,
+  custom_domain = getOption("vembedr.box_custom_domain"),
+  width = NULL,
+  height = 300,
+  ratio = c("16by9", "4by3"),
+  frameborder = 0,
+  allowfullscreen = TRUE
+)
 }
 \arguments{
 \item{id}{character, identifier provided by the service}
@@ -37,7 +75,7 @@ embed_box(id, custom_domain = getOption("vembedr.box_custom_domain"),
 
 \item{height}{numeric, height of iframe (px)}
 
-\item{ratio}{\code{character}, indicates aspect ratio for the \code{<iframe/>}}
+\item{ratio}{\code{character}, indicates aspect ratio for the \verb{<iframe/>}}
 
 \item{frameborder}{numeric, size of frame border (px)}
 
@@ -54,7 +92,7 @@ the standard Box instance.}
 }
 \value{
 object with class \code{vembedr_embed},
-prints to an 'HTML' \code{<div/>} that contains an \code{<iframe/>}
+prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
 }
 \description{
 These functions are used to embed video into your \strong{rmarkdown} html-documents,

@@ -51,13 +51,11 @@ For these examples, it can be useful to load the **htmltools** package
 along with the **vembedr** package.
 
 ``` r
-library("htmltools")
 library("vembedr")
 ```
 
 With the function `embed_url()`, you can use the URL from your browser
-to embed
-video:
+to embed video:
 
 ``` r
 embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
@@ -97,11 +95,10 @@ mixed-and-matched in the interest of brevity.
 -----
 
 To embed a YouTube (or Vimeo, or Channel 9) video you can use its
-identifier, which you can get from the original
-URL.
+identifier, which you can get from the original URL.
 
 ``` r
-embed_youtube("1-vcErOPofQ")
+embed_youtube("lGTEUtS5H7I")
 ```
 
 <!--html_preserve-->
@@ -110,7 +107,7 @@ embed_youtube("1-vcErOPofQ")
 
 <div>
 
-<iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="533" height="300" frameborder="0" allowfullscreen>
+<iframe src="https://www.youtube.com/embed/lGTEUtS5H7I" width="533" height="300" frameborder="0" allowfullscreen>
 
 </iframe>
 
@@ -125,31 +122,17 @@ embed_youtube("1-vcErOPofQ")
 For this example, we embed a Vimeo using some custom formatting - thanks
 to [Eric Koncina](https://github.com/koncina) and [Aurélien
 Ginolhac](https://github.com/ginolhac) who [showed the
-way](https://github.com/ijlyttle/vembedr/issues/25). First let’s
-introduce some css where we can define some rounded corners for an
-embedded video, by describing an HTML class, `vembedr`:
-
-To embed a Vimeo with some custom formatting:
-
-  - call `embed_vimeo()` using the Vimeo identifier, *then*
-  - wrap that in `<div/>` using our new `vembedr` class, *then*
-  - wrap that in a `<div/>` that centers its contents
-
-<!-- end list -->
+way](https://github.com/ijlyttle/vembedr/issues/25). You can use the
+function `use_align()`:
 
 ``` r
 embed_vimeo("189919038") %>%
-  div(class = "vembedr") %>%
-  div(align = "center")
+  use_align("center")
 ```
 
 <!--html_preserve-->
 
-<div data-align="center">
-
-<div class="vembedr">
-
-<div class="vembedr">
+<div class="vembedr" data-align="center">
 
 <div>
 
@@ -161,15 +144,7 @@ embed_vimeo("189919038") %>%
 
 </div>
 
-</div>
-
-</div>
-
 <!--/html_preserve-->
-
-<!--html_preserve-->
-
-<br/><!--/html_preserve-->
 
 Of course, the use of the pipe operator is optional. Hat tip to Karthik
 Ram for

@@ -31,7 +31,7 @@ set_iframe(embed, ...)
 }
 \value{
 \describe{
-\item{get_iframe}{\code{shiny.tag} with \code{name} \code{"iframe"}, created using \link[htmltools:tags]{htmltools::tags}\code{$iframe()}}
+\item{get_iframe}{\code{shiny.tag} with \code{name} \code{"iframe"}, created using \link[htmltools:builder]{htmltools::tags}\verb{$iframe()}}
 \item{set_iframe}{\code{embed} object}
 }
 }

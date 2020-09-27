@@ -49,34 +49,33 @@ library("vembedr")
 For example, to center your video horizontally, you can pipe to the function `use_align()`:
 
 ```{r}
-rickroll_youtube(ratio = "4by3") %>%
+embed_vimeo("10022924") %>%
   use_align("center")
 ```
 
-You can make things responsive:
+If you are using Bootstrap, you can make things responsive:
 
 ```{r}
-embed_youtube("zpOULjyy-n8") %>%
+embed_youtube("FkBQc0gQkQI") %>%
   use_bs_responsive()
 ```
 
 You can make rounded corners:
 
 ```{r}
-rickroll_youtube() %>%
+embed_vimeo("276139835") %>%
   use_rounded()
 ```
 
 ```{r}
-rickroll_youtube() %>%
+embed_youtube("lan-UQfN0zs") %>%
   use_align("center") %>%
   use_rounded(radius = 5)
 ```
 
 
 ```{r}
-embed_youtube("zpOULjyy-n8") %>%
-  use_bs_responsive() %>%
+embed_youtube("3pKpfs5EK_s") %>%
   use_rounded()
 ```
 
@@ -97,7 +96,7 @@ The identifier is simply the last part of the URL: **`44wDwMQVqCc`**.
 To embed this video, use the function `embed_youtube()`, using the identifier as the `id` argument:
 
 ```{r}
-embed_youtube(id = "44wDwMQVqCc")
+embed_youtube(id = "JeaBNAXfHfQ")
 ```
 
 ## Vimeo

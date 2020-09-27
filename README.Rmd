@@ -2,6 +2,7 @@
 output: 
   github_document:
     html_preview: false
+always_allow_html: true    
 ---
 
 # vembedr
@@ -59,8 +60,7 @@ This project supports two documentation-websites, built using [pkgdown](https://
 
 For these examples, it can be useful to load the **htmltools** package along with the **vembedr** package.
 
-```{r}
-library("htmltools")
+```{r eval=FALSE}
 library("vembedr")
 ```
 
@@ -85,27 +85,17 @@ All of the features shown here can be used for all the supported services: YouTu
 To embed a YouTube (or Vimeo, or Channel 9) video you can use its identifier, which you can get from the original URL. 
 
 ```{r}
-embed_youtube("1-vcErOPofQ")
+embed_youtube("lGTEUtS5H7I")
 ```
 
 -----
 
-For this example, we embed a Vimeo using some custom formatting - thanks to [Eric Koncina](https://github.com/koncina) and [Aurélien Ginolhac](https://github.com/ginolhac) who [showed the way](https://github.com/ijlyttle/vembedr/issues/25). First let's introduce some css where we can define some rounded corners for an embedded video, by describing an HTML class, `vembedr`:
+For this example, we embed a Vimeo using some custom formatting - thanks to [Eric Koncina](https://github.com/koncina) and [Aurélien Ginolhac](https://github.com/ginolhac) who [showed the way](https://github.com/ijlyttle/vembedr/issues/25). You can use the function `use_align()`:
 
-To embed a Vimeo with some custom formatting:
-
-- call `embed_vimeo()` using the Vimeo identifier, *then*
-- wrap that in `<div/>` using our new `vembedr` class, *then*
-- wrap that in a `<div/>` that centers its contents
 
 ```{r}
 embed_vimeo("189919038") %>%
-  div(class = "vembedr") %>%
-  div(align = "center")
-```
-
-```{r echo=FALSE}
-tags$br()
+  use_align("center")
 ```
 
 Of course, the use of the pipe operator is optional. Hat tip to Karthik Ram for [tweeting](https://twitter.com/_inundata/status/794616331727294464) out this Vimeo.
@@ -122,15 +112,6 @@ embed_user2017("Room-202-Lightning-Talks") %>%
 ```
 
 ------
-
-
-## Note for GitHub README and RStudio viewer
-
-The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit the [GitHub pages](http://ijlyttle.github.io/vembedr/) site, built using [pkgdown](http://hadley.github.io/pkgdown/).
-
-If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the [learnr](https://rstudio.github.io/learnr/) package, the IDE-viewer supports embedding of Vimeo and YouTube videos.
-
-Otherwise, you can simply open your preview in an external browser.
 
 ## Code of Conduct
 

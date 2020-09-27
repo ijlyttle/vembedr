@@ -18,9 +18,3 @@ reference:
   - suggest_embed
   - use_start_time
 
-articles:
-- title: All vignettes
-  desc: ~
-  contents:
-  - services
-  - helpers
