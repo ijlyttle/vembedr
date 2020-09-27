@@ -1,10 +1,10 @@
 ---
-title: "Video services"
+title: "Embed video"
 author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Video services}
+  %\VignetteIndexEntry{Embed video}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
