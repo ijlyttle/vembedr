@@ -103,7 +103,7 @@ Alternatively, you can express this as a vector of strings:
 embed_channel9(c("Shows", "Going+Deep", "Brian-Beckman-Dont-fear-the-Monads"))
 ```
 
-#### UseR!2016 (and 2017)
+#### UseR! 2016 (and 2017)
 
 At UseR! 2016, Rick Becker gave a wonderful talk on the history of the S language:
 
