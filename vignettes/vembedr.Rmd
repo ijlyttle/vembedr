@@ -15,12 +15,12 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(vembedr)
+library("vembedr")
 ```
 
 Embedding and customizing videos in a RMarkdown document might seem like complex task. It need not be.
 
-Even the most seemingly-intractable issues become clearer with a well-founded framework:
+Even the most seemingly-intractable issues can be brought into focus with a clarifying framework:
 
 ```{r}
 embed_url("https://www.youtube.com/watch?v=_fZQQ7o16yQ") %>%
@@ -28,15 +28,27 @@ embed_url("https://www.youtube.com/watch?v=_fZQQ7o16yQ") %>%
 ```
 
 
+
 ```{r}
-embed_vimeo("276139835") %>%
-  use_rounded()
+embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
 ```
 
 
 ```{r}
+embed_youtube("lGTEUtS5H7I")
+```
+
+```{r}
 embed_youtube("3pKpfs5EK_s") %>%
   use_rounded()
+```
+
+```{r}
+embed_youtube("KvX8MijgeW8")
+```
+
+```{r}
+embed_youtube("uKQ01MvF8mY")
 ```
 
 ## Caveats
@@ -44,4 +56,6 @@ embed_youtube("3pKpfs5EK_s") %>%
 - Not all videos let you play embedded.
 - RStudio viewer.
 
-
+```{r}
+embed_vimeo("45157591")
+```

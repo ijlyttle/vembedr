@@ -22,7 +22,7 @@ library("vembedr")
 
 This article deals with modifications you can make to videos that you embed. These include:
 
-- setting the start time
+- start time
 - horizontal alignment
 - rounded corners
 - responsive sizing for [Bootstrap](https://getbootstrap.com/docs/3.4/components/#responsive-embed)
