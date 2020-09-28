@@ -20,10 +20,28 @@ library(vembedr)
 
 Embedding and customizing videos in a RMarkdown document might seem like complex task. It need not be.
 
-Even the most complex and seemingly intractable issues can become clear with a well-founded framework:
+Even the most seemingly-intractable issues become clearer with a well-founded framework:
 
 ```{r}
 embed_url("https://www.youtube.com/watch?v=_fZQQ7o16yQ") %>%
   use_start_time("1m32")
 ```
+
+
+```{r}
+embed_vimeo("276139835") %>%
+  use_rounded()
+```
+
+
+```{r}
+embed_youtube("3pKpfs5EK_s") %>%
+  use_rounded()
+```
+
+## Caveats
+
+- Not all videos let you play embedded.
+- RStudio viewer.
+
 

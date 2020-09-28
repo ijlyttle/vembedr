@@ -33,6 +33,8 @@ Using this package, you can embed videos into RMarkdown documents and Shiny apps
 The links above are associated with the embedding API for each of the services; these are the APIs wrapped by the
 `embed()` functions in this packages.  In many cases it may be easier to embed by using only URL of the page your video is on, using `embed_url()`.
 
+To set the start time, or to change the formatting, check out the `use_*()` functions in `vignette("modify")`.
+
 ## Embded using URL
 
 Although a URL can be long and awkward, it will get the job done. If the URL is from one of the supported services, it should *just work*:
