@@ -40,6 +40,7 @@
 #' embed_user2016("Literate-Programming")
 #' embed_user2017("Room-202-Lightning-Talks") %>% use_start_time("26m35s")
 #' embed_box("m5do45hvzw32iv2aors3urf5pgkxxazx")
+#' embed_msstream("ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48")
 #'
 NULL
 

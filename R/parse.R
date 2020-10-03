@@ -133,7 +133,7 @@ get_service <- function(url) {
     youtube_short = "^youtu\\.be$",
     vimeo = "^vimeo\\.com$",
     box = "app\\.box\\.com$",
-    msstream = "microsoftstream\\.com$"
+    msstream = "web\\.microsoftstream\\.com$"
   )
 
   # str_detect is vectorized over the patters

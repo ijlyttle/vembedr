@@ -149,6 +149,13 @@ embed_box("d75g9cr27s2jnx62b86idpgffzzxfdt2")
 
 If you are using a corporate instance of Box, and use the `embed_box()` function, you will also have to specify the `custom_domain`. For example, if your URL starts with `"https://acme.app.box.com"`, then your `custom_domain` is `"acme"`.
 
+## Microsoft Stream
+
+```{r}
+embed_msstream("ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48") %>%
+  use_start_time(10)
+```
+
 ## Sample videos
 
 In case you need sample videos with which to experiment, this package has you covered:

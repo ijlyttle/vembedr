@@ -130,6 +130,11 @@ list_parse_msstream_time <- list(
   start_time = "10"
 )
 
+list_suggest_msstream_time <- list(
+  embed = "embed_msstream(\"ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48\")",
+  start_time = "use_start_time(\"10\")"
+)
+
 ####
 url_cran <- "https://cran.rstudio.com/"
 
@@ -182,4 +187,5 @@ test_that("build_suggestion works", {
   expect_build(list_parse_user2017, list_suggest_user2017)
   expect_build(list_parse_box, list_suggest_box)
   expect_build(list_parse_box_acme, list_suggest_box_acme)
+  expect_build(list_parse_msstream_time, list_suggest_msstream_time)
 })
