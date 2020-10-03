@@ -3,18 +3,29 @@ template:
     bootswatch: sandstone
 
 development:
-  mode: auto
+  mode: release # remember to switch back to auto
 
 reference:
-- title: Embedding functions
+- title: Embed functions
   desc: ~
   contents:
   - embed
+  - embed_url
   - rickroll
+- title: Modifier functions
+  desc: ~
+  contents:
+  - use_start_time
+  - use_align
+  - use_rounded
+  - use_bs_responsive
 - title: Helper functions
   desc: ~
   contents:
-  - embed_url
+  - get_service
   - suggest_embed
-  - use_start_time
-
+- title: Meta
+  desc: ~
+  contents:
+  - vembedr-package
+  - vembedr-s3-classes

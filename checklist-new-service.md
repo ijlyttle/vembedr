@@ -21,3 +21,17 @@ Methods based on service:
 - `vignettes/vembedr.Rmd`
 - `vignettes/embed.Rmd`
 - `README.Rmd`
+
+## Other videos
+
+```r
+embed_youtube("3pKpfs5EK_s") 
+```
+
+```r
+embed_youtube("KvX8MijgeW8")
+```
+
+```r
+embed_youtube("uKQ01MvF8mY")
+```

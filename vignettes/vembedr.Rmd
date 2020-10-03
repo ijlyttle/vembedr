@@ -18,44 +18,74 @@ knitr::opts_chunk$set(
 library("vembedr")
 ```
 
-Embedding and customizing videos in a RMarkdown document might seem like complex task. It need not be.
-
-Even the most seemingly-intractable issues can be brought into focus with a clarifying framework:
+Embedding and customizing videos in RMarkdown documents might seem like complex task. 
+It need not be.
 
 ```{r}
 embed_url("https://www.youtube.com/watch?v=_fZQQ7o16yQ") %>%
   use_start_time("1m32")
 ```
 
+Even the most seemingly-intractable issues can be brought into focus with a clarifying framework.
 
+Above, we used an `embed` function followed by a `use` function.
+Using `embed_url()`, you can create an embed object for any of these supported services, or you can use an `id` with a service-specific embed function:
+
+- YouTube: `embed_youtube()`
+- Vimeo: `embed_vimeo()`
+- Microsoft Channel 9: `embed_channel9()`
+- Box: `embed_box()`
+
+You can read more about these services in `vignette("embed")`. 
+Once you create an embed object, you can modify it with `use` functions:
+
+- start time: `use_start_time()`
+- formatting: `use_align()`, `use_rounded()`
+- responsiveness (for Bootstrap): `use_bs_responsive()`
+
+You can read more about these modifications in `vignette("modify")`.
+
+## Examples
+
+To align the video horizontally within its container, `use_align()`:
 
 ```{r}
-embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
+embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs") %>%
+  use_align("center")
 ```
 
+To add rounded corners, `use_rounded()`: 
 
 ```{r}
-embed_youtube("lGTEUtS5H7I")
-```
-
-```{r}
-embed_youtube("3pKpfs5EK_s") %>%
+embed_youtube("lGTEUtS5H7I") %>%
   use_rounded()
 ```
 
-```{r}
-embed_youtube("KvX8MijgeW8")
-```
+If your HTML file uses Bootstrap, and want to make the size responsive to the width of the container, `use_bs_responsive()`:
 
 ```{r}
-embed_youtube("uKQ01MvF8mY")
+embed_url("https://www.youtube.com/watch?v=Io2NMCFtqsE") %>%
+  use_bs_responsive()
 ```
+
+For example this **does not** work in the R vignette, but it **does** work in the pkgdown site.
 
 ## Caveats
 
-- Not all videos let you play embedded.
-- RStudio viewer.
+Just because a service publishes a video, this does not mean that you can embed it. 
+For example, this is an amazing Otis Redding performance:
 
 ```{r}
+# does not embed, but you can watch it at Vimeo
 embed_vimeo("45157591")
 ```
+
+Also, as of RStudio 1.3, the RStudio IDE preview window will work with YouTube and Vimeo, but not with Channel 9:
+
+```{r}
+rickroll_channel9()
+```
+
+If you view this page in a full browser, it should work just fine.
+
+
