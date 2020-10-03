@@ -115,6 +115,21 @@ list_suggest_box_acme <- list(
 url_msstream <-
   "https://web.microsoftstream.com/video/ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48"
 
+url_msstream_time <-
+  "https://web.microsoftstream.com/video/ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48?st=10"
+
+list_parse_msstream <- list(
+  service = "msstream",
+  id = "ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48",
+  start_time = NULL
+)
+
+list_parse_msstream_time <- list(
+  service = "msstream",
+  id = "ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48",
+  start_time = "10"
+)
+
 ####
 url_cran <- "https://cran.rstudio.com/"
 
@@ -153,6 +168,8 @@ test_that("parse_video_url works", {
   expect_parse(url_user2017, list_parse_user2017)
   expect_parse(url_box, list_parse_box)
   expect_parse(url_box_acme, list_parse_box_acme)
+  expect_parse(url_msstream, list_parse_msstream)
+  expect_parse(url_msstream_time, list_parse_msstream_time)
   expect_error(parse_video_url(url_cran), regexp = "cran\\.rstudio\\.com")
 })
 
