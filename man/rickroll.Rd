@@ -5,7 +5,7 @@
 \alias{rickroll_vimeo}
 \alias{rickroll_youtube}
 \alias{rickroll_channel9}
-\title{Embed a popular video}
+\title{Embed popular video}
 \usage{
 rickroll_vimeo(...)
 

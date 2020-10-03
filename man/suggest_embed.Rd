@@ -3,15 +3,14 @@
 \name{suggest_embed}
 \alias{suggest_embed}
 \alias{suggest_embed_pure}
-\title{Suggest embedding-code based on a URL}
+\title{Suggest embed-code based on URL}
 \usage{
 suggest_embed(url)
 
 suggest_embed_pure(url)
 }
 \arguments{
-\item{url}{character, can be copied from browser location or from
-the "share" output on a video's web page}
+\item{url}{\code{character}, URL of web-page for video}
 }
 \value{
 character, returns the suggested code (\code{suggest_embed} returns invisibly)

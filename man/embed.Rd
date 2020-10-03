@@ -8,7 +8,7 @@
 \alias{embed_user2017}
 \alias{embed_channel9}
 \alias{embed_box}
-\title{Embed a video into an HTML document}
+\title{Embed video from service}
 \usage{
 embed_vimeo(
   id,
@@ -69,35 +69,34 @@ embed_box(
 )
 }
 \arguments{
-\item{id}{character, identifier provided by the service}
+\item{id}{\code{character}, identifier provided by the service}
 
-\item{width}{numeric, width of iframe (px)}
+\item{width}{\code{numeric}, width of iframe (px)}
 
-\item{height}{numeric, height of iframe (px)}
+\item{height}{\code{numeric}, height of iframe (px)}
 
 \item{ratio}{\code{character}, indicates aspect ratio for the \verb{<iframe/>}}
 
-\item{frameborder}{numeric, size of frame border (px)}
+\item{frameborder}{\code{numeric}, size of frame border (px)}
 
-\item{allowfullscreen}{logical, indicates if to allow fullscreen}
+\item{allowfullscreen}{\code{logical}, indicates if to allow fullscreen}
 
-\item{query}{list of items to include in url-query string}
+\item{query}{\code{list}, items to include in url-query string}
 
-\item{fragment}{character, string to include as url-fragment}
+\item{fragment}{\code{character}, string to include as url-fragment}
 
-\item{custom_domain}{character, (used by Box) name of Box-instance
+\item{custom_domain}{\code{character}, (used by Box) name of Box-instance
 to use. It can be useful to use \code{getOption("vembedr.box_custom_domain")}
 if you are using a corporate instance of Box. If \code{NULL}, it will use
 the standard Box instance.}
 }
 \value{
-object with class \code{vembedr_embed},
-prints to an 'HTML' \verb{<div/>} that contains an \verb{<iframe/>}
+Object with S3 class \code{vembedr_embed}
 }
 \description{
 These functions are used to embed video into your \strong{rmarkdown} html-documents,
 or into your \strong{shiny} apps. There are functions to embed from
-YouTube, Vimeo, and Microsoft Channel 9 (who host the UseR! 2016 videos).
+YouTube, Vimeo, Microsoft Channel 9 (who host the UseR! 2016 videos), and Box.
 }
 \details{
 These services allow you to customize a lot of things by specifying

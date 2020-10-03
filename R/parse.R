@@ -1,4 +1,4 @@
-#' Suggest embedding-code based on a URL
+#' Suggest embed-code based on URL
 #'
 #' This function is meant to work with URLs from any of the supported services.
 #'
@@ -11,8 +11,7 @@
 #'     that represents the suggested code}
 #' }
 #'
-#' @param url    character, can be copied from browser location or from
-#'   the "share" output on a video's web page
+#' @inheritParams embed_url
 #'
 #' @return character, returns the suggested code (`suggest_embed` returns invisibly)
 #'
@@ -79,7 +78,7 @@ suggest_embed_pure <- function(url){
 #' @examples
 #' parse_video_url("https://youtu.be/1-vcErOPofQ?t=28s") %>%
 #' build_suggestion()
-#' @export
+#' @noRd
 #'
 build_suggestion <- function(parse_list){
 
@@ -112,11 +111,11 @@ build_suggestion <- function(parse_list){
   suggest_list
 }
 
-#' Determine the service, given the URL
+#' Determine service based on URL
 #'
-#' @inheritParams suggest_embed
+#' @inheritParams embed_url
 #'
-#' @return `character` identfying the video service
+#' @return `character` identifying the video service
 #'
 #' @examples
 #' get_service("https://youtu.be/1-vcErOPofQ?t=28s")

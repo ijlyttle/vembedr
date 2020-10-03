@@ -2,19 +2,18 @@
 % Please edit documentation in R/parse.R
 \name{get_service}
 \alias{get_service}
-\title{Determine the service, given the URL}
+\title{Determine service based on URL}
 \usage{
 get_service(url)
 }
 \arguments{
-\item{url}{character, can be copied from browser location or from
-the "share" output on a video's web page}
+\item{url}{\code{character}, URL of web-page for video}
 }
 \value{
-\code{character} identfying the video service
+\code{character} identifying the video service
 }
 \description{
-Determine the service, given the URL
+Determine service based on URL
 }
 \examples{
 get_service("https://youtu.be/1-vcErOPofQ?t=28s")

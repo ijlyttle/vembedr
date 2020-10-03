@@ -1,4 +1,4 @@
-#' Embed a popular video
+#' Embed popular video
 #'
 #' If you want to experiment with the arguments to [embed()],
 #' such as `query`, but do not have a particular video in mind, this function

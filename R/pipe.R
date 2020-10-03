@@ -8,6 +8,9 @@
 #' @rdname pipe
 #' @export
 #' @param lhs,rhs An embed object and a function to apply to it
+#'
+#' @keywords internal
+#'
 #' @examples
 #' # Instead of
 #' use_start_time(rickroll_youtube(), "1m35s")

@@ -2,25 +2,23 @@
 % Please edit documentation in R/embed_url.R
 \name{embed_url}
 \alias{embed_url}
-\title{Embed a video based on URL}
+\title{Embed video based on URL}
 \usage{
 embed_url(url)
 }
 \arguments{
-\item{url}{character, URL of webpage for video}
+\item{url}{\code{character}, URL of web-page for video}
 }
 \value{
-An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+Object with S3 class \code{vembedr_embed}
 }
 \description{
 You can use this function to embed video using only the URL and you do not
-need any customization beyond the start-time.
-It should work for all the services supported by the \code{\link[=embed]{embed()}}
-family of functions.
+need any customization beyond the start-time. It works for all the
+services supported by the \code{\link[=embed]{embed()}} family of functions.
 }
 \details{
 This function calls \code{\link[=suggest_embed]{suggest_embed()}} then parses and evaluates the code.
-If you need to customize the iframe, \code{\link[=suggest_embed]{suggest_embed()}} may be more useful to you.
 }
 \examples{
 embed_url("https://youtu.be/1-vcErOPofQ?t=28s")

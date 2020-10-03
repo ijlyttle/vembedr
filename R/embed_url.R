@@ -1,16 +1,14 @@
-#' Embed a video based on URL
+#' Embed video based on URL
 #'
 #' You can use this function to embed video using only the URL and you do not
-#' need any customization beyond the start-time.
-#' It should work for all the services supported by the [embed()]
-#' family of functions.
+#' need any customization beyond the start-time. It works for all the
+#' services supported by the [embed()] family of functions.
 #'
 #' This function calls [suggest_embed()] then parses and evaluates the code.
-#' If you need to customize the iframe, [suggest_embed()] may be more useful to you.
 #'
-#' @param url character, URL of webpage for video
+#' @param url `character`, URL of web-page for video
 #'
-#' @return An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+#' @inherit embed return
 #'
 #' @seealso [suggest_embed()]
 #' @examples

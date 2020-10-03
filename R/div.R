@@ -1,7 +1,7 @@
 #' Align horizontally
 #'
-#' Use this function to specify the horizontal alignment of the `<iframe/>`
-#' within the enclosing `</div>`.
+#' Use this function to specify the horizontal alignment of the `iframe`
+#' within the enclosing `div`.
 #'
 #' @inheritParams use_start_time
 #' @param align `character`, indicates type of alignment
@@ -26,10 +26,10 @@ use_align <- function(embed,
 
 #' Make size responsive
 #'
-#' If your 'HTML` page includes
+#' If your HTML page includes
 #' [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed),
-#' you can use this function to make the size of the `<iframe/>` responsive
-#' within the enclosing `</div>`.
+#' you can use this function to make the size of the `iframe` responsive
+#' within the enclosing `div`.
 #'
 #' @inheritParams use_start_time
 #'
@@ -108,9 +108,6 @@ use_rounded <- function(embed, radius = NULL) {
   }
 
   embed[["children"]][[1]] <- div
-
-  # attach html-dependency
-  embed <- htmltools::attachDependencies(embed, vembedr_dependency)
 
   embed
 }
