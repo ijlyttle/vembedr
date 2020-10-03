@@ -10,9 +10,10 @@ To determine service:
 
 Methods based on service:
 
-- `use_start_time()`: `use_start_time.R`
-- `.parse()`: `R/parse.R`
-- `get_iframe()`: `R/iframe.R`
+- `embed_foo()`
+- `use_start_time.foo()`
+- `.parse.foo()`
+- `get_iframe_foo()` (if different)
 
 ## Documentation
 
