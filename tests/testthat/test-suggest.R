@@ -112,6 +112,10 @@ list_suggest_box_acme <- list(
 )
 
 ####
+url_msstream <-
+  "https://web.microsoftstream.com/video/ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48"
+
+####
 url_cran <- "https://cran.rstudio.com/"
 
 ####
@@ -136,6 +140,7 @@ test_that("get_service works", {
   expect_service(url_user2017, "channel9")
   expect_service(url_box, "box")
   expect_service(url_box_acme, "box")
+  expect_service(url_msstream, "msstream")
   expect_error(get_service(url_cran), regexp = "cran\\.rstudio\\.com")
 })
 

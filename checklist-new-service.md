@@ -22,6 +22,7 @@ Methods based on service:
 - `vignettes/vembedr.Rmd`
 - `vignettes/embed.Rmd`
 - `README.Rmd`
+- `NEWS.md`
 
 ## Other videos
 
