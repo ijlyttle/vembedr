@@ -29,8 +29,9 @@ The goal of the vembedr package is to make it a little bit easier for you to emb
 - Vimeo
 - Microsoft Channel 9 (including UseR! 2016 and 2017 videos).
 - Box
+- Microsoft Stream
 
-## New to version 0.1.3.9000
+## New to version 0.1.4
 
 - new functions to help you format: `use_rounded()`, `use_align()`, and `use_bs_responsive()`.
 - new services supported:

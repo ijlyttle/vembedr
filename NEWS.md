@@ -1,4 +1,4 @@
-## vembedr 0.1.3.9000
+## vembedr 0.1.4
 
 - add support for [Microsoft Stream](https://www.microsoft.com/en-us/microsoft-365/microsoft-stream), which offers an enterprise video service; this will likely be for use internal to an organization. (#38)
 - if you have a recent version of [usethis](https://usethis.r-lib.org) installed, `suggest_embed()` will copy the suggested code to your clipboard. (#32)
