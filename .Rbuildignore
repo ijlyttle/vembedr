@@ -2,7 +2,6 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^README-.*\.png$
-^CONDUCT\.md$
 ^\.travis\.yml$
 ^cran-comments\.md$
 ^codecov\.yml$
@@ -11,3 +10,4 @@
 ^docs$
 ^\.github$
 ^checklist-new-service\.md$
+^CODE_OF_CONDUCT\.md$
