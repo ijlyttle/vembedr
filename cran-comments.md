@@ -7,7 +7,6 @@
 * GitHub Actions: ubuntu-20.04 (devel)
 * winbuilder: R Under development (unstable) (2020-10-02 r79291)
 * r-hub: Fedora Linux, R-devel, clang, gfortran
-* r-hub: Ubuntu Linux 16.04 LTS, R-release, GCC
 * r-hub: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
 
 ## R CMD check results
