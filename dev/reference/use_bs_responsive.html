@@ -40,7 +40,10 @@
 
 
 <meta property="og:title" content="Make size responsive — use_bs_responsive" />
-<meta property="og:description" content="If your 'HTMLpage includes [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed), you can use this function to make the size of the&amp;lt;iframe/&amp;gt;responsive within the enclosing&amp;lt;/div&amp;gt;`." />
+<meta property="og:description" content="If your HTML page includes
+Twitter Bootstrap 3,
+you can use this function to make the size of the iframe responsive
+within the enclosing div." />
 
 
 <meta name="robots" content="noindex">
@@ -72,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -85,10 +88,25 @@
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="../articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -120,7 +138,10 @@
     </div>
 
     <div class="ref-description">
-    <p>If your 'HTML<code>page includes [Twitter Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#responsive-embed), you can use this function to make the size of the</code>&lt;iframe/&gt;<code>responsive within the enclosing</code>&lt;/div&gt;`.</p>
+    <p>If your HTML page includes
+<a href='https://getbootstrap.com/docs/3.3/components/#responsive-embed'>Twitter Bootstrap 3</a>,
+you can use this function to make the size of the <code>iframe</code> responsive
+within the enclosing <code>div</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>use_bs_responsive</span><span class='op'>(</span><span class='va'>embed</span><span class='op'>)</span></pre>
@@ -136,8 +157,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>object with class <code>vembedr_embed</code>,
-prints to an 'HTML' <code>&lt;div/&gt;</code> that contains an <code>&lt;iframe/&gt;</code></p>
+    <p>Object with S3 class <code>vembedr_embed</code></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

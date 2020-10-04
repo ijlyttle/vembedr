@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -84,10 +84,25 @@
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="../articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -127,7 +142,7 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-embedding-functions" class="hasAnchor"><a href="#section-embedding-functions" class="anchor"></a>Embedding functions</h2>
+          <h2 id="section-embed-functions" class="hasAnchor"><a href="#section-embed-functions" class="anchor"></a>Embed functions</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -139,15 +154,58 @@
       <tr>
         
         <td>
-          <p><code><a href="embed.html">embed_vimeo()</a></code> <code><a href="embed.html">embed_youtube()</a></code> <code><a href="embed.html">embed_user2016()</a></code> <code><a href="embed.html">embed_user2017()</a></code> <code><a href="embed.html">embed_channel9()</a></code> <code><a href="embed.html">embed_box()</a></code> </p>
+          <p><code><a href="embed.html">embed_user2016()</a></code> <code><a href="embed.html">embed_user2017()</a></code> <code><a href="embed.html">embed_box()</a></code> <code><a href="embed.html">embed_channel9()</a></code> <code><a href="embed.html">embed_msstream()</a></code> <code><a href="embed.html">embed_vimeo()</a></code> <code><a href="embed.html">embed_youtube()</a></code> </p>
         </td>
-        <td><p>Embed a video into an HTML document</p></td>
+        <td><p>Embed video from service</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="embed_url.html">embed_url()</a></code> </p>
+        </td>
+        <td><p>Embed video based on URL</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="rickroll.html">rickroll_vimeo()</a></code> <code><a href="rickroll.html">rickroll_youtube()</a></code> <code><a href="rickroll.html">rickroll_channel9()</a></code> </p>
         </td>
-        <td><p>Embed a popular video</p></td>
+        <td><p>Embed popular video</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-modifier-functions" class="hasAnchor"><a href="#section-modifier-functions" class="anchor"></a>Modifier functions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="use_start_time.html">use_start_time()</a></code> </p>
+        </td>
+        <td><p>Specify start time</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="use_align.html">use_align()</a></code> </p>
+        </td>
+        <td><p>Align horizontally</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="use_rounded.html">use_rounded()</a></code> </p>
+        </td>
+        <td><p>Make rounded corners</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="use_bs_responsive.html">use_bs_responsive()</a></code> </p>
+        </td>
+        <td><p>Make size responsive</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -164,21 +222,40 @@
       <tr>
         
         <td>
-          <p><code><a href="embed_url.html">embed_url()</a></code> </p>
+          <p><code><a href="get_service.html">get_service()</a></code> </p>
         </td>
-        <td><p>Embed a video based on URL</p></td>
+        <td><p>Determine service based on URL</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="suggest_embed.html">suggest_embed()</a></code> <code><a href="suggest_embed.html">suggest_embed_pure()</a></code> </p>
         </td>
-        <td><p>Suggest embedding-code based on a URL</p></td>
+        <td><p>Suggest embed-code based on URL</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-meta" class="hasAnchor"><a href="#section-meta" class="anchor"></a>Meta</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="vembedr-package.html">vembedr-package</a></code> </p>
+        </td>
+        <td><p>vembedr: Package for embedding video</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="use_start_time.html">use_start_time()</a></code> </p>
+          <p><code><a href="vembedr-s3-classes.html">vembedr-s3-classes</a></code> </p>
         </td>
-        <td><p>Specify a start time for an embedded video</p></td>
+        <td><p>vembedr S3 Classes</p></td>
       </tr>
     </tbody>
     </table>

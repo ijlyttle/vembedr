@@ -2,7 +2,8 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  helpers: helpers.html
-  services: services.html
-last_built: 2020-09-27T14:31Z
+  embed: embed.html
+  modify: modify.html
+  vembedr: vembedr.html
+last_built: 2020-10-04T13:41Z
 

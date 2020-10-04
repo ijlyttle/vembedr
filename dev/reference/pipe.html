@@ -73,7 +73,7 @@ function composition into a series of imperative statements." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -86,10 +86,25 @@ function composition into a series of imperative statements." />
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="../articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -138,13 +153,13 @@ function composition into a series of imperative statements.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Instead of</span>
-<span class='fu'><a href='use_start_time.html'>use_start_time</a></span><span class='op'>(</span><span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"1m35s"</span><span class='op'>)</span>
+<span class='fu'><a href='use_start_time.vembedr_embed_box.html'>use_start_time</a></span><span class='op'>(</span><span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"1m35s"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe src="https://www.youtube.com/embed/DLzxrzFCyOs?start=95" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='co'># you can write</span>
-<span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='use_start_time.html'>use_start_time</a></span><span class='op'>(</span><span class='st'>"1m35s"</span><span class='op'>)</span>
+<span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='use_start_time.vembedr_embed_box.html'>use_start_time</a></span><span class='op'>(</span><span class='st'>"1m35s"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;div class="vembedr"&gt;
 #&gt;   &lt;div&gt;
 #&gt;     &lt;iframe src="https://www.youtube.com/embed/DLzxrzFCyOs?start=95" width="533" height="300" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;

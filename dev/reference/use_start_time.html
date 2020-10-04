@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Specify a start time for an embedded video — use_start_time • vembedr</title>
+<title>Specify start time — use_start_time.vembedr_embed_box • vembedr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Specify a start time for an embedded video — use_start_time" />
+<meta property="og:title" content="Specify start time — use_start_time.vembedr_embed_box" />
 <meta property="og:description" content="This function provides you a consistent way to specify the start time,
 regardless of the service. Please note that Box does not provide a
 means to specify the start time." />
@@ -74,7 +74,7 @@ means to specify the start time." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -87,10 +87,25 @@ means to specify the start time." />
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="../articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -116,8 +131,8 @@ means to specify the start time." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Specify a start time for an embedded video</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/use_start_time.R'><code>R/use_start_time.R</code></a></small>
+    <h1>Specify start time</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/service-box.R'><code>R/service-box.R</code></a>, <a href='https://github.com/ijlyttle/vembedr/blob/master/R/service-channel9.R'><code>R/service-channel9.R</code></a>, <a href='https://github.com/ijlyttle/vembedr/blob/master/R/service-msstream.R'><code>R/service-msstream.R</code></a>, and 3 more</small>
     <div class="hidden name"><code>use_start_time.Rd</code></div>
     </div>
 
@@ -127,49 +142,51 @@ regardless of the service. Please note that Box does not provide a
 means to specify the start time.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='co'># S3 method for vembedr_embed_box</span>
+<span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='co'># S3 method for default</span>
-<span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
+<span class='co'># S3 method for vembedr_embed_channel9</span>
+<span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>start_time</span>, is_paused <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='co'># S3 method for vembedr_embed_youtube</span>
+<span class='co'># S3 method for vembedr_embed_msstream</span>
 <span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>start_time</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for vembedr_embed_vimeo</span>
 <span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>start_time</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='co'># S3 method for vembedr_embed_channel9</span>
-<span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>start_time</span>, is_paused <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span>
+<span class='co'># S3 method for vembedr_embed_youtube</span>
+<span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>start_time</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='co'># S3 method for vembedr_embed_box</span>
+<span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S3 method for default</span>
 <span class='fu'>use_start_time</span><span class='op'>(</span><span class='va'>embed</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>generic arguments to pass through</p></td>
-    </tr>
-    <tr>
       <th>embed</th>
       <td><p><code>vembedr_embed</code> object, created using an <code><a href='embed.html'>embed()</a></code> function</p></td>
     </tr>
     <tr>
+      <th>...</th>
+      <td><p>generic arguments to pass through</p></td>
+    </tr>
+    <tr>
       <th>start_time</th>
-      <td><p>numeric (seconds), or character (e.g. <code>"3m15s"</code>)</p></td>
+      <td><p><code>numeric</code> (seconds), or <code>character</code> (e.g. <code>"3m15s"</code>)</p></td>
     </tr>
     <tr>
       <th>is_paused</th>
-      <td><p>logical, for "Channel 9" specifies if the video
+      <td><p><code>logical</code>, for "Channel 9" specifies if the video
 should be paused at this time</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>object with class <code>vembedr_embed</code>,
-prints to an 'HTML' <code>&lt;div/&gt;</code> that contains an <code>&lt;iframe/&gt;</code></p>
+    <p>Object with S3 class <code>vembedr_embed</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The <code>start_time</code> argument can take a variety of formats; these inputs
@@ -182,7 +199,7 @@ all evaluate to the same value:</p>
 
 <p>Please note that for Vimeo, you can specify a start time, but you can not
 specify that the video be paused at this time. In other words, it is like
-"autoplay" is set to TRUE, and you cannot unset it.</p>
+"autoplay" is set to <code>TRUE</code>, and you cannot unset it.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>  <span class='fu'><a href='rickroll.html'>rickroll_youtube</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>

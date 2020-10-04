@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Embed a video based on URL — embed_url • vembedr</title>
+<title>Embed video based on URL — embed_url • vembedr</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,10 @@
 
 
 
-<meta property="og:title" content="Embed a video based on URL — embed_url" />
+<meta property="og:title" content="Embed video based on URL — embed_url" />
 <meta property="og:description" content="You can use this function to embed video using only the URL and you do not
-need any customization beyond the start-time.
-It should work for all the services supported by the embed()
-family of functions." />
+need any customization beyond the start-time. It works for all the
+services supported by the embed() family of functions." />
 
 
 <meta name="robots" content="noindex">
@@ -75,7 +74,7 @@ family of functions." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -88,10 +87,25 @@ family of functions." />
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="../articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -117,16 +131,15 @@ family of functions." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Embed a video based on URL</h1>
+    <h1>Embed video based on URL</h1>
     <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/embed_url.R'><code>R/embed_url.R</code></a></small>
     <div class="hidden name"><code>embed_url.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>You can use this function to embed video using only the URL and you do not
-need any customization beyond the start-time.
-It should work for all the services supported by the <code><a href='embed.html'>embed()</a></code>
-family of functions.</p>
+need any customization beyond the start-time. It works for all the
+services supported by the <code><a href='embed.html'>embed()</a></code> family of functions.</p>
     </div>
 
     <pre class="usage"><span class='fu'>embed_url</span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span></pre>
@@ -136,17 +149,16 @@ family of functions.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>url</th>
-      <td><p>character, URL of webpage for video</p></td>
+      <td><p><code>character</code>, URL of web-page for video</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An embed object that prints an <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/builder.html'>tags</a>$iframe</code> element</p>
+    <p>Object with S3 class <code>vembedr_embed</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function calls <code><a href='suggest_embed.html'>suggest_embed()</a></code> then parses and evaluates the code.
-If you need to customize the iframe, <code><a href='suggest_embed.html'>suggest_embed()</a></code> may be more useful to you.</p>
+    <p>This function calls <code><a href='suggest_embed.html'>suggest_embed()</a></code> then parses and evaluates the code.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='suggest_embed.html'>suggest_embed()</a></code></p></div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Determine the service, given the URL — get_service • vembedr</title>
+<title>Determine service based on URL — get_service • vembedr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Determine the service, given the URL — get_service" />
-<meta property="og:description" content="Determine the service, given the URL" />
+<meta property="og:title" content="Determine service based on URL — get_service" />
+<meta property="og:description" content="Determine service based on URL" />
 
 
 <meta name="robots" content="noindex">
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -85,10 +85,25 @@
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="../articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -114,13 +129,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Determine the service, given the URL</h1>
+    <h1>Determine service based on URL</h1>
     <small class="dont-index">Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/R/parse.R'><code>R/parse.R</code></a></small>
     <div class="hidden name"><code>get_service.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Determine the service, given the URL</p>
+    <p>Determine service based on URL</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_service</span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span></pre>
@@ -130,14 +145,13 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>url</th>
-      <td><p>character, can be copied from browser location or from
-the "share" output on a video's web page</p></td>
+      <td><p><code>character</code>, URL of web-page for video</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>character</code> identfying the video service</p>
+    <p><code>character</code> identifying the video service</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>get_service</span><span class='op'>(</span><span class='st'>"https://youtu.be/1-vcErOPofQ?t=28s"</span><span class='op'>)</span>

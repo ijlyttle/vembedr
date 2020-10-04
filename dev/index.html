@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
       </span>
     </div>
 
@@ -46,10 +46,25 @@
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="articles/vembedr.html">Get started</a>
 </li>
 <li>
-  <a href="articles/index.html">Articles</a>
+  <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/embed.html">Embed video</a>
+    </li>
+    <li>
+      <a href="articles/modify.html">Modify embedding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
@@ -77,6 +92,7 @@
 <div id="vembedr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#vembedr" class="anchor"></a>vembedr</h1></div>
+<!-- badges: start -->
 
 <p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your <strong>rmarkdown</strong> documents and your <strong>shiny</strong> apps. Four services are currently supported:</p>
 <ul>
@@ -89,8 +105,15 @@
 <h2 class="hasAnchor">
 <a href="#new-to-version-0139000" class="anchor"></a>New to version 0.1.3.9000</h2>
 <ul>
-<li>functions to help you format: <code><a href="reference/use_rounded.html">use_rounded()</a></code>, <code><a href="reference/use_align.html">use_align()</a></code>, and <code><a href="reference/use_bs_responsive.html">use_bs_responsive()</a></code>.</li>
-<li>you can embed videos hosted on Box, using <code><a href="reference/embed.html">embed_box()</a></code>.</li>
+<li>new functions to help you format: <code><a href="reference/use_rounded.html">use_rounded()</a></code>, <code><a href="reference/use_align.html">use_align()</a></code>, and <code><a href="reference/use_bs_responsive.html">use_bs_responsive()</a></code>.</li>
+<li>new services supported:
+<ul>
+<li>Box, using <code><a href="reference/embed.html">embed_box()</a></code>
+</li>
+<li>Microsoft Stream, using <code><a href="reference/embed.html">embed_msstream()</a></code>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div id="installation" class="section level2">
@@ -103,104 +126,37 @@
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ijlyttle/vembedr"</span><span class="op">)</span></pre></div>
-<div id="documentation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h3>
+</div>
+<div id="documentation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#documentation" class="anchor"></a>Documentation</h2>
 <p>This project supports two documentation-websites, built using <a href="https://pkgdown.r-lib.org">pkgdown</a>:</p>
 <ul>
 <li><a href="https://ijlyttle.github.io/vembedr">CRAN version</a></li>
 <li>latest <a href="https://ijlyttle.github.io/vembedr/dev">developent version</a> from GitHub</li>
 </ul>
-</div>
-</div>
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
-<p>For these examples, it can be useful to load the <strong>htmltools</strong> package along with the <strong>vembedr</strong> package.</p>
+<div id="usage" class="section level3">
+<h3 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h3>
+<p>The most useful function might be <code><a href="reference/embed_url.html">embed_url()</a></code>. If the URL is from one of the supported services, it will do the right thing:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span></pre></div>
-<p>With the function <code><a href="reference/embed_url.html">embed_url()</a></code>, you can use the URL from your browser to embed video:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span>
+
 <span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span></pre></div>
-<!--html_preserve-->
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen>
-</iframe>
+<p>To see this in action, please see <code><a href="articles/vembedr.html">vignette("vembedr")</a></code>.</p>
+<p>To see details on each of the services supported, see <code><a href="articles/embed.html">vignette("embed")</a></code>. You can also modify the appearance and the start time, for example:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></pre></div>
+<p>To see these functions in action, see <code><a href="articles/modify.html">vignette("modify")</a></code>.</p>
 </div>
+<div id="caveats" class="section level3">
+<h3 class="hasAnchor">
+<a href="#caveats" class="anchor"></a>Caveats</h3>
+<p>Be aware that not all videos will play when embedded at a different site (like your RMarkdown document). This is due to licensing issues.</p>
+<p>The RStudio viewer will embed YouTube and Vimeo videos, but not others. Everthing should work well in a browser like Chrome.</p>
 </div>
-<!--/html_preserve-->
-<hr>
-<p>If you just want the embedding code, the <code><a href="reference/suggest_embed.html">suggest_embed()</a></code> function may be useful:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://youtu.be/uV4UpCq2azs?t=1m32s"</span><span class="op">)</span>
-<span class="co">#&gt;   embed_youtube("uV4UpCq2azs") %&gt;%</span>
-<span class="co">#&gt;   use_start_time("1m32s")</span></pre></div>
-<p>All of the features shown here can be used for all the supported services: YouTube, Vimeo, and Channel 9. Here, the features are mixed-and-matched in the interest of brevity.</p>
-<hr>
-<p>To embed a YouTube (or Vimeo, or Channel 9) video you can use its identifier, which you can get from the original URL.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"1-vcErOPofQ"</span><span class="op">)</span></pre></div>
-<!--html_preserve-->
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/1-vcErOPofQ" width="533" height="300" frameborder="0" allowfullscreen>
-</iframe>
-</div>
-</div>
-<!--/html_preserve-->
-<hr>
-<p>For this example, we embed a Vimeo using some custom formatting - thanks to <a href="https://github.com/koncina">Eric Koncina</a> and <a href="https://github.com/ginolhac">Aurélien Ginolhac</a> who <a href="https://github.com/ijlyttle/vembedr/issues/25">showed the way</a>. First let’s introduce some css where we can define some rounded corners for an embedded video, by describing an HTML class, <code>vembedr</code>:</p>
-<p>To embed a Vimeo with some custom formatting:</p>
-<ul>
-<li>call <code><a href="reference/embed.html">embed_vimeo()</a></code> using the Vimeo identifier, <em>then</em>
-</li>
-<li>wrap that in <code>&lt;div/&gt;</code> using our new <code>vembedr</code> class, <em>then</em>
-</li>
-<li>wrap that in a <code>&lt;div/&gt;</code> that centers its contents</li>
-</ul>
-<!-- end list --><div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"189919038"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"vembedr"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>align <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span></pre></div>
-<!--html_preserve-->
-<div data-align="center">
-<div class="vembedr">
-<div class="vembedr">
-<div>
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/189919038" width="533" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-</iframe>
-</div>
-</div>
-</div>
-</div>
-<!--/html_preserve-->
-<!--html_preserve-->
-<p><br><!--/html_preserve--></p>
-<p>Of course, the use of the pipe operator is optional. Hat tip to Karthik Ram for <a href="https://twitter.com/_inundata/status/794616331727294464">tweeting</a> out this Vimeo.</p>
-<hr>
-<p>You can also specify a start time. Please note that for Vimeo, specifying a start time implies that the video <strong>will</strong> be auto-played (which can be annoying).</p>
-<p>Here’s an example using a lightning presentation from UseR!2017:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="fu"><a href="reference/embed.html">embed_user2017</a></span><span class="op">(</span><span class="st">"Room-202-Lightning-Talks"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="reference/use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="st">"26m35s"</span><span class="op">)</span></pre></div>
-<!--html_preserve-->
-<div class="vembedr">
-<div>
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="533" height="300" frameborder="0" allowfullscreen>
-</iframe>
-</div>
-</div>
-<!--/html_preserve-->
-<hr>
-</div>
-<div id="note-for-github-readme-and-rstudio-viewer" class="section level2">
-<h2 class="hasAnchor">
-<a href="#note-for-github-readme-and-rstudio-viewer" class="anchor"></a>Note for GitHub README and RStudio viewer</h2>
-<p>The GitHub Markdown renderer does not support video embedding. To see everything in action, you are invited to visit the <a href="http://ijlyttle.github.io/vembedr/">GitHub pages</a> site, built using <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
-<p>If you use the RStudio-IDE viewer to preview your work, please note that RStudio have made the design choice not to allow arbitrary external web-content in the IDE, which is wholly appropriate. However, with the advent of the <a href="https://rstudio.github.io/learnr/">learnr</a> package, the IDE-viewer supports embedding of Vimeo and YouTube videos.</p>
-<p>Otherwise, you can simply open your preview in an external browser.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
@@ -242,7 +198,7 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=vembedr"><img src="https://www.r-pkg.org/badges/version/vembedr" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://travis-ci.org/ijlyttle/vembedr"><img src="https://travis-ci.org/ijlyttle/vembedr.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://github.com/ijlyttle/vembedr/actions"><img src="https://github.com/ijlyttle/vembedr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
 </ul>
 </div>
