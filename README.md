@@ -16,8 +16,9 @@ apps. Four services are currently supported:
   - Vimeo
   - Microsoft Channel 9 (including UseR\! 2016 and 2017 videos).
   - Box
+  - Microsoft Stream
 
-## New to version 0.1.3.9000
+## New to version 0.1.4
 
   - new functions to help you format: `use_rounded()`, `use_align()`,
     and `use_bs_responsive()`.
@@ -45,8 +46,8 @@ devtools::install_github("ijlyttle/vembedr")
 This project supports two documentation-websites, built using
 [pkgdown](https://pkgdown.r-lib.org):
 
-  - [CRAN version](https://ijlyttle.github.io/vembedr)
-  - latest [developent version](https://ijlyttle.github.io/vembedr/dev)
+  - [CRAN version](https://ijlyttle.github.io/vembedr/)
+  - latest [developent version](https://ijlyttle.github.io/vembedr/dev/)
     from GitHub
 
 ### Usage

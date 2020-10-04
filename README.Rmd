@@ -57,8 +57,8 @@ devtools::install_github("ijlyttle/vembedr")
 
 This project supports two documentation-websites, built using [pkgdown](https://pkgdown.r-lib.org):
 
-- [CRAN version](https://ijlyttle.github.io/vembedr)
-- latest [developent version](https://ijlyttle.github.io/vembedr/dev) from GitHub
+- [CRAN version](https://ijlyttle.github.io/vembedr/)
+- latest [developent version](https://ijlyttle.github.io/vembedr/dev/) from GitHub
 
 ### Usage
 
