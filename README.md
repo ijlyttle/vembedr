@@ -19,9 +19,11 @@ apps. Four services are currently supported:
 
 ## New to version 0.1.3.9000
 
-  - functions to help you format: `use_rounded()`, `use_align()`, and
-    `use_bs_responsive()`.
-  - you can embed videos hosted on Box, using `embed_box()`.
+  - new functions to help you format: `use_rounded()`, `use_align()`,
+    and `use_bs_responsive()`.
+  - new services supported:
+      - Box, using `embed_box()`
+      - Microsoft Stream, using `embed_msstream()`
 
 ## Installation
 

@@ -4,7 +4,7 @@ When adding a new service, say TikTok, we need to make sure that we add it every
 
 Maybe split up be service so that we can just add the file.
 
-To determine service:
+To determine service, add to regex list:
 
 - `get_service()`: `R/parse.R` 
 
@@ -19,6 +19,7 @@ Methods based on service:
 
 - `R/s3-classes.R`
 - `R/vembedr-package.R`
+- `R/embed.R`
 - `vignettes/vembedr.Rmd`
 - `vignettes/embed.Rmd`
 - `README.Rmd`

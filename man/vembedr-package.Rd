@@ -14,6 +14,7 @@ these services:
 \item Vimeo
 \item Microsoft Channel 9
 \item Box
+\item Microsoft Stream
 }
 
 It provides two categories of functions:

@@ -61,7 +61,7 @@ use_start_time.vembedr_embed_vimeo <- function(embed, start_time, ...){
   embed
 }
 
-.parse.vembedr_vimeo <- function(url_parsed, ...){
+.parse.vembedr_url_vimeo <- function(url_parsed, ...){
 
   start_time <- NULL
   if (!is.null(url_parsed$fragment)){

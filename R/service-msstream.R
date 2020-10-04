@@ -52,7 +52,7 @@ use_start_time.vembedr_embed_msstream <- function(embed, start_time, ...){
   embed
 }
 
-.parse.vembedr_msstream <- function(url_parsed, ...) {
+.parse.vembedr_url_msstream <- function(url_parsed, ...) {
 
   path_split <- stringr::str_split(url_parsed$path, "/")[[1]]
 

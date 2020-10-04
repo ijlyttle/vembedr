@@ -177,7 +177,7 @@ parse_video_url <- function(url) {
   service <- get_service(url)
 
   url_parsed <- httr::parse_url(url)
-  class(url_parsed) <- c(glue::glue("vembedr_{service}"))
+  class(url_parsed) <- c(glue::glue("vembedr_url_{service}"))
 
   .parse(url_parsed)
 }

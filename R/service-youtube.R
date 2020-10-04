@@ -56,7 +56,7 @@ use_start_time.vembedr_embed_youtube <- function(embed, start_time, ...){
   embed
 }
 
-.parse.vembedr_youtube <- function(url_parsed, ...) {
+.parse.vembedr_url_youtube <- function(url_parsed, ...) {
   list(
     service = "youtube",
     id = url_parsed$query$v,
@@ -64,7 +64,7 @@ use_start_time.vembedr_embed_youtube <- function(embed, start_time, ...){
   )
 }
 
-.parse.vembedr_youtube_short <- function(url_parsed, ...) {
+.parse.vembedr_url_youtube_short <- function(url_parsed, ...) {
   list(
     service = "youtube",
     id = url_parsed$path,

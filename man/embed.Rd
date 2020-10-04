@@ -117,9 +117,10 @@ according to the service being used:
 \describe{
 \item{YouTube}{\url{https://developers.google.com/youtube/player_parameters}}
 \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
-\item{Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
+\item{Microsoft Channel 9}{\url{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S}
 (click the \emph{Embed} tab)}
 \item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
+\item{Microsoft Stream}{\url{https://docs.microsoft.com/en-us/stream/portal-embed-video}}
 }
 }
 \examples{
