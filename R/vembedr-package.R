@@ -7,6 +7,7 @@
 #'  - Vimeo
 #'  - Microsoft Channel 9
 #'  - Box
+#'  - Microsoft Stream
 #'
 #' It provides two categories of functions:
 #'

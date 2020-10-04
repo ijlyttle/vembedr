@@ -55,7 +55,7 @@ use_start_time.vembedr_embed_box <- function(embed, ...) {
 }
 
 
-.parse.vembedr_box <- function(url_parsed, ...) {
+.parse.vembedr_url_box <- function(url_parsed, ...) {
 
   # determine custom-domain by taking apart hostname
   hostname_split <- stringr::str_split(url_parsed$hostname, "\\.")[[1]]

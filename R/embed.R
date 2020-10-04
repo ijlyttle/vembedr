@@ -11,9 +11,10 @@
 #' \describe{
 #'   \item{YouTube}{<https://developers.google.com/youtube/player_parameters>}
 #'   \item{Vimeo}{<https://developer.vimeo.com/player/embedding>}
-#'   \item{Channel 9}{<https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S>
+#'   \item{Microsoft Channel 9}{<https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S>
 #'   (click the *Embed* tab)}
 #'   \item{Box}{<https://developer.box.com/docs/box-embed#section-build-box-embed-programatically>}
+#'   \item{Microsoft Stream}{<https://docs.microsoft.com/en-us/stream/portal-embed-video>}
 #' }
 #'
 #' @param id                `character`, identifier provided by the service
@@ -40,6 +41,7 @@
 #' embed_user2016("Literate-Programming")
 #' embed_user2017("Room-202-Lightning-Talks") %>% use_start_time("26m35s")
 #' embed_box("m5do45hvzw32iv2aors3urf5pgkxxazx")
+#' embed_msstream("ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48")
 #'
 NULL
 

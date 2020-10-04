@@ -35,6 +35,7 @@ Using `embed_url()`, you can create an embed object for any of these supported s
 - Vimeo: `embed_vimeo()`
 - Microsoft Channel 9: `embed_channel9()`
 - Box: `embed_box()`
+- Microsoft Stream: `embed_msstream()`
 
 You can read more about these services in `vignette("embed")`. 
 Once you create an embed object, you can modify it with `use` functions:

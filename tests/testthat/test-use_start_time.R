@@ -37,3 +37,14 @@ test_that("box throws a warning", {
   expect_warning(use_start_time(emb_box, "25s"), "^Start time")
 })
 
+test_that("msstream works", {
+
+  emb_msstream <- embed_msstream("foo") %>% use_start_time(10)
+
+  expect_identical(
+    get_query(emb_msstream)[["st"]],
+    "10"
+  )
+
+})
+

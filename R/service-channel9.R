@@ -60,7 +60,7 @@ use_start_time.vembedr_embed_channel9 <- function(embed, start_time, is_paused =
   embed
 }
 
-.parse.vembedr_channel9 <- function(url_parsed, ...){
+.parse.vembedr_url_channel9 <- function(url_parsed, ...){
 
   path_split <-
     url_parsed$path %>%
