@@ -91,7 +91,7 @@ embed_youtube("FkBQc0gQkQI") %>%
 It has no arguments, but it uses the `ratio` provided to the `embed()` function:
 
 ```{r}
-embed_youtube("q2nNzNo_Xps", ratio = "4by3") %>%
+embed_youtube("KvX8MijgeW8", ratio = "4by3") %>%
   use_bs_responsive()  
 ```
 

@@ -27,14 +27,9 @@ Methods based on service:
 
 ## Other videos
 
+
 ```r
+# Otis Redding: Shake
 embed_youtube("3pKpfs5EK_s") 
 ```
 
-```r
-embed_youtube("KvX8MijgeW8")
-```
-
-```r
-embed_youtube("uKQ01MvF8mY")
-```

@@ -43,13 +43,13 @@ Although a URL can be long and awkward, it will get the job done.
 If the URL is from one of the supported services, it should *just work*:
 
 ```{r}
-embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
+embed_url("https://www.youtube.com/watch?v=uKQ01MvF8mY")
 ```
 
 If you would like to generate more-concise code using the URL, you can use the `suggest_embed()` function:
 
 ```{r}
-suggest_embed("https://www.youtube.com/watch?v=uV4UpCq2azs")
+suggest_embed("https://www.youtube.com/watch?v=uKQ01MvF8mY")
 ```
 
 ## Embed by service
