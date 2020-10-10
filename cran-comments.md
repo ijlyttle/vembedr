@@ -15,7 +15,13 @@
 
 R CMD check succeeded
 
-**Note** new email for maintainer.
+**Note** new email for maintainer:
+
+N  checking CRAN incoming feasibility
+   Maintainer: 'Ian Lyttle <ian.lyttle@se.com>'
+     Ian Lyttle <ian.lyttle@se.com>
+   Old maintainer(s):
+     Ian Lyttle <ian.lyttle@schneider-electric.com>
 
 ## Reverse dependencies
 
