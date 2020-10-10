@@ -8,9 +8,9 @@ status](https://github.com/ijlyttle/vembedr/workflows/R-CMD-check/badge.svg)](ht
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
-The goal of the vembedr package is to make it a little bit easier for
-you to embed videos into your **rmarkdown** documents and your **shiny**
-apps. Four services are currently supported:
+The goal of vembedr is to make it a little bit easier for you to embed
+videos into your **RMarkdown** documents and your **Shiny** apps. In
+this verison, five services are supported:
 
   - YouTube
   - Vimeo
@@ -61,11 +61,13 @@ library("vembedr")
 embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
 ```
 
-To see this in action, please see `vignette("vembedr")`.
+The video is not embedded in this README file as is rendered to
+Markdown; to see embedded videos, please see `vignette("vembedr")`. Each
+of the supported services, e.g. YouTube, is discussed in
+`vignette("embed")`.
 
-To see details on each of the services supported, see
-`vignette("embed")`. You can also modify the appearance and the start
-time, for example:
+The functions are designed to be piped. For example, here’s how you can
+modify the appearance and the start time:
 
 ``` r
 embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs") %>%
@@ -77,11 +79,15 @@ To see these functions in action, see `vignette("modify")`.
 
 ### Caveats
 
-Be aware that not all videos will play when embedded at a different site
-(like your RMarkdown document). This is due to licensing issues.
+  - Be aware that, due to licensing issues, not all videos will play
+    when embedded at a different site (like your HTML document).
 
-The RStudio viewer will embed YouTube and Vimeo videos, but not others.
-Everthing should work well in a browser like Chrome.
+  - The RStudio viewer will embed YouTube and Vimeo videos, but not
+    others. Videos from all services should be rendered as you expect in
+    a browser like Chrome.
+
+  - Some of the formatting, e.g. rounded corners, does not render on
+    mobile sites.
 
 ## Code of Conduct
 

@@ -59,7 +59,7 @@ This function works with all of the services except for Box.
 
 ## Horizontal alignment
 
-You can `use_align()` to specify the horizonatal alignmment:
+You can `use_align()` to specify the horizontal alignment:
 
 ```{r}
 embed_vimeo("10022924") %>%
