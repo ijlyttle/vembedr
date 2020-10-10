@@ -27,7 +27,7 @@ Using this package, you can embed videos into RMarkdown documents and Shiny apps
 
 - [YouTube](https://developers.google.com/youtube/player_parameters)
 - [Vimeo](https://developer.vimeo.com/player/embedding)
-- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 and 2017 videos. Click the *Embed* tab for embedding options.
+- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 and 2017 videos.
 - [Box](https://developer.box.com/docs/box-embed#section-build-box-embed-programatically)
 - [Microsoft Stream](https://docs.microsoft.com/en-us/stream/portal-embed-video)
 
@@ -43,13 +43,13 @@ Although a URL can be long and awkward, it will get the job done.
 If the URL is from one of the supported services, it should *just work*:
 
 ```{r}
-embed_url("https://www.youtube.com/watch?v=uV4UpCq2azs")
+embed_url("https://www.youtube.com/watch?v=uKQ01MvF8mY")
 ```
 
 If you would like to generate more-concise code using the URL, you can use the `suggest_embed()` function:
 
 ```{r}
-suggest_embed("https://www.youtube.com/watch?v=uV4UpCq2azs")
+suggest_embed("https://www.youtube.com/watch?v=uKQ01MvF8mY")
 ```
 
 ## Embed by service
