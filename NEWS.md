@@ -1,3 +1,7 @@
+# vembedr 0.1.4.9000 (development version)
+
+- version bump for development
+
 ## vembedr 0.1.4
 
 - adds support for [Microsoft Stream](https://www.microsoft.com/en-us/microsoft-365/microsoft-stream), which offers an enterprise video service; this will likely be for use internal to an organization. (#38)
