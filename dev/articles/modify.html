@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9003</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9000</span>
       </span>
     </div>
 
@@ -86,14 +86,14 @@
 
       
 
-      </header><script src="modify_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="modify_files/vembedr-0.1.3.9003/css/vembedr.css" rel="stylesheet">
+      </header><script src="modify_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="modify_files/vembedr-0.1.4.9000/css/vembedr.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Modify embedding</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-10-04</h4>
+            <h4 class="date">2020-10-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/master/vignettes/modify.Rmd"><code>vignettes/modify.Rmd</code></a></small>
       <div class="hidden name"><code>modify.Rmd</code></div>
@@ -154,7 +154,7 @@
 <div id="horizontal-alignment" class="section level2">
 <h2 class="hasAnchor">
 <a href="#horizontal-alignment" class="anchor"></a>Horizontal alignment</h2>
-<p>You can <code><a href="../reference/use_align.html">use_align()</a></code> to specify the horizonatal alignmment:</p>
+<p>You can <code><a href="../reference/use_align.html">use_align()</a></code> to specify the horizontal alignment:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"10022924"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></pre></div>
@@ -193,11 +193,11 @@
 </div>
 <p>It has no arguments, but it uses the <code>ratio</code> provided to the <code><a href="../reference/embed.html">embed()</a></code> function:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"q2nNzNo_Xps"</span>, ratio <span class="op">=</span> <span class="st">"4by3"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"KvX8MijgeW8"</span>, ratio <span class="op">=</span> <span class="st">"4by3"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span><span class="op">(</span><span class="op">)</span>  </pre></div>
 <div class="vembedr embed-responsive embed-responsive-4by3">
 <div>
-<iframe src="https://www.youtube.com/embed/q2nNzNo_Xps" width="400" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/KvX8MijgeW8" width="400" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <p>The <code>ratio</code> defaults to <code>"16by9"</code>, but it can also be <code>"4by3"</code>.</p>
