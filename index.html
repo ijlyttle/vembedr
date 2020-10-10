@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">vembedr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -93,19 +93,27 @@
 <a href="#vembedr" class="anchor"></a>vembedr</h1></div>
 <!-- badges: start -->
 
-<p>The goal of the vembedr package is to make it a little bit easier for you to embed videos into your <strong>rmarkdown</strong> documents and your <strong>shiny</strong> apps. Four services are currently supported:</p>
+<p>The goal of vembedr is to make it a little bit easier for you to embed videos into your <strong>RMarkdown</strong> documents and your <strong>Shiny</strong> apps. In this verison, five services are supported:</p>
 <ul>
 <li>YouTube</li>
 <li>Vimeo</li>
 <li>Microsoft Channel 9 (including UseR! 2016 and 2017 videos).</li>
 <li>Box</li>
+<li>Microsoft Stream</li>
 </ul>
-<div id="new-to-version-0139000" class="section level2">
+<div id="new-to-version-014" class="section level2">
 <h2 class="hasAnchor">
-<a href="#new-to-version-0139000" class="anchor"></a>New to version 0.1.3.9000</h2>
+<a href="#new-to-version-014" class="anchor"></a>New to version 0.1.4</h2>
 <ul>
-<li>functions to help you format: <code><a href="reference/use_rounded.html">use_rounded()</a></code>, <code><a href="reference/use_align.html">use_align()</a></code>, and <code><a href="reference/use_bs_responsive.html">use_bs_responsive()</a></code>.</li>
-<li>you can embed videos hosted on Box, using <code><a href="reference/embed.html">embed_box()</a></code>.</li>
+<li>new functions to help you format: <code><a href="reference/use_rounded.html">use_rounded()</a></code>, <code><a href="reference/use_align.html">use_align()</a></code>, and <code><a href="reference/use_bs_responsive.html">use_bs_responsive()</a></code>.</li>
+<li>new services supported:
+<ul>
+<li>Box, using <code><a href="reference/embed.html">embed_box()</a></code>
+</li>
+<li>Microsoft Stream, using <code><a href="reference/embed.html">embed_msstream()</a></code>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div id="installation" class="section level2">
@@ -124,8 +132,8 @@
 <a href="#documentation" class="anchor"></a>Documentation</h2>
 <p>This project supports two documentation-websites, built using <a href="https://pkgdown.r-lib.org">pkgdown</a>:</p>
 <ul>
-<li><a href="https://ijlyttle.github.io/vembedr">CRAN version</a></li>
-<li>latest <a href="https://ijlyttle.github.io/vembedr/dev">developent version</a> from GitHub</li>
+<li><a href="https://ijlyttle.github.io/vembedr/">CRAN version</a></li>
+<li>latest <a href="https://ijlyttle.github.io/vembedr/dev/">developent version</a> from GitHub</li>
 </ul>
 <div id="usage" class="section level3">
 <h3 class="hasAnchor">
@@ -135,8 +143,8 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span></pre></div>
-<p>To see this in action, please see <code><a href="articles/vembedr.html">vignette("vembedr")</a></code>.</p>
-<p>To see details on each of the services supported, see <code><a href="articles/embed.html">vignette("embed")</a></code>. You can also modify the appearance and the start time, for example:</p>
+<p>The video is not embedded in this README file as is rendered to Markdown; to see embedded videos, please see <code><a href="articles/vembedr.html">vignette("vembedr")</a></code>. Each of the supported services, e.g. YouTube, is discussed in <code><a href="articles/embed.html">vignette("embed")</a></code>.</p>
+<p>The functions are designed to be piped. For example, here’s how you can modify the appearance and the start time:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -146,14 +154,17 @@
 <div id="caveats" class="section level3">
 <h3 class="hasAnchor">
 <a href="#caveats" class="anchor"></a>Caveats</h3>
-<p>Be aware that not all videos will play when embedded at a different site (like your RMarkdown document). This is due to licensing issues.</p>
-<p>The RStudio viewer will embed YouTube and Vimeo videos, but not others. Everthing should work well in a browser like Chrome.</p>
+<ul>
+<li><p>Be aware that, due to licensing issues, not all videos will play when embedded at a different site (like your HTML document).</p></li>
+<li><p>The RStudio viewer will embed YouTube and Vimeo videos, but not others. Videos from all services should be rendered as you expect in a browser like Chrome.</p></li>
+<li><p>Some of the formatting, e.g. rounded corners, does not render on mobile sites.</p></li>
+</ul>
 </div>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+<p>Please note that the vembedr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
@@ -176,6 +187,12 @@
 <li>
 <a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
+</ul>
+</div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
 <div class="developers">

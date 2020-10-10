@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -85,14 +85,14 @@
 
       
 
-      </header><script src="embed_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="embed_files/vembedr-0.1.3.9002/css/vembedr.css" rel="stylesheet">
+      </header><script src="embed_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="embed_files/vembedr-0.1.4/css/vembedr.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Embed video</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-10-03</h4>
+            <h4 class="date">2020-10-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/master/vignettes/embed.Rmd"><code>vignettes/embed.Rmd</code></a></small>
       <div class="hidden name"><code>embed.Rmd</code></div>
@@ -108,8 +108,9 @@
 <li><a href="https://developers.google.com/youtube/player_parameters">YouTube</a></li>
 <li><a href="https://developer.vimeo.com/player/embedding">Vimeo</a></li>
 <li>
-<a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a>, which includes the UseR! 2016 and 2017 videos. Click the <em>Embed</em> tab for embedding options.</li>
+<a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S">Channel 9</a>, which includes the UseR! 2016 and 2017 videos.</li>
 <li><a href="https://developer.box.com/docs/box-embed#section-build-box-embed-programatically">Box</a></li>
+<li><a href="https://docs.microsoft.com/en-us/stream/portal-embed-video">Microsoft Stream</a></li>
 </ul>
 <p>The links above are associated with the embedding API for each of the services; these are the APIs wrapped by the <code><a href="../reference/embed.html">embed()</a></code> functions in this packages. In many cases it may be easier to embed by using only URL of the page your video is on, using <code><a href="../reference/embed_url.html">embed_url()</a></code>.</p>
 <p>To set the start time, or to change the formatting, check out the <code>use_*()</code> functions in <code><a href="../articles/modify.html">vignette("modify")</a></code>.</p>
@@ -118,16 +119,16 @@
 <a href="#embded-using-url" class="anchor"></a>Embded using URL</h2>
 <p>Although a URL can be long and awkward, it will get the job done. If the URL is from one of the supported services, it should <em>just work</em>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uKQ01MvF8mY"</span><span class="op">)</span></pre></div>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/uKQ01MvF8mY" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <p>If you would like to generate more-concise code using the URL, you can use the <code><a href="../reference/suggest_embed.html">suggest_embed()</a></code> function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span>
-<span class="co">#&gt;   embed_youtube("uV4UpCq2azs")</span></pre></div>
+<span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uKQ01MvF8mY"</span><span class="op">)</span>
+<span class="co">#&gt;   embed_youtube("uKQ01MvF8mY")</span></pre></div>
 </div>
 <div id="embed-by-service" class="section level2">
 <h2 class="hasAnchor">
@@ -155,7 +156,7 @@
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://vimeo.com/238200347"</span><span class="op">)</span>
 <span class="co">#&gt;   embed_vimeo("238200347")</span></pre></div>
-<p>The Vimeo identifier is the path part of the URL:</p>
+<p>The Vimeo identifier is the path of the URL:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"238200347"</span><span class="op">)</span></pre></div>
 <div class="vembedr">
@@ -168,7 +169,7 @@
 <h3 class="hasAnchor">
 <a href="#channel-9" class="anchor"></a>Channel 9</h3>
 <p>The UseR! 2016 and 2017 videos are hosted on Microsoft’s Channel 9 service, motivating this embed function.</p>
-<p>Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a great video; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.</p>
+<p>Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a wonderful presentation; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.</p>
 <p>Here’s the URL:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span>
@@ -212,7 +213,7 @@
 <div class="sourceCode" id="cb12"><pre class="downlit">
 <span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://app.box.com/s/d75g9cr27s2jnx62b86idpgffzzxfdt2"</span><span class="op">)</span>
 <span class="co">#&gt;   embed_box("d75g9cr27s2jnx62b86idpgffzzxfdt2")</span></pre></div>
-<p>You can do the same thing using the <code><a href="../reference/embed.html">embed_box()</a></code> function and the <code>id</code>. The Box identifier is the last part of the path.</p>
+<p>You can do the same thing using the <code><a href="../reference/embed.html">embed_box()</a></code> function and the <code>id</code>. The Box identifier is the last part of the path, in this case <strong><code>d75g9cr27s2jnx62b86idpgffzzxfdt2</code></strong>.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit">
 <span class="fu"><a href="../reference/embed.html">embed_box</a></span><span class="op">(</span><span class="st">"d75g9cr27s2jnx62b86idpgffzzxfdt2"</span><span class="op">)</span></pre></div>
 <div class="vembedr">
@@ -222,12 +223,33 @@
 </div>
 <p>If you are using a corporate instance of Box, and use the <code><a href="../reference/embed.html">embed_box()</a></code> function, you will also have to specify the <code>custom_domain</code>. For example, if your URL starts with <code>"https://acme.app.box.com"</code>, then your <code>custom_domain</code> is <code>"acme"</code>.</p>
 </div>
+<div id="microsoft-stream" class="section level3">
+<h3 class="hasAnchor">
+<a href="#microsoft-stream" class="anchor"></a>Microsoft Stream</h3>
+<p>Microsoft Stream is a service offered for use by (large) organizations so that they may share videos internally to their organization. As such, this functionality may have limited appeal.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit">
+<span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span>
+  <span class="st">"https://web.microsoftstream.com/video/ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48"</span>
+<span class="op">)</span>
+<span class="co">#&gt;   embed_msstream("ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48")</span></pre></div>
+<p>The identifier is the last part of the path of the URL, in this case <strong><code>ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48</code></strong>.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit">
+<span class="fu"><a href="../reference/embed.html">embed_msstream</a></span><span class="op">(</span><span class="st">"ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></pre></div>
+<div class="vembedr">
+<div class="vembedr-rounded">
+<iframe src="https://web.microsoftstream.com/embed/video/ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48?autoplay=false&amp;showinfo=true&amp;st=10" width="533" height="300" style="border:none;"></iframe>
+</div>
+</div>
+<p>Because this video is internal to an organization, it will likely not play for you.</p>
+</div>
 </div>
 <div id="sample-videos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#sample-videos" class="anchor"></a>Sample videos</h2>
 <p>In case you need sample videos with which to experiment, this package has you covered:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit">
+<div class="sourceCode" id="cb16"><pre class="downlit">
 <span class="fu"><a href="../reference/rickroll.html">rickroll_youtube</a></span><span class="op">(</span><span class="op">)</span></pre></div>
 <div class="vembedr">
 <div>
@@ -235,9 +257,9 @@
 </div>
 </div>
 <p>Also (mercifully, not displayed):</p>
-<div class="sourceCode" id="cb15"><pre class="downlit">
+<div class="sourceCode" id="cb17"><pre class="downlit">
 <span class="fu"><a href="../reference/rickroll.html">rickroll_vimeo</a></span><span class="op">(</span><span class="op">)</span></pre></div>
-<div class="sourceCode" id="cb16"><pre class="downlit">
+<div class="sourceCode" id="cb18"><pre class="downlit">
 <span class="fu"><a href="../reference/rickroll.html">rickroll_channel9</a></span><span class="op">(</span><span class="op">)</span></pre></div>
 </div>
   </div>

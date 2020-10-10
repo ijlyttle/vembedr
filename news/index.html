@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -132,10 +132,11 @@
       <small>Source: <a href='https://github.com/ijlyttle/vembedr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="vembedr-0139000" class="section level2">
+    <div id="vembedr-014" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vembedr-0139000" class="anchor"></a>vembedr 0.1.3.9000</h2>
+<a href="#vembedr-014" class="anchor"></a>vembedr 0.1.4</h2>
 <ul>
+<li>adds support for <a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-stream">Microsoft Stream</a>, which offers an enterprise video service; this will likely be for use internal to an organization. (<a href='https://github.com/ijlyttle/vembedr/issues/38'>#38</a>)</li>
 <li>if you have a recent version of <a href="https://usethis.r-lib.org">usethis</a> installed, <code><a href="../reference/suggest_embed.html">suggest_embed()</a></code> will copy the suggested code to your clipboard. (<a href='https://github.com/ijlyttle/vembedr/issues/32'>#32</a>)</li>
 <li>sets the default <code>height</code> to 300 pixels, and introduces an argument <code>ratio</code>, to set the aspect ratio; legal values are <code>"16by9"</code> or <code>"4by3"</code>. If you set the <code>width</code> and <code>height</code>, <code>ratio</code> is ignored. If you specify only one of <code>width</code> or <code>height</code>, <code>ratio</code> is used to calculate the other. (<a href='https://github.com/ijlyttle/vembedr/issues/33'>#33</a>)</li>
 <li>adds three functions to help with formatting; they are all pipeable with <code>embed_*()</code> functions:
