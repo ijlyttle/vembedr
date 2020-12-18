@@ -3,7 +3,7 @@ template:
     bootswatch: sandstone
 
 development:
-  mode: auto
+  mode: release
 
 reference:
 - title: Embed functions

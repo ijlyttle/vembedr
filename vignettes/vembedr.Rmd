@@ -65,7 +65,7 @@ embed_youtube("lGTEUtS5H7I") %>%
 If your HTML file uses Bootstrap, and want to make the size responsive to the width of the container, `use_bs_responsive()`:
 
 ```{r}
-embed_url("https://www.youtube.com/watch?v=Io2NMCFtqsE") %>%
+embed_url("https://www.youtube.com/watch?v=H9KYQ_tnTtc") %>%
   use_bs_responsive()
 ```
 
