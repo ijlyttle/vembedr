@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9002</span>
       </span>
     </div>
 
@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -72,7 +72,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/ijlyttle/vembedr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -86,7 +86,7 @@
 
       
 
-      </header><script src="vembedr_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="vembedr_files/vembedr-0.1.4.9000/css/vembedr.css" rel="stylesheet">
+      </header><script src="vembedr_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="vembedr_files/vembedr-0.1.4.9002/css/vembedr.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -100,12 +100,12 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span></code></pre></div>
 <p>Embedding and customizing videos in RMarkdown documents might seem like complex task. It need not be.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=_fZQQ7o16yQ"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=_fZQQ7o16yQ"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
 <iframe src="https://www.youtube.com/embed/_fZQQ7o16yQ?start=92" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
@@ -139,30 +139,30 @@
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
 <p>To align the video horizontally within its container, <code><a href="../reference/use_align.html">use_align()</a></code>:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr" align="center">
 <div>
 <iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <p>To add rounded corners, <code><a href="../reference/use_rounded.html">use_rounded()</a></code>:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"lGTEUtS5H7I"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"lGTEUtS5H7I"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div class="vembedr-rounded">
 <iframe src="https://www.youtube.com/embed/lGTEUtS5H7I" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 <p>If your HTML file uses Bootstrap, and want to make the size responsive to the width of the container, <code><a href="../reference/use_bs_responsive.html">use_bs_responsive()</a></code>:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=Io2NMCFtqsE"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=H9KYQ_tnTtc"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr embed-responsive embed-responsive-16by9">
 <div>
-<iframe src="https://www.youtube.com/embed/Io2NMCFtqsE" width="533" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/H9KYQ_tnTtc" width="533" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <p>For example this <strong>does not</strong> work in the R vignette, but it <strong>does</strong> work in the pkgdown site.</p>
@@ -171,17 +171,17 @@
 <h2 class="hasAnchor">
 <a href="#caveats" class="anchor"></a>Caveats</h2>
 <p>Just because a service publishes a video, this does not mean that you can embed it. For example, this is an amazing Otis Redding performance:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="co"># does not embed, but you can watch it at Vimeo</span>
-<span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"45157591"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># does not embed, but you can watch it at Vimeo</span>
+<span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"45157591"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
 <iframe class="vimeo-embed" src="https://player.vimeo.com/video/45157591" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 </div>
 </div>
 <p>Also, as of RStudio 1.3, the RStudio IDE preview window will work with YouTube and Vimeo, but not with Channel 9:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="../reference/rickroll.html">rickroll_channel9</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_channel9</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
 <iframe src="https://channel9.msdn.com/Blogs/Dan/BlueHat-v7-Katie-Moussouris-interviews-Dan-Kaminsky-on-some-interesting-research-hes-been-doing-late/player#time=0h5m8s:paused" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
