@@ -35,7 +35,8 @@ embed_box <- function(id, custom_domain = getOption("vembedr.box_custom_domain")
     frameborder = frameborder,
     allowfullscreen = allowfullscreen,
     webkitallowfullscreen = allowfullscreen,
-    msallowfullscreen = allowfullscreen
+    msallowfullscreen = allowfullscreen,
+    `data-external` = 1
   )
 
   embed <- create_embed(iframe, "vembedr_embed_box", ratio)

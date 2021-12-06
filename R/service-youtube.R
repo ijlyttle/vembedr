@@ -21,7 +21,8 @@ embed_youtube <- function(id,
     width = dim$width,
     height = dim$height,
     frameborder = frameborder,
-    allowfullscreen = allowfullscreen
+    allowfullscreen = allowfullscreen,
+    `data-external` = 1
   )
 
   embed <- create_embed(iframe, "vembedr_embed_youtube", ratio)

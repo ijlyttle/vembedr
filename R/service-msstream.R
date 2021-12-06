@@ -17,7 +17,8 @@ embed_msstream <- function(id, width = NULL, height = 300,
     width = dim$width,
     height = dim$height,
     allowfullscreen = NULL,
-    style = "border:none;"
+    style = "border:none;",
+    `data-external` = 1
   )
 
   embed <- create_embed(iframe, "vembedr_embed_msstream", ratio)
