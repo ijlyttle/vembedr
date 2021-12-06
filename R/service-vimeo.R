@@ -26,7 +26,8 @@ embed_vimeo <- function(id,
     frameborder = frameborder,
     webkitallowfullscreen = allowfullscreen,
     mozallowfullscreen = allowfullscreen,
-    allowfullscreen = allowfullscreen
+    allowfullscreen = allowfullscreen,
+    `data-external` = 1
   )
 
   embed <- create_embed(iframe, "vembedr_embed_vimeo", ratio)
