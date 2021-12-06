@@ -21,6 +21,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -33,18 +35,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9002</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9003</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="articles/vembedr.html">Get started</a>
 </li>
@@ -72,7 +68,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ijlyttle/vembedr/">
+  <a href="https://github.com/ijlyttle/vembedr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -89,9 +85,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="vembedr" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#vembedr" class="anchor"></a>vembedr</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="vembedr">vembedr<a class="anchor" aria-label="anchor" href="#vembedr"></a>
+</h1></div>
 <!-- badges: start -->
 
 <p>The goal of vembedr is to make it a little bit easier for you to embed videos into your <strong>RMarkdown</strong> documents and your <strong>Shiny</strong> apps. In this verison, five services are supported:</p>
@@ -102,9 +98,9 @@
 <li>Box</li>
 <li>Microsoft Stream</li>
 </ul>
-<div id="new-to-version-014" class="section level2">
-<h2 class="hasAnchor">
-<a href="#new-to-version-014" class="anchor"></a>New to version 0.1.4</h2>
+<div class="section level2">
+<h2 id="new-to-version-014">New to version 0.1.4<a class="anchor" aria-label="anchor" href="#new-to-version-014"></a>
+</h2>
 <ul>
 <li>new functions to help you format: <code><a href="reference/use_rounded.html">use_rounded()</a></code>, <code><a href="reference/use_align.html">use_align()</a></code>, and <code><a href="reference/use_bs_responsive.html">use_bs_responsive()</a></code>.</li>
 <li>new services supported:
@@ -117,44 +113,44 @@
 </li>
 </ul>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>You can install the latest released version from CRAN with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"vembedr"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"vembedr"</span><span class="op">)</span></code></pre></div>
 <p>or the latest development version from GitHub with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ijlyttle/vembedr"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="documentation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h2>
-<p>This project supports two documentation-websites, built using <a href="https://pkgdown.r-lib.org">pkgdown</a>:</p>
+<div class="section level2">
+<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
+</h2>
+<p>This project supports two documentation-websites, built using <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>:</p>
 <ul>
-<li><a href="https://ijlyttle.github.io/vembedr/">CRAN version</a></li>
-<li>latest <a href="https://ijlyttle.github.io/vembedr/dev/">developent version</a> from GitHub</li>
+<li><a href="https://ijlyttle.github.io/vembedr/" class="external-link">CRAN version</a></li>
+<li>latest <a href="https://ijlyttle.github.io/vembedr/dev/" class="external-link">developent version</a> from GitHub</li>
 </ul>
-<div id="usage" class="section level3">
-<h3 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h3>
+<div class="section level3">
+<h3 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h3>
 <p>The most useful function might be <code><a href="reference/embed_url.html">embed_url()</a></code>. If the URL is from one of the supported services, it will do the right thing:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr" class="external-link">"vembedr"</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span></code></pre></div>
 <p>The video is not embedded in this README file as is rendered to Markdown; to see embedded videos, please see <code><a href="articles/vembedr.html">vignette("vembedr")</a></code>. Each of the supported services, e.g. YouTube, is discussed in <code><a href="articles/embed.html">vignette("embed")</a></code>.</p>
 <p>The functions are designed to be piped. For example, here’s how you can modify the appearance and the start time:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="reference/use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></code></pre></div>
 <p>To see these functions in action, see <code><a href="articles/modify.html">vignette("modify")</a></code>.</p>
 </div>
-<div id="caveats" class="section level3">
-<h3 class="hasAnchor">
-<a href="#caveats" class="anchor"></a>Caveats</h3>
+<div class="section level3">
+<h3 id="caveats">Caveats<a class="anchor" aria-label="anchor" href="#caveats"></a>
+</h3>
 <ul>
 <li><p>Be aware that, due to licensing issues, not all videos will play when embedded at a different site (like your HTML document).</p></li>
 <li><p>The RStudio viewer will embed YouTube and Vimeo videos, but not others. Videos from all services should be rendered as you expect in a browser like Chrome.</p></li>
@@ -162,66 +158,76 @@
 </ul>
 </div>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the vembedr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that the vembedr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=vembedr">https://​cloud.r-project.org/​package=vembedr</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/ijlyttle/vembedr/">https://​github.com/​ijlyttle/​vembedr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/ijlyttle/vembedr/issues">https://​github.com/​ijlyttle/​vembedr/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=vembedr" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/ijlyttle/vembedr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/ijlyttle/vembedr/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Ian Lyttle <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-9962-4849" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing vembedr</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=vembedr"><img src="https://www.r-pkg.org/badges/version/vembedr" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://github.com/ijlyttle/vembedr/actions"><img src="https://github.com/ijlyttle/vembedr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
+<li>Ian Lyttle <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-9962-4849" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=vembedr" class="external-link"><img src="https://www.r-pkg.org/badges/version/vembedr" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://github.com/ijlyttle/vembedr/actions" class="external-link"><img src="https://github.com/ijlyttle/vembedr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Ian Lyttle.</p>
+  <p></p>
+<p>Developed by Ian Lyttle.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -229,6 +235,8 @@
 
   
 
+
+  
 
   </body>
 </html>

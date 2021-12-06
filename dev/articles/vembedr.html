@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,18 +34,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9002</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9003</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/vembedr.html">Get started</a>
 </li>
@@ -71,7 +67,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ijlyttle/vembedr/">
+  <a href="https://github.com/ijlyttle/vembedr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -86,14 +82,14 @@
 
       
 
-      </header><script src="vembedr_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="vembedr_files/vembedr-0.1.4.9002/css/vembedr.css" rel="stylesheet">
+      </header><script src="vembedr_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="vembedr_files/vembedr-0.1.4.9003/css/vembedr.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>vembedr</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/master/vignettes/vembedr.Rmd"><code>vignettes/vembedr.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/vignettes/vembedr.Rmd" class="external-link"><code>vignettes/vembedr.Rmd</code></a></small>
       <div class="hidden name"><code>vembedr.Rmd</code></div>
 
     </div>
@@ -101,14 +97,14 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr" class="external-link">"vembedr"</a></span><span class="op">)</span></code></pre></div>
 <p>Embedding and customizing videos in RMarkdown documents might seem like complex task. It need not be.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=_fZQQ7o16yQ"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=_fZQQ7o16yQ"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="st">"1m32"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/_fZQQ7o16yQ?start=92" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/_fZQQ7o16yQ?start=92" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>Even the most seemingly-intractable issues can be brought into focus with a clarifying framework.</p>
@@ -127,7 +123,7 @@
 </ul>
 <p>You can read more about these services in <code><a href="../articles/embed.html">vignette("embed")</a></code>. Once you create an embed object, you can modify it with <code>use</code> functions:</p>
 <ul>
-<li>start time: <code><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time()</a></code>
+<li>start time: <code><a href="../reference/use_start_time.html">use_start_time()</a></code>
 </li>
 <li>formatting: <code><a href="../reference/use_align.html">use_align()</a></code>, <code><a href="../reference/use_rounded.html">use_rounded()</a></code>
 </li>
@@ -135,48 +131,48 @@
 </li>
 </ul>
 <p>You can read more about these modifications in <code><a href="../articles/modify.html">vignette("modify")</a></code>.</p>
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
 <p>To align the video horizontally within its container, <code><a href="../reference/use_align.html">use_align()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr" align="center">
 <div>
-<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>To add rounded corners, <code><a href="../reference/use_rounded.html">use_rounded()</a></code>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"lGTEUtS5H7I"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"lGTEUtS5H7I"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div class="vembedr-rounded">
-<iframe src="https://www.youtube.com/embed/lGTEUtS5H7I" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/lGTEUtS5H7I" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>If your HTML file uses Bootstrap, and want to make the size responsive to the width of the container, <code><a href="../reference/use_bs_responsive.html">use_bs_responsive()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=H9KYQ_tnTtc"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=H9KYQ_tnTtc"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr embed-responsive embed-responsive-16by9">
 <div>
-<iframe src="https://www.youtube.com/embed/H9KYQ_tnTtc" width="533" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/H9KYQ_tnTtc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <p>For example this <strong>does not</strong> work in the R vignette, but it <strong>does</strong> work in the pkgdown site.</p>
 </div>
-<div id="caveats" class="section level2">
-<h2 class="hasAnchor">
-<a href="#caveats" class="anchor"></a>Caveats</h2>
+<div class="section level2">
+<h2 id="caveats">Caveats<a class="anchor" aria-label="anchor" href="#caveats"></a>
+</h2>
 <p>Just because a service publishes a video, this does not mean that you can embed it. For example, this is an amazing Otis Redding performance:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># does not embed, but you can watch it at Vimeo</span>
 <span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"45157591"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/45157591" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/45157591" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>Also, as of RStudio 1.3, the RStudio IDE preview window will work with YouTube and Vimeo, but not with Channel 9:</p>
@@ -184,7 +180,7 @@
 <code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_channel9</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
-<iframe src="https://channel9.msdn.com/Blogs/Dan/BlueHat-v7-Katie-Moussouris-interviews-Dan-Kaminsky-on-some-interesting-research-hes-been-doing-late/player#time=0h5m8s:paused" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://channel9.msdn.com/Blogs/Dan/BlueHat-v7-Katie-Moussouris-interviews-Dan-Kaminsky-on-some-interesting-research-hes-been-doing-late/player#time=0h5m8s:paused" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>If you view this page in a full browser, it should work just fine.</p>
@@ -202,11 +198,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Ian Lyttle.</p>
+  <p></p>
+<p>Developed by Ian Lyttle.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -214,6 +212,8 @@
 
   
 
+
+  
 
   </body>
 </html>

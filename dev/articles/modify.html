@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,18 +34,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9002</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9003</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/vembedr.html">Get started</a>
 </li>
@@ -71,7 +67,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ijlyttle/vembedr/">
+  <a href="https://github.com/ijlyttle/vembedr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -86,16 +82,16 @@
 
       
 
-      </header><script src="modify_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="modify_files/vembedr-0.1.4.9002/css/vembedr.css" rel="stylesheet">
+      </header><script src="modify_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="modify_files/vembedr-0.1.4.9003/css/vembedr.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Modify embedding</h1>
-                        <h4 class="author">Ian Lyttle</h4>
+                        <h4 data-toc-skip class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-12-18</h4>
+            <h4 data-toc-skip class="date">2021-12-06</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/master/vignettes/modify.Rmd"><code>vignettes/modify.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/vignettes/modify.Rmd" class="external-link"><code>vignettes/modify.Rmd</code></a></small>
       <div class="hidden name"><code>modify.Rmd</code></div>
 
     </div>
@@ -103,41 +99,41 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr" class="external-link">"vembedr"</a></span><span class="op">)</span></code></pre></div>
 <p>This article deals with modifications you can make to videos that you embed. These include:</p>
 <ul>
 <li>start time</li>
 <li>horizontal alignment</li>
 <li>rounded corners</li>
-<li>responsive sizing for <a href="https://getbootstrap.com/docs/3.4/components/#responsive-embed">Bootstrap</a>
+<li>responsive sizing for <a href="https://getbootstrap.com/docs/3.4/components/#responsive-embed" class="external-link">Bootstrap</a>
 </li>
 </ul>
 <p>These modifications can be made independently of each other, and can be composed:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"2WoDQBhJCVQ"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"44s"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"2WoDQBhJCVQ"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="st">"44s"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
 <div class="vembedr" align="center">
 <div class="vembedr-rounded" style="border-radius: 10px;">
-<iframe src="https://www.youtube.com/embed/2WoDQBhJCVQ?start=44" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/2WoDQBhJCVQ?start=44" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>To embed videos from variety of services, please read <code><a href="../articles/embed.html">vignette("embed")</a></code>.</p>
-<div id="start-time" class="section level2">
-<h2 class="hasAnchor">
-<a href="#start-time" class="anchor"></a>Start time</h2>
-<p>To specify a starting time for a video, you can <code><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time()</a></code>:</p>
+<div class="section level2">
+<h2 id="start-time">Start time<a class="anchor" aria-label="anchor" href="#start-time"></a>
+</h2>
+<p>To specify a starting time for a video, you can <code><a href="../reference/use_start_time.html">use_start_time()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"8SGif63VW6E"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time</a></span><span class="op">(</span><span class="st">"4m12s"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"8SGif63VW6E"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="../reference/use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="st">"4m12s"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/8SGif63VW6E?start=252" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
-<p>Thanks to <a href="https://github.com/ginolhac">Aurélien Ginolhac</a> for suggesting this video using this start-time.</p>
-<p>The <code><a href="../reference/use_start_time.vembedr_embed_box.html">use_start_time()</a></code> function treats these all of these inputs equivalently:</p>
+<p>Thanks to <a href="https://github.com/ginolhac" class="external-link">Aurélien Ginolhac</a> for suggesting this video using this start-time.</p>
+<p>The <code><a href="../reference/use_start_time.html">use_start_time()</a></code> function treats these all of these inputs equivalently:</p>
 <ul>
 <li>
 <code>"0h1m0s"</code>, <code>"0h01m00s"</code>, <code>"0h1m"</code>
@@ -151,58 +147,58 @@
 </ul>
 <p>This function works with all of the services except for Box.</p>
 </div>
-<div id="horizontal-alignment" class="section level2">
-<h2 class="hasAnchor">
-<a href="#horizontal-alignment" class="anchor"></a>Horizontal alignment</h2>
+<div class="section level2">
+<h2 id="horizontal-alignment">Horizontal alignment<a class="anchor" aria-label="anchor" href="#horizontal-alignment"></a>
+</h2>
 <p>You can <code><a href="../reference/use_align.html">use_align()</a></code> to specify the horizontal alignment:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"10022924"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_vimeo</a></span><span class="op">(</span><span class="st">"10022924"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_align.html">use_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr" align="center">
 <div>
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/10022924" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/10022924" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>Possible values for <code>align</code> are: <code>"left"</code> (default), <code>"right"</code>, <code>"center"</code>, <code>"justified"</code>.</p>
 </div>
-<div id="rounded-corners" class="section level2">
-<h2 class="hasAnchor">
-<a href="#rounded-corners" class="anchor"></a>Rounded corners</h2>
+<div class="section level2">
+<h2 id="rounded-corners">Rounded corners<a class="anchor" aria-label="anchor" href="#rounded-corners"></a>
+</h2>
 <p>You can <code><a href="../reference/use_rounded.html">use_rounded()</a></code> to specify the <code>radius</code> (in pixels) of the rounds:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"lan-UQfN0zs"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"lan-UQfN0zs"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span>radius <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div class="vembedr-rounded" style="border-radius: 10px;">
-<iframe src="https://www.youtube.com/embed/lan-UQfN0zs" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/lan-UQfN0zs" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>This seems to work better in the browser than in the RStudio viewer.</p>
 </div>
-<div id="responsive-sizing" class="section level2">
-<h2 class="hasAnchor">
-<a href="#responsive-sizing" class="anchor"></a>Responsive sizing</h2>
+<div class="section level2">
+<h2 id="responsive-sizing">Responsive sizing<a class="anchor" aria-label="anchor" href="#responsive-sizing"></a>
+</h2>
 <p>If you are using Bootstrap, you can <code><a href="../reference/use_bs_responsive.html">use_bs_responsive()</a></code> to make your video responsive to the width of its container:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"FkBQc0gQkQI"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"FkBQc0gQkQI"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr embed-responsive embed-responsive-16by9">
 <div>
-<iframe src="https://www.youtube.com/embed/FkBQc0gQkQI" width="533" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/FkBQc0gQkQI" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <p>It has no arguments, but it uses the <code>ratio</code> provided to the <code><a href="../reference/embed.html">embed()</a></code> function:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"KvX8MijgeW8"</span>, ratio <span class="op">=</span> <span class="st">"4by3"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_youtube</a></span><span class="op">(</span><span class="st">"KvX8MijgeW8"</span>, ratio <span class="op">=</span> <span class="st">"4by3"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_bs_responsive.html">use_bs_responsive</a></span><span class="op">(</span><span class="op">)</span>  </code></pre></div>
 <div class="vembedr embed-responsive embed-responsive-4by3">
 <div>
-<iframe src="https://www.youtube.com/embed/KvX8MijgeW8" width="400" height="300" frameborder="0" allowfullscreen="" class="embed-responsive-item"></iframe>
+<iframe src="https://www.youtube.com/embed/KvX8MijgeW8" width="400" height="300" frameborder="0" allowfullscreen="" data-external="1" class="embed-responsive-item"></iframe>
 </div>
 </div>
 <p>The <code>ratio</code> defaults to <code>"16by9"</code>, but it can also be <code>"4by3"</code>.</p>
 <p>If you are viewing this as this HTML vignette provided by R’s help, you will not see responsiveness as it does not use Bootstrap.</p>
-<p>If you are viewing this at <a href="https://ijlyttle.github.io/vembedr/articles/modify.html">this package’s pkgdown site</a>, you will see the responsiveness.</p>
+<p>If you are viewing this at <a href="https://ijlyttle.github.io/vembedr/articles/modify.html" class="external-link">this package’s pkgdown site</a>, you will see the responsiveness.</p>
 </div>
   </div>
 
@@ -217,11 +213,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Ian Lyttle.</p>
+  <p></p>
+<p>Developed by Ian Lyttle.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -229,6 +227,8 @@
 
   
 
+
+  
 
   </body>
 </html>
