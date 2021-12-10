@@ -2,29 +2,27 @@
 # vembedr
 
 <!-- badges: start -->
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr)
-[![R build
-status](https://github.com/ijlyttle/vembedr/workflows/R-CMD-check/badge.svg)](https://github.com/ijlyttle/vembedr/actions)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/vembedr)](https://cran.r-project.org/package=vembedr)
+[![R-CMD-check](https://github.com/ijlyttle/vembedr/workflows/R-CMD-check/badge.svg)](https://github.com/ijlyttle/vembedr/actions)
 <!-- badges: end -->
 
 The goal of vembedr is to make it a little bit easier for you to embed
 videos into your **RMarkdown** documents and your **Shiny** apps. In
 this verison, five services are supported:
 
-  - YouTube
-  - Vimeo
-  - Microsoft Channel 9 (including UseR\! 2016 and 2017 videos).
-  - Box
-  - Microsoft Stream
+-   YouTube
+-   Vimeo
+-   Microsoft Channel 9 (including UseR! 2016 and 2017 videos).
+-   Box
+-   Microsoft Stream
 
 ## New to version 0.1.4
 
-  - new functions to help you format: `use_rounded()`, `use_align()`,
+-   new functions to help you format: `use_rounded()`, `use_align()`,
     and `use_bs_responsive()`.
-  - new services supported:
-      - Box, using `embed_box()`
-      - Microsoft Stream, using `embed_msstream()`
+-   new services supported:
+    -   Box, using `embed_box()`
+    -   Microsoft Stream, using `embed_msstream()`
 
 ## Installation
 
@@ -46,8 +44,8 @@ devtools::install_github("ijlyttle/vembedr")
 This project supports two documentation-websites, built using
 [pkgdown](https://pkgdown.r-lib.org):
 
-  - [CRAN version](https://ijlyttle.github.io/vembedr/)
-  - latest [developent version](https://ijlyttle.github.io/vembedr/dev/)
+-   [CRAN version](https://ijlyttle.github.io/vembedr/)
+-   latest [developent version](https://ijlyttle.github.io/vembedr/dev/)
     from GitHub
 
 ### Usage
@@ -79,14 +77,14 @@ To see these functions in action, see `vignette("modify")`.
 
 ### Caveats
 
-  - Be aware that, due to licensing issues, not all videos will play
+-   Be aware that, due to licensing issues, not all videos will play
     when embedded at a different site (like your HTML document).
 
-  - The RStudio viewer will embed YouTube and Vimeo videos, but not
+-   The RStudio viewer will embed YouTube and Vimeo videos, but not
     others. Videos from all services should be rendered as you expect in
     a browser like Chrome.
 
-  - Some of the formatting, e.g. rounded corners, does not render on
+-   Some of the formatting, e.g. rounded corners, does not render on
     mobile sites.
 
 ## Code of Conduct
