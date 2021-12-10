@@ -19,7 +19,7 @@ YouTube, Vimeo, Microsoft Channel 9 (who host the UseR! 2016 videos), and Box.">
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9005</span>
       </span>
     </div>
 
@@ -62,7 +62,7 @@ YouTube, Vimeo, Microsoft Channel 9 (who host the UseR! 2016 videos), and Box.">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Embed video from service</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/R/embed.R" class="external-link"><code>R/embed.R</code></a>, <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/R/embed_url.R" class="external-link"><code>R/embed_url.R</code></a>, <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/R/service-box.R" class="external-link"><code>R/service-box.R</code></a>, and 4 more</small>
+    <small class="dont-index">Source: <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/R/embed.R" class="external-link"><code>R/embed.R</code></a>, <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/R/service-box.R" class="external-link"><code>R/service-box.R</code></a>, <a href="https://github.com/ijlyttle/vembedr/blob/HEAD/R/service-msstream.R" class="external-link"><code>R/service-msstream.R</code></a>, and 2 more</small>
     <div class="hidden name"><code>embed.Rd</code></div>
     </div>
 
@@ -73,36 +73,9 @@ YouTube, Vimeo, Microsoft Channel 9 (who host the UseR! 2016 videos), and Box.</
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">embed_user2016</span><span class="op">(</span>
-  <span class="va">id</span>,
-  width <span class="op">=</span> <span class="cn">NULL</span>,
-  height <span class="op">=</span> <span class="fl">300</span>,
-  ratio <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"16by9"</span>, <span class="st">"4by3"</span><span class="op">)</span>,
-  frameborder <span class="op">=</span> <span class="fl">0</span>,
-  allowfullscreen <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-<span class="fu">embed_user2017</span><span class="op">(</span>
-  <span class="va">id</span>,
-  width <span class="op">=</span> <span class="cn">NULL</span>,
-  height <span class="op">=</span> <span class="fl">300</span>,
-  ratio <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"16by9"</span>, <span class="st">"4by3"</span><span class="op">)</span>,
-  frameborder <span class="op">=</span> <span class="fl">0</span>,
-  allowfullscreen <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-<span class="fu">embed_box</span><span class="op">(</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">embed_box</span><span class="op">(</span>
   <span class="va">id</span>,
   custom_domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"vembedr.box_custom_domain"</span><span class="op">)</span>,
-  width <span class="op">=</span> <span class="cn">NULL</span>,
-  height <span class="op">=</span> <span class="fl">300</span>,
-  ratio <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"16by9"</span>, <span class="st">"4by3"</span><span class="op">)</span>,
-  frameborder <span class="op">=</span> <span class="fl">0</span>,
-  allowfullscreen <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-<span class="fu">embed_channel9</span><span class="op">(</span>
-  <span class="va">id</span>,
   width <span class="op">=</span> <span class="cn">NULL</span>,
   height <span class="op">=</span> <span class="fl">300</span>,
   ratio <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"16by9"</span>, <span class="st">"4by3"</span><span class="op">)</span>,
@@ -144,6 +117,11 @@ YouTube, Vimeo, Microsoft Channel 9 (who host the UseR! 2016 videos), and Box.</
     <h2>Arguments</h2>
     <dl><dt>id</dt>
 <dd><p><code>character</code>, identifier provided by the service</p></dd>
+<dt>custom_domain</dt>
+<dd><p><code>character</code>, (used by Box) name of Box-instance
+to use. It can be useful to use <code>getOption("vembedr.box_custom_domain")</code>
+if you are using a corporate instance of Box. If <code>NULL</code>, it will use
+the standard Box instance.</p></dd>
 <dt>width</dt>
 <dd><p><code>numeric</code>, width of iframe (px)</p></dd>
 <dt>height</dt>
@@ -154,11 +132,6 @@ YouTube, Vimeo, Microsoft Channel 9 (who host the UseR! 2016 videos), and Box.</
 <dd><p><code>numeric</code>, size of frame border (px)</p></dd>
 <dt>allowfullscreen</dt>
 <dd><p><code>logical</code>, indicates if to allow fullscreen</p></dd>
-<dt>custom_domain</dt>
-<dd><p><code>character</code>, (used by Box) name of Box-instance
-to use. It can be useful to use <code>getOption("vembedr.box_custom_domain")</code>
-if you are using a corporate instance of Box. If <code>NULL</code>, it will use
-the standard Box instance.</p></dd>
 <dt>query</dt>
 <dd><p><code>list</code>, items to include in url-query string</p></dd>
 <dt>fragment</dt>
@@ -179,12 +152,8 @@ according to the service being used:</p>
 <dt>Vimeo</dt>
 <dd><p><a href="https://developer.vimeo.com/player/embedding" class="external-link">https://developer.vimeo.com/player/embedding</a></p></dd>
 
-<dt>Microsoft Channel 9</dt>
-<dd><p><a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S" class="external-link">https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S</a>
-(click the <em>Embed</em> tab)</p></dd>
-
 <dt>Box</dt>
-<dd><p><a href="https://developer.box.com/docs/box-embed#section-build-box-embed-programatically" class="external-link">https://developer.box.com/docs/box-embed#section-build-box-embed-programatically</a></p></dd>
+<dd><p><a href="https://developer.box.com/guides/embed/box-embed/#programmatically" class="external-link">https://developer.box.com/guides/embed/box-embed/#programmatically</a></p></dd>
 
 <dt>Microsoft Stream</dt>
 <dd><p><a href="https://docs.microsoft.com/en-us/stream/portal-embed-video" class="external-link">https://docs.microsoft.com/en-us/stream/portal-embed-video</a></p></dd>
@@ -208,18 +177,6 @@ according to the service being used:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="vembedr"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;iframe class="vimeo-embed" src="https://player.vimeo.com/video/45196609" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-external="1"&gt;&lt;/iframe&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/div&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
-<span class="r-in"><span class="fu">embed_user2016</span><span class="op">(</span><span class="st">"Literate-Programming"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="vembedr"&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Literate-Programming/player" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"&gt;&lt;/iframe&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/div&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
-<span class="r-in"><span class="fu">embed_user2017</span><span class="op">(</span><span class="st">"Room-202-Lightning-Talks"</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="st">"26m35s"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="vembedr"&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/Room-202-Lightning-Talks/player#time=0h26m35s:paused" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"&gt;&lt;/iframe&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
 <span class="r-in"><span class="fu">embed_box</span><span class="op">(</span><span class="st">"m5do45hvzw32iv2aors3urf5pgkxxazx"</span><span class="op">)</span></span>

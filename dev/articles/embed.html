@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vembedr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9004</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9005</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
 
       
 
-      </header><script src="embed_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="embed_files/vembedr-0.1.4.9004/css/vembedr.css" rel="stylesheet">
+      </header><script src="embed_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="embed_files/vembedr-0.1.4.9005/css/vembedr.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -104,9 +104,7 @@
 <ul>
 <li><a href="https://developers.google.com/youtube/player_parameters" class="external-link">YouTube</a></li>
 <li><a href="https://developer.vimeo.com/player/embedding" class="external-link">Vimeo</a></li>
-<li>
-<a href="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S" class="external-link">Channel 9</a>, which includes the UseR! 2016 and 2017 videos.</li>
-<li><a href="https://developer.box.com/docs/box-embed#section-build-box-embed-programatically" class="external-link">Box</a></li>
+<li><a href="https://developer.box.com/guides/embed/box-embed/#programmatically" class="external-link">Box</a></li>
 <li><a href="https://docs.microsoft.com/en-us/stream/portal-embed-video" class="external-link">Microsoft Stream</a></li>
 </ul>
 <p>The links above are associated with the embedding API for each of the services; these are the APIs wrapped by the <code><a href="../reference/embed.html">embed()</a></code> functions in this packages. In many cases it may be easier to embed by using only URL of the page your video is on, using <code><a href="../reference/embed_url.html">embed_url()</a></code>.</p>
@@ -116,16 +114,16 @@
 </h2>
 <p>Although a URL can be long and awkward, it will get the job done. If the URL is from one of the supported services, it should <em>just work</em>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uKQ01MvF8mY"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=BD_n6ju9iRA"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/uKQ01MvF8mY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/BD_n6ju9iRA" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>If you would like to generate more-concise code using the URL, you can use the <code><a href="../reference/suggest_embed.html">suggest_embed()</a></code> function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uKQ01MvF8mY"</span><span class="op">)</span>
-<span class="co">#&gt; <span style="color: #555555;">  embed_youtube("uKQ01MvF8mY")</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=BD_n6ju9iRA"</span><span class="op">)</span>
+<span class="co">#&gt; <span style="color: #555555;">  embed_youtube("BD_n6ju9iRA")</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="embed-by-service">Embed by service<a class="anchor" aria-label="anchor" href="#embed-by-service"></a>
@@ -163,55 +161,16 @@
 </div>
 </div>
 <div class="section level3">
-<h3 id="channel-9">Channel 9<a class="anchor" aria-label="anchor" href="#channel-9"></a>
-</h3>
-<p>The UseR! 2016 and 2017 videos are hosted on Microsoft’s Channel 9 service, motivating this embed function.</p>
-<p>Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. I understand it to be a useful construct for managing side-effects, but true understanding escapes me. This is a wonderful presentation; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.</p>
-<p>Here’s the URL:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span>
-  <span class="st">"https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"</span>
-<span class="op">)</span>
-<span class="co">#&gt; <span style="color: #555555;">  embed_channel9("Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")</span></span></code></pre></div>
-<p>The identifier is the path of the URL, <strong><code>Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads</code></strong>, which you can express as a string:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_channel9</a></span><span class="op">(</span><span class="st">"Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"</span><span class="op">)</span></code></pre></div>
-<div class="vembedr">
-<div>
-<iframe src="https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads/player" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-<p>Alternatively, you can express this as a vector of strings:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_channel9</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Shows"</span>, <span class="st">"Going+Deep"</span>, <span class="st">"Brian-Beckman-Dont-fear-the-Monads"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="section level4">
-<h4 id="user-2016-and-2017">UseR! 2016 (and 2017)<a class="anchor" aria-label="anchor" href="#user-2016-and-2017"></a>
-</h4>
-<p>At UseR! 2016, Rick Becker gave a wonderful talk on the history of the S language:</p>
-<p>
-<code>https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/<strong>Forty-years-of-S</strong></code>
-</p>
-<p>For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: <strong><code>Forty-years-of-S</code></strong>. To embed the video:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_user2016</a></span><span class="op">(</span><span class="st">"Forty-years-of-S"</span><span class="op">)</span></code></pre></div>
-<div class="vembedr">
-<div>
-<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S/player" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
 <h3 id="box">Box<a class="anchor" aria-label="anchor" href="#box"></a>
 </h3>
 <p>To share a video on Box, the video file itself will have to be shared. From the Box web-interface, you can do this by clicking the <strong>Share</strong> button at the top-right corner of your file’s web-page. Then create a <strong>Share Link</strong>:</p>
 <p><img src="figures/box-binford.png" width="100%"></p>
 <p>Then, you need to capture some information about the embed-link itself, either the URL or the <code>id</code>. Please note that you need to work with the “ugly” URL, not a custom URL:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span><span class="st">"https://app.box.com/s/d75g9cr27s2jnx62b86idpgffzzxfdt2"</span><span class="op">)</span>
 <span class="co">#&gt; <span style="color: #555555;">  embed_box("d75g9cr27s2jnx62b86idpgffzzxfdt2")</span></span></code></pre></div>
 <p>You can do the same thing using the <code><a href="../reference/embed.html">embed_box()</a></code> function and the <code>id</code>. The Box identifier is the last part of the path, in this case <strong><code>d75g9cr27s2jnx62b86idpgffzzxfdt2</code></strong>.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_box</a></span><span class="op">(</span><span class="st">"d75g9cr27s2jnx62b86idpgffzzxfdt2"</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
@@ -224,13 +183,13 @@
 <h3 id="microsoft-stream">Microsoft Stream<a class="anchor" aria-label="anchor" href="#microsoft-stream"></a>
 </h3>
 <p>Microsoft Stream is a service offered for use by (large) organizations so that they may share videos internally to their organization. As such, this functionality may have limited appeal.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/suggest_embed.html">suggest_embed</a></span><span class="op">(</span>
   <span class="st">"https://web.microsoftstream.com/video/ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48"</span>
 <span class="op">)</span>
 <span class="co">#&gt; <span style="color: #555555;">  embed_msstream("ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48")</span></span></code></pre></div>
 <p>The identifier is the last part of the path of the URL, in this case <strong><code>ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48</code></strong>.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/embed.html">embed_msstream</a></span><span class="op">(</span><span class="st">"ae21b0ac-4a2b-41f4-b3fc-f1720dd20f48"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_rounded.html">use_rounded</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/use_start_time.html">use_start_time</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
@@ -246,18 +205,16 @@
 <h2 id="sample-videos">Sample videos<a class="anchor" aria-label="anchor" href="#sample-videos"></a>
 </h2>
 <p>In case you need sample videos with which to experiment, this package has you covered:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_youtube</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_vimeo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/148751763" width="533" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
-<p>Also (mercifully, not displayed):</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_vimeo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_channel9</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>Also (mercifully, not displayed as it seems no-longer embeddable):</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/rickroll.html">rickroll_youtube</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 
