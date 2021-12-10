@@ -1,6 +1,6 @@
 Package: vembedr
 Title: Embed Video in HTML
-Version: 0.1.4.9004
+Version: 0.1.4.9005
 Authors@R: c(
     person(
       given = "Ian", 
@@ -26,8 +26,9 @@ Imports:
     magrittr,
     glue,
     assertthat,
-    utils
-RoxygenNote: 7.1.1
+    utils,
+    lifecycle
+RoxygenNote: 7.1.2
 URL: https://github.com/ijlyttle/vembedr
 BugReports: https://github.com/ijlyttle/vembedr/issues
 Suggests: 

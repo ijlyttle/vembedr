@@ -27,7 +27,6 @@ Using this package, you can embed videos into RMarkdown documents and Shiny apps
 
 - [YouTube](https://developers.google.com/youtube/player_parameters)
 - [Vimeo](https://developer.vimeo.com/player/embedding)
-- [Channel 9](https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Forty-years-of-S), which includes the UseR! 2016 and 2017 videos.
 - [Box](https://developer.box.com/docs/box-embed#section-build-box-embed-programatically)
 - [Microsoft Stream](https://docs.microsoft.com/en-us/stream/portal-embed-video)
 
@@ -43,13 +42,13 @@ Although a URL can be long and awkward, it will get the job done.
 If the URL is from one of the supported services, it should *just work*:
 
 ```{r}
-embed_url("https://www.youtube.com/watch?v=uKQ01MvF8mY")
+embed_url("https://www.youtube.com/watch?v=BD_n6ju9iRA")
 ```
 
 If you would like to generate more-concise code using the URL, you can use the `suggest_embed()` function:
 
 ```{r}
-suggest_embed("https://www.youtube.com/watch?v=uKQ01MvF8mY")
+suggest_embed("https://www.youtube.com/watch?v=BD_n6ju9iRA")
 ```
 
 ## Embed by service
@@ -81,56 +80,6 @@ The Vimeo identifier is the path of the URL:
 
 ```{r}
 embed_vimeo("238200347")
-```
-
-### Channel 9
-
-The UseR! 2016 and 2017 videos are hosted on Microsoft's Channel 9 service, motivating this embed function.
-
-Personal note: one of the things I want to well-and-truly understand (along with non-standard evaluation) is monads. 
-I understand it to be a useful construct for managing side-effects, but true understanding escapes me. 
-This is a wonderful presentation; it gets me 95% of the way there (I think), so maybe repeated viewings will get me sufficiently close.
-
-Here's the URL:
-
-```{r}
-suggest_embed(
-  "https://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads"
-)
-```
-
-The identifier is the path of the URL, **`Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads`**, which you can express as a string:
-
-```{r}
-embed_channel9("Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads")
-```
-
-Alternatively, you can express this as a vector of strings:
-
-```{r eval=FALSE}
-embed_channel9(c("Shows", "Going+Deep", "Brian-Beckman-Dont-fear-the-Monads"))
-```
-
-#### UseR! 2016 (and 2017)
-
-At UseR! 2016, Rick Becker gave a wonderful talk on the history of the S language:
-
-```{r echo=FALSE}
-tags$p(
-  tags$code(
-    HTML(paste0(
-      "https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/",  
-      tags$strong("Forty-years-of-S")
-    ))
-  )  
-)
-```
-
-For a UseR!2016 (or 2017) video, the identifier is the last component of path of the URL, in this case: **`Forty-years-of-S`**. 
-To embed the video:
-
-```{r}
-embed_user2016("Forty-years-of-S")
 ```
 
 ### Box
@@ -186,15 +135,12 @@ Because this video is internal to an organization, it will likely not play for y
 In case you need sample videos with which to experiment, this package has you covered:
 
 ```{r}
-rickroll_youtube()
-```
-
-Also (mercifully, not displayed):
-
-```{r eval=FALSE}
 rickroll_vimeo()
 ```
 
+Also (mercifully, not displayed as it seems no-longer embeddable):
+
 ```{r eval=FALSE}
-rickroll_channel9()
+rickroll_youtube()
 ```
+

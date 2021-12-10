@@ -22,3 +22,8 @@
 #' @docType package
 #' @name vembedr-package
 NULL
+
+## usethis namespace: start
+#' @importFrom lifecycle deprecated
+## usethis namespace: end
+NULL

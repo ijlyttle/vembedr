@@ -11,7 +11,6 @@ test_that("embed functions set a ratio", {
 
   expect_identical(ratio(rickroll_youtube()), "16by9")
   expect_identical(ratio(rickroll_vimeo()), "16by9")
-  expect_identical(ratio(rickroll_channel9()), "16by9")
   expect_identical(ratio(embed_box("foo")), "16by9")
 })
 

@@ -26,16 +26,13 @@ In this verison, five services are supported:
 
 - YouTube 
 - Vimeo
-- Microsoft Channel 9 (including UseR! 2016 and 2017 videos).
 - Box
 - Microsoft Stream
 
-## New to version 0.1.4
+## New to version 0.1.5
 
-- new functions to help you format: `use_rounded()`, `use_align()`, and `use_bs_responsive()`.
-- new services supported:
-   - Box, using `embed_box()`
-   - Microsoft Stream, using `embed_msstream()`
+- updated embedding code to comport with new Pandoc.
+- deprecated Microsoft Channel 9 (including UserR! 2016 & 2017)), as service is deprecated.
 
 ## Installation
 

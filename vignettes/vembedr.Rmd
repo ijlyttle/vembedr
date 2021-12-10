@@ -33,7 +33,6 @@ Using `embed_url()`, you can create an embed object for any of these supported s
 
 - YouTube: `embed_youtube()`
 - Vimeo: `embed_vimeo()`
-- Microsoft Channel 9: `embed_channel9()`
 - Box: `embed_box()`
 - Microsoft Stream: `embed_msstream()`
 
@@ -81,12 +80,5 @@ For example, this is an amazing Otis Redding performance:
 embed_vimeo("45157591")
 ```
 
-Also, as of RStudio 1.3, the RStudio IDE preview window will work with YouTube and Vimeo, but not with Channel 9:
-
-```{r}
-rickroll_channel9()
-```
-
-If you view this page in a full browser, it should work just fine.
 
 
