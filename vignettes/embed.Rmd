@@ -27,7 +27,7 @@ Using this package, you can embed videos into RMarkdown documents and Shiny apps
 
 - [YouTube](https://developers.google.com/youtube/player_parameters)
 - [Vimeo](https://developer.vimeo.com/player/embedding)
-- [Box](https://developer.box.com/docs/box-embed#section-build-box-embed-programatically)
+- [Box](https://developer.box.com/guides/embed/box-embed/#programmatically)
 - [Microsoft Stream](https://docs.microsoft.com/en-us/stream/portal-embed-video)
 
 The links above are associated with the embedding API for each of the services; these are the APIs wrapped by the

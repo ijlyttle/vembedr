@@ -86,7 +86,7 @@ according to the service being used:
 \describe{
 \item{YouTube}{\url{https://developers.google.com/youtube/player_parameters}}
 \item{Vimeo}{\url{https://developer.vimeo.com/player/embedding}}
-\item{Box}{\url{https://developer.box.com/docs/box-embed#section-build-box-embed-programatically}}
+\item{Box}{\url{https://developer.box.com/guides/embed/box-embed/#programmatically}}
 \item{Microsoft Stream}{\url{https://docs.microsoft.com/en-us/stream/portal-embed-video}}
 }
 }

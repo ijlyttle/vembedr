@@ -11,7 +11,7 @@
 #' \describe{
 #'   \item{YouTube}{<https://developers.google.com/youtube/player_parameters>}
 #'   \item{Vimeo}{<https://developer.vimeo.com/player/embedding>}
-#'   \item{Box}{<https://developer.box.com/docs/box-embed#section-build-box-embed-programatically>}
+#'   \item{Box}{<https://developer.box.com/guides/embed/box-embed/#programmatically>}
 #'   \item{Microsoft Stream}{<https://docs.microsoft.com/en-us/stream/portal-embed-video>}
 #' }
 #'
