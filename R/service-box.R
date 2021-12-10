@@ -6,7 +6,7 @@ embed_box <- function(id, custom_domain = getOption("vembedr.box_custom_domain")
                       frameborder = 0, allowfullscreen = TRUE) {
 
   # adapted from:
-  # https://developer.box.com/docs/box-embed#section-build-box-embed-programatically
+  # https://developer.box.com/guides/embed/box-embed/#programmatically
 
   # <iframe
   #    src="https://{custom_domain}.app.box.com/embed/s/{shared link value}"

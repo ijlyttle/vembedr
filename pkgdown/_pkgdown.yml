@@ -29,3 +29,8 @@ reference:
   contents:
   - vembedr-package
   - vembedr-s3-classes
+- title: Deprecated
+  desc: "Microsoft's Channel 9 links no longer work."
+  contents:
+  - embed_channel9
+

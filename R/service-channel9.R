@@ -1,9 +1,28 @@
-#' @rdname embed
+#' Embed video from Microsoft Channel 9
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' These functions are deprecated: links to Microsoft Channel 9
+#' [no longer work](https://docs.microsoft.com/en-us/teamblog/channel9joinedmicrosoftlearn).
+#'
+#' @inherit embed return params
+#' @param ... arguments (other than `id`) passed on to [embed()]
 #' @export
 #'
 embed_channel9 <- function(id,
                            width = NULL, height = 300, ratio = c("16by9", "4by3"),
                            frameborder = 0, allowfullscreen = TRUE){
+
+  lifecycle::deprecate_warn(
+    "1.5.0",
+    "embed_channel9()",
+    details = c(
+      i = "Microsoft made breaking changes to its Channel 9 service.",
+      i = "See <https://docs.microsoft.com/en-us/teamblog/channel9joinedmicrosoftlearn>."
+    ),
+    id = "channel_9"
+  )
 
   ratio <- match.arg(ratio)
   dim <- get_width_height(width, height, ratio)
