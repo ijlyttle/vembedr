@@ -7,8 +7,8 @@
 <!-- badges: end -->
 
 The goal of vembedr is to make it a little bit easier for you to embed
-videos into your **RMarkdown** documents and your **Shiny** apps. In
-this verison, five services are supported:
+videos into your **RMarkdown** documents and your **Shiny** apps; these
+services are supported:
 
 -   YouTube
 -   Vimeo
@@ -17,9 +17,12 @@ this verison, five services are supported:
 
 ## New to version 0.1.5
 
--   updated embedding code to comport with new Pandoc.
+-   updated internal implementation to comport with latest Pandoc.
+    ([#52](https://github.com/ijlyttle/vembedr/pull/52), thanks
+    [@jnolis](https://github.com/jnolis)!)
 -   deprecated Microsoft Channel 9 (including UserR! 2016 & 2017)), as
-    service is deprecated.
+    Channel 9 has been deprecated.
+    ([#54](https://github.com/ijlyttle/vembedr/pull/54))
 
 ## Installation
 

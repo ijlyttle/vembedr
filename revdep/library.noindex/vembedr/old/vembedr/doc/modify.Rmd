@@ -1,0 +1,107 @@
+---
+title: "Modify embedding"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Modify embedding}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+library("vembedr")
+```
+
+This article deals with modifications you can make to videos that you embed. These include:
+
+- start time
+- horizontal alignment
+- rounded corners
+- responsive sizing for [Bootstrap](https://getbootstrap.com/docs/3.4/components/#responsive-embed)
+
+These modifications can be made independently of each other, and can be composed:
+
+```{r}
+embed_youtube("2WoDQBhJCVQ") %>%
+  use_start_time("44s") %>%
+  use_align("center") %>%
+  use_rounded(10)
+```
+
+To embed videos from variety of services, please read `vignette("embed")`. 
+
+## Start time
+
+To specify a starting time for a video, you can `use_start_time()`: 
+
+```{r}
+embed_youtube(id = "8SGif63VW6E") %>% 
+  use_start_time("4m12s")
+```
+
+Thanks to [Aurélien Ginolhac](https://github.com/ginolhac) for suggesting this video using this start-time.
+
+The `use_start_time()` function treats these all of these inputs equivalently:
+
+- `"0h1m0s"`, `"0h01m00s"`, `"0h1m"`
+- `"1m0s"`, `"1m"`
+- `"60s"`, `60`
+
+This function works with all of the services except for Box. 
+
+## Horizontal alignment
+
+You can `use_align()` to specify the horizontal alignment:
+
+```{r}
+embed_vimeo("10022924") %>%
+  use_align("center")
+```
+
+Possible values for `align` are: `"left"` (default), `"right"`, `"center"`, `"justified"`. 
+
+## Rounded corners
+ 
+You can `use_rounded()` to specify the `radius` (in pixels) of the rounds:
+
+```{r}
+embed_youtube("lan-UQfN0zs") %>%
+  use_rounded(radius = 10)
+```
+
+This seems to work better in the browser than in the RStudio viewer.
+
+## Responsive sizing
+
+If you are using Bootstrap, you can `use_bs_responsive()` to make your video responsive to the width of its container:
+
+```{r}
+embed_youtube("FkBQc0gQkQI") %>%
+  use_bs_responsive()
+```
+
+It has no arguments, but it uses the `ratio` provided to the `embed()` function:
+
+```{r}
+embed_youtube("KvX8MijgeW8", ratio = "4by3") %>%
+  use_bs_responsive()  
+```
+
+The `ratio` defaults to `"16by9"`, but it can also be `"4by3"`.
+
+If you are viewing this as this HTML vignette provided by R's help, you will not see responsiveness as it does not use Bootstrap. 
+
+If you are viewing this at [this package's pkgdown site](https://ijlyttle.github.io/vembedr/articles/modify.html), you will see the responsiveness.
+
+
+
+
+

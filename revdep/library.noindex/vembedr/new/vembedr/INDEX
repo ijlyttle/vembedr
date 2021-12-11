@@ -1,0 +1,12 @@
+embed                   Embed video from service
+embed_url               Embed video based on URL
+embed_user2016          Embed video from Microsoft Channel 9
+get_service             Determine service based on URL
+rickroll                Embed popular video
+use_align               Align horizontally
+use_bs_responsive       Make size responsive
+use_rounded             Make rounded corners
+use_start_time.vembedr_embed_box
+                        Specify start time
+vembedr-package         vembedr: Package for embedding video
+vembedr-s3-classes      vembedr S3 Classes
