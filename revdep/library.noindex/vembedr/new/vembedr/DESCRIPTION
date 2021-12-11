@@ -28,8 +28,8 @@ Roxygen: list(markdown = TRUE)
 RemoteType: local
 RemoteUrl: /Users/ijlyttle/Documents/repos/public/vembedr
 NeedsCompilation: no
-Packaged: 2021-12-11 15:03:31 UTC; ijlyttle
+Packaged: 2021-12-11 15:48:15 UTC; ijlyttle
 Author: Ian Lyttle [aut, cre] (<https://orcid.org/0000-0001-9962-4849>),
   Schneider Electric [cph]
 Maintainer: Ian Lyttle <ian.lyttle@se.com>
-Built: R 4.1.2; ; 2021-12-11 15:03:31 UTC; unix
+Built: R 4.1.2; ; 2021-12-11 15:48:16 UTC; unix
