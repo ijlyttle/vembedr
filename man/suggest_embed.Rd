@@ -20,12 +20,12 @@ This function is meant to work with URLs from any of the supported services.
 }
 \details{
 \describe{
-\item{\code{suggest_embed}}{called for the side-effect of
+\item{\code{suggest_embed}}{Called for the side-effect of
 printing suggested code the screen. If you have a recent version
 of \href{https://cran.r-project.org/package=usethis}{usethis}, the code
-will be copied to your clipboard}
-\item{\code{suggest_embed_pure}}{returns character string
-that represents the suggested code}
+will be copied to your clipboard.}
+\item{\code{suggest_embed_pure}}{Returns character string
+that represents the suggested code.}
 }
 }
 \examples{

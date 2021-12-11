@@ -20,8 +20,9 @@ services are supported:
 -   updated internal implementation to comport with latest Pandoc.
     ([#52](https://github.com/ijlyttle/vembedr/pull/52), thanks
     [@jnolis](https://github.com/jnolis)!)
--   deprecated Microsoft Channel 9 (including UserR! 2016 & 2017)), as
-    Channel 9 has been deprecated.
+-   deprecated Microsoft Channel 9 (including UserR! 2016 & 2017), as
+    [Channel 9 has been
+    moved](https://docs.microsoft.com/en-us/teamblog/channel9joinedmicrosoftlearn).
     ([#54](https://github.com/ijlyttle/vembedr/pull/54))
 
 ## Installation

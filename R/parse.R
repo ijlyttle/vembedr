@@ -3,12 +3,12 @@
 #' This function is meant to work with URLs from any of the supported services.
 #'
 #' \describe{
-#'   \item{`suggest_embed`}{called for the side-effect of
+#'   \item{`suggest_embed`}{Called for the side-effect of
 #'     printing suggested code the screen. If you have a recent version
 #'     of [usethis](https://cran.r-project.org/package=usethis), the code
-#'     will be copied to your clipboard}
-#'   \item{`suggest_embed_pure`}{returns character string
-#'     that represents the suggested code}
+#'     will be copied to your clipboard.}
+#'   \item{`suggest_embed_pure`}{Returns character string
+#'     that represents the suggested code.}
 #' }
 #'
 #' @inheritParams embed_url

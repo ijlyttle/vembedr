@@ -13,7 +13,7 @@ use_rounded(embed, radius = NULL)
 for the \verb{<iframe/>}. Numeric values will be interpreted as number of pixels.}
 }
 \value{
-Object with S3 class \code{vembedr_embed}
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 You can use this function to make rounded corners for the enclosing \verb{</div>}.

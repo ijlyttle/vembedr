@@ -1,5 +1,5 @@
 Library: /Users/ijlyttle/Documents/repos/public/vembedr/revdep/library.noindex/vembedr/new
-vembedr (0.1.4.9005)
+vembedr (0.1.4.9006)
 
 Library: /Users/ijlyttle/Documents/repos/public/vembedr/revdep/library.noindex/promises
 askpass    (1.1)

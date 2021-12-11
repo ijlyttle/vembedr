@@ -28,7 +28,7 @@
 #' @param query             `list`, items to include in url-query string
 #' @param fragment          `character`, string to include as url-fragment
 #'
-#' @return Object with S3 class `vembedr_embed`
+#' @return Object with S3 class `vembedr_embed`.
 #'
 #' @name embed
 #' @family embed

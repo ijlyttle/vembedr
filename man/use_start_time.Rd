@@ -37,7 +37,7 @@ use_start_time(embed, ...)
 should be paused at this time}
 }
 \value{
-Object with S3 class \code{vembedr_embed}
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 This function provides you a consistent way to specify the start time,

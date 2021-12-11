@@ -1,32 +1,13 @@
-## Test environments
+## R CMD check results 
 
-* local: OS X install, R 4.0.2
-* GitHub Actions: windows-latest (release)
-* GitHub Actions: macOS-latest (release)
-* GitHub Actions: ubuntu-20.04 (release)
-* GitHub Actions: ubuntu-20.04 (devel)
-* winbuilder: R Under development (unstable) (2020-10-02 r79291)
-* r-hub: Fedora Linux, R-devel, clang, gfortran
-* r-hub: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+0 errors | 0 warnings | 0 notes 
 
-## R CMD check results
+## revdepcheck results
 
-0 errors | 0 warnings | 1 note
+We checked 1 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
 
-R CMD check succeeded
+ * We saw 0 new problems
+ * We failed to check 0 packages
 
-**Note** new email for maintainer:
-
-N  checking CRAN incoming feasibility
-   Maintainer: 'Ian Lyttle <ian.lyttle@se.com>'
-     Ian Lyttle <ian.lyttle@se.com>
-   Old maintainer(s):
-     Ian Lyttle <ian.lyttle@schneider-electric.com>
-
-## Reverse dependencies
-
-There appear to be no reverse dependencies.
-
----
 
 

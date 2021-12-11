@@ -10,7 +10,7 @@ embed_url(url)
 \item{url}{\code{character}, URL of web-page for video}
 }
 \value{
-Object with S3 class \code{vembedr_embed}
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 You can use this function to embed video using only the URL and you do not
