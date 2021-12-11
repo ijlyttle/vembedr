@@ -1,6 +1,6 @@
 Package: vembedr
 Title: Embed Video in HTML
-Version: 0.1.4.9006
+Version: 0.1.4
 Authors@R: c(
     person(
       given = "Ian", 
@@ -13,30 +13,23 @@ Authors@R: c(
   )
 Description: A set of functions for generating HTML to
     embed hosted video in your R Markdown documents or Shiny applications.
-Depends:
-    R (>= 3.3.0)
+Depends: R (>= 3.3.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
-Imports:
-    htmltools,
-    httr,
-    stringr,
-    magrittr,
-    glue,
-    assertthat,
-    utils,
-    lifecycle
-RoxygenNote: 7.1.2
+LazyData: true
+Imports: htmltools, rlang, httr, stringr, magrittr, glue, assertthat,
+        utils
+RoxygenNote: 7.1.1
 URL: https://github.com/ijlyttle/vembedr
 BugReports: https://github.com/ijlyttle/vembedr/issues
-Suggests: 
-    testthat,
-    knitr,
-    rmarkdown,
-    covr,
-    here,
-    fs,
-    conflicted,
-    usethis
+Suggests: testthat, knitr, rmarkdown, covr, here, fs, conflicted,
+        usethis
 VignetteBuilder: knitr
-Roxygen: list(markdown = TRUE)
+NeedsCompilation: no
+Packaged: 2020-10-10 13:38:23 UTC; sesa19001
+Author: Ian Lyttle [aut, cre] (<https://orcid.org/0000-0001-9962-4849>),
+  Schneider Electric [cph]
+Maintainer: Ian Lyttle <ian.lyttle@se.com>
+Repository: CRAN
+Date/Publication: 2020-10-10 21:20:02 UTC
+Built: R 4.1.0; ; 2021-05-27 06:15:41 UTC; unix

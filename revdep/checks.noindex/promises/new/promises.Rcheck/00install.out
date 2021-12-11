@@ -1,0 +1,21 @@
+* installing *source* package ‘promises’ ...
+** package ‘promises’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+clang++ -mmacosx-version-min=10.13 -std=gnu++14 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/ijlyttle/Documents/repos/public/vembedr/revdep/library.noindex/promises/later/include' -I'/Users/ijlyttle/Documents/repos/public/vembedr/revdep/library.noindex/promises/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c RcppExports.cpp -o RcppExports.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++14 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/ijlyttle/Documents/repos/public/vembedr/revdep/library.noindex/promises/later/include' -I'/Users/ijlyttle/Documents/repos/public/vembedr/revdep/library.noindex/promises/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c promise_task.cpp -o promise_task.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++14 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o promises.so RcppExports.o promise_task.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/ijlyttle/Documents/repos/public/vembedr/revdep/checks.noindex/promises/new/promises.Rcheck/00LOCK-promises/00new/promises/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (promises)

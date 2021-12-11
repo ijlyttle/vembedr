@@ -21,8 +21,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-The goal of vembedr is to make it a little bit easier for you to embed videos into your **RMarkdown** documents and your **Shiny** apps. 
-In this verison, five services are supported:
+The goal of vembedr is to make it a little bit easier for you to embed videos into your **RMarkdown** documents and your **Shiny** apps;
+these services are supported:
 
 - YouTube 
 - Vimeo
@@ -31,9 +31,11 @@ In this verison, five services are supported:
 
 ## New to version 0.1.5
 
-- updated embedding code to comport with new Pandoc.
-- deprecated Microsoft Channel 9 (including UserR! 2016 & 2017)), as service is deprecated.
-
+- updated internal implementation to comport with latest Pandoc. 
+  ([#52](https://github.com/ijlyttle/vembedr/pull/52), thanks [\@jnolis](https://github.com/jnolis)!)
+- deprecated Microsoft Channel 9 (including UserR! 2016 & 2017)), as Channel 9 has been deprecated.
+  ([#54](https://github.com/ijlyttle/vembedr/pull/54))
+  
 ## Installation
 
 You can install the latest released version from CRAN with:

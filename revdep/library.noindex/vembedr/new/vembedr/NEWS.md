@@ -1,10 +1,10 @@
 # vembedr 0.1.4 (development version)
 
-- updates repository and GitHub actions to reflect default git branch is now `main`. (#55)
+- updates repository, actions to reflect default git branch is now `main` (#55)
 
-- updates `<iframe>` implementation to keep up with pandoc, see [rstudio/rmarkdown#2255](https://github.com/rstudio/rmarkdown/issues/2255). (#52,  @jnolis)
+- updates `<iframe>` implementation to keep up with pandoc, see [rstudio/rmarkdown#2255](https://github.com/rstudio/rmarkdown/issues/2255) (#52,  @jnolis).
 
-- version bump for development.
+- version bump for development
 
 ## vembedr 0.1.4
 

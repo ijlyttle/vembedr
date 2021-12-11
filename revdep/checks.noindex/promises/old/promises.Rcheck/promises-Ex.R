@@ -1,0 +1,193 @@
+pkgname <- "promises"
+source(file.path(R.home("share"), "R", "examples-header.R"))
+options(warn = 1)
+library('promises')
+
+base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+cleanEx()
+nameEx("future_promise")
+### * future_promise
+
+flush(stderr()); flush(stdout())
+
+### Name: future_promise_queue
+### Title: 'future' promise
+### Aliases: future_promise_queue future_promise
+
+### ** Examples
+
+
+
+
+cleanEx()
+nameEx("pipes")
+### * pipes
+
+flush(stderr()); flush(stdout())
+
+### Name: pipes
+### Title: Promise pipe operators
+### Aliases: pipes %...>% %...T>% %...!% %...T!%
+
+### ** Examples
+
+## Not run: 
+##D library(future)
+##D plan(multisession)
+##D 
+##D future_promise(cars) %...>%
+##D   head(5) %...T>%
+##D   print()
+##D 
+##D # If the read.csv fails, resolve to NULL instead
+##D future_promise(read.csv("http://example.com/data.csv")) %...!%
+##D   { NULL }
+## End(Not run)
+
+
+
+
+cleanEx()
+nameEx("promise")
+### * promise
+
+flush(stderr()); flush(stdout())
+
+### Name: promise
+### Title: Create a new promise object
+### Aliases: promise
+
+### ** Examples
+
+# Create a promise that resolves to a random value after 2 secs
+p1 <- promise(function(resolve, reject) {
+  later::later(~resolve(runif(1)), delay = 2)
+})
+
+p1 %...>% print()
+
+# Create a promise that errors immediately
+p2 <- promise(~{
+  reject("An error has occurred")
+})
+then(p2,
+  onFulfilled = ~message("Success"),
+  onRejected = ~message("Failure")
+)
+
+
+
+
+cleanEx()
+nameEx("promise_all")
+### * promise_all
+
+flush(stderr()); flush(stdout())
+
+### Name: promise_all
+### Title: Combine multiple promise objects
+### Aliases: promise_all promise_race
+
+### ** Examples
+
+p1 <- promise(~later::later(~resolve(1), delay = 1))
+p2 <- promise(~later::later(~resolve(2), delay = 2))
+
+# Resolves after 1 second, to the value: 1
+promise_race(p1, p2) %...>% {
+  cat("promise_race:\n")
+  str(.)
+}
+
+# Resolves after 2 seconds, to the value: list(1, 2)
+promise_all(p1, p2) %...>% {
+  cat("promise_all:\n")
+  str(.)
+}
+
+
+
+
+cleanEx()
+nameEx("promise_map")
+### * promise_map
+
+flush(stderr()); flush(stdout())
+
+### Name: promise_map
+### Title: Promise-aware lapply/map
+### Aliases: promise_map
+
+### ** Examples
+
+# Waits x seconds, then returns x*10
+wait_this_long <- function(x) {
+  promise(~later::later(~{
+    resolve(x*10)
+  }, delay = x))
+}
+
+promise_map(list(A=1, B=2, C=3), wait_this_long) %...>%
+  print()
+
+
+
+
+cleanEx()
+nameEx("promise_reduce")
+### * promise_reduce
+
+flush(stderr()); flush(stdout())
+
+### Name: promise_reduce
+### Title: Promise-aware version of Reduce
+### Aliases: promise_reduce
+
+### ** Examples
+
+# Returns a promise for the sum of e1 + e2, with a 0.5 sec delay
+slowly_add <- function(e1, e2) {
+  promise(~later::later(~resolve(e1 + e2), delay = 0.5))
+}
+
+# Prints 55 after a little over 5 seconds
+promise_reduce(1:10, slowly_add, .init = 0) %...>% print()
+
+
+
+
+cleanEx()
+nameEx("promise_resolve")
+### * promise_resolve
+
+flush(stderr()); flush(stdout())
+
+### Name: promise_resolve
+### Title: Create a resolved or rejected promise
+### Aliases: promise_resolve promise_reject
+
+### ** Examples
+
+promise_resolve(mtcars) %...>%
+  head() %...>%
+  print()
+
+promise_reject("Something went wrong") %...T!%
+  { message(conditionMessage(.)) }
+
+
+
+
+### * <FOOTER>
+###
+cleanEx()
+options(digits = 7L)
+base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+grDevices::dev.off()
+###
+### Local variables: ***
+### mode: outline-minor ***
+### outline-regexp: "\\(> \\)?### [*]+" ***
+### End: ***
+quit('no')
