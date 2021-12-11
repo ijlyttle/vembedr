@@ -1,4 +1,4 @@
-## vembedr 0.1.5
+# vembedr 0.1.5
 
 - updates repository and GitHub actions to reflect default git branch is now `main`. (#55)
 
@@ -6,7 +6,7 @@
 
 - version bump for development.
 
-## vembedr 0.1.4
+# vembedr 0.1.4
 
 - adds support for [Microsoft Stream](https://www.microsoft.com/en-us/microsoft-365/microsoft-stream), which offers an enterprise video service; this will likely be for use internal to an organization. (#38)
 - if you have a recent version of [usethis](https://usethis.r-lib.org) installed, `suggest_embed()` will copy the suggested code to your clipboard. (#32)
@@ -19,14 +19,14 @@
 - adds functionality for embedding [Box](https://www.box.com) videos, via the `embed_box()` function (#28)
 - version bump for development
 
-## vembedr 0.1.3
+# vembedr 0.1.3
 
 - updates README to show some custom formatting (#25, @koncina & @ginolhac)
 - deprecates `hms()` and `secs()` in favor of `use_start_time()` (#24)
 - adds function `embed_user2017()`: embed videos from UseR!2017
 - version bump for development
 
-## vembedr 0.1.2
+# vembedr 0.1.2
 
 - adds `embed_url()`: given a URL, build the `<iframe/>` to embed the video
 - adds `suggest_embed()`: given a URL, provides suggested code to embed video
@@ -34,7 +34,7 @@
 - adds **pkgdown** support 
 - version bump for development
 
-## vembedr 0.1.1
+# vembedr 0.1.1
 
 * adds `rickroll_channel9()`, stretches definition of rickrolling
 * deprecates `allow_full_screen` argument to embed functions in favor of
@@ -45,7 +45,7 @@
 * adds `embed_user2016()`
 * version bump for development
 
-## vembedr 0.1.0
+# vembedr 0.1.0
 
 * Added a `NEWS.md` file to track changes to the package.
 * Added a vignette.
