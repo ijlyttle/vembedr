@@ -14,7 +14,7 @@ rickroll_youtube(...)
 \item{...}{arguments (other than \code{id}) passed on to \code{\link[=embed]{embed()}}}
 }
 \value{
-An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 If you want to experiment with the arguments to \code{\link[=embed]{embed()}},

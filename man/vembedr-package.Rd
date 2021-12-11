@@ -12,7 +12,6 @@ these services:
 \itemize{
 \item YouTube
 \item Vimeo
-\item Microsoft Channel 9
 \item Box
 \item Microsoft Stream
 }
@@ -25,6 +24,6 @@ e.g. \code{\link[=embed_youtube]{embed_youtube()}}, \code{\link[=embed_url]{embe
 e.g. \code{\link[=use_start_time]{use_start_time()}}, \code{\link[=use_rounded]{use_rounded()}}
 }
 
-You can use the pipe (\verb{\%>\%}) to chain embed function-calls with
-use function-calls.
+You can use the pipe (\verb{|>} or \verb{\%>\%}) to chain \emph{embed function-calls} with
+\emph{use function-calls}.
 }

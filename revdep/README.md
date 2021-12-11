@@ -10,13 +10,13 @@
 |collate  |en_US.UTF-8                  |
 |ctype    |en_US.UTF-8                  |
 |tz       |America/Chicago              |
-|date     |2021-12-10                   |
+|date     |2021-12-11                   |
 
 # Dependencies
 
 |package |old   |new        |Δ  |
 |:-------|:-----|:----------|:--|
-|vembedr |0.1.4 |0.1.4.9005 |*  |
+|vembedr |0.1.4 |0.1.4.9006 |*  |
 
 # Revdeps
 

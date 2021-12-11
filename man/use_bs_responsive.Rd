@@ -10,7 +10,7 @@ use_bs_responsive(embed)
 \item{embed}{\code{vembedr_embed} object, created using an \code{\link[=embed]{embed()}} function}
 }
 \value{
-Object with S3 class \code{vembedr_embed}
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 If your HTML page includes

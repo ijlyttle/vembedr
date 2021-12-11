@@ -52,7 +52,7 @@ embed_channel9(
 \item{...}{arguments (other than \code{id}) passed on to \code{\link[=embed]{embed()}}}
 }
 \value{
-Object with S3 class \code{vembedr_embed}
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

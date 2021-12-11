@@ -8,7 +8,7 @@
 #'
 #' @param ... arguments (other than `id`) passed on to [embed()]
 #'
-#' @return An embed object that prints an \code{htmltools::\link[htmltools]{tags}$iframe} element
+#' @inherit embed return
 #'
 #' @name rickroll
 #' @examples

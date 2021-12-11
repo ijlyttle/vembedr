@@ -71,7 +71,7 @@ the standard Box instance.}
 \item{fragment}{\code{character}, string to include as url-fragment}
 }
 \value{
-Object with S3 class \code{vembedr_embed}
+Object with S3 class \code{vembedr_embed}.
 }
 \description{
 These functions are used to embed video into your \strong{rmarkdown} html-documents,
